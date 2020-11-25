@@ -23,11 +23,32 @@ class Listing_Shortcode {
 			return '';
 		}
 
+		$args = array(
+			'post_type' => Boat_Post_Type::get_post_type_name(),
+			'post_status'      => 'publish',
+			'posts_per_page' => -1,
+			'meta_query' => array(
+				'relation' => 'AND',
+				array(
+					'key' => 'Fabricante',
+					'value' => 'Disney',
+					'compare' => '=',
+				),
+				array(
+					'key' => 'precio',
+					'value' => array(50,100),
+					'type' => 'numeric',
+					'compare' => 'BETWEEN',
+				),
+			),
+		);
+		$query_jueguete = new WP_Query( $args );
+
 		$args = [
 			'numberposts'      => 1,
 			'orderby'          => 'post_date',
 			'order'            => 'DESC',
-			'post_type'        => 'addcomm_forms',
+			'post_type'        => Boat_Post_Type::get_post_type_name(),
 			'post_status'      => 'publish',
 			'name'             => $attr[ 'id' ],
 			'suppress_filters' => true
