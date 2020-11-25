@@ -169,7 +169,7 @@ class Dealers_League_Marine {
 
 	}
 
-	/*
+
 	public function load_single_template( $template ) {
 		global $post;
 
@@ -179,14 +179,19 @@ class Dealers_League_Marine {
 
 		return $template;
 	}
-	*/
+
 
 	public function listing_content( $content ) {
 		global $post;
 
 		// Check if we're in the right post type and single post
 		if ( $post->post_type === Boat_Post_Type::get_post_type_name() && is_singular() ) {
-			return 'MY LISTING CONTENT';
+
+			ob_start();
+			// Get template file output
+			$listing_json_data = maybe_unserialize( get_post_meta( $post->ID, 'listing_json_data', true ) );
+			include plugin_dir_path( __FILE__ ) . '../templates/content-listing.php';
+			return ob_get_clean();
 		}
 
 		return $content;

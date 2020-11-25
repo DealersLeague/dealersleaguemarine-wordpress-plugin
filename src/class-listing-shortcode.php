@@ -19,60 +19,43 @@ class Listing_Shortcode {
 	 */
 	public function shortcode_listing_archive( $attr ): string {
 
-		if ( empty( $attr[ 'id' ] ) ) {
-			return '';
+		$conditions = [];
+
+		if ( empty( $attr[ 'category' ] ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_category',
+				'value'   => $attr[ 'category' ],
+				'compare' => '=',
+			);
+		}
+		if ( empty( $attr[ 'manufacturer' ] ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_manufacturer',
+				'value'   => $attr[ 'manufacturer' ],
+				'compare' => '=',
+			);
+		}
+		if ( empty( $attr[ 'location' ] ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_location',
+				'value'   => $attr[ 'location' ],
+				'compare' => '=',
+			);
 		}
 
 		$args = array(
-			'post_type' => Boat_Post_Type::get_post_type_name(),
-			'post_status'      => 'publish',
-			'posts_per_page' => -1,
-			'meta_query' => array(
-				'relation' => 'AND',
-				array(
-					'key' => 'Fabricante',
-					'value' => 'Disney',
-					'compare' => '=',
-				),
-				array(
-					'key' => 'precio',
-					'value' => array(50,100),
-					'type' => 'numeric',
-					'compare' => 'BETWEEN',
-				),
-			),
+			'post_type'   => Boat_Post_Type::get_post_type_name(),
+			'post_status' => 'publish',
 		);
-		$query_jueguete = new WP_Query( $args );
 
-		$args = [
-			'numberposts'      => 1,
-			'orderby'          => 'post_date',
-			'order'            => 'DESC',
-			'post_type'        => Boat_Post_Type::get_post_type_name(),
-			'post_status'      => 'publish',
-			'name'             => $attr[ 'id' ],
-			'suppress_filters' => true
-		];
-
-		$form_post = get_posts( $args );
-
-		if ( empty( $form_post ) ) {
-			return '';
+		if ( ! empty( $conditions ) && count( $conditions ) > 1 ) {
+			$conditions['relation'] = 'AND';
+			$args['meta_query']     = $conditions;
 		}
 
-		$form_post = $form_post[ 0 ];
+		$listings = new \WP_Query( $args );
 
-		$form_field_list = maybe_unserialize( get_post_meta( $form_post->ID, 'addcomm_form_field_list', true ) );
-		$form_action_url = get_post_meta( $form_post->ID, 'addcomm_form_action_url', true );
-
-		if ( empty( $form_action_url ) || count( $form_field_list ) === 0 ) {
-			return '';
-		}
-
-		$addcomm_forms_obj = new AddCommForms();
-		$form_obj          = $addcomm_forms_obj->get_form_obj_from_post( $form_post->ID, [] );
-
-		return $form_obj->render_form();
+		return '';
 
 	}
 
