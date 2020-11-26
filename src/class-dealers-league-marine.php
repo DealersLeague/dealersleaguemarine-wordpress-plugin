@@ -190,11 +190,55 @@ class Dealers_League_Marine {
 			ob_start();
 			// Get template file output
 			$listing_json_data = maybe_unserialize( get_post_meta( $post->ID, 'listing_json_data', true ) );
-			include plugin_dir_path( __FILE__ ) . '../templates/content-listing.php';
+			$transformed_data = $this->transform_listing_data( $listing_json_data['listing'] );
+			include plugin_dir_path( __FILE__ ) . '../templates/content-single-listing.php';
 			return ob_get_clean();
 		}
 
 		return $content;
+	}
+
+	/**
+	 * @param $listing_data
+	 *
+	 * @return array
+	 */
+	public function transform_listing_data( $listing_data ) {
+
+		$transformed_fields = [];
+
+		foreach ( $listing_data as $tab ) {
+
+			foreach ( $tab as $section_name => $section ) {
+
+				$remove_section = true;
+
+				$transformed_fields[ $section_name ] = [];
+				foreach ( $section as $field_name => $field_value ) {
+
+					if ( is_array( $field_value ) ) {
+						$transformed_fields[ $section_name ][ $field_name ] = [];
+						foreach ( $field_value as $subfield_name => $subfield_value ) {
+							if ( ! empty( $subfield_value ) ) {
+								$transformed_fields[ $section_name ][ $field_name ][ $subfield_name ] = $subfield_value;
+								$remove_section = false;
+							}
+						}
+					} elseif (! empty( $field_value ) ) {
+
+						$transformed_fields[ $section_name ][ $field_name ] = $field_value;
+						$remove_section = false;
+					}
+
+				}
+				if ( $remove_section ) {
+					unset( $transformed_fields[ $section_name ] );
+				}
+
+			}
+		}
+
+		return $transformed_fields;
 	}
 
 	/**
@@ -235,6 +279,7 @@ class Dealers_League_Marine {
 					}
 
 					$json_data = json_decode( $listing_data['json_data'], true );
+
 					update_post_meta( $post_id, 'listing_external_id', $listing_data[ 'id' ] );
 					update_post_meta( $post_id, 'listing_json_data', maybe_serialize( $json_data ) );
 
