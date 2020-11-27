@@ -19,6 +19,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/class-api.php';
 require_once __DIR__ . '/src/class-boat-post-type.php';
 require_once __DIR__ . '/src/class-settings-page.php';
+require_once __DIR__ . '/src/class-listing-shortcode.php';
 require_once __DIR__ . '/src/class-dealers-league-marine.php';
 
 
