@@ -1,0 +1,29 @@
+.field-checkbox {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.field-checkbox:before {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #ff0000;
+    border-radius: .3rem;
+    content: "";
+    color: #fff;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+.field-checkbox:after {
+    font-family: 'fontawesome';
+    color: #fff;
+    content: "\f00c";
+    position: absolute;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    left: 0;
+    top: -3px;
+    width: 1.5rem;
+    text-align: center;
+}

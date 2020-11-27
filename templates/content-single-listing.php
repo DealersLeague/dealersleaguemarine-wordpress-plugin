@@ -6,6 +6,8 @@ if ( is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
 } else {
 	$image_list = empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_images' ], true );
 }
+
+
 // Description
 $current_site_language =  explode( '_', get_locale() );
 
@@ -39,13 +41,13 @@ $draft        = get_post_meta( $post_id, 'listing_draught', true );
 $beam         = get_post_meta( $post_id, 'listing_beam', true );
 // Loop sections
 $exclude_section_list = [
-   'advert',
-    'listing_managment',
-    'images',
-    'panorama_images',
-    'videos',
-    'panoramas',
-    'documents'
+	'advert',
+	'listing_managment',
+	'images',
+	'panorama_images',
+	'videos',
+	'panoramas',
+	'documents'
 ];
 
 ?>
@@ -54,7 +56,7 @@ $exclude_section_list = [
     <section class="block">
         <!--Gallery Carousel-->
         <section>
-            <div class="owl-carousel full-width-carousel">
+            <div class="owl-carousel full-width-carousel" style="min-height: 300px;width:100%;">
                 <?php
                 foreach ( $image_list as $index => $image ) {
                  ?>
@@ -82,52 +84,70 @@ $exclude_section_list = [
                     <!--Details-->
                     <section>
                         <h2><?php _e('Details', 'dlmarine' ); ?></h2>
-                        <dl class="columns-3">
+                        <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">
                             <?php if (! empty( $manufacturer ) ) { ?>
-                            <dt><?php _e('Manufacturer', 'dlcrm' ); ?></dt>
-                            <dd><?php echo $manufacturer; ?></dd>
+                                <div class="item" style="height:auto !important;">
+                                    <strong><?php _e('Manufacturer', 'dlmarine' ); ?></strong><br>
+                                    <?php echo $manufacturer; ?>
+                                </div>
                             <?php } ?>
 
 	                        <?php if (! empty( $model ) ) { ?>
-                            <dt><?php _e('Model', 'dlcrm' ); ?></dt>
-                            <dd><?php echo $model; ?></dd>
+                                <div class="item" style="height:auto !important;">
+                                    <strong><?php _e('Model', 'dlmarine' ); ?></strong><br>
+	                                <?php echo $model; ?>
+                                </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $boat_type ) ) { ?>
-                            <dt><?php _e('Boat Type', 'dlcrm'); ?></dt>
-                            <dd><?php _e( $boat_type, 'dlcrm'); ?></dd>
+                                <div class="item" style="height:auto !important;">
+                                    <strong><?php _e('Boat Type', 'dlmarine'); ?></strong><br>
+	                                <?php _e( $boat_type, 'dlmarine'); ?>
+                                </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $condition ) ) { ?>
-                            <dt><?php _e('Condition', 'dlcrm' ); ?></dt>
-                            <dd><?php _e( $condition, 'dlcrm'); ?></dd>
+                                <div class="item" style="height:auto !important;">
+                                    <strong><?php _e('Condition', 'dlmarine' ); ?></strong><br>
+	                                <?php _e( $condition, 'dlmarine'); ?>
+                                </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $location ) ) { ?>
-                            <dt><? _e('Location', 'dlcrm' ); ?></dt>
-                            <dd><?php echo $location; ?></dd>
+                                <div class="item" style="height:auto !important;">
+                                    <strong><? _e('Location', 'dlmarine' ); ?></strong><br>
+	                                <?php echo $location; ?>
+                                </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $sale_status ) ) { ?>
-                            <dt><?php _e('Sale Status', 'dlcrm' ); ?></dt>
-                            <dd><?php _e( $sale_status, 'dlcrm'); ?></dd>
+                                <div class="item" style="height:auto !important;">
+                                    <strong><?php _e('Sale Status', 'dlmarine' ); ?></strong><br>
+	                                <?php _e( $sale_status, 'dlmarine'); ?>
+                                </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $loa ) ) { ?>
-                            <dt><?php _e('LOA', 'dlcrm'); ?></dt>
-                            <dd><?php echo $loa; ?></dd>
+                                <div class="item" style="height:auto !important;">
+                                    <strong><?php _e('LOA', 'dlmarine'); ?></strong><br>
+	                                <?php echo $loa; ?>
+                                </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $draft ) ) { ?>
-                            <dt><?php _e('Draft', 'dlcrm'); ?></dt>
-                            <dd><?php echo $draft; ?></dd>
+                                <div class="item" style="height:auto !important;">
+                                    <strong><?php _e('Draft', 'dlmarine'); ?></strong><br>
+	                                <?php echo $draft; ?>
+                                </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $beam ) ) { ?>
-                            <dt><?php _e('Beam', 'dlcrm' ); ?></dt>
-                            <dd><?php echo $beam; ?></dd>
+                                <div class="item" style="height:auto !important;">
+                                    <strong><?php _e('Beam', 'dlmarine' ); ?></strong><br>
+	                                <?php echo $beam; ?>
+                                </div>
 	                        <?php } ?>
-                        </dl>
+                        </div>
                     </section>
                     <!--end Details-->
 
@@ -136,40 +156,18 @@ $exclude_section_list = [
 	                    foreach ( $transformed_data as $section_name => $section ) {
                             if ( ! in_array( $section_name, $exclude_section_list ) && ! empty( $section ) ) {
 	                            echo '<section>';
-	                            echo '<h2>' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlcrm' ) . ' '. count($section).'</h2>';
-                                echo '<div class=col-xs-12>';
+	                            echo '<h2>' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlcrm' ) . '</h2>';
+                                echo ' <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">';
 	                            foreach ( $section as $field_name => $field_value ) {
-                                    echo '<div class="col-xs-4">';
-		                            if ( is_array( $field_value ) ) {
-			                            echo '<span style="font-weight: 700;margin-right:5px;width:50%;text-align: left;">' . $field_name . '</span>';
-
-			                            foreach ( $field_value as $subfield_name => $subfield_value ) {
-
-			                                if ( ! is_array( $subfield_value ) ) {
-
-				                                echo '<span style="width:50%;text-align: left;">' . $subfield_value . '</span>';
-
-			                                } else {
-
-
-			                                    if ( ( $subfield_name == 'number' || $subfield_name=='speed' )  && ! empty( $subfield_value[0] ) ) {
-				                                    echo '<span style="width:50%;text-align: left;">' . $subfield_value[0] . '</span>';
-                                                } elseif( $subfield_name != 'number' && $subfield_name!='speed'){
-			                                        echo '<br>'.$subfield_name .' '. $subfield_value[0]. ' ';
-
-                                                }
-                                            }
-
-			                            }
-
-
-		                            } elseif( ! empty( $field_value ) ) {
-
-			                            echo '<span style="font-weight: 700;margin-right:5px;width:50%;text-align: left;">' .  __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlcrm' ) . '</span>';
-			                            echo '<span style="width:50%;text-align: left;">' . $field_value . '</span>';
+                                    if( ! empty( $field_value ) ) {
+                                        $name = ( $field_name == 'vat' ) ? __('VAT', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
+                                        $name = ( $field_name == 'boat_types' ) ? __('Category', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
+                                        echo '<div class="item" style="height:auto !important;">';
+			                            echo '<strong>' .  $name . '</strong><br>';
+			                            echo ltrim( $field_value, ' ' );
+			                            echo '</div>';
 
 		                            }
-		                            echo '</div>';
 	                            }
                                 echo '</div>';
 	                            echo '</section>';
@@ -178,6 +176,40 @@ $exclude_section_list = [
 	                    }
 
                     ?>
+
+                    <section>
+                        <h2>Details</h2>
+                        <dl class="columns-3">
+                            <span class="field-checkbox">&nbsp;</span>
+                            <dt>Date Added</dt>
+                            <dd>05.04.2017</dd>
+
+                            <dt>Type</dt>
+                            <dd>Offer</dd>
+
+                            <dt>Status</dt>
+                            <dd>Used</dd>
+
+                            <dt>First Owner</dt>
+                            <dd>Yes</dd>
+
+                            <dt>Material</dt>
+                            <dd>Wood, Leather</dd>
+
+                            <dt>Color</dt>
+                            <dd>White, Grey</dd>
+
+                            <dt>Height</dt>
+                            <dd>47cm</dd>
+
+                            <dt>Width</dt>
+                            <dd>203cm</dd>
+
+                            <dt>Length</dt>
+                            <dd>54cm</dd>
+
+                        </dl>
+                    </section>
                     <!--Features-->
                     <section>
                         <h2>Features</h2>

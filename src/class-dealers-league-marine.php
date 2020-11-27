@@ -205,6 +205,7 @@ class Dealers_League_Marine {
 	 */
 	public function transform_listing_data( $listing_data ) {
 
+		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption' ];
 		$transformed_fields = [];
 
 		foreach ( $listing_data as $tab ) {
@@ -217,17 +218,54 @@ class Dealers_League_Marine {
 				foreach ( $section as $field_name => $field_value ) {
 
 					if ( is_array( $field_value ) ) {
-						$transformed_fields[ $section_name ][ $field_name ] = [];
+						$subfield_text = '';
 						foreach ( $field_value as $subfield_name => $subfield_value ) {
 							if ( ! empty( $subfield_value ) ) {
-								$transformed_fields[ $section_name ][ $field_name ][ $subfield_name ] = $subfield_value;
+								if ( is_array( $subfield_value ) ) {
+
+									if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! empty( $subfield_value[0] ) && ! in_array( $subfield_name, $exclude_field_name ) ) {
+										$subfield_text .= '&nbsp;<strong>' . __( $subfield_name, 'dlmarine' ) . '</strong>';
+									}
+									foreach ( $subfield_value as $index => $sv ) {
+										if ( ! empty( $sv ) ) {
+											if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! is_numeric( $index ) ) {
+												$subfield_text .= ' ' . $index . ' ' . __( $sv, 'dlmarine' ) . ($field_name=='boat_types' ? '' : '<br>');
+											} else {
+												$subfield_text .= ' ' . $sv . ($field_name=='boat_types' ? '' : '<br>');
+											}
+										}
+									}
+								} elseif ( $subfield_name != 'checked' && $subfield_name != $field_name && ! in_array( $subfield_name, $exclude_field_name ) && ! is_numeric( $subfield_name ))  {
+									$subfield_text .= '<strong>' . __( $subfield_name, 'dlmarine' ) . '</strong>' . ' ' . __( $subfield_value, 'dlmarine' ) . ' ';
+								} else {
+									$subfield_text .= __( $subfield_value, 'dlmarine' ) . '<br>';
+								}
 								$remove_section = false;
 							}
+
 						}
+						if ( ! empty( $subfield_text ) ) {
+							$transformed_fields[ $section_name ][ $field_name ] = ltrim( $subfield_text, '0');
+						}
+
 					} elseif (! empty( $field_value ) ) {
 
-						$transformed_fields[ $section_name ][ $field_name ] = $field_value;
+						$transformed_fields[ $section_name ][ $field_name ] = __( $field_value, 'dlmarine' );
 						$remove_section = false;
+					}
+
+					if (
+						isset( $transformed_fields[ $section_name ][ $field_name ] ) &&
+						( strpos( $transformed_fields[ $section_name ][ $field_name ], 'on<br>' ) !== false ||
+						  strpos( $transformed_fields[ $section_name ][ $field_name ], '<br>on' ) !== false
+						) ) {
+						$transformed_fields[ $section_name ][ $field_name ] = str_replace(
+							['<br>on', 'on<br>'],
+							['<br><span class="field-checkbox">&nbsp;</span>', '<span class="field-checkbox">&nbsp;</span><br>'],
+							$transformed_fields[ $section_name ][ $field_name ]
+						);
+					} elseif ( ! empty( $transformed_fields[ $section_name ][ $field_name ] ) && $transformed_fields[ $section_name ][ $field_name ] == 'on' ) {
+						$transformed_fields[ $section_name ][ $field_name ] = '<span class="field-checkbox">&nbsp;</span>';
 					}
 
 				}
@@ -295,20 +333,20 @@ class Dealers_League_Marine {
 					} else {
 						delete_post_meta( $post_id, 'listing_category' );
 					}
-					if ( isset( $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['loa']['number'] ) ) {
-						$loa = $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['loa']['number'];
+					if ( isset( $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['loa']['number'][0] ) ) {
+						$loa = $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['loa']['number'][0];
 						update_post_meta( $post_id, 'listing_loa', $loa );
 					} else {
 						delete_post_meta( $post_id, 'listing_loa' );
 					}
-					if ( isset( $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['beam']['number'] ) ) {
-						$beam = $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['beam']['number'];
+					if ( isset( $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['beam']['number'][0] ) ) {
+						$beam = $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['beam']['number'][0];
 						update_post_meta( $post_id, 'listing_beam', $beam );
 					} else {
 						delete_post_meta( $post_id, 'listing_beam' );
 					}
-					if ( isset( $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['draught']['number'] ) ) {
-						$draught = $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['draught']['number'];
+					if ( isset( $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['draught']['number'][0] ) ) {
+						$draught = $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['draught']['number'][0];
 						update_post_meta( $post_id, 'listing_draught', $draught );
 					} else {
 						delete_post_meta( $post_id, 'listing_draught' );
