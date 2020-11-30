@@ -283,6 +283,10 @@ input.error, textarea.error, select.error {
     font-size: .6rem;
 }
 
+.item .wrapper {
+    padding: 0;
+}
+
 .single-boat-owl-carousel{
     width: 100vw;
     position: relative;
