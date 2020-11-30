@@ -55,7 +55,7 @@ $exclude_section_list = [
 <section class="content">
     <section class="block">
         <!--Gallery Carousel-->
-        <section>
+        <section class="single-boat-owl-carousel">
             <div class="owl-carousel full-width-carousel" style="min-height: 300px;width:100%;">
                 <?php
                 foreach ( $image_list as $index => $image ) {
@@ -75,7 +75,7 @@ $exclude_section_list = [
                 <div class="col-md-8">
                     <!--Description-->
                     <section>
-                        <h2><?php _e('Description', 'dlmarine'); ?></h2>
+                        <h2 class="listing-heading"><?php _e('Description', 'dlmarine'); ?></h2>
                         <p>
                             <?php echo $long_description_text; ?>
                         </p>
@@ -83,7 +83,7 @@ $exclude_section_list = [
                     <!--end Description-->
                     <!--Details-->
                     <section>
-                        <h2><?php _e('Details', 'dlmarine' ); ?></h2>
+                        <h2 class="listing-heading"><?php _e('General Details', 'dlmarine' ); ?></h2>
                         <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">
                             <?php if (! empty( $manufacturer ) ) { ?>
                                 <div class="item" style="height:auto !important;">
@@ -156,15 +156,15 @@ $exclude_section_list = [
 	                    foreach ( $transformed_data as $section_name => $section ) {
                             if ( ! in_array( $section_name, $exclude_section_list ) && ! empty( $section ) ) {
 	                            echo '<section>';
-	                            echo '<h2>' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlcrm' ) . '</h2>';
+	                            echo '<h2 class="listing-heading">' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlcrm' ) . '</h2>';
                                 echo ' <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">';
 	                            foreach ( $section as $field_name => $field_value ) {
                                     if( ! empty( $field_value ) ) {
                                         $name = ( $field_name == 'vat' ) ? __('VAT', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
                                         $name = ( $field_name == 'boat_types' ) ? __('Category', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
                                         echo '<div class="item" style="height:auto !important;">';
-			                            echo '<strong>' .  $name . '</strong><br>';
-			                            echo ltrim( $field_value, ' ' );
+			                            echo '<span><strong>' .  $name . '</strong></span><br>';
+			                            echo '<span>' . ltrim( $field_value, ' ' ) . '</span>';
 			                            echo '</div>';
 
 		                            }
@@ -176,92 +176,7 @@ $exclude_section_list = [
 	                    }
 
                     ?>
-
-                    <section>
-                        <h2>Details</h2>
-                        <dl class="columns-3">
-                            <span class="field-checkbox">&nbsp;</span>
-                            <dt>Date Added</dt>
-                            <dd>05.04.2017</dd>
-
-                            <dt>Type</dt>
-                            <dd>Offer</dd>
-
-                            <dt>Status</dt>
-                            <dd>Used</dd>
-
-                            <dt>First Owner</dt>
-                            <dd>Yes</dd>
-
-                            <dt>Material</dt>
-                            <dd>Wood, Leather</dd>
-
-                            <dt>Color</dt>
-                            <dd>White, Grey</dd>
-
-                            <dt>Height</dt>
-                            <dd>47cm</dd>
-
-                            <dt>Width</dt>
-                            <dd>203cm</dd>
-
-                            <dt>Length</dt>
-                            <dd>54cm</dd>
-
-                        </dl>
-                    </section>
-                    <!--Features-->
-                    <section>
-                        <h2>Features</h2>
-                        <ul class="features-checkboxes columns-3">
-                            <li>Quality Wood</li>
-                            <li>Brushed Alluminium Handles</li>
-                            <li>Foam mattress</li>
-                            <li>Detachable chaise section</li>
-                            <li>3 fold pull out mechanism</li>
-                        </ul>
-                    </section>
-                    <!--end Features-->
-
-                    <!--Features-->
-                    <section>
-                        <h2>Features</h2>
-                        <ul class="features-checkboxes columns-3">
-                            <li>Quality Wood</li>
-                            <li>Brushed Alluminium Handles</li>
-                            <li>Foam mattress</li>
-                            <li>Detachable chaise section</li>
-                            <li>3 fold pull out mechanism</li>
-                        </ul>
-                    </section>
-                    <!--end Features-->
-
-                    <!--Features-->
-                    <section>
-                        <h2>Features</h2>
-                        <ul class="features-checkboxes columns-3">
-                            <li>Quality Wood</li>
-                            <li>Brushed Alluminium Handles</li>
-                            <li>Foam mattress</li>
-                            <li>Detachable chaise section</li>
-                            <li>3 fold pull out mechanism</li>
-                        </ul>
-                    </section>
-                    <!--end Features-->
-
-                    <!--Features-->
-                    <section>
-                        <h2>Features</h2>
-                        <ul class="features-checkboxes columns-3">
-                            <li>Quality Wood</li>
-                            <li>Brushed Alluminium Handles</li>
-                            <li>Foam mattress</li>
-                            <li>Detachable chaise section</li>
-                            <li>3 fold pull out mechanism</li>
-                        </ul>
-                    </section>
-                    <!--end Features-->
-
+ 
                     <!--Contact Form-->
                     <section>
                         <h2>Enquire</h2>
@@ -330,40 +245,36 @@ $exclude_section_list = [
 
                             <div class="social-icons">
                                 <a class="social-icon" rel="nofollow" target="_blank"
-                                   href="http://www.facebook.com/sharer/sharer.php?u=<?php
-								   the_permalink(); ?>&title=<?php
-								   the_title(); ?>">
+                                    href="http://www.facebook.com/sharer/sharer.php?u=<?php
+                                    the_permalink(); ?>&title=<?php
+                                    the_title(); ?>">
                                     <img alt="Share on Facebook" src="<?php
-									echo plugins_url( 'img/fb-social.png', __DIR__ ); ?>"/>
+                                        echo plugins_url( 'img/fb-social.png', __DIR__ ); ?>"/>
                                 </a>
-
                                 <a class="social-icon" rel="nofollow" target="_blank"
-                                   href="http://twitter.com/intent/tweet?status=<?php
-								   the_title(); ?>+<?php
-								   the_permalink(); ?>">
+                                    href="http://twitter.com/intent/tweet?status=<?php
+                                    the_title(); ?>+<?php
+                                    the_permalink(); ?>">
                                     <img alt="Share on Twitter" src="<?php
-									echo plugins_url( 'img/tr-social.png', __DIR__ ); ?>"/>
+                                        echo plugins_url( 'img/tr-social.png', __DIR__ ); ?>"/>
                                 </a>
-
                                 <a class="social-icon" rel="nofollow" target="_blank" href="mailto:?subject=<?php
-								_e( 'Thought you might like this' ); ?>: <?php
-								the_title(); ?>&body=<?php
-								_e( 'Hi, Thought this might interest you' ); ?>: <?php
-								the_permalink(); ?>">
+                                    _e( 'Thought you might like this' ); ?>: <?php
+                                    the_title(); ?>&body=<?php
+                                    _e( 'Hi, Thought this might interest you' ); ?>: <?php
+                                    the_permalink(); ?>">
                                     <img alt="Share via email" src="<?php
-									echo plugins_url( 'img/email-social.png', __DIR__ ); ?>"/>
+                                        echo plugins_url( 'img/email-social.png', __DIR__ ); ?>"/>
                                 </a>
-
                                 <a class="social-icon" rel="nofollow" target="_blank" href="whatsapp://send?text=<?php
-								_e( 'Check out this boat' ); ?>: <?php
-								the_permalink(); ?>">
+                                    _e( 'Check out this boat' ); ?>: <?php
+                                    the_permalink(); ?>">
                                     <img alt="Share via WhatsApp" src="<?php
-									echo plugins_url( 'img/whatsapp-social.png', __DIR__ ); ?>"/>
+                                    echo plugins_url( 'img/whatsapp-social.png', __DIR__ ); ?>"/>
                                 </a>
-
                                 <a class="social-icon" rel="nofollow" href="#" onclick="window.print();return false;">
                                     <img alt="Print this page" src="<?php
-									echo plugins_url( 'img/print-social.png', __DIR__ ); ?>"/>
+                                    echo plugins_url( 'img/print-social.png', __DIR__ ); ?>"/>
                                 </a>
                             </div>
                         </section>
