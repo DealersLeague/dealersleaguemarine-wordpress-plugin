@@ -21,21 +21,21 @@ class Listing_Shortcode {
 
 		$conditions = [];
 
-		if ( empty( $attr[ 'category' ] ) ) {
+		if ( ! empty( $attr[ 'category' ] ) ) {
 			$conditions[] = array(
 				'key'     => 'listing_category',
 				'value'   => $attr[ 'category' ],
 				'compare' => '=',
 			);
 		}
-		if ( empty( $attr[ 'manufacturer' ] ) ) {
+		if ( ! empty( $attr[ 'manufacturer' ] ) ) {
 			$conditions[] = array(
 				'key'     => 'listing_manufacturer',
 				'value'   => $attr[ 'manufacturer' ],
 				'compare' => '=',
 			);
 		}
-		if ( empty( $attr[ 'location' ] ) ) {
+		if ( ! empty( $attr[ 'location' ] ) ) {
 			$conditions[] = array(
 				'key'     => 'listing_location',
 				'value'   => $attr[ 'location' ],
@@ -48,14 +48,18 @@ class Listing_Shortcode {
 			'post_status' => 'publish',
 		);
 
-		if ( ! empty( $conditions ) && count( $conditions ) > 1 ) {
-			$conditions['relation'] = 'AND';
-			$args['meta_query']     = $conditions;
+		if ( ! empty( $conditions ) ) {
+			if ( count( $conditions ) > 1 ) {
+				$conditions[ 'relation' ] = 'AND';
+			}
+			$args['meta_query'] = $conditions;
 		}
 
+		ob_start();
+		// Get template file output
 		$listings = new \WP_Query( $args );
-
-		return '';
+		include plugin_dir_path( __FILE__ ) . '../templates/content-archive-listing.php';
+		return ob_get_clean();
 
 	}
 

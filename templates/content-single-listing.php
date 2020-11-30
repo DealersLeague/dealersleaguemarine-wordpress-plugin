@@ -176,7 +176,6 @@ $exclude_section_list = [
 	                    }
 
                     ?>
- 
                     <!--Contact Form-->
                     <section>
                         <h2>Enquire</h2>

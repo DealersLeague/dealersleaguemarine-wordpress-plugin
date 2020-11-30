@@ -9,6 +9,7 @@ class Dealers_League_Marine {
 	public function load(): void {
 		(new Settings_Page())->init();
 		(new Boat_Post_Type())->init();
+		(new Listing_Shortcode())->init();
 		$this->api_object = new Api();
 		$this->api_object->init();
 
