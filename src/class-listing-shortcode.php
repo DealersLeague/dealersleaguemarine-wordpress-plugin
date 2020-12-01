@@ -19,6 +19,9 @@ class Listing_Shortcode {
 	 */
 	public function shortcode_listing_archive( $attr ): string {
 
+		$settings = new Settings_Page();
+		$settings->refresh_options();
+
 		$conditions = [];
 
 		if ( ! empty( $attr[ 'category' ] ) ) {
@@ -43,9 +46,11 @@ class Listing_Shortcode {
 			);
 		}
 
+		$posts_per_page = $settings->get_web_settings_option_val( 'items_per_page' );
 		$args = array(
-			'post_type'   => Boat_Post_Type::get_post_type_name(),
-			'post_status' => 'publish',
+			'post_type'      => Boat_Post_Type::get_post_type_name(),
+			'post_status'    => 'publish',
+			'posts_per_page' => empty( $posts_per_page ) ? 10 : $posts_per_page
 		);
 
 		if ( ! empty( $conditions ) ) {
@@ -57,7 +62,8 @@ class Listing_Shortcode {
 
 		ob_start();
 		// Get template file output
-		$listings = new \WP_Query( $args );
+		$layout_type = strtolower( $settings->get_web_settings_option_val( 'listing_layout' ) );
+		$listings    = new \WP_Query( $args );
 		include plugin_dir_path( __FILE__ ) . '../templates/content-archive-listing.php';
 		return ob_get_clean();
 
