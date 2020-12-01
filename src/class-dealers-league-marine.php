@@ -18,6 +18,8 @@ class Dealers_League_Marine {
 
 		add_action( 'wp_ajax_dealers-league-marine_refresh_listings', array( $this, 'refresh_listings' ) );
 		add_action( 'wp_ajax_nopriv_dealers-league-marine_refresh_listings', array( $this, 'refresh_listings' ) );
+		add_action( 'wp_ajax_dealers-league-marine_send_enquiry', array( $this, 'send_enquiry' ) );
+		add_action( 'wp_ajax_nopriv_dealers-league-marine_send_enquiry', array( $this, 'send_enquiry' ) );
 
 		//add_filter( 'single_template', array( $this, 'load_single_template' ) );
 		//add_filter( 'singular_template', array( $this, 'load_single_template' ) );
@@ -188,6 +190,8 @@ class Dealers_League_Marine {
 		// Check if we're in the right post type and single post
 		if ( $post->post_type === Boat_Post_Type::get_post_type_name() && is_singular() ) {
 
+			remove_filter('the_content', 'wpautop');
+			remove_filter('the_excerpt', 'wpautop');
 			ob_start();
 			// Get template file output
 			$listing_json_data = maybe_unserialize( get_post_meta( $post->ID, 'listing_json_data', true ) );
@@ -288,7 +292,7 @@ class Dealers_League_Marine {
 		try {
 			$result = array( 'status' => 'NOK', 'message' => '' );
 			$added_posts = [];
-
+			// page -1 means all listings
 			$listings = $this->api_object->get_listings( -1 );
 
 			if ( is_array( $listings['listings'] ) && $listings['totalCount'] > 0 ) {
@@ -435,6 +439,107 @@ class Dealers_League_Marine {
 		wp_send_json( $result );
 	}
 
+	/**
+	 * Ajax handler to send listing enquiry emails
+	 */
+	public function send_enquiry() {
+
+		$result = array(
+			'status'  => 'NOK',
+			'message' => '<span style="color:#FF0000;">' . __( 'Missing data', 'dlmarine' ) . '</span>'
+		);
+
+		if ( isset( $_POST['enquiry'] ) && ! empty( $_POST['enquiry']['current_url'] ) && ! empty( $_POST['enquiry']['boat_name'] ) ) {
+
+			$can_send_recaptcha   = true;
+			// Get from options
+			$recaptcha_site_key   = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+			$recaptcha_secret_key = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
+			$show_recaptcha = ! empty( $recaptcha_site_key ) && ! empty( $recaptcha_secret_key );
+
+			if ( $show_recaptcha && ! empty( $_POST[ 'g-recaptcha-response' ] ) ) {
+				$url_checker = sprintf(
+					'https://www.google.com/recaptcha/api/siteverify?secret=%s&response=%s',
+					$recaptcha_secret_key,
+					$_POST[ 'g-recaptcha-response' ]
+				);
+				$verify_response = file_get_contents( $url_checker );
+				$response_data   = json_decode( $verify_response );
+				if ( empty( $response_data->success ) ) {
+					$can_send_recaptcha = false;
+				}
+			}
+
+			$error_messages = [];
+
+			if ( ! $can_send_recaptcha ) {
+				$error_messages[] = __( 'Please complete recaptcha', 'dlmarine' );
+			}
+			if ( empty( $_POST[ 'enquiry' ][ 'name' ] ) ) {
+				$error_messages[] = __( 'The name is required', 'dlmarine' );
+			}
+			if ( empty( $_POST[ 'enquiry' ][ 'email' ] ) ) {
+				$error_messages[] = __( 'The email is required', 'dlmarine' );
+			} elseif ( filter_var( $_POST[ 'enquiry' ][ 'email' ], FILTER_VALIDATE_EMAIL ) === false ) {
+				$error_messages[] = __( 'The email is not valid', 'dlmarine' );
+			}
+			if ( empty( $_POST[ 'enquiry' ][ 'phone' ] ) ) {
+				$error_messages[] = __( 'The phone is required', 'dlmarine' );
+			}
+			if ( empty( $_POST[ 'enquiry' ][ 'subject' ] ) ) {
+				$error_messages[] = __( 'The subject is required', 'dlmarine' );
+			}
+			if ( empty( $_POST[ 'enquiry' ][ 'message' ] ) ) {
+				$error_messages[] = __( 'The message is required', 'dlmarine' );
+			}
+
+			if ( empty( $error_messages ) ) {
+
+				$current_url = $_POST[ 'enquiry' ][ 'current_url' ];
+				$boat_name   = $_POST[ 'enquiry' ][ 'boat_name' ];
+
+				if ( $_POST[ 'enquiry' ][ 'subject' ] == 'request_survey' ) {
+					$to = 'survey email from options';
+					$subject = __( 'New Survey Request from', 'dlmarine' ) . ' ' . get_bloginfo( 'name' );
+					$survey_partners_privacy_notice = rwmb_meta( 'survey_partners_privacy_notice', array( 'object_type' => 'setting' ), 'boats' );
+					$body =  '<p style="margin-bottom:10px;">' . __( 'New Survey Request', 'dlmarine' ) . '</p> ';
+				} else {
+					$to = 'email contact from options';
+					$subject = $boat_name . ' ' . __( 'New Boat Enquiry', 'dlmarine' );
+					$body =  '<p style="margin-bottom:10px;">' . __( 'New Enquiry', 'dlmarine' ) . '</p> ';
+				}
+
+				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'name' ] . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'email' ] . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'phone' ] . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'subject' ] . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'message' ] . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . __( 'View Boat', 'dlmarine' ) . ': <a href="' . $current_url . '">' . $boat_name . '</a></p>';
+
+				$headers = 'From: "' . get_bloginfo( 'name' ) . '" <'. $_POST[ 'enquiry' ][ 'email' ] . ">\r\n" .
+				           'Content-type: text/html' . "\r\n" .
+				           'Reply-To: ' . $_POST[ 'enquiry' ][ 'email' ] . "\r\n";
+
+				$sent = wp_mail( $to, $subject, $body, $headers );
+
+				if ( $sent ) {
+					$result[ 'status' ]  = 'OK';
+					$result[ 'message' ] = '<span style="color:#058305;">' . __( 'Thank you for contacting us, we will be in touch soon.', 'dlmarine' ) . '</span>';
+				} else {
+					$result[ 'message' ] = '<span style="color:#058305;">' . __( 'Sorry there was an error. Message was not sent.', 'dlmarine' ) . '</span>';
+				}
+
+			} else {
+				$result[ 'message' ] = '<span style="color:#058305;">' . implode( '<br>', $error_messages ) . '</span>';
+			}
+
+		} else {
+			$result['message'] = '<span style="color:#FF0000;">' . __( 'Missing data', 'dlmarine' ) . '</span>';
+		}
+
+		wp_send_json( $result );
+
+	}
 
 
 }

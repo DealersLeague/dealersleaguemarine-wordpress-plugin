@@ -1,5 +1,24 @@
 <?php
 
+use dealersleague\marine\wordpress\Settings_Page;
+
+$settings = new Settings_Page();
+$settings->refresh_options();
+// Options for recaptcha
+$recaptcha_site_key   = $settings->get_integration_option_val( 'Google reCAPTCHA', 'site_key' );
+$recaptcha_secret_key = $settings->get_integration_option_val( 'Google reCAPTCHA', 'secret_key' );
+$show_recaptcha       = ! empty( $recaptcha_site_key ) && ! empty( $recaptcha_secret_key );
+// Privacy link option
+$privacy_policy_page_link = $settings->get_web_settings_option_val( 'privacy_link' );
+$gdpr_message             = '';
+if ( ! empty( $privacy_policy_page_link) ) {
+	$gdpr_message = sprintf(
+		__( 'I have read and agreed to the %sPrivacy Policy%s', 'dlmarine' ),
+		'<a target="_blank" href="' . $privacy_policy_page_link . '">',
+		'</a>'
+	);
+}
+
 // Images for slider
 if ( is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
     $image_list = $listing_json_data[ 'fileuploader-list-listing_images' ];
@@ -177,44 +196,68 @@ $exclude_section_list = [
 
                     ?>
 
+	                <?php if ( $show_recaptcha ) { ?>
+                    <script>
+                        function reCaptchaVerify(response) {
+                            if (response === document.querySelector('.g-recaptcha-response').value) {
+                                jQuery('#btn-send-enquiry').prop("disabled", false);
+                            } else {
+                                jQuery('#btn-send-enquiry').prop("disabled", true);
+                            }
+                        }
+                        function reCaptchaExpired () {
+
+                        }
+                        function reCaptchaCallback () {
+                            grecaptcha.render('g-recaptcha', {
+                                'sitekey': "<?php echo $recaptcha_site_key; ?>",
+                                'callback': reCaptchaVerify,
+                                'expired-callback': reCaptchaExpired
+                            });
+                        }
+                    </script>
+                    <?php } ?>
+
                     <!--Contact Form-->
                     <section>
-                        <h2>Enquire</h2>
+                        <h2><?php _e('Enquiry', 'dlmarine'); ?></h2>
                         <div class="box">
-                            <form class="form email">
+                            <form class="form email" id="form_send_enquiry" method="post">
+                                <input type="hidden" name="enquiry['current_url]" value="<?php the_permalink();?>">
+                                <input type="hidden" name="enquiry['boat_name]" value="<?php echo $manufacturer.' '.$model;?>">
+
+                                <div class="success" style="display: none;"></div>
+                                <div class="error" style="display: none;"></div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="name" class="col-form-label">Name</label>
-                                            <input name="name" type="text" class="form-control" id="name"
-                                                   placeholder="Your Name">
+                                            <label for="name" class="col-form-label"><?php _e('Name', 'dlmarine'); ?></label>
+                                            <input name="enquiry[name]" type="text" class="form-control" id="name" placeholder="<?php _e('Your Name', 'dlmarine'); ?>" required="required">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="email" class="col-form-label">Email</label>
-                                            <input name="email" type="email" class="form-control" id="email"
-                                                   placeholder="Your Email">
+                                            <label for="email" class="col-form-label"><?php _e('Email', 'dlmarine'); ?></label>
+                                            <input name="enquiry[email]" type="email" class="form-control" id="email" placeholder="<?php _e('Your Email', 'dlmarine'); ?>" required="required">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="phone" class="col-form-label">Phone</label>
-                                            <input name="phone" type="tel" class="form-control" id="phone"
-                                                   placeholder="Your Phone">
+                                            <label for="phone" class="col-form-label"><?php _e('Phone', 'dlmarine'); ?></label>
+                                            <input name="enquiry[phone]" type="tel" class="form-control" id="phone" placeholder="<?php _e('Your Phone', 'dlmarine'); ?>" required="required">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="subject" class="col-form-label">Subject</label>
-                                            <select name="subject" id="subject">
-                                                <option>Auswählen</option>
-                                                <option value="Besichtigung">Besichtigung</option>
-                                                <option value="Verfügbarkeit">Verfügbarkeit</option>
-                                                <option value="Preisanfrage">Preisanfrage</option>
-                                                <option value="Weitere Informationen">Weitere Informationen</option>
+                                            <label for="subject" class="col-form-label"><?php _e('Subject', 'dlmarine'); ?></label>
+                                            <select name="enquiry[subject]" id="subject" required="required">
+                                                <option value=""><?php _e('Choose an option', 'dlmarine'); ?></option>
+                                                <option value="<?php _e('Viewing', 'dlmarine'); ?>"><?php _e('Viewing', 'dlmarine'); ?></option>
+                                                <option value="<?php _e('Availability', 'dlmarine'); ?>"><?php _e('Availability', 'dlmarine'); ?></option>
+                                                <option value="<?php _e('Pricing', 'dlmarine'); ?>"><?php _e('Pricing', 'dlmarine'); ?></option>
+                                                <option value="<?php _e('Further Information', 'dlmarine'); ?>"><?php _e('Further Information', 'dlmarine'); ?></option>
 
-                                                <option value="request_survey">Gutachten</option>
+                                                <option value="request_survey"><?php _e('Request Survey', 'dlmarine'); ?></option>
                                             </select>
                                         </div>
                                     </div>
@@ -222,11 +265,25 @@ $exclude_section_list = [
 
                                 <!--end form-group-->
                                 <div class="form-group">
-                                    <label for="message" class="col-form-label">Message</label>
-                                    <textarea name="message" id="message" class="form-control" rows="4"></textarea>
+                                    <label for="message" class="col-form-label"><?php _e('Message', 'dlmarine'); ?></label>
+                                    <textarea name="enquiry[message]" id="message" class="form-control" rows="4" style="resize: none;"></textarea>
                                 </div>
+                                <?php if ( ! empty( $gdpr_message ) ) { ?>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="enquiry[gdpr]" value="yes" required>
+                                        <?php echo $gdpr_message; ?>
+                                    </label>
+                                </div>
+                                <?php } ?>
                                 <!--end form-group-->
-                                <button type="submit" class="btn btn-primary">Send</button>
+                                <?php if ( $show_recaptcha ) { ?>
+                                <div id="g-recaptcha" class="m-b-20 m-t-20"></div>
+                                <script src="https://www.google.com/recaptcha/api.js?onload=reCaptchaCallback&render=explicit" async defer></script>
+                                <?php } ?>
+                                <button type="submit" id="btn-send-enquiry" class="btn btn-primary btn-send-enquiry"><?php _e('Send', 'dlmarine'); ?></button>
+
+
                             </form>
                         </div>
                     </section>

@@ -9,10 +9,15 @@ class Api {
 	/** @var Api_Client */
 	private $client;
 
-	public function init(): void {
+	/**
+	 * @param Settings_Page|null $settings_page
+	 */
+	public function init( Settings_Page $settings_page = null ): void {
 		try {
-			$settings_page = new Settings_Page();
-			$settings_page->refresh_options();
+		    if ( null === $settings_page ) {
+			    $settings_page = new Settings_Page();
+			    $settings_page->refresh_options();
+		    }
 			$email   = $settings_page->get_option_val( 'dealers_league_marine_email' );
 			$api_key = $settings_page->get_option_val( 'dealers_league_marine_api_key' );
 
@@ -76,6 +81,21 @@ class Api {
 		}
 
 		return $settings;
+	}
+
+	/**
+	 * @return array|mixed|string
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
+	 */
+	public function get_integration() {
+		$integrations = [];
+
+		if ( ! empty( $this->client ) ) {
+			$integrations = $this->client->getIntegrations();
+		}
+
+		return $integrations;
 	}
 
 	/**

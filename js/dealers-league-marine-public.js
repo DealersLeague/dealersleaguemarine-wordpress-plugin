@@ -1,4 +1,37 @@
 (function($){
+
+    // Enquiry
+    $(document).on('submit', '#form_send_enquiry', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var form = $(this);
+        var submitButton = form.find('.btn-send-enquiry');
+        submitButton.attr('disabled', true);
+        var formData = form.serialize() + '&action=dealers-league-marine_send_enquiry';
+
+        $.ajax({
+            url : dealers_league_marine_params.ajaxurl, // AJAX handler
+            data : formData,
+            type : 'POST',
+            success : function( data ){
+                console.log(data);
+                if ( data.status === 'NOK') {
+                    form.find('div.success').css('display', 'none')
+                    form.find('div.error').html(data.message).css('display', 'block');
+                } else {
+                    form.find('div.error').css('display', 'none');
+                    form.trigger('reset');
+                    form.find('div.success').html(data.message).css('display', 'block').delay(10000).fadeOut();
+                }
+
+            },
+            complete: function( data ) {
+                submitButton.attr('disabled', false);
+            }
+        });
+
+        return '';
+    });
  
     //  Selectize
     

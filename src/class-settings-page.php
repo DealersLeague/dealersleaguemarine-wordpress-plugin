@@ -12,6 +12,12 @@ class Settings_Page {
 	private $option_name = 'dealers_league_marine_option';
 	protected $options;
 
+	private $web_settings_option_name = 'dealers_league_marine_web_settings_option';
+	protected $web_settings_options;
+
+	private $integration_option_name = 'dealers_league_marine_integration_option';
+	protected $integration_options;
+
 	private $option_metabox = [];
 	private $tab_page = [];
 	private $times = 1;
@@ -27,8 +33,10 @@ class Settings_Page {
 	}
 
 	public function refresh_options() {
-		$this->options = get_option( $this->option_name );
-    }
+		$this->options              = get_option( $this->option_name );
+		$this->integration_options  = maybe_unserialize( get_option( $this->integration_option_name ) );
+		$this->web_settings_options = maybe_unserialize( get_option( $this->web_settings_option_name ) );
+	}
 
 	/**
 	 * @return array
@@ -82,6 +90,34 @@ class Settings_Page {
 	 */
 	public function get_option_val( $name ): string {
 		return ! empty( $this->options[ $name ] ) ? esc_attr( $this->options[ $name ] ) : '';
+	}
+
+	/**
+	 * @param $name
+	 *
+	 * @return string
+	 */
+	public function get_web_settings_option_val( $name ): string {
+		return ! empty( $this->web_settings_options[ $name ] ) ? esc_attr( $this->web_settings_options[ $name ] ) : '';
+	}
+
+	/**
+	 * @param $integration_name
+	 * @param $var_name
+	 *
+	 * @return array|string
+	 */
+	public function get_integration_option_val( $integration_name, $var_name ): string {
+
+	    $fields = isset( $this->integration_options[ $integration_name ]['fields'] ) ? json_decode( $this->integration_options[ $integration_name ]['fields'], true ) : [];
+	    foreach ( $fields as $field ) {
+	        if ( $field['name'] == $var_name ) {
+		        return $field[ 'value' ];
+            }
+        }
+
+	    return '';
+
 	}
 
 	/**
@@ -231,6 +267,9 @@ class Settings_Page {
 	/**
 	 * @param $options
 	 * @param $option_name
+	 *
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
 	 */
 	public function save_options( $options, $option_name ): void {
 
@@ -251,6 +290,17 @@ class Settings_Page {
 		}
 
 		update_option( $this->option_name, $this->options );
+
+		// Getting options from API
+		$api_object = new Api();
+		$api_object->init( $this );
+
+		$web_settings = $api_object->get_web_settings();
+		update_option( $this->web_settings_option_name, maybe_serialize( $web_settings ) );
+
+		$integrations = $api_object->get_integration();
+		update_option( $this->integration_option_name, maybe_serialize( $integrations ) );
+
 	}
 
 	/**
