@@ -28,14 +28,14 @@
     text-align: center;
 }
 
-<<<<<<< HEAD
 .m-b-20 {
     margin-bottom: 20px !important;
 }
 
 .m-t-20 {
     margin-top: 20px !important;
-=======
+}
+
 .button-add-field {
     float:right;
     cursor: pointer;
@@ -239,9 +239,9 @@ input.error, textarea.error, select.error {
     word-wrap: normal;
     margin-bottom: 1em;
     padding: 12px 8px;
-    padding-bottom: 20px !ie7;
+    padding-bottom: 20px;
     width: auto;
-    width: 650px !ie7;
+    width: 650px;
     min-height: 300px;
     max-height: 300px;
     overflow: auto;
@@ -301,5 +301,4 @@ input.error, textarea.error, select.error {
     margin-left: -50vw;
     left: 50%;
     margin-bottom: 3rem !important;
->>>>>>> 8f96dbef497c19aaf2d12ac7280e8e4a20b78cd1
 }
