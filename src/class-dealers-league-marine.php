@@ -338,20 +338,20 @@ class Dealers_League_Marine {
 					} else {
 						delete_post_meta( $post_id, 'listing_category' );
 					}
-					if ( isset( $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['loa']['number'][0] ) ) {
-						$loa = $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['loa']['number'][0];
+					if ( !empty( $json_data['listing']['boat_details']['dimensions']['loa']['number'][0] ) ) {
+						$loa = $json_data['listing']['boat_details']['dimensions']['loa']['number'][0];
 						update_post_meta( $post_id, 'listing_loa', $loa );
 					} else {
 						delete_post_meta( $post_id, 'listing_loa' );
 					}
-					if ( isset( $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['beam']['number'][0] ) ) {
-						$beam = $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['beam']['number'][0];
+					if ( isset( $json_data['listing']['boat_details']['dimensions']['beam']['number'][0] ) ) {
+						$beam = $json_data['listing']['boat_details']['dimensions']['beam']['number'][0];
 						update_post_meta( $post_id, 'listing_beam', $beam );
 					} else {
 						delete_post_meta( $post_id, 'listing_beam' );
 					}
-					if ( isset( $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['draught']['number'][0] ) ) {
-						$draught = $json_data['listing']['boat_details']['sales_details']['construction_details']['dimension']['draught']['number'][0];
+					if ( isset( $json_data['listing']['boat_details']['dimensions']['draught']['number'][0] ) ) {
+						$draught = $json_data['listing']['boat_details']['dimensions']['draught']['number'][0];
 						update_post_meta( $post_id, 'listing_draught', $draught );
 					} else {
 						delete_post_meta( $post_id, 'listing_draught' );
@@ -390,7 +390,7 @@ class Dealers_League_Marine {
 						$city = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['location']['city'][0];
 						update_post_meta( $post_id, 'listing_location_city', $city );
 					} else {
-						delete_post_meta( $post_id, 'listing_location_country' );
+						delete_post_meta( $post_id, 'listing_location_city' );
 					}
 					if ( isset( $json_data['listing']['listing_details']['sales_details']['condition'] ) ) {
 						$condition = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ][ 'condition' ];
@@ -414,6 +414,8 @@ class Dealers_League_Marine {
 					if ( !empty($json_data[ 'fileuploader-list-listing_images' ] ) ) {
 
 						$image_list = json_decode( $json_data[ 'fileuploader-list-listing_images' ], true );
+
+						update_post_meta( $post_id, 'listing_n_images', count( $image_list ) );
 
 						if ( isset( $image_list[ 0 ][ 'file' ] ) ) {
 							update_post_meta( $post_id, 'listing_featured_image', $image_list[ 0 ][ 'file' ] );
