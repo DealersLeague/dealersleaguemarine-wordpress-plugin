@@ -22,7 +22,7 @@ class Api {
 			$api_key = $settings_page->get_option_val( 'dealers_league_marine_api_key' );
 
 			$this->client = new Api_Client( $email, $api_key );
-			$this->client->setApiUrl( 'http://api.dlcrm:8888/v1' );
+			$this->client->setApiUrl( '//api.dlcrm.local/v1' );
 
 		} catch ( \Exception $e ) {
 			add_action( 'admin_notices', array( $this, 'error_api_notice', $e ) );

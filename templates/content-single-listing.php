@@ -1,6 +1,7 @@
 <?php
 
 use dealersleague\marine\wordpress\Settings_Page;
+use dealersleague\marine\wordpress\Utils;
 
 $settings = new Settings_Page();
 $settings->refresh_options();
@@ -26,27 +27,8 @@ if ( is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
 	$image_list = empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_images' ], true );
 }
 
+$long_description_text = Utils::get_long_description( $listing_json_data );
 
-// Description
-$current_site_language =  explode( '_', get_locale() );
-
-$language = strtolower( $current_site_language[0] );
-
-$long_description_array = empty( $listing_json_data['listing']['listing_details']['listing_managment']['long_description'] ) ? [] : $listing_json_data['listing']['listing_details']['listing_managment']['long_description'];
-$long_description_text = '';
-if ( count( $long_description_array ) === 1 ) {
-	$long_description_text = ! empty( $long_description_array['text'][0] ) ? $long_description_array['text'][0] : '';
-} else {
-    foreach ( $long_description_array['language'] as $index => $long_description_language ) {
-        if ( $long_description_language == $language ) {
-	        $long_description_text =  $long_description_array[ 'text' ][ $index ];
-	        break;
-        }
-    }
-    if ( empty( $long_description_text ) ) {
-	    $long_description_text = $long_description_array[ 'text' ][0];
-    }
-}
 // Details
 $post_id      = get_the_ID();
 $boat_type    = get_post_meta( $post_id, 'listing_boat_type', true );
