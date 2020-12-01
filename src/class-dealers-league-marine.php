@@ -24,8 +24,8 @@ class Dealers_League_Marine {
 		//add_filter( 'single_template', array( $this, 'load_single_template' ) );
 		//add_filter( 'singular_template', array( $this, 'load_single_template' ) );
 
-		add_filter( 'the_content', array( $this, 'listing_content' ), -1 );
-
+		add_filter( 'the_content', array( $this, 'listing_content' ), -1 ); 
+ 
 	}
 
 	public function admin_scripts(): void {
@@ -198,7 +198,7 @@ class Dealers_League_Marine {
 			$transformed_data = $this->transform_listing_data( $listing_json_data['listing'] );
 			include plugin_dir_path( __FILE__ ) . '../templates/content-single-listing.php';
 			return ob_get_clean();
-		}
+		} 
 
 		return $content;
 	}
@@ -282,7 +282,7 @@ class Dealers_League_Marine {
 		}
 
 		return $transformed_fields;
-	}
+	} 
 
 	/**
 	 * Ajax handler for refreshing listings from the settings page
