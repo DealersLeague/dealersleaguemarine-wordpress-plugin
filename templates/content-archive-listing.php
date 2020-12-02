@@ -1,17 +1,20 @@
 <?php
 use dealersleague\marine\wordpress\Utils;
+/*
+ * vars $sort, $layout_type and $listings come from archive shortcode, which includes this file
+ */
 ?>
 <div class="section-title clearfix">
     <div class="float-left float-xs-none">
-        <label class="mr-3">Sort by: </label>
-        <select name="sorting" id="sorting" class="small width-200px selectized" data-placeholder="Default Sorting"
-                tabindex="-1" style="display: none;">
-            <option value="" selected="selected">Default Sorting</option>
-            <option value="" selected="selected">Newest First</option>
-            <option value="" selected="selected">Oldest First</option>
-            <option value="" selected="selected">Lowest Price First</option>
-            <option value="" selected="selected">Highest Price First</option>
+        <label class="mr-3 align-text-bottom"><?php _e('Sort by:', 'dlmarine'); ?></label>
+        <select name="sorting" id="sorting" class="small width-200px" data-placeholder="<?php _e( 'Default Sorting', 'dlmarine');?>" >
+            <option value="<?php echo esc_url( remove_query_arg( 'sort' ) )?>"><?php _e( 'Default Sorting', 'dlmarine');?></option>
+            <option <?php echo $sort == 'date_desc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'date_desc' ) )?>"><?php _e( 'Newest First', 'dlmarine');?></option>
+            <option <?php echo $sort == 'date_asc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'date_asc' ) )?>"><?php _e( 'Oldest First', 'dlmarine');?></option>
+            <option <?php echo $sort == 'price_asc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'price_asc' ) )?>"><?php _e( 'Lowest Price First', 'dlmarine');?></option>
+            <option <?php echo $sort == 'price_desc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'price_desc' ) )?>"><?php _e( 'Highest Price First', 'dlmarine');?></option>
         </select>
+
     </div>
     <div class="float-right d-xs-none thumbnail-toggle">
         <a href="#" class="change-class" data-change-from-class="list" data-change-to-class="grid"
@@ -42,8 +45,9 @@ use dealersleague\marine\wordpress\Utils;
 	    $draft          = get_post_meta( $listing->ID, 'listing_draught', true );
 	    $condition      = str_replace( '-', ' ', get_post_meta( $listing->ID, 'listing_condition', true ) );
 	    $sale_status    = get_post_meta( $listing->ID, 'listing_sale_status', true );
-	    $price          = Utils::format_price( get_post_meta( $listing->ID, 'listing_price', true ) );
-	    $currency       = Utils::get_currency_symbol( get_post_meta( $listing->ID, 'listing_currency', true ) );
+	    $currency_code  = get_post_meta( $listing->ID, 'listing_currency', true );
+	    $currency       = Utils::get_currency_symbol( $currency_code );
+	    $price          = Utils::format_price( get_post_meta( $listing->ID, 'listing_price', true ), $currency_code );
 	    $featured_image = get_post_meta( $listing->ID, 'listing_featured_image', true );
 	    $n_images       = get_post_meta( $listing->ID, 'listing_n_images', true );
 

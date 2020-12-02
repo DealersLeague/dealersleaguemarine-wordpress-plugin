@@ -34,6 +34,8 @@
     });
  
     //  Selectize
+
+
     
         $("[data-enable-search=true]").each(function(){
             $(this).selectize({
@@ -47,7 +49,12 @@
         select.selectize({
             onDropdownOpen: dropdownOpen,
             onDropdownClose: dropdownClose,
-            allowEmptyOption: true,        
+            allowEmptyOption: true,
+        });
+
+        $(document).on( 'change', '#sorting', function(event) {
+            var value = $(this).val();
+            window.location.href = value;
         });
     
         function dropdownOpen($dropdown){

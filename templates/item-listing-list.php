@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <div class="item">
     <div class="wrapper">
         <div class="image">

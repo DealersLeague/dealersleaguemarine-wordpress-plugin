@@ -8,8 +8,7 @@ class Utils {
 		'EUR' => '&euro;',
 		'GBP' => '&pound;',
 		'USD' => '&dollar;'
-
-	); 
+	);
   
 	public static function get_currency_symbol( $currency_code ) {
 		if ( array_key_exists( $currency_code, self::$currency_list ) ) {
@@ -17,6 +16,23 @@ class Utils {
 		}
 
 		return $currency_code . ' ';
+	}
+
+
+	public static function format_price( $price, $currency_code ) {
+		$remove = '.00';
+		if ( $currency_code == 'EUR' ) {
+			$price  = number_format( floatval( $price ), 2, ',', '.' );
+			$remove = ',00';
+		} else {
+			$price = number_format( floatval( $price ), 2, '.', ',' );
+		}
+		if ( self::ends_with( $price, $remove ) ) {
+			$p     = explode( $remove, $price );
+			$price = $p[ 0 ];
+		}
+
+		return $price;
 	}
 
 	public static function get_boat_type_name( $boat_type_key ) {
@@ -366,10 +382,7 @@ class Utils {
 		return $county_code;
 	}
 
-	public static function format_price( $price ) {
-		return number_format( floatval( $price ), 2, '.', ',' );
-	}
-
+	
 	public static function get_long_description( $listing_json_data ) {
 		// Description
 		$current_site_language = explode( '_', get_locale() );
@@ -408,7 +421,7 @@ class Utils {
 		} elseif ( isset( $short_description_array[ 'language' ] ) && is_array( $short_description_array[ 'language' ] ) ) {
 			foreach ( $short_description_array[ 'language' ] as $index => $short_description_language ) {
 				if ( $short_description_language == $language ) {
-					$long_description_text = $short_description_array[ 'text' ][ $index ];
+					$short_description_text = $short_description_array[ 'text' ][ $index ];
 					break;
 				}
 			}
@@ -420,5 +433,21 @@ class Utils {
 		return $short_description_text;
 	}
 	
+
+	/**
+	 * @param $string
+	 * @param $test
+	 *
+	 * @return bool
+	 */
+	public static function ends_with( $string, $test ) {
+		$strlen  = strlen( $string );
+		$testlen = strlen( $test );
+		if ( $testlen > $strlen ) {
+			return false;
+		}
+
+		return substr_compare( $string, $test, $strlen - $testlen, $testlen ) === 0;
+	}
 
 }

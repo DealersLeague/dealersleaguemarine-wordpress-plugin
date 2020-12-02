@@ -6,7 +6,7 @@ class Listing_Shortcode {
 
 	public function init(): void {
 
-		add_shortcode( 'listing_archive', [ $this, 'shortcode_listing_archive' ] );
+		add_shortcode( 'listing_archive', array( $this, 'shortcode_listing_archive' ) );
 
 	}
 
@@ -48,11 +48,14 @@ class Listing_Shortcode {
 			);
 		}
 
+		$default_sorting = $settings->get_web_settings_option_val( 'default_sorting' );
+		$sort = ! empty( $_GET['sort'] ) ? $_GET['sort'] : strtolower( $default_sorting );
+
 		$posts_per_page = $settings->get_web_settings_option_val( 'items_per_page' );
 		$args = array(
 			'post_type'      => Boat_Post_Type::get_post_type_name(),
 			'post_status'    => 'publish',
-			'posts_per_page' => 2,//empty( $posts_per_page ) ? 10 : $posts_per_page,
+			'posts_per_page' => empty( $posts_per_page ) ? 10 : $posts_per_page,
 			'paged'          => $paged,
 		);
 
@@ -61,6 +64,18 @@ class Listing_Shortcode {
 				$conditions[ 'relation' ] = 'AND';
 			}
 			$args['meta_query'] = $conditions;
+		}
+
+		if ( ! empty( $sort ) ) {
+			$sort_params = explode( '_', $sort );
+			if ( $sort_params[0] == 'price' ) {
+				$args['orderby']  = 'meta_value_num';
+				$args['meta_key'] = 'listing_price';
+			} else {
+				$args['orderby'] = 'date';
+			}
+			$args['order'] = strtoupper( $sort_params[1] ); // ASC, DESC
+			$args['suppress_filters'] = true;
 		}
 
 		ob_start();
@@ -77,8 +92,10 @@ class Listing_Shortcode {
 	/**
 	 * @param string $pages
 	 * @param int $range
+	 *
+	 * @return string
 	 */
-	public function render_pagination( $pages = '' , $range = 1 ) {
+	public function render_pagination( $pages = '' , $range = 4 ) {
 		global $paged, $the_query;
 
 		$show_items = ( $range * 2 ) + 1;
