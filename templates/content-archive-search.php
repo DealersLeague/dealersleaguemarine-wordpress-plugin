@@ -67,7 +67,7 @@
                     <div class="form-row">
                         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
                               
-                            <select name="age" id="age" class="small" data-placeholder="age" >
+                            <select name="age" id="age" data-placeholder="age" >
                                 <option value="">Age</option>
                                 <option value="1">New</option>
                                 <option value="2">2020 - 2010</option>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
                               
-                            <select name="fuel" id="fuel" class="small" data-placeholder="fuel" >
+                            <select name="fuel" id="fuel" data-placeholder="fuel" >
                                 <option value="">Fuel Type</option>
                                 <option value="1">Gasoline</option>
                                 <option value="2">Diesel</option>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
                               
-                            <select name="country" id="country" class="small" data-placeholder="country" >
+                            <select name="country" id="country" data-placeholder="country" >
                                 <option value="">Country </option>
                                 <option value="1">All Countries</option>
                                 <option value="2">United Kingdom</option>
@@ -98,7 +98,7 @@
                         </div> 
                         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
                               
-                            <select name="colour" id="colour" class="small" data-placeholder="colour" >
+                            <select name="colour" id="colour" data-placeholder="colour" >
                                 <option value="">Colour</option>
                                 <option value="1">All Colours</option>
                                 <option value="2">United Kingdom</option>
