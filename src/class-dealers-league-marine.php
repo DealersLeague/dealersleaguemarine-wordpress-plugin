@@ -9,6 +9,7 @@ class Dealers_League_Marine {
 	public function load(): void {
 		(new Settings_Page())->init();
 		(new Boat_Post_Type())->init();
+		(new Listing_Search_Shortcode())->init();
 		(new Listing_Shortcode())->init();
 		$this->api_object = new Api();
 		$this->api_object->init();
@@ -230,7 +231,7 @@ class Dealers_League_Marine {
 
 									if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! empty( $subfield_value[0] ) && ! in_array( $subfield_name, $exclude_field_name ) ) {
 										$subfield_name = str_replace( '_', ' ', $subfield_name );
-										$subfield_text .= '&nbsp;<strong>' . __( $subfield_name, 'dlmarine' ) . ( $subfield_value[0] == 'on' ? '</strong>' :  ':</strong>');
+										$subfield_text .= '<strong>' . __( $subfield_name, 'dlmarine' ) . ( $subfield_value[0] == 'on' ? '</strong>' :  ':</strong>');
 									}
 
 									foreach ( $subfield_value as $index => $sv ) {
@@ -258,7 +259,7 @@ class Dealers_League_Marine {
 														$sv = str_replace( array('-','_'), array(' ',' '),$sv );
 														$unit = Utils::get_unity( $subfield_name );
 														$unit = empty( $unit ) ? Utils::get_unity( $field_name ) : $unit;
-														$subfield_text .= ' ' . $sv . $unit .'<br>';
+														$subfield_text .= ' ' . ucwords( $sv ) . $unit .'<br>';
 												}
 											}
 										}
@@ -275,10 +276,10 @@ class Dealers_League_Marine {
 									$subfield_value = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_value );
 									$subfield_name = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_name );
 									$unit = Utils::get_unity( $subfield_name );
-									$subfield_text .= __( $subfield_value, 'dlmarine' ) . $unit . '<br>';
+									$subfield_text .= ucwords( __( $subfield_value, 'dlmarine' ) ) . $unit . '<br>';
 								}
 								$subfield_text = str_replace(
-									['<br>on', 'on<br>'],
+									['<br>On', 'On<br>'],
 									['', ''],
 									$subfield_text
 								);
@@ -293,7 +294,7 @@ class Dealers_League_Marine {
 					} elseif (! empty( $field_value ) ) {
 						$field_value = Utils::get_country_name( $field_value );
 						$unit = Utils::get_unity( $field_name );
-						$transformed_fields[ $section_name ][ $field_name ] = __( $field_value, 'dlmarine' ) . $unit;
+						$transformed_fields[ $section_name ][ $field_name ] = ucwords( __( $field_value, 'dlmarine' ) ) . $unit;
 						$remove_section = false;
 					}
 
@@ -303,7 +304,7 @@ class Dealers_League_Marine {
 						  strpos( $transformed_fields[ $section_name ][ $field_name ], '<br>on' ) !== false
 						) ) {
 						$transformed_fields[ $section_name ][ $field_name ] = str_replace(
-							['<br>on', 'on<br>'],
+							['<br>On', 'On<br>'],
 							['', ''],
 							$transformed_fields[ $section_name ][ $field_name ]
 						);

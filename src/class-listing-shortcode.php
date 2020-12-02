@@ -26,6 +26,8 @@ class Listing_Shortcode {
 
 		$conditions = [];
 
+		// manufacturer=1&category&price&age&fuel&country&colour&sort=date_desc
+
 		if ( ! empty( $attr[ 'category' ] ) ) {
 			$conditions[] = array(
 				'key'     => 'listing_category',
@@ -33,13 +35,22 @@ class Listing_Shortcode {
 				'compare' => '=',
 			);
 		}
+
+		$search_manufacturer = '';
+
 		if ( ! empty( $attr[ 'manufacturer' ] ) ) {
+			$search_manufacturer = strtolower( $attr[ 'manufacturer' ] );
+		} elseif ( ! empty( $_GET['manufacturer'] ) ) {
+			$search_manufacturer = strtolower( $_GET[ 'manufacturer' ] );
+		}
+		if ( ! empty( $search_manufacturer ) ) {
 			$conditions[] = array(
 				'key'     => 'listing_manufacturer',
-				'value'   => $attr[ 'manufacturer' ],
+				'value'   => $search_manufacturer,
 				'compare' => '=',
 			);
 		}
+
 		if ( ! empty( $attr[ 'location' ] ) ) {
 			$conditions[] = array(
 				'key'     => 'listing_location',
@@ -82,7 +93,6 @@ class Listing_Shortcode {
 		// Get template file output
 		$layout_type = strtolower( $settings->get_web_settings_option_val( 'listing_layout' ) );
 		$listings    = new \WP_Query( $args );
-		include plugin_dir_path( __FILE__ ) . '../templates/content-archive-search.php';
 		include plugin_dir_path( __FILE__ ) . '../templates/content-archive-listing.php';
 		echo $this->render_pagination( $listings->max_num_pages );
 		return ob_get_clean();
