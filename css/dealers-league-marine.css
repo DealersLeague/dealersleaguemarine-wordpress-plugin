@@ -262,12 +262,12 @@ input.error, textarea.error, select.error {
 }
 
 .listing-heading {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.item span {
+/*.item span {
     padding-left: 1.5rem;
     display: inline-block;
 }
@@ -289,7 +289,7 @@ input.error, textarea.error, select.error {
     content: "\f00c";
     text-align: center;
     font-size: .6rem;
-}
+}*/
 
 .item .wrapper {
     padding: 0;
@@ -303,3 +303,19 @@ input.error, textarea.error, select.error {
     margin-bottom: 3rem !important;
 }
 
+.boat-info-item { 
+    font-size: .9rem; 
+    width: 25% !important;
+    height:auto !important;
+}
+
+.boat-info-item strong {
+    opacity: .6; 
+    text-transform: uppercase; 
+    font-weight: 600;
+}
+
+.boat-info-item span,
+.boat-info-item span strong {
+    opacity: 1;  
+}

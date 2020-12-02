@@ -807,7 +807,7 @@ Headers:		'Varela Round', sans-serif;
 }
 /*------ Item ------*/
 .items:not(.selectize-input) .item {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     position: relative;
 }
 .items:not(.selectize-input) .item .wrapper {
@@ -1725,17 +1725,17 @@ Headers:		'Varela Round', sans-serif;
 }
 .page-pagination > nav .pagination .page-item .page-link {
     color: #000;
-    width: 4rem;
-    line-height: 4rem;
+    width: 2rem;
+    line-height: 2rem;
     padding: inherit;
     border: none;
     background-color: transparent;
     border-radius: .3rem;
-    font-size: 1.6rem;
+    font-size: 1rem;
     margin: 0 .2rem;
 }
 .page-pagination > nav .pagination .page-item .page-link i {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: rgba(0,0,0,.5);
 }
 .page-pagination > nav .pagination .page-item .page-link:hover {
