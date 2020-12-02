@@ -11,6 +11,7 @@ $recaptcha_secret_key = $settings->get_integration_option_val( 'Google reCAPTCHA
 $show_recaptcha       = ! empty( $recaptcha_site_key ) && ! empty( $recaptcha_secret_key );
 // Privacy link option
 $privacy_policy_page_link = $settings->get_web_settings_option_val( 'privacy_link' );
+$video_placement = $settings->get_web_settings_option_val( 'video_placement' );
 $gdpr_message             = '';
 if ( ! empty( $privacy_policy_page_link) ) {
 	$gdpr_message = sprintf(
@@ -25,6 +26,13 @@ if ( is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
     $image_list = $listing_json_data[ 'fileuploader-list-listing_images' ];
 } else {
 	$image_list = empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_images' ], true );
+}
+
+// videos 
+if ( is_array( $listing_json_data['listing']['media']['videos'] ) ) {
+    $videos = $listing_json_data['listing']['media']['videos'];
+} else {
+    $videos = false;
 }
 
 $long_description_text = Utils::get_long_description( $listing_json_data );
@@ -153,6 +161,16 @@ $exclude_section_list = [
                         </div>
                     </section>
                     <!--end Details-->
+
+                    <?php if ( $videos && $video_placement != 'SIDEBAR' ) { ?>
+                        <section>
+                            <?php foreach ( $videos['video_upload'] as $video ) { 
+                                echo '<div class="videoWrapper">';
+                                    echo wp_oembed_get( $video );  
+                                echo '</div>';
+                            } ?>
+                        </section>
+                    <?php } ?>
 
                     <?php
 
@@ -321,6 +339,16 @@ $exclude_section_list = [
                             </div>
                         </section>
                         <!--End Author-->
+
+                        <?php if ( $videos && $video_placement == 'SIDEBAR' ) { ?>
+                            <section>
+                                <?php foreach ( $videos['video_upload'] as $video ) {  
+                                    echo '<div class="videoWrapper">';
+                                        echo wp_oembed_get( $video );  
+                                    echo '</div>';  
+                                } ?>
+                            </section>
+                        <?php } ?>
                     </aside>
                 </div>
                 <!--============ End Sidebar ================================================================-->
