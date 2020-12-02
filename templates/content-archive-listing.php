@@ -6,8 +6,8 @@ use dealersleague\marine\wordpress\Utils;
 ?>
 <div class="section-title clearfix">
     <div class="float-left float-xs-none">
-        <label class="mr-3 align-text-bottom"><?php _e('Sort by:', 'dlmarine'); ?></label>
-        <select name="sorting" id="sorting" class="small width-200px" data-placeholder="<?php _e( 'Default Sorting', 'dlmarine');?>" >
+        <label class="mr-3"><?php _e('Sort by:', 'dlmarine'); ?></label>
+        <select name="sorting" id="sorting" class="width-200px" data-placeholder="<?php _e( 'Default Sorting', 'dlmarine');?>" >
             <option value="<?php echo esc_url( remove_query_arg( 'sort' ) )?>"><?php _e( 'Default Sorting', 'dlmarine');?></option>
             <option <?php echo $sort == 'date_desc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'date_desc' ) )?>"><?php _e( 'Newest First', 'dlmarine');?></option>
             <option <?php echo $sort == 'date_asc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'date_asc' ) )?>"><?php _e( 'Oldest First', 'dlmarine');?></option>

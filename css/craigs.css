@@ -807,7 +807,7 @@ Headers:		'Varela Round', sans-serif;
 }
 /*------ Item ------*/
 .items:not(.selectize-input) .item {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     position: relative;
 }
 .items:not(.selectize-input) .item .wrapper {
