@@ -28,6 +28,17 @@ if ( is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
 	$image_list = empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_images' ], true );
 }
 
+// Documents for download
+if ( is_array( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ) {
+    $document_list = $listing_json_data[ 'fileuploader-list-listing_documents' ]; 
+} else {
+	$document_list = empty( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_documents' ], true ); 
+} 
+
+if ( ! empty( $listing_json_data[ 'listing_uploaded_document_list' ] ) ) { 
+    $document_names = explode( ',', $listing_json_data[ 'listing_uploaded_document_list' ] );
+} 
+
 // videos 
 if ( is_array( $listing_json_data['listing']['media']['videos'] ) ) {
     $videos = $listing_json_data['listing']['media']['videos'];
@@ -198,6 +209,25 @@ $exclude_section_list = [
 	                    }
 
                     ?>
+
+                    <?php if ( ! empty( $document_list ) ) {
+
+                        echo '<h2 class="listing-heading">' . __( 'Documents', 'dlmarine' ) . '</h2>';
+
+                        echo '<ul>';
+
+                            foreach ( $document_list as $index => $doc ) { 
+                                echo '<li>';
+                                    echo '<a href="' . $doc['file'] . '">' . $document_names[$index] . '</a>'; 
+                                echo '</li>';
+                            }
+
+                        echo '</ul>';
+
+                    } ?> 
+
+                    <section>
+                    </section>
 
 	                <?php if ( $show_recaptcha ) { ?>
                     <script>
