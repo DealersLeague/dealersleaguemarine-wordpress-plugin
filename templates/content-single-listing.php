@@ -31,6 +31,7 @@ $long_description_text = Utils::get_long_description( $listing_json_data );
 
 // Details
 $post_id      = get_the_ID();
+$post_title   = get_the_title();
 $boat_type    = get_post_meta( $post_id, 'listing_boat_type', true );
 $manufacturer = get_post_meta( $post_id, 'listing_manufacturer', true );
 $model        = get_post_meta( $post_id, 'listing_model', true );
@@ -62,7 +63,7 @@ $exclude_section_list = [
                 foreach ( $image_list as $index => $image ) {
                  ?>
                 <div class="item background-image">
-                    <img src="<?php echo $image['file']; ?>" alt="" data-hash="<?php echo $index; ?>">
+                    <img class="owl-lazy" data-src="<?php echo $image['file']; ?>" data-hash="<?php echo $index; ?>" alt="<?php echo $post_title; ?>" >
                 </div>
                 <?php
                 }
@@ -286,20 +287,20 @@ $exclude_section_list = [
                                 <a class="social-icon" rel="nofollow" target="_blank"
                                     href="http://www.facebook.com/sharer/sharer.php?u=<?php
                                     the_permalink(); ?>&title=<?php
-                                    the_title(); ?>">
+                                    echo $post_title; ?>">
                                     <img alt="Share on Facebook" src="<?php
                                         echo plugins_url( 'img/fb-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" target="_blank"
                                     href="http://twitter.com/intent/tweet?status=<?php
-                                    the_title(); ?>+<?php
+                                    echo $post_title; ?>+<?php
                                     the_permalink(); ?>">
                                     <img alt="Share on Twitter" src="<?php
                                         echo plugins_url( 'img/tr-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" target="_blank" href="mailto:?subject=<?php
                                     _e( 'Thought you might like this' ); ?>: <?php
-                                    the_title(); ?>&body=<?php
+                                    echo $post_title; ?>&body=<?php
                                     _e( 'Hi, Thought this might interest you' ); ?>: <?php
                                     the_permalink(); ?>">
                                     <img alt="Share via email" src="<?php
