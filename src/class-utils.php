@@ -19,15 +19,22 @@ class Utils {
 		return $currency_code . ' ';
 	}
 
-	public static function format_price( $price ) {
-		$price = number_format( floatval( $price ), 2, '.', ',' );
-		if ( self::ends_with( $price, '.00' ) ) {
-			$p = explode( '.00', $price );
+	public static function format_price( $price, $currency_code ) {
+		$remove = '.00';
+		if ( $currency_code == 'EUR' ) {
+			$price = number_format( floatval( $price ), 2, ',', '.' );
+			$remove = ',00';
+		} else {
+			$price = number_format( floatval( $price ), 2, '.', ',' );
+		}
+		if ( self::ends_with( $price, $remove ) ) {
+			$p = explode( $remove, $price );
 			$price = $p[0];
 		}
+
 		return $price;
 	}
-
+	
 	public static function get_long_description( $listing_json_data ) {
 		// Description
 		$current_site_language = explode( '_', get_locale() );

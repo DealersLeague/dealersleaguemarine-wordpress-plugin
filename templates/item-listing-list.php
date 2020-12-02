@@ -6,13 +6,13 @@
                 <a href="<?php echo get_permalink( $listing->ID ); ?>" class="title"><?php echo $manufacturer . ' ' . $model; ?></a>
                 <span class="tag"><?php echo $sale_status; ?></span>
             </h3>
-            <a href="single-listing-1.html" class="image-wrapper background-image" style="background-image: url('https://i.insider.com/5b59df8d1982d835008b460a?width=1136&format=jpeg');">
+            <a href="<?php echo get_permalink( $listing->ID ); ?>" class="image-wrapper background-image">
                 <img src="<?php echo $featured_image; ?>" alt="">
             </a>
         </div>
         <!--end image-->
 
-        <div class="price"><?php echo $n_images; ?></div>
+        <div class="price"><i class="fa fa-image"></i> <?php echo $n_images; ?></div>
         <div class="meta">
             <?php echo $currency . $price; ?>
         </div>
@@ -36,7 +36,7 @@
             </ul>
         </div>
         <!--end description-->
-        <a href="<?php echo get_permalink( $listing->ID ); ?>" class="detail text-caps underline"><?php _e('Detail', 'dlmarine'); ?></a>
+        <a href="<?php echo get_permalink( $listing->ID ); ?>" class="detail text-caps underline"><?php _e('View Listing', 'dlmarine'); ?></a>
     </div>
 </div>
 <!--end item-->

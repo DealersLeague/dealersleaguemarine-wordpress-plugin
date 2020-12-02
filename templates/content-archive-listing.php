@@ -1,5 +1,8 @@
 <?php
 use dealersleague\marine\wordpress\Utils;
+/*
+ * vars $sort, $layout_type and $listings come from archive shortcode, which includes this file
+ */
 ?>
 <div class="section-title clearfix">
     <div class="float-left float-xs-none">
@@ -42,8 +45,9 @@ use dealersleague\marine\wordpress\Utils;
 	    $draft          = get_post_meta( $listing->ID, 'listing_draught', true );
 	    $condition      = str_replace( '-', ' ', get_post_meta( $listing->ID, 'listing_condition', true ) );
 	    $sale_status    = get_post_meta( $listing->ID, 'listing_sale_status', true );
-	    $price          = Utils::format_price( get_post_meta( $listing->ID, 'listing_price', true ) );
-	    $currency       = Utils::get_currency_symbol( get_post_meta( $listing->ID, 'listing_currency', true ) );
+	    $currency_code  = get_post_meta( $listing->ID, 'listing_currency', true );
+	    $currency       = Utils::get_currency_symbol( $currency_code );
+	    $price          = Utils::format_price( get_post_meta( $listing->ID, 'listing_price', true ), $currency_code );
 	    $featured_image = get_post_meta( $listing->ID, 'listing_featured_image', true );
 	    $n_images       = get_post_meta( $listing->ID, 'listing_n_images', true );
 
