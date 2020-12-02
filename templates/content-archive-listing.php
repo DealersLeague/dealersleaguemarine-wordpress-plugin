@@ -3,7 +3,7 @@ use dealersleague\marine\wordpress\Utils;
 ?>
 <div class="section-title clearfix">
     <div class="float-left float-xs-none">
-        <label class="mr-3 align-text-bottom">Sort by: </label>
+        <label class="mr-3">Sort by: </label>
         <select name="sorting" id="sorting" class="small width-200px selectized" data-placeholder="Default Sorting"
                 tabindex="-1" style="display: none;">
             <option value="" selected="selected">Default Sorting</option>

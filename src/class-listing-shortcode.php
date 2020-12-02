@@ -67,6 +67,7 @@ class Listing_Shortcode {
 		// Get template file output
 		$layout_type = strtolower( $settings->get_web_settings_option_val( 'listing_layout' ) );
 		$listings    = new \WP_Query( $args );
+		include plugin_dir_path( __FILE__ ) . '../templates/content-archive-search.php';
 		include plugin_dir_path( __FILE__ ) . '../templates/content-archive-listing.php';
 		echo $this->render_pagination( $listings->max_num_pages );
 		return ob_get_clean();
