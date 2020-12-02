@@ -20,7 +20,12 @@ class Utils {
 	}
 
 	public static function format_price( $price ) {
-		return number_format( floatval( $price ), 2, '.', ',' );
+		$price = number_format( floatval( $price ), 2, '.', ',' );
+		if ( self::ends_with( $price, '.00' ) ) {
+			$p = explode( '.00', $price );
+			$price = $p[0];
+		}
+		return $price;
 	}
 
 	public static function get_long_description( $listing_json_data ) {
@@ -61,7 +66,7 @@ class Utils {
 		} elseif ( isset( $short_description_array[ 'language' ] ) && is_array( $short_description_array[ 'language' ] ) ) {
 			foreach ( $short_description_array[ 'language' ] as $index => $short_description_language ) {
 				if ( $short_description_language == $language ) {
-					$long_description_text = $short_description_array[ 'text' ][ $index ];
+					$short_description_text = $short_description_array[ 'text' ][ $index ];
 					break;
 				}
 			}
@@ -71,6 +76,22 @@ class Utils {
 		}
 
 		return $short_description_text;
+	}
+
+	/**
+	 * @param $string
+	 * @param $test
+	 *
+	 * @return bool
+	 */
+	public static function ends_with( $string, $test ) {
+		$strlen  = strlen( $string );
+		$testlen = strlen( $test );
+		if ( $testlen > $strlen ) {
+			return false;
+		}
+
+		return substr_compare( $string, $test, $strlen - $testlen, $testlen ) === 0;
 	}
 
 }
