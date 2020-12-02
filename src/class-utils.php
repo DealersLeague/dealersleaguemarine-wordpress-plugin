@@ -114,7 +114,7 @@ class Utils {
 			'container-ship'        => __( 'Container Ship', 'dlmarine' )
 		);
 
-		if ( array_key_exists( $boat_type_key, $boat_type_list ) ) {
+		if ( is_string( $boat_type_key ) && array_key_exists( $boat_type_key, $boat_type_list ) ) {
 			return $boat_type_list[ $boat_type_key ];
 		}
 
@@ -380,6 +380,45 @@ class Utils {
 		}
 
 		return $county_code;
+	}
+
+	public static function get_unity( $field_name ) {
+
+		$unity_list = array(
+			'loa'              => __( 'm', 'dlmarine' ),
+			'lwl'              => __( 'm', 'dlmarine' ),
+			'beam'              => __( 'm', 'dlmarine' ),
+			'draught'          => __( 'm', 'dlmarine' ),
+			'draught_keelup'   => __( 'm', 'dlmarine' ),
+			'clearance'        => __( 'm', 'dlmarine' ),
+			'displacement'     => __( 'kg', 'dlmarine' ),
+			'keel_ballast'     => __( 'kg', 'dlmarine' ),
+			'speed'            => __( 'kg', 'dlmarine' ),
+			'consumption'      => __( 'lh', 'dlmarine' ),
+			'range'            => __( 'nm', 'dlmarine' ),
+			'power'            => __( 'hp', 'dlmarine' ),
+			'headroom'         => __( 'm', 'dlmarine' ),
+			'volume'           => __( 'L', 'dlmarine' ),
+			'capacity'         => __( 'cm3', 'dlmarine' ),
+			'wight'            => __( 'kg', 'dlmarine' ),
+			'max_speed'        => __( 'kmh', 'dlmarine' ),
+			'length'           => __( 'm', 'dlmarine' ),
+			'width'            => __( 'm', 'dlmarine' ),
+			'axle_width'       => __( 'm', 'dlmarine' ),
+			'curb_weight'      => __( 'kg', 'dlmarine' ),
+			'payload'          => __( 'kg', 'dlmarine' ),
+			'total_weight'     => __( 'kg', 'dlmarine' ),
+			'area'             => __( 'm2', 'dlmarine' ),
+			'water_depth'      => __( 'm', 'dlmarine' ),
+			'max_boat_draught' => __( 'm', 'dlmarine' ),
+		);
+
+		if ( array_key_exists( $field_name , $unity_list ) ) {
+			return $unity_list[ $field_name  ];
+		}
+
+		return '';
+
 	}
 
 	

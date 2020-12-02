@@ -229,23 +229,60 @@ class Dealers_League_Marine {
 								if ( is_array( $subfield_value ) ) {
 
 									if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! empty( $subfield_value[0] ) && ! in_array( $subfield_name, $exclude_field_name ) ) {
-										$subfield_text .= '&nbsp;<strong>' . __( $subfield_name, 'dlmarine' ) . '</strong>';
+										$subfield_name = str_replace( '_', ' ', $subfield_name );
+										$subfield_text .= '&nbsp;<strong>' . __( $subfield_name, 'dlmarine' ) . ( $subfield_value[0] == 'on' ? '</strong>' :  ':</strong>');
 									}
+
 									foreach ( $subfield_value as $index => $sv ) {
+										$sv = str_replace( array('-', '_'), array(' ' ,' ' ), $sv );
 										if ( ! empty( $sv ) ) {
 											if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! is_numeric( $index ) ) {
-												$subfield_text .= ' ' . $index . ' ' . __( $sv, 'dlmarine' ) . ($field_name=='boat_types' ? '' : '<br>');
+												$separator = $sv != 'on' ?  ': ' : '';
+												$subfield_text .= ' ' . $index . $separator . __( $sv, 'dlmarine' ) . ( $field_name == 'boat_types' ? '' : '<br>' );
 											} else {
-												$subfield_text .= ' ' . $sv . ($field_name=='boat_types' ? '' : '<br>');
+												switch( $subfield_name ) {
+													case 'boat_types':
+														$subfield_text .= Utils::get_boat_type_name( $sv ) . '<br>';
+														break;
+													case 'currency':
+														$subfield_text .= Utils::get_currency_symbol( $sv );
+														break;
+													case 'price':
+														$currency = $listing_data[ 'listing_details' ][ 'sales_details' ][ 'price' ][ 'currency' ][ 0 ];
+														$subfield_text .= Utils::format_price( $sv, $currency );
+														break;
+													case 'country':
+														$subfield_text .= Utils::get_country_name( $sv ) . ', ';
+														break;
+													default:
+														$sv = str_replace( array('-','_'), array(' ',' '),$sv );
+														$unit = Utils::get_unity( $subfield_name );
+														$unit = empty( $unit ) ? Utils::get_unity( $field_name ) : $unit;
+														$subfield_text .= ' ' . $sv . $unit .'<br>';
+												}
 											}
 										}
 									}
+
 								} elseif ( $subfield_name != 'checked' && $subfield_name != $field_name && ! in_array( $subfield_name, $exclude_field_name ) && ! is_numeric( $subfield_name ))  {
-									$subfield_text .= '<strong>' . __( $subfield_name, 'dlmarine' ) . '</strong>' . ' ' . __( $subfield_value, 'dlmarine' ) . ' ';
+									$subfield_value = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_value );
+									$subfield_name = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_name );
+									$unit = Utils::get_unity( $subfield_name );
+									$subfield_text .= '<strong>' . __( $subfield_name, 'dlmarine' ) . '</strong>' . ' ' . __( $subfield_value, 'dlmarine' ) . $unit . ' ';
+								} elseif ( $field_name =='boat_types' ) {
+									$subfield_text .= Utils::get_boat_type_name( $subfield_value ) . '<br>';
 								} else {
-									$subfield_text .= __( $subfield_value, 'dlmarine' ) . '<br>';
+									$subfield_value = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_value );
+									$subfield_name = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_name );
+									$unit = Utils::get_unity( $subfield_name );
+									$subfield_text .= __( $subfield_value, 'dlmarine' ) . $unit . '<br>';
 								}
-								$remove_section = false;
+								$subfield_text = str_replace(
+									['<br>on', 'on<br>'],
+									['', ''],
+									$subfield_text
+								);
+								$remove_section = empty( $subfield_text );
 							}
 
 						}
@@ -254,8 +291,9 @@ class Dealers_League_Marine {
 						}
 
 					} elseif (! empty( $field_value ) ) {
-
-						$transformed_fields[ $section_name ][ $field_name ] = __( $field_value, 'dlmarine' );
+						$field_value = Utils::get_country_name( $field_value );
+						$unit = Utils::get_unity( $field_name );
+						$transformed_fields[ $section_name ][ $field_name ] = __( $field_value, 'dlmarine' ) . $unit;
 						$remove_section = false;
 					}
 
@@ -266,11 +304,11 @@ class Dealers_League_Marine {
 						) ) {
 						$transformed_fields[ $section_name ][ $field_name ] = str_replace(
 							['<br>on', 'on<br>'],
-							['<br><span class="field-checkbox">&nbsp;</span>', '<span class="field-checkbox">&nbsp;</span><br>'],
+							['', ''],
 							$transformed_fields[ $section_name ][ $field_name ]
 						);
 					} elseif ( ! empty( $transformed_fields[ $section_name ][ $field_name ] ) && $transformed_fields[ $section_name ][ $field_name ] == 'on' ) {
-						$transformed_fields[ $section_name ][ $field_name ] = '<span class="field-checkbox">&nbsp;</span>';
+						$transformed_fields[ $section_name ][ $field_name ] = '';
 					}
 
 				}
