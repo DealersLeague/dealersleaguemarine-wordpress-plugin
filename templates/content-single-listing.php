@@ -35,11 +35,12 @@ $boat_type    = get_post_meta( $post_id, 'listing_boat_type', true );
 $manufacturer = get_post_meta( $post_id, 'listing_manufacturer', true );
 $model        = get_post_meta( $post_id, 'listing_model', true );
 $condition    = get_post_meta( $post_id, 'listing_condition', true );
+$condition    = str_replace( '-', ' ', $condition );
 $location     = get_post_meta( $post_id, 'listing_location', true );
 $sale_status  = get_post_meta( $post_id, 'listing_sale_status', true );
-$loa          = get_post_meta( $post_id, 'listing_loa', true );
-$draft        = get_post_meta( $post_id, 'listing_draught', true );
-$beam         = get_post_meta( $post_id, 'listing_beam', true );
+$loa          = get_post_meta( $post_id, 'listing_loa', true ) . Utils::get_unity( 'loa' );
+$draft        = get_post_meta( $post_id, 'listing_draught', true ) . Utils::get_unity( 'draught' );
+$beam         = get_post_meta( $post_id, 'listing_beam', true ) . Utils::get_unity( 'beam' );
 // Loop sections
 $exclude_section_list = [
 	'advert',
@@ -161,11 +162,13 @@ $exclude_section_list = [
                                 echo ' <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">';
 	                            foreach ( $section as $field_name => $field_value ) {
                                     if( ! empty( $field_value ) ) {
+                                        $val = str_replace( '_', ' ', $field_value );
+                                        $val = str_replace( '-', ' ', $val );
                                         $name = ( $field_name == 'vat' ) ? __('VAT', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
                                         $name = ( $field_name == 'boat_types' ) ? __('Category', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
                                         echo '<div class="item" style="height:auto !important;">';
 			                            echo '<span><strong>' .  $name . '</strong></span><br>';
-			                            echo '<span>' . ltrim( $field_value, ' ' ) . '</span>';
+			                            echo '<span>' . ltrim( $val, ' ' ) . '</span>';
 			                            echo '</div>';
 
 		                            }
