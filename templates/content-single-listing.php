@@ -159,7 +159,7 @@ $exclude_section_list = [
 	                    foreach ( $transformed_data as $section_name => $section ) {
                             if ( ! in_array( $section_name, $exclude_section_list ) && ! empty( $section ) ) {
 	                            echo '<section>';
-	                            echo '<h2 class="listing-heading">' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlcrm' ) . '</h2>';
+	                            echo '<h2 class="listing-heading">' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlmarine' ) . '</h2>';
                                 echo ' <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">';
 	                            foreach ( $section as $field_name => $field_value ) {
                                     if( ! empty( $field_value ) ) {
@@ -282,22 +282,22 @@ $exclude_section_list = [
                     <aside class="sidebar">
                         <!--Author-->
                         <section>
-                            <a href="#" class="btn btn-primary btn-lg btn-block">Enquiry</a>
-                            <a href="#" class="btn btn-primary btn-lg btn-block">Print</a>
+                            <a href="#" class="btn btn-primary btn-lg btn-block"><?php _e('Enquiry', 'dlmarine'); ?></a>
+                            <a href="#" class="btn btn-primary btn-lg btn-block"><?php _e('Print', 'dlmarine'); ?></a>
 
                             <div class="social-icons">
                                 <a class="social-icon" rel="nofollow" target="_blank"
                                     href="http://www.facebook.com/sharer/sharer.php?u=<?php
                                     the_permalink(); ?>&title=<?php
                                     echo $post_title; ?>">
-                                    <img alt="Share on Facebook" src="<?php
+                                    <img alt="<?php _e('Share on Facebook', 'dlmarine'); ?>" src="<?php
                                         echo plugins_url( 'img/fb-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" target="_blank"
                                     href="http://twitter.com/intent/tweet?status=<?php
                                     echo $post_title; ?>+<?php
                                     the_permalink(); ?>">
-                                    <img alt="Share on Twitter" src="<?php
+                                    <img alt="<?php _e('Share on Twitter', 'dlmarine'); ?>" src="<?php
                                         echo plugins_url( 'img/tr-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" target="_blank" href="mailto:?subject=<?php
@@ -305,17 +305,17 @@ $exclude_section_list = [
                                     echo $post_title; ?>&body=<?php
                                     _e( 'Hi, Thought this might interest you' ); ?>: <?php
                                     the_permalink(); ?>">
-                                    <img alt="Share via email" src="<?php
+                                    <img alt="<?php _e('Share via email', 'dlmarine'); ?>" src="<?php
                                         echo plugins_url( 'img/email-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" target="_blank" href="whatsapp://send?text=<?php
                                     _e( 'Check out this boat' ); ?>: <?php
                                     the_permalink(); ?>">
-                                    <img alt="Share via WhatsApp" src="<?php
+                                    <img alt="<?php _e('Share via WhatsApp', 'dlmarine'); ?>" src="<?php
                                     echo plugins_url( 'img/whatsapp-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" href="#" onclick="window.print();return false;">
-                                    <img alt="Print this page" src="<?php
+                                    <img alt="<?php _e('Print this page', 'dlmarine'); ?>" src="<?php
                                     echo plugins_url( 'img/print-social.png', __DIR__ ); ?>"/>
                                 </a>
                             </div>
