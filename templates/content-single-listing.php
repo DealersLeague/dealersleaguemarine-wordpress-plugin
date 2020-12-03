@@ -11,6 +11,7 @@ $recaptcha_secret_key = $settings->get_integration_option_val( 'Google reCAPTCHA
 $show_recaptcha       = ! empty( $recaptcha_site_key ) && ! empty( $recaptcha_secret_key );
 // Privacy link option
 $privacy_policy_page_link = $settings->get_web_settings_option_val( 'privacy_link' );
+$video_placement = $settings->get_web_settings_option_val( 'video_placement' );
 $gdpr_message             = '';
 if ( ! empty( $privacy_policy_page_link) ) {
 	$gdpr_message = sprintf(
@@ -27,10 +28,29 @@ if ( is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
 	$image_list = empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_images' ], true );
 }
 
+// Documents for download
+if ( is_array( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ) {
+    $document_list = $listing_json_data[ 'fileuploader-list-listing_documents' ]; 
+} else {
+	$document_list = empty( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_documents' ], true ); 
+} 
+
+if ( ! empty( $listing_json_data[ 'listing_uploaded_document_list' ] ) ) { 
+    $document_names = explode( ',', $listing_json_data[ 'listing_uploaded_document_list' ] );
+} 
+
+// videos 
+if ( is_array( $listing_json_data['listing']['media']['videos'] ) ) {
+    $videos = $listing_json_data['listing']['media']['videos'];
+} else {
+    $videos = false;
+}
+
 $long_description_text = Utils::get_long_description( $listing_json_data );
 
 // Details
 $post_id      = get_the_ID();
+$post_title   = get_the_title();
 $boat_type    = get_post_meta( $post_id, 'listing_boat_type', true );
 $manufacturer = get_post_meta( $post_id, 'listing_manufacturer', true );
 $model        = get_post_meta( $post_id, 'listing_model', true );
@@ -63,7 +83,7 @@ $exclude_section_list = [
                 foreach ( $image_list as $index => $image ) {
                  ?>
                 <div class="item background-image">
-                    <img src="<?php echo $image['file']; ?>" alt="" data-hash="<?php echo $index; ?>">
+                    <img class="owl-lazy" data-src="<?php echo $image['file']; ?>" data-hash="<?php echo $index; ?>" alt="<?php echo $post_title; ?>" >
                 </div>
                 <?php
                 }
@@ -153,12 +173,22 @@ $exclude_section_list = [
                     </section>
                     <!--end Details-->
 
+                    <?php if ( $videos && $video_placement != 'SIDEBAR' ) { ?>
+                        <section>
+                            <?php foreach ( $videos['video_upload'] as $video ) { 
+                                echo '<div class="videoWrapper">';
+                                    echo wp_oembed_get( $video );  
+                                echo '</div>';
+                            } ?>
+                        </section>
+                    <?php } ?>
+
                     <?php
 
 	                    foreach ( $transformed_data as $section_name => $section ) {
                             if ( ! in_array( $section_name, $exclude_section_list ) && ! empty( $section ) ) {
 	                            echo '<section>';
-	                            echo '<h2 class="listing-heading">' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlcrm' ) . '</h2>';
+	                            echo '<h2 class="listing-heading">' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlmarine' ) . '</h2>';
                                 echo ' <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">';
 	                            foreach ( $section as $field_name => $field_value ) {
                                     if( ! empty( $field_value ) ) {
@@ -179,6 +209,25 @@ $exclude_section_list = [
 	                    }
 
                     ?>
+
+                    <?php if ( ! empty( $document_list ) ) {
+
+                        echo '<h2 class="listing-heading">' . __( 'Documents', 'dlmarine' ) . '</h2>';
+
+                        echo '<ul>';
+
+                            foreach ( $document_list as $index => $doc ) { 
+                                echo '<li>';
+                                    echo '<a href="' . $doc['file'] . '">' . $document_names[$index] . '</a>'; 
+                                echo '</li>';
+                            }
+
+                        echo '</ul>';
+
+                    } ?> 
+
+                    <section>
+                    </section>
 
 	                <?php if ( $show_recaptcha ) { ?>
                     <script>
@@ -281,45 +330,55 @@ $exclude_section_list = [
                     <aside class="sidebar">
                         <!--Author-->
                         <section>
-                            <a href="#" class="btn btn-primary btn-lg btn-block">Enquiry</a>
-                            <a href="#" class="btn btn-primary btn-lg btn-block">Print</a>
+                            <a href="#" class="btn btn-primary btn-lg btn-block"><?php _e('Enquiry', 'dlmarine'); ?></a>
+                            <a href="#" class="btn btn-primary btn-lg btn-block"><?php _e('Print', 'dlmarine'); ?></a>
 
                             <div class="social-icons">
                                 <a class="social-icon" rel="nofollow" target="_blank"
                                     href="http://www.facebook.com/sharer/sharer.php?u=<?php
                                     the_permalink(); ?>&title=<?php
-                                    the_title(); ?>">
-                                    <img alt="Share on Facebook" src="<?php
+                                    echo $post_title; ?>">
+                                    <img alt="<?php _e('Share on Facebook', 'dlmarine'); ?>" src="<?php
                                         echo plugins_url( 'img/fb-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" target="_blank"
                                     href="http://twitter.com/intent/tweet?status=<?php
-                                    the_title(); ?>+<?php
+                                    echo $post_title; ?>+<?php
                                     the_permalink(); ?>">
-                                    <img alt="Share on Twitter" src="<?php
+                                    <img alt="<?php _e('Share on Twitter', 'dlmarine'); ?>" src="<?php
                                         echo plugins_url( 'img/tr-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" target="_blank" href="mailto:?subject=<?php
                                     _e( 'Thought you might like this' ); ?>: <?php
-                                    the_title(); ?>&body=<?php
+                                    echo $post_title; ?>&body=<?php
                                     _e( 'Hi, Thought this might interest you' ); ?>: <?php
                                     the_permalink(); ?>">
-                                    <img alt="Share via email" src="<?php
+                                    <img alt="<?php _e('Share via email', 'dlmarine'); ?>" src="<?php
                                         echo plugins_url( 'img/email-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" target="_blank" href="whatsapp://send?text=<?php
                                     _e( 'Check out this boat' ); ?>: <?php
                                     the_permalink(); ?>">
-                                    <img alt="Share via WhatsApp" src="<?php
+                                    <img alt="<?php _e('Share via WhatsApp', 'dlmarine'); ?>" src="<?php
                                     echo plugins_url( 'img/whatsapp-social.png', __DIR__ ); ?>"/>
                                 </a>
                                 <a class="social-icon" rel="nofollow" href="#" onclick="window.print();return false;">
-                                    <img alt="Print this page" src="<?php
+                                    <img alt="<?php _e('Print this page', 'dlmarine'); ?>" src="<?php
                                     echo plugins_url( 'img/print-social.png', __DIR__ ); ?>"/>
                                 </a>
                             </div>
                         </section>
                         <!--End Author-->
+
+                        <?php if ( $videos && $video_placement == 'SIDEBAR' ) { ?>
+                            <section>
+                                <?php foreach ( $videos['video_upload'] as $video ) {  
+                                    echo '<div class="videoWrapper">';
+                                        echo wp_oembed_get( $video );  
+                                    echo '</div>';  
+                                } ?>
+                            </section>
+                        <?php } ?>
                     </aside>
                 </div>
                 <!--============ End Sidebar ================================================================-->

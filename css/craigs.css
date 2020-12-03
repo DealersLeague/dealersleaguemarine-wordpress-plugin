@@ -825,7 +825,7 @@ Headers:		'Varela Round', sans-serif;
 }
 /*------ Image ------*/
 .items:not(.selectize-input) .item .image {
-    height: 26rem;
+    height: 16rem;
     position: relative;
     border-top-left-radius: .6rem;
     border-top-right-radius: .6rem;
@@ -870,9 +870,10 @@ Headers:		'Varela Round', sans-serif;
     z-index: 1;
     left: 1.8rem;
     color: white;
-    bottom: 6rem;
+    bottom: 1rem;
     padding-right: 1.8rem;
     margin-bottom: .5rem;
+    font-size: 1.5rem;
 }
 .items:not(.selectize-input) .item h3 a {
     color: #fff;
@@ -889,17 +890,18 @@ Headers:		'Varela Round', sans-serif;
     position: relative;
     transition: .3s background-color ease;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: .8rem;
     text-shadow: none;
     text-decoration: none;
     top: inherit;
     bottom: 1rem;
     left: 0;
+    
 }
 .items:not(.selectize-input) .item h3 .tag:not(.category) {
     background-color: #fff;
     top: inherit;
-    bottom: 16rem;
+    bottom: 11rem;
     left: 0;
     color: #000;
     font-weight: 600;
@@ -1102,9 +1104,7 @@ Headers:		'Varela Round', sans-serif;
 .items:not(.selectize-input).masonry .item .wrapper {
     padding-bottom: 5rem;
 }
-.items:not(.selectize-input).grid .item {
-    height: 43rem;
-}
+ 
 .items:not(.selectize-input).grid .item .additional-info {
     display: none;
 }

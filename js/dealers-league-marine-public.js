@@ -186,6 +186,8 @@
                 margin: 10,
                 nav: true,
                 items: 3,
+                lazyLoad:true,
+                lazyLoadEager:1,
                 navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
                 autoHeight: false,
                 center: true,

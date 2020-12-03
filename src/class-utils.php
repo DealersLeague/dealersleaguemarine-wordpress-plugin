@@ -387,7 +387,7 @@ class Utils {
 		$unity_list = array(
 			'loa'              => __( 'm', 'dlmarine' ),
 			'lwl'              => __( 'm', 'dlmarine' ),
-			'beam'              => __( 'm', 'dlmarine' ),
+			'beam'             => __( 'm', 'dlmarine' ),
 			'draught'          => __( 'm', 'dlmarine' ),
 			'draught_keelup'   => __( 'm', 'dlmarine' ),
 			'clearance'        => __( 'm', 'dlmarine' ),

@@ -503,9 +503,9 @@ class Dealers_League_Marine {
 				}
 				$result['status'] = 'OK';
 				$result['listings'] = $listings['listings'];
-				$result['html'] = '<span class="refresh-result" style="margin-left: 5px;color:#058305;">' . $listings['totalCount'] . ' ' . __( 'listings', 'dlcrm' ) . '</span>';
+				$result['html'] = '<span class="refresh-result" style="margin-left: 5px;color:#058305;">' . $listings['totalCount'] . ' ' . __( 'listings', 'dlmarine' ) . '</span>';
 			} else {
-				$result['message'] = 'No listings found';
+				$result['message'] = __( 'No listings found', 'dlmarine' );
 			}
 		} catch ( \Exception $e ) {
 			$result['message'] = $e->getMessage();

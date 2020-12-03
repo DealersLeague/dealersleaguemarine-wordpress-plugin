@@ -12,7 +12,8 @@
         </div>
         <!--end image-->
 
-        <div class="price"><i class="fa fa-image"></i> <?php echo $n_images; ?></div>
+        <?php echo ($n_images ? '<div class="price"><i class="fa fa-image"></i> ' . $n_images . '</div>' : ''); ?>
+             
         <div class="meta">
             <?php echo $currency . $price; ?>
         </div>
