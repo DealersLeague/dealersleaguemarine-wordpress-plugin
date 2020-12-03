@@ -132,6 +132,8 @@ class Listing_Shortcode {
 			}
 		}
 
+		$hide_order_by = $settings->get_web_settings_option_val( 'hide_orderby' );
+
 		$default_sorting = $settings->get_web_settings_option_val( 'default_sorting' );
 		$sort = ! empty( $_GET['sort'] ) ? $_GET['sort'] : strtolower( $default_sorting );
 

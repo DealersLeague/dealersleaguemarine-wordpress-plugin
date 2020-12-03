@@ -21,6 +21,11 @@ if ( ! empty( $privacy_policy_page_link) ) {
 	);
 }
 
+$hide_enquiry_button     = $settings->get_web_settings_option_val( 'hide_enquiry_button' );
+$hide_print_button       = $settings->get_web_settings_option_val( 'hide_print_button' );
+$hide_watch_video_button = $settings->get_web_settings_option_val( 'hide_watch_video_button' );
+
+
 // Images for slider
 if ( is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
     $image_list = $listing_json_data[ 'fileuploader-list-listing_images' ];
@@ -176,7 +181,7 @@ $exclude_section_list = [
                     <?php if ( $videos && $video_placement != 'SIDEBAR' ) { ?>
                         <section>
                             <?php foreach ( $videos as $video ) { 
-                                echo '<div class="videoWrapper">';
+                                echo '<div class="videoWrapper" id="video-wrapper">';
                                     echo wp_oembed_get( $video );  
                                 echo '</div>';
                             } ?>
@@ -330,9 +335,15 @@ $exclude_section_list = [
                     <aside class="sidebar">
                         <!--Author-->
                         <section>
-                            <a href="#" class="btn btn-primary btn-lg btn-block"><?php _e('Enquiry', 'dlmarine'); ?></a>
+                            <?php if ( empty( $hide_enquiry_button ) ) { ?>
+                            <a href="#form_send_enquiry" class="btn btn-primary btn-lg btn-block anchor-scroll"><?php _e('Enquiry', 'dlmarine'); ?></a>
+                            <?php } ?>
+	                        <?php if ( empty( $hide_print_button ) ) { ?>
                             <a href="#" class="btn btn-primary btn-lg btn-block"><?php _e('Print', 'dlmarine'); ?></a>
-
+                            <?php } ?>
+	                        <?php if ( $videos && $video_placement != 'SIDEBAR' && empty( $hide_watch_video_button ) ) { ?>
+                                <a href="#video-wrapper" class="btn btn-primary btn-lg btn-block anchor-scroll"><?php _e('Watch Video', 'dlmarine'); ?></a>
+	                        <?php } ?>
                             <div class="social-icons">
                                 <a class="social-icon" rel="nofollow" target="_blank"
                                     href="http://www.facebook.com/sharer/sharer.php?u=<?php
@@ -362,10 +373,12 @@ $exclude_section_list = [
                                     <img alt="<?php _e('Share via WhatsApp', 'dlmarine'); ?>" src="<?php
                                     echo plugins_url( 'img/whatsapp-social.png', __DIR__ ); ?>"/>
                                 </a>
+	                            <?php if ( empty( $hide_print_button ) ) { ?>
                                 <a class="social-icon" rel="nofollow" href="#" onclick="window.print();return false;">
                                     <img alt="<?php _e('Print this page', 'dlmarine'); ?>" src="<?php
                                     echo plugins_url( 'img/print-social.png', __DIR__ ); ?>"/>
                                 </a>
+                                <?php } ?>
                             </div>
                         </section>
                         <!--End Author-->

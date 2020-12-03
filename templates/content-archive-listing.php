@@ -5,6 +5,7 @@ use dealersleague\marine\wordpress\Utils;
  */
 ?>
 <div class="section-title clearfix">
+    <?php if ( empty( $hide_order_by ) ) { ?>
     <div class="float-left float-xs-none">
         <label class="mr-3"><?php _e('Sort by:', 'dlmarine'); ?></label>
         <select name="sorting" id="sorting" class="width-200px" data-placeholder="<?php _e( 'Default Sorting', 'dlmarine');?>" >
@@ -16,6 +17,7 @@ use dealersleague\marine\wordpress\Utils;
         </select>
 
     </div>
+    <?php } ?>
     <div class="float-right d-xs-none thumbnail-toggle">
         <a href="#" class="change-class <?php echo ($layout_type == 'grid' ? 'active' : ''); ?>" data-change-from-class="list" data-change-to-class="grid"
            data-parent-class="items">

@@ -1,5 +1,19 @@
 (function($){
 
+    $('.anchor-scroll').on('click', function(evt){
+        evt.preventDefault(); //prevents hash from being append to the url
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800);
+
+    });
+
     // Enquiry
     $(document).on('submit', '#form_send_enquiry', function(event) {
         event.preventDefault();
