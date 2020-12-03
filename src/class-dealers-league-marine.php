@@ -371,84 +371,119 @@ class Dealers_League_Marine {
 					} else {
 						delete_post_meta( $post_id, 'listing_boat_type' );
 					}
+
 					if ( isset( $json_data['listing']['boat_details']['boat_types']['boat_types'][0] ) ) {
 						$category = $json_data['listing']['boat_details']['boat_types']['boat_types'][0];
 						update_post_meta( $post_id, 'listing_category', $category );
 					} else {
 						delete_post_meta( $post_id, 'listing_category' );
 					}
+
 					if ( !empty( $json_data['listing']['boat_details']['dimensions']['loa']['number'][0] ) ) {
 						$loa = $json_data['listing']['boat_details']['dimensions']['loa']['number'][0];
 						update_post_meta( $post_id, 'listing_loa', $loa );
 					} else {
 						delete_post_meta( $post_id, 'listing_loa' );
 					}
+
 					if ( isset( $json_data['listing']['boat_details']['dimensions']['beam']['number'][0] ) ) {
 						$beam = $json_data['listing']['boat_details']['dimensions']['beam']['number'][0];
 						update_post_meta( $post_id, 'listing_beam', $beam );
 					} else {
 						delete_post_meta( $post_id, 'listing_beam' );
 					}
+
 					if ( isset( $json_data['listing']['boat_details']['dimensions']['draught']['number'][0] ) ) {
 						$draught = $json_data['listing']['boat_details']['dimensions']['draught']['number'][0];
 						update_post_meta( $post_id, 'listing_draught', $draught );
 					} else {
 						delete_post_meta( $post_id, 'listing_draught' );
 					}
+
 					if ( isset( $json_data['listing']['boat_details']['construction_details']['model'] ) ) {
 						$model = $json_data['listing']['boat_details']['construction_details']['model'];
 						update_post_meta( $post_id, 'listing_model', $model );
 					} else {
 						delete_post_meta( $post_id, 'listing_model' );
 					}
+
 					if ( isset( $json_data['listing']['boat_details']['construction_details']['manufacturer']['name'][0] ) ) {
 						$manufacturer = $json_data['listing']['boat_details']['construction_details']['manufacturer']['name'][0];
 						update_post_meta( $post_id, 'listing_manufacturer', $manufacturer );
 					} else {
 						delete_post_meta( $post_id, 'listing_manufacturer' );
 					}
+
+					if ( isset( $json_data['listing']['engine_data']['engine_data']['fuel'] ) ) {
+						$model = $json_data['listing']['engine_data']['engine_data']['fuel'];
+						update_post_meta( $post_id, 'listing_fuel', $model );
+					} else {
+						delete_post_meta( $post_id, 'listing_fuel' );
+					}
+
+					if ( isset( $json_data['listing']['engine_data']['engine_data']['year_built'] ) ) {
+						$model = $json_data['listing']['engine_data']['engine_data']['year_built'];
+						update_post_meta( $post_id, 'listing_year_built', $model );
+					} else {
+						delete_post_meta( $post_id, 'listing_year_built' );
+					}
+
 					if ( isset( $json_data['listing']['listing_details']['sales_details']['sale_status'] ) ) {
 						$sale_status = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['sale_status'];
 						update_post_meta( $post_id, 'listing_sale_status', $sale_status );
 					} else {
 						delete_post_meta( $post_id, 'listing_sale_status' );
 					}
+
+					if ( isset( $json_data['listing']['listing_details']['sales_details']['sale_class'] ) ) {
+						$sale_status = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['sale_class'];
+						update_post_meta( $post_id, 'listing_sale_class', $sale_status );
+					} else {
+						delete_post_meta( $post_id, 'listing_sale_class' );
+					}
+
 					if ( isset( $json_data['listing']['listing_details']['sales_details']['vat']['status'][0] ) ) {
 						$vat_status = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['vat']['status'][0];
 						update_post_meta( $post_id, 'listing_vat_status', $vat_status );
 					} else {
 						delete_post_meta( $post_id, 'listing_vat_status' );
 					}
+
 					if ( isset( $json_data['listing']['listing_details']['sales_details']['location']['country'][0] ) ) {
 						$country = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['location']['country'][0];
 						update_post_meta( $post_id, 'listing_location_country', $country );
 					} else {
 						delete_post_meta( $post_id, 'listing_location_country' );
 					}
+
 					if ( isset( $json_data['listing']['listing_details']['sales_details']['location']['city'][0] ) ) {
 						$city = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['location']['city'][0];
 						update_post_meta( $post_id, 'listing_location_city', $city );
 					} else {
 						delete_post_meta( $post_id, 'listing_location_city' );
 					}
+
 					if ( isset( $json_data['listing']['listing_details']['sales_details']['condition'] ) ) {
 						$condition = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ][ 'condition' ];
 						update_post_meta( $post_id, 'listing_condition', $condition );
 					} else {
 						delete_post_meta( $post_id, 'listing_condition' );
 					}
+
 					if ( isset( $json_data['listing']['listing_details']['sales_details']['price']['price'][0] ) ) {
 						$price = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ][ 'price' ][ 'price' ][ 0 ];
 						update_post_meta( $post_id, 'listing_price', $price );
 					} else {
 						delete_post_meta( $post_id, 'listing_price' );
 					}
+
 					if ( isset( $json_data['listing']['listing_details']['sales_details']['price']['currency'][0] ) ) {
 						$currency = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ][ 'price' ][ 'currency' ][ 0 ];
 						update_post_meta( $post_id, 'listing_currency', $currency );
 					} else {
 						delete_post_meta( $post_id, 'listing_currency' );
 					}
+
 					// Get first image as cover image
 					if ( !empty($json_data[ 'fileuploader-list-listing_images' ] ) ) {
 

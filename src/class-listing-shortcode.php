@@ -11,7 +11,7 @@ class Listing_Shortcode {
 	}
 
 	/**
-	 * Usage: [listing_archive category="my category" manufacturer="my manufacturer" location="my location"]
+	 * Usage: [listing_archive category="my category" manufacturer="my manufacturer" country="DE"]
 	 *
 	 * @param mixed $attr
 	 *
@@ -26,37 +26,110 @@ class Listing_Shortcode {
 
 		$conditions = [];
 
-		// manufacturer=1&category&price&age&fuel&country&colour&sort=date_desc
-
-		if ( ! empty( $attr[ 'category' ] ) ) {
-			$conditions[] = array(
-				'key'     => 'listing_category',
-				'value'   => $attr[ 'category' ],
-				'compare' => '=',
-			);
-		}
-
-		$search_manufacturer = '';
-
-		if ( ! empty( $attr[ 'manufacturer' ] ) ) {
-			$search_manufacturer = strtolower( $attr[ 'manufacturer' ] );
-		} elseif ( ! empty( $_GET['manufacturer'] ) ) {
-			$search_manufacturer = strtolower( $_GET[ 'manufacturer' ] );
-		}
+		$search_manufacturer = $attr[ 'manufacturer' ] ?? $_GET['manufacturer'] ?? '';
 		if ( ! empty( $search_manufacturer ) ) {
 			$conditions[] = array(
 				'key'     => 'listing_manufacturer',
-				'value'   => $search_manufacturer,
+				'value'   => strtolower( $search_manufacturer ),
 				'compare' => '=',
 			);
 		}
 
-		if ( ! empty( $attr[ 'location' ] ) ) {
+		$search_category = $attr[ 'category' ] ?? $_GET['category'] ?? '';
+		if ( ! empty( $search_category ) ) {
 			$conditions[] = array(
-				'key'     => 'listing_location',
-				'value'   => $attr[ 'location' ],
+				'key'     => 'listing_category',
+				'value'   => strtolower( $search_category ),
 				'compare' => '=',
 			);
+		}
+
+		$search_country = $attr[ 'country' ] ?? $_GET['country'] ?? '';
+		if ( ! empty( $search_country ) && $search_country != 'all' ) {
+			$conditions[] = array(
+				'key'     => 'listing_location_country',
+				'value'   => strtolower( $search_country ),
+				'compare' => '=',
+			);
+		}
+
+		$search_fuel = $_GET['fuel'] ?? '';
+		if ( ! empty( $search_fuel ) ) {
+
+			if ( $search_fuel == 'other' ) {
+				$conditions[] = array(
+					'key'     => 'listing_fuel',
+					'value'   => array( 'diesel', 'gasoline' ),
+					'compare' => 'NOT IN',
+				);
+			} else {
+				$conditions[] = array(
+					'key'     => 'listing_fuel',
+					'value'   => strtolower( $search_fuel ),
+					'compare' => '=',
+				);
+			}
+		}
+
+		$search_colour = $_GET['colour'] ?? '';
+		if ( ! empty( $search_colour ) && $search_colour != 'all' ) {
+			$conditions[] = array(
+				'key'     => 'listing_fuel',
+				'value'   => strtolower( $search_colour ),
+				'compare' => '=',
+			);
+		}
+
+		$search_age = $_GET['age'] ?? '';
+		if ( ! empty( $search_age ) ) {
+
+			if ( $search_age == 'new' ) {
+				$conditions[] = array(
+					'key'     => 'listing_sale_class',
+					'value'   => array( 'new', 'new-instock', 'new-onorder', 'new-inorder' ),
+					'compare' => 'IN',
+				);
+			} elseif ( $search_age == '1999' ) {
+				$conditions[] = array(
+					'key'     => 'listing_year_built',
+					'value'   => $search_age,
+					'type'    => 'numeric',
+					'compare' => '<=',
+				);
+			} else {
+				$age = explode( '-', str_replace( ' ', '', $search_age ) );
+				if ( count( $age ) == 2 ) {
+					$conditions[] = array(
+						'key'     => 'listing_year_built',
+						'value'   => $age,
+						'type'    => 'numeric',
+						'compare' => 'BETWEEN',
+					);
+				}
+			}
+
+		}
+
+		$search_price = $_GET['price'] ?? '';
+		if ( ! empty( $search_price ) ) {
+			if ( $search_price == 100000 ) {
+				$conditions[] = array(
+					'key'     => 'listing_price',
+					'value'   => $search_price,
+					'type'    => 'numeric',
+					'compare' => '>=',
+				);
+			} elseif ( $search_price != 'all' ) {
+				$price = explode( '-', str_replace( ' ', '', $search_price ) );
+				if ( count( $price ) == 2 ) {
+					$conditions[] = array(
+						'key'     => 'listing_price',
+						'value'   => $price,
+						'type'    => 'numeric',
+						'compare' => 'BETWEEN',
+					);
+				}
+			}
 		}
 
 		$default_sorting = $settings->get_web_settings_option_val( 'default_sorting' );
@@ -112,7 +185,7 @@ class Listing_Shortcode {
 
 		$paged = empty( $paged ) ? 1 : $paged;
 
-		if ( $pages == '' ) {
+		if ( $pages == '' && ! empty( $the_query->max_num_pages ) ) {
 			$pages = $the_query->max_num_pages;
 		}
 
