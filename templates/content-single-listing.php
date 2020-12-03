@@ -40,8 +40,8 @@ if ( ! empty( $listing_json_data[ 'listing_uploaded_document_list' ] ) ) {
 } 
 
 // videos 
-if ( is_array( $listing_json_data['listing']['media']['videos'] ) ) {
-    $videos = $listing_json_data['listing']['media']['videos'];
+if ( is_array( $listing_json_data['listing']['media']['videos']['video_upload'] ) ) {
+    $videos = $listing_json_data['listing']['media']['videos']['video_upload'];
 } else {
     $videos = false;
 }
@@ -99,7 +99,7 @@ $exclude_section_list = [
                     <section>
                         <h2 class="listing-heading"><?php _e('Description', 'dlmarine'); ?></h2>
                         <p>
-                            <?php echo $long_description_text; ?>
+                            <?php echo $long_description_text;?>
                         </p>
                     </section>
                     <!--end Description-->
@@ -175,7 +175,7 @@ $exclude_section_list = [
 
                     <?php if ( $videos && $video_placement != 'SIDEBAR' ) { ?>
                         <section>
-                            <?php foreach ( $videos['video_upload'] as $video ) { 
+                            <?php foreach ( $videos as $video ) { 
                                 echo '<div class="videoWrapper">';
                                     echo wp_oembed_get( $video );  
                                 echo '</div>';
@@ -372,7 +372,7 @@ $exclude_section_list = [
 
                         <?php if ( $videos && $video_placement == 'SIDEBAR' ) { ?>
                             <section>
-                                <?php foreach ( $videos['video_upload'] as $video ) {  
+                                <?php foreach ( $videos as $video ) {  
                                     echo '<div class="videoWrapper">';
                                         echo wp_oembed_get( $video );  
                                     echo '</div>';  

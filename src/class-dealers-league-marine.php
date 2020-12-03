@@ -462,6 +462,13 @@ class Dealers_League_Marine {
 							delete_post_meta( $post_id, 'listing_featured_image' );
 						}
 
+					} 
+					if ( !empty($json_data['listing']['media']['videos']['video_upload'] ) ) {
+
+						$video_list = json_decode( $json_data['listing']['media']['videos']['video_upload'], true );
+
+						update_post_meta( $post_id, 'listing_n_videos', count( $video_list ) );
+
 					}
 
 					$added_posts[] = $post_id;
