@@ -18,6 +18,9 @@ class Settings_Page {
 	private $integration_option_name = 'dealers_league_marine_integration_option';
 	protected $integration_options;
 
+	private $search_form_option_name = 'dealers_league_marine_search_form_option';
+	protected $search_form_options;
+
 	private $option_metabox = [];
 	private $tab_page = [];
 	private $times = 1;
@@ -36,6 +39,7 @@ class Settings_Page {
 		$this->options              = get_option( $this->option_name );
 		$this->integration_options  = maybe_unserialize( get_option( $this->integration_option_name ) );
 		$this->web_settings_options = maybe_unserialize( get_option( $this->web_settings_option_name ) );
+		$this->search_form_options  = json_decode( get_option( $this->search_form_option_name ), true );
 	}
 
 	/**
@@ -64,6 +68,12 @@ class Settings_Page {
 						'desc' => __( 'API Key provided by Dealers League SL', 'dlmarine' ),
 						'type' => 'text'
                     ),
+					array(
+						'id'   => 'dealers_league_marine_api_url',
+						'name' => __( 'API URL', 'dlmarine' ),
+						'desc' => __( 'API URL for external requests', 'dlmarine' ),
+						'type' => 'url'
+					),
 					array(
 						'id'      => 'dealers_league_marine_refresh_listings',
 						'name'    => __( 'Refresh listings', 'dlmarine' ),
@@ -118,6 +128,15 @@ class Settings_Page {
 
 	    return '';
 
+	}
+
+	/**
+	 * @param $name
+	 *
+	 * @return string
+	 */
+	public function get_search_form_option_val( $name ): array {
+		return ! empty( $this->search_form_options[ $name ] ) ? $this->search_form_options[ $name ] : [];
 	}
 
 	/**
@@ -253,6 +272,9 @@ class Settings_Page {
 			case 'select':
 				$new_input = sanitize_text_field( $input );
 				break;
+            case 'url':
+	            $new_input = esc_url_raw( $input );
+	            break;
 			case 'email':
 				$new_input = sanitize_email( $input );
 				break;
@@ -304,6 +326,25 @@ class Settings_Page {
 	}
 
 	/**
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
+	 */
+	public function save_search_form_options() {
+		// Getting options from API
+		$api_object = new Api();
+		$api_object->init( $this );
+
+		$search_form_options = array(
+			'countries'     => $api_object->get_country_list(),
+			'manufacturers' => $api_object->get_manufacturer_list(),
+			'categories'    => $api_object->get_category_list(),
+			'colours'       => $api_object->get_colour_tag_list(),
+		);
+
+		update_option( $this->search_form_option_name, json_encode( $search_form_options ) );
+	}
+
+	/**
 	 * @param $field
 	 *
 	 * @return void
@@ -320,18 +361,12 @@ class Settings_Page {
                     isset( $this->options[ $field[ 'id' ] ] ) ? esc_attr( $this->options[ $field[ 'id' ] ] ) : ''
 				);
 				break;
+            case 'email':
+            case 'url':
 			case 'text':
 				$html = sprintf(
-					'<input type="text" id="%s" name="%s[%s]" value="%s" class="regular-text code" />',
-					$field[ 'id' ],
-                    $this->option_name,
-                    $field[ 'id' ],
-                    isset( $this->options[ $field[ 'id' ] ] ) ? esc_attr( $this->options[ $field[ 'id' ] ] ) : ''
-				);
-				break;
-			case 'email':
-				$html = sprintf(
-					'<input type="email" id="%s" name="%s[%s]" value="%s" class="regular-text code" />',
+					'<input type="%s" id="%s" name="%s[%s]" value="%s" class="regular-text code" />',
+					$field['type'],
 					$field[ 'id' ],
                     $this->option_name,
                     $field[ 'id' ],

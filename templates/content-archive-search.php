@@ -1,3 +1,9 @@
+<?php
+
+use dealersleague\marine\wordpress\Utils;
+
+?>
+
 <!--============ Hero Form ==========================================================================-->
 <form class="hero-form form" method="get" id="advanced-searchform" role="search" action="<?php echo esc_url( $action_url ); ?>">
     <div class="container">
@@ -9,9 +15,9 @@
                         <label for="manufacturer" class="col-form-label"><?php _e( 'Manufacturer', 'dlmarine' ); ?></label>
                         <select name="manufacturer" id="manufacturer" data-placeholder="Select Manufacturer">
                             <option value=""><?php _e( 'Select Manufacturer', 'dlmarine' ); ?></option>
-                            <option value="Integrity">Integrity</option>
-                            <option value="Yamaha">Yamaha</option>
-                            <option value="Bayliner">Bayliner</option>
+                            <?php foreach ( $manufacturer_list as $manufacturer_name => $model_list ) { ?>
+                                <option value="<?php echo $manufacturer_name; ?>"><?php echo ucfirst( $manufacturer_name ); ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <!--end form-group-->
@@ -22,8 +28,9 @@
                         <label for="category" class="col-form-label"><?php _e( 'Category', 'dlmarine' ); ?></label>
                         <select name="category" id="category" data-placeholder="Select Category">
                             <option value=""><?php _e( 'Select Category', 'dlmarine' ); ?></option>
-                            <option value="motorboat">Motorboats</option>
-                            <option value="sailboat">Sailboats</option>
+	                        <?php foreach ( $category_list as $category ) { ?>
+                                <option value="<?php echo $category; ?>"><?php echo ucfirst( __( $category, 'dlmarine' ) ); ?></option>
+	                        <?php } ?>
                         </select>
                     </div>
                     <!--end form-group-->
@@ -75,7 +82,7 @@
                                 <option <?php echo (isset($search_age) && $search_age == 'new' ? 'selected="selected"' : '') ?> value="new"><?php _e( 'New', 'dlmarine'); ?></option>
                                 <option <?php echo (isset($search_age) && $search_age == '2010-2020' ? 'selected="selected"' : '') ?> value="2010-2020">2020 - 2010</option>
                                 <option <?php echo (isset($search_age) && $search_age == '2000-2009' ? 'selected="selected"' : '') ?> value="2000-2009">2009 - 2000</option>
-                                <option <?php echo (isset($search_age) && $search_age == '1999' ? 'selected="selected"' : '') ?> value="1999"><?php __('1999 and older', 'dlmarine'); ?></option>
+                                <option <?php echo (isset($search_age) && $search_age == '1999' ? 'selected="selected"' : '') ?> value="1999"><?php _e('1999 and older', 'dlmarine'); ?></option>
                             </select> 
 
                         </div>
@@ -94,8 +101,9 @@
                             <select name="country" id="country" data-placeholder="country" >
                                 <option value=""><?php _e('Country', 'dlmarine'); ?></option>
                                 <option <?php echo (isset($search_country) && $search_country == 'all' ? 'selected="selected"' : '') ?> value="all"><?php _e( 'All Countries', 'dlmarine' ); ?></option>
-                                <option value="UK">United Kingdom</option>
-                                <option value="DE">Germany</option>
+	                            <?php foreach ( $country_list as $country_code ) { ?>
+                                    <option value="<?php echo $country_code; ?>"><?php echo Utils::get_country_name( $country_code ); ?></option>
+	                            <?php } ?>
                             </select>
 
                         </div> 
@@ -104,8 +112,9 @@
                             <select name="colour" id="colour" data-placeholder="colour" >
                                 <option value=""><?php _e('Colour', 'dlmarine'); ?></option>
                                 <option <?php echo (isset($search_colour) && $search_colour == 'all' ? 'selected="selected"' : '') ?> value="all"><?php _e('All Colours', 'dlmarine'); ?></option>
-                                <option value="2">United Kingdom</option>
-                                <option value="3">Germany</option> 
+	                            <?php foreach ( $colour_list as $colour ) { ?>
+                                    <option value="<?php echo $colour; ?>"><?php echo ucfirst( __( $colour, 'dlmarine' ) ); ?></option>
+	                            <?php } ?>
                             </select>
 
                         </div>  

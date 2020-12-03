@@ -23,6 +23,11 @@ class Listing_Search_Shortcode {
 		$settings = new Settings_Page();
 		$settings->refresh_options();
 
+		$manufacturer_list = $settings->get_search_form_option_val( 'manufacturers' );
+		$category_list     = $settings->get_search_form_option_val( 'categories' );
+		$country_list      = $settings->get_search_form_option_val( 'countries' );
+		$colour_list       = $settings->get_search_form_option_val( 'colours' );
+
 		// Prefill form fields with the search items
 		if ( ! empty( $_GET['manufacturer'] ) ) {
 			$search_manufacturer = $_GET['manufacturer'];

@@ -329,10 +329,14 @@ class Dealers_League_Marine {
 	public function refresh_listings() {
 
 		try {
+
+			$settings = new Settings_Page();
+			$settings->save_search_form_options();
+
 			$result = array( 'status' => 'NOK', 'message' => '' );
 			$added_posts = [];
 			// page -1 means all listings
-			$listings = $this->api_object->get_listings( -1 );
+			$listings      = $this->api_object->get_listings( - 1 );
 
 			if ( is_array( $listings['listings'] ) && $listings['totalCount'] > 0 ) {
 
@@ -527,10 +531,13 @@ class Dealers_League_Marine {
 
 		if ( isset( $_POST['enquiry'] ) && ! empty( $_POST['enquiry']['current_url'] ) && ! empty( $_POST['enquiry']['boat_name'] ) ) {
 
+			$settings = new Settings_Page();
+			$settings->refresh_options();
+
 			$can_send_recaptcha   = true;
-			// Get from options
-			$recaptcha_site_key   = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
-			$recaptcha_secret_key = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
+
+			$recaptcha_site_key   = $settings->get_integration_option_val( 'Google reCAPTCHA', 'site_key' );
+			$recaptcha_secret_key = $settings->get_integration_option_val( 'Google reCAPTCHA', 'secret_key' );
 			$show_recaptcha = ! empty( $recaptcha_site_key ) && ! empty( $recaptcha_secret_key );
 
 			if ( $show_recaptcha && ! empty( $_POST[ 'g-recaptcha-response' ] ) ) {

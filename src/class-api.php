@@ -7,7 +7,7 @@ use dealersleague\marine\Client as Api_Client;
 class Api {
 
 	/** @var Api_Client */
-	private $client;
+	private $client = null;
 
 	/**
 	 * @param Settings_Page|null $settings_page
@@ -16,13 +16,16 @@ class Api {
 		try {
 		    if ( null === $settings_page ) {
 			    $settings_page = new Settings_Page();
-			    $settings_page->refresh_options();
 		    }
+			$settings_page->refresh_options();
 			$email   = $settings_page->get_option_val( 'dealers_league_marine_email' );
 			$api_key = $settings_page->get_option_val( 'dealers_league_marine_api_key' );
+			$api_url = $settings_page->get_option_val( 'dealers_league_marine_api_url' );
 
-			$this->client = new Api_Client( $email, $api_key );
-			$this->client->setApiUrl( '//api.dlcrm.local/v1' );
+			if ( ! empty( $email ) && ! empty( $api_key ) && ! empty( $api_url ) ) {
+				$this->client = new Api_Client( $email, $api_key );
+				$this->client->setApiUrl( $api_url );
+			}
 
 		} catch ( \Exception $e ) {
 			add_action( 'admin_notices', array( $this, 'error_api_notice', $e ) );
@@ -63,6 +66,63 @@ class Api {
 			}
 
 			return $manufacturer_list;
+		}catch (\Exception $e ) {
+			var_dump($e);die;
+		}
+	}
+
+	/**
+	 * @return array
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
+	 */
+	public function get_country_list() {
+		try {
+			$country_list = [];
+
+			if ( ! empty( $this->client ) ) {
+				$country_list = $this->client->getCountries();
+			}
+
+			return $country_list;
+		}catch (\Exception $e ) {
+			var_dump($e);die;
+		}
+	}
+
+	/**
+	 * @return array
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
+	 */
+	public function get_category_list() {
+		try {
+			$category_list = [];
+
+			if ( ! empty( $this->client ) ) {
+				$category_list = $this->client->getCategories();
+			}
+
+			return $category_list;
+		}catch (\Exception $e ) {
+			var_dump($e);die;
+		}
+	}
+
+	/**
+	 * @return array
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
+	 */
+	public function get_colour_tag_list() {
+		try {
+			$colour_list = [];
+
+			if ( ! empty( $this->client ) ) {
+				$colour_list = $this->client->getColourTags();
+			}
+
+			return $colour_list;
 		}catch (\Exception $e ) {
 			var_dump($e);die;
 		}
