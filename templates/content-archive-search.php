@@ -2,6 +2,7 @@
 
 use dealersleague\marine\wordpress\Utils;
 
+if ( empty( $hide_search_bar ) ) {
 ?>
 
 <!--============ Hero Form ==========================================================================-->
@@ -10,10 +11,11 @@ use dealersleague\marine\wordpress\Utils;
         <!--Main Form-->
         <div class="main-search-form">
             <div class="form-row">
+	            <?php if ( ! $hide_manufacturer ) { ?>
                 <div class="col-md-3 col-sm-3">
                     <div class="form-group">
                         <label for="manufacturer" class="col-form-label"><?php _e( 'Manufacturer', 'dlmarine' ); ?></label>
-                        <select name="manufacturer" id="manufacturer" data-placeholder="Select Manufacturer">
+                        <select name="manufacturer" id="manufacturer" data-placeholder="<?php _e( 'Select Manufacturer', 'dlmarine' ); ?>">
                             <option value=""><?php _e( 'Select Manufacturer', 'dlmarine' ); ?></option>
                             <?php foreach ( $manufacturer_list as $manufacturer_name => $model_list ) { ?>
                                 <option value="<?php echo $manufacturer_name; ?>"><?php echo ucfirst( $manufacturer_name ); ?></option>
@@ -22,11 +24,13 @@ use dealersleague\marine\wordpress\Utils;
                     </div>
                     <!--end form-group-->
                 </div>
+                <?php } ?>
                 <!--end col-md-3-->
+	            <?php if ( ! $hide_category ) { ?>
                 <div class="col-md-3 col-sm-3">
                     <div class="form-group">
                         <label for="category" class="col-form-label"><?php _e( 'Category', 'dlmarine' ); ?></label>
-                        <select name="category" id="category" data-placeholder="Select Category">
+                        <select name="category" id="category" data-placeholder="<?php _e( 'Select Category', 'dlmarine' ); ?>">
                             <option value=""><?php _e( 'Select Category', 'dlmarine' ); ?></option>
 	                        <?php foreach ( $category_list as $category ) { ?>
                                 <option value="<?php echo $category; ?>"><?php echo ucfirst( __( $category, 'dlmarine' ) ); ?></option>
@@ -35,10 +39,13 @@ use dealersleague\marine\wordpress\Utils;
                     </div>
                     <!--end form-group-->
                 </div>
+	            <?php } ?>
+                <!--end col-md-3-->
+	            <?php if ( ! $hide_price ) { ?>
                 <div class="col-md-3 col-sm-3">
                     <div class="form-group">
                         <label for="price" class="col-form-label"><?php _e( 'Price', 'dlmarine' ); ?></label>
-                        <select name="price" id="price" data-placeholder="Select price">
+                        <select name="price" id="price" data-placeholder="<?php _e( 'Select Price', 'dlmarine' ); ?>">
                             <option value=""><?php _e( 'Select Price', 'dlmarine' ); ?></option>
                             <option <?php echo (isset($search_price) && $search_price == 'all' ? 'selected="selected"' : '') ?> value="all"><?php _e( 'All Prices', 'dlmarine' ); ?></option>
                             <option <?php echo (isset($search_price) && $search_price == '0-19999' ? 'selected="selected"' : '') ?> value="0-19999">0 - 19,999</option>
@@ -49,7 +56,9 @@ use dealersleague\marine\wordpress\Utils;
                     </div>
                     <!--end form-group-->
                 </div>
-                <!--end col-md-3
+	            <?php } ?>
+                <!--end col-md-3-->
+                <!--
                 <div class="col-md-3 col-sm-3">
                     <div class="form-group">
                         <label for="input-location" class="col-form-label">Where?</label>
@@ -75,9 +84,10 @@ use dealersleague\marine\wordpress\Utils;
             <div class="collapse <?php echo $show_collapse; ?>" id="collapseAlternativeSearchForm">
                 <div class="wrapper">
                     <div class="form-row">
+	                    <?php if ( ! $hide_age ) { ?>
                         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
                               
-                            <select name="age" id="age" data-placeholder="age" >
+                            <select name="age" id="age" data-placeholder="<?php _e( 'Age', 'dlmarine' ); ?>" >
                                 <option value=""><?php _e('Age', 'dlmarine'); ?></option>
                                 <option <?php echo (isset($search_age) && $search_age == 'new' ? 'selected="selected"' : '') ?> value="new"><?php _e( 'New', 'dlmarine'); ?></option>
                                 <option <?php echo (isset($search_age) && $search_age == '2010-2020' ? 'selected="selected"' : '') ?> value="2010-2020">2020 - 2010</option>
@@ -86,9 +96,11 @@ use dealersleague\marine\wordpress\Utils;
                             </select> 
 
                         </div>
+                        <?php } ?>
+	                    <?php if ( ! $hide_fuel_type ) { ?>
                         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
                               
-                            <select name="fuel" id="fuel" data-placeholder="fuel" >
+                            <select name="fuel" id="fuel" data-placeholder="<?php _e( 'Fuel', 'dlmarine' ); ?>" >
                                 <option value=""><?php _e( 'Fuel Type', 'dlmarine' ); ?></option>
                                 <option <?php echo (isset($search_fuel) && $search_fuel == 'gasoline' ? 'selected="selected"' : '') ?> value="gasoline"><?php _e( 'Gasoline', 'dlmarine' ); ?></option>
                                 <option <?php echo (isset($search_fuel) && $search_fuel == 'diesel' ? 'selected="selected"' : '') ?> value="diesel"><?php _e('Diesel', 'dlmarine' ); ?></option>
@@ -96,9 +108,11 @@ use dealersleague\marine\wordpress\Utils;
                             </select>
 
                         </div>
+	                    <?php } ?>
+	                    <?php if ( ! $hide_country ) { ?>
                         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
                               
-                            <select name="country" id="country" data-placeholder="country" >
+                            <select name="country" id="country" data-placeholder="<?php _e( 'Country', 'dlmarine' ); ?>" >
                                 <option value=""><?php _e('Country', 'dlmarine'); ?></option>
                                 <option <?php echo (isset($search_country) && $search_country == 'all' ? 'selected="selected"' : '') ?> value="all"><?php _e( 'All Countries', 'dlmarine' ); ?></option>
 	                            <?php foreach ( $country_list as $country_code ) { ?>
@@ -106,10 +120,12 @@ use dealersleague\marine\wordpress\Utils;
 	                            <?php } ?>
                             </select>
 
-                        </div> 
+                        </div>
+                        <?php } ?>
+	                    <?php if ( ! $hide_colour ) { ?>
                         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
                               
-                            <select name="colour" id="colour" data-placeholder="colour" >
+                            <select name="colour" id="colour" data-placeholder="<?php _e( 'Colour', 'dlmarine' ); ?>" >
                                 <option value=""><?php _e('Colour', 'dlmarine'); ?></option>
                                 <option <?php echo (isset($search_colour) && $search_colour == 'all' ? 'selected="selected"' : '') ?> value="all"><?php _e('All Colours', 'dlmarine'); ?></option>
 	                            <?php foreach ( $colour_list as $colour ) { ?>
@@ -117,7 +133,8 @@ use dealersleague\marine\wordpress\Utils;
 	                            <?php } ?>
                             </select>
 
-                        </div>  
+                        </div>
+                        <?php } ?>
                     </div>
                     <!--end row-->
                 </div>
@@ -130,3 +147,4 @@ use dealersleague\marine\wordpress\Utils;
     <!--end container-->
 </form>
 <!--============ End Hero Form ======================================================================-->
+<?php } ?>
