@@ -17,11 +17,11 @@ use dealersleague\marine\wordpress\Utils;
 
     </div>
     <div class="float-right d-xs-none thumbnail-toggle">
-        <a href="#" class="change-class" data-change-from-class="list" data-change-to-class="grid"
+        <a href="#" class="change-class <?php echo ($layout_type == 'grid' ? 'active' : ''); ?>" data-change-from-class="list" data-change-to-class="grid"
            data-parent-class="items">
             <i class="fa fa-th"></i>
         </a>
-        <a href="#" class="change-class active" data-change-from-class="grid" data-change-to-class="list"
+        <a href="#" class="change-class <?php echo ($layout_type == 'list' ? 'active' : ''); ?>" data-change-from-class="grid" data-change-to-class="list"
            data-parent-class="items">
             <i class="fa fa-th-list"></i>
         </a>
@@ -50,6 +50,7 @@ use dealersleague\marine\wordpress\Utils;
 	    $price          = Utils::format_price( get_post_meta( $listing->ID, 'listing_price', true ), $currency_code );
 	    $featured_image = get_post_meta( $listing->ID, 'listing_featured_image', true );
 	    $n_images       = get_post_meta( $listing->ID, 'listing_n_images', true );
+	    $n_videos       = get_post_meta( $listing->ID, 'listing_n_videos', true ); 
 
 	    $listing_json_data = get_post_meta( $listing->ID, 'listing_json_data', true );
 	    $short_description_text = Utils::get_short_description( $listing_json_data );
