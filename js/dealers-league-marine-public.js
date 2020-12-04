@@ -2,7 +2,7 @@
 
     $('.anchor-scroll').on('click', function(evt){
         evt.preventDefault(); //prevents hash from being append to the url
-
+        evt.stopPropagation();
         // Store hash
         var hash = this.hash;
 

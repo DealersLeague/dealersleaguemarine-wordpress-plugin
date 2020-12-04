@@ -99,7 +99,7 @@ class Settings_Page {
 	 * @return string
 	 */
 	public function get_option_val( $name ): string {
-		return ! empty( $this->options[ $name ] ) ? esc_attr( $this->options[ $name ] ) : '';
+		return ! empty( $this->options[ $name ] ) ? $this->options[ $name ] : '';
 	}
 
 	/**
@@ -342,6 +342,20 @@ class Settings_Page {
 		);
 
 		update_option( $this->search_form_option_name, json_encode( $search_form_options ) );
+	}
+
+	/**
+	 * @param $web_settings
+	 */
+	public function save_web_settings_options( $web_settings ) {
+		update_option( $this->web_settings_option_name, maybe_serialize( $web_settings ) );
+	}
+
+	/**
+	 * @param $integrations
+	 */
+	public function save_integrations_options( $integrations ) {
+		update_option( $this->integration_option_name, maybe_serialize( $integrations ) );
 	}
 
 	/**
