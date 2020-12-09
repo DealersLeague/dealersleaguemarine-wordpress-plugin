@@ -79,6 +79,14 @@ class Dealers_League_Marine {
 		wp_enqueue_style( 'dealers-league-marine-owl-css' );
 
 		wp_register_style(
+			'dealers-league-marine-simple-lightbox-css',
+			plugins_url('css/simple-lightbox.css' , __DIR__ ),
+			false,
+			'1.0.0'
+		);
+		wp_enqueue_style( 'dealers-league-marine-owl-css' );
+
+		wp_register_style(
 			'dealers-league-marine-craigs-css',
 			plugins_url('css/craigs.css' , __DIR__ ),
 			false,
@@ -112,6 +120,15 @@ class Dealers_League_Marine {
 			true
 		);
 		wp_enqueue_script( 'dealers-league-marine-bootstrap-js' );
+
+		wp_register_script(
+			'dealers-league-marine-simple-lightbox-js',
+			plugins_url( 'js/simple-lightbox.min.js' , __DIR__ ),
+			array( ),
+			false,
+			true
+		);
+		wp_enqueue_script( 'dealers-league-marine-simple-lightbox-js' );
 
 		wp_register_script(
 			'dealers-league-marine-selectize-js',
