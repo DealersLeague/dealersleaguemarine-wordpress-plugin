@@ -239,6 +239,10 @@
                 $(".gallery-carousel-thumbs").find("a[href='#" + hash + "']").trigger("click");
             });
         }
+
+        if( $(".owl-carousel").length ){
+            var lightbox = new SimpleLightbox('.owl-carousel .owl-item', { /* options */ });
+        }
     
     //  Bootstrap tooltip initialization
     
