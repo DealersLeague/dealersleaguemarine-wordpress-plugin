@@ -67,6 +67,10 @@ $sale_status  = get_post_meta( $post_id, 'listing_sale_status', true );
 $loa          = get_post_meta( $post_id, 'listing_loa', true ) . Utils::get_unity( 'loa' );
 $draft        = get_post_meta( $post_id, 'listing_draught', true ) . Utils::get_unity( 'draught' );
 $beam         = get_post_meta( $post_id, 'listing_beam', true ) . Utils::get_unity( 'beam' );
+
+// Panorama
+$panorama_list = maybe_unserialize( get_post_meta( $post_id, 'listing_panorama', true ) );
+
 // Loop sections
 $exclude_section_list = [
 	'advert',
@@ -392,6 +396,15 @@ $exclude_section_list = [
                                     echo '</div>';  
                                 } ?>
                             </section>
+                        <?php } ?>
+
+                        <?php if ( ! empty( $panorama_list ) && is_array( $panorama_list ) ) { ?>
+                        <section>
+	                        <?php foreach ( $panorama_list as $panorama ) { ?>
+
+                            <iframe src="<?php echo $panorama; ?>" width="300" height="200" allow="fullscreen"></iframe>
+		                    <?php } ?>
+                        </section>
                         <?php } ?>
                     </aside>
                 </div>

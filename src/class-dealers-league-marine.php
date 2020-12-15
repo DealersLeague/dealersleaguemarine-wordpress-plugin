@@ -408,6 +408,12 @@ class Dealers_League_Marine {
 		update_post_meta( $post_id, 'listing_external_id', $listing_data[ 'id' ] );
 		update_post_meta( $post_id, 'listing_json_data', maybe_serialize( $json_data ) );
 
+		if ( isset( $listing_data['panorama'] ) ) {
+			update_post_meta( $post_id, 'listing_panorama', maybe_serialize( $listing_data['panorama'] ) );
+		} else {
+			delete_post_meta( $post_id, 'listing_panorama' );
+		}
+
 		if ( isset( $json_data['listing']['listing_meta']['advert']['advert_type'] ) ) {
 			$boat_type = $json_data['listing']['listing_meta']['advert']['advert_type'];
 			update_post_meta( $post_id, 'listing_boat_type', $boat_type );
