@@ -536,7 +536,7 @@ class Dealers_League_Marine {
 		// Get first image as cover image
 		if ( !empty($json_data[ 'fileuploader-list-listing_images' ] ) ) {
 
-			$image_list = json_decode( $json_data[ 'fileuploader-list-listing_images' ], true );
+			$image_list = is_array( $json_data[ 'fileuploader-list-listing_images' ] ) ? $json_data[ 'fileuploader-list-listing_images' ] : json_decode( $json_data[ 'fileuploader-list-listing_images' ], true );
 
 			update_post_meta( $post_id, 'listing_n_images', count( $image_list ) );
 
