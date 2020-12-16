@@ -401,8 +401,10 @@ $exclude_section_list = [
                         <?php if ( ! empty( $panorama_list ) && is_array( $panorama_list ) ) { ?>
                         <section>
 	                        <?php foreach ( $panorama_list as $panorama ) { ?>
-
-                            <iframe src="<?php echo $panorama; ?>" width="300" height="200" allow="fullscreen"></iframe>
+                                <div class='responsive-panorama'>
+                                    <iframe allowfullscreen webkitallowfullscreen mozallowfullscreen src="<?php echo $panorama; ?>" allow="fullscreen"></iframe>
+                                    
+                                </div>
 		                    <?php } ?>
                         </section>
                         <?php } ?>
