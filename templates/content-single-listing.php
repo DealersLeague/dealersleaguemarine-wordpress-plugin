@@ -27,18 +27,19 @@ $hide_watch_video_button = $settings->get_web_settings_option_val( 'hide_watch_v
 
 
 // Images for slider
-if ( is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
+if ( ! empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) && is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
     $image_list = $listing_json_data[ 'fileuploader-list-listing_images' ];
 } else {
 	$image_list = empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_images' ], true );
 }
 
 // Documents for download
-if ( is_array( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ) {
-    $document_list = $listing_json_data[ 'fileuploader-list-listing_documents' ]; 
+
+if ( ! empty( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) && is_array( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ) {
+    $document_list = $listing_json_data[ 'fileuploader-list-listing_documents' ];
 } else {
-	$document_list = empty( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_documents' ], true ); 
-} 
+	$document_list = empty( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_documents' ], true );
+}
 
 if ( ! empty( $listing_json_data[ 'listing_uploaded_document_list' ] ) ) { 
     $document_names = explode( ',', $listing_json_data[ 'listing_uploaded_document_list' ] );
@@ -66,6 +67,10 @@ $sale_status  = get_post_meta( $post_id, 'listing_sale_status', true );
 $loa          = get_post_meta( $post_id, 'listing_loa', true ) . Utils::get_unity( 'loa' );
 $draft        = get_post_meta( $post_id, 'listing_draught', true ) . Utils::get_unity( 'draught' );
 $beam         = get_post_meta( $post_id, 'listing_beam', true ) . Utils::get_unity( 'beam' );
+
+// Panorama
+$panorama_list = maybe_unserialize( get_post_meta( $post_id, 'listing_panorama', true ) );
+
 // Loop sections
 $exclude_section_list = [
 	'advert',
@@ -391,6 +396,15 @@ $exclude_section_list = [
                                     echo '</div>';  
                                 } ?>
                             </section>
+                        <?php } ?>
+
+                        <?php if ( ! empty( $panorama_list ) && is_array( $panorama_list ) ) { ?>
+                        <section>
+	                        <?php foreach ( $panorama_list as $panorama ) { ?>
+
+                            <iframe src="<?php echo $panorama; ?>" width="300" height="200" allow="fullscreen"></iframe>
+		                    <?php } ?>
+                        </section>
                         <?php } ?>
                     </aside>
                 </div>

@@ -114,11 +114,25 @@ class Utils {
 			'container-ship'        => __( 'Container Ship', 'dlmarine' )
 		);
 
-		if ( is_string( $boat_type_key ) && array_key_exists( $boat_type_key, $boat_type_list ) ) {
-			return $boat_type_list[ $boat_type_key ];
+		$boat_type_string = [];
+		if ( is_array( $boat_type_key ) ) {
+			foreach ( $boat_type_key as $key ) {
+				if ( array_key_exists( $key, $boat_type_list ) ) {
+					$boat_type_string[] = $boat_type_list[ $key ];
+				} else {
+					$boat_type_string[] = $key;
+				}
+			}
+		} elseif ( is_string( $boat_type_key ) ) {
+
+			if( array_key_exists( $boat_type_key, $boat_type_list ) ) {
+				$boat_type_string[] = $boat_type_list[ $boat_type_key ];
+			} else{
+				$boat_type_string[] = $boat_type_key;
+			}
 		}
 
-		return $boat_type_key;
+		return implode(', ', $boat_type_string );
 	}
 
 	public static function get_country_name( $county_code  ) {
