@@ -16,15 +16,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/src/class-utils.php';
-require_once __DIR__ . '/src/class-api.php';
-require_once __DIR__ . '/src/class-webhook.php';
-require_once __DIR__ . '/src/class-boat-post-type.php';
-require_once __DIR__ . '/src/class-settings-page.php';
-require_once __DIR__ . '/src/class-listing-search-shortcode.php';
-require_once __DIR__ . '/src/class-listing-shortcode.php';
-require_once __DIR__ . '/src/class-dealers-league-marine.php';
-
+require_once __DIR__ . '/bootstrap.php';
 
 use dealersleague\marine\wordpress\Dealers_League_Marine;
 

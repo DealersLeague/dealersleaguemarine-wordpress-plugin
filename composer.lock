@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/DealersLeague/dealersleaguemarine-sdk.git",
-                "reference": "60d7b9bdbe764a3dd936ca0d916dba3d59fb8898"
+                "reference": "1f148bf746f64198f43d7b366c1768aae069a768"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DealersLeague/dealersleaguemarine-sdk/zipball/60d7b9bdbe764a3dd936ca0d916dba3d59fb8898",
-                "reference": "60d7b9bdbe764a3dd936ca0d916dba3d59fb8898",
+                "url": "https://api.github.com/repos/DealersLeague/dealersleaguemarine-sdk/zipball/1f148bf746f64198f43d7b366c1768aae069a768",
+                "reference": "1f148bf746f64198f43d7b366c1768aae069a768",
                 "shasum": ""
             },
             "require": {
@@ -60,7 +60,7 @@
                 "source": "https://github.com/DealersLeague/dealersleaguemarine-sdk/tree/main",
                 "issues": "https://github.com/DealersLeague/dealersleaguemarine-sdk/issues"
             },
-            "time": "2020-12-03T11:53:41+00:00"
+            "time": "2020-12-16T18:38:02+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
