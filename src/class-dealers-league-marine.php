@@ -80,7 +80,7 @@ class Dealers_League_Marine {
 
 		wp_register_style(
 			'dealers-league-marine-featherlight-css',
-			'https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css',
+			plugins_url('css/featherlight.min.css' , __DIR__ ),
 			false,
 			'1.0.0'
 		);
@@ -131,8 +131,8 @@ class Dealers_League_Marine {
 
 		wp_register_script(
 			'dealers-league-marine-featherlight-js',
-			'https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js',
-			array( ),
+			plugins_url( 'js/featherlight.min.js' , __DIR__ ),
+			array( 'jquery' ),
 			false,
 			true
 		);

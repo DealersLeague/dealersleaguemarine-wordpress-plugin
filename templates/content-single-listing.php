@@ -92,9 +92,9 @@ $exclude_section_list = [
                 <?php
                 foreach ( $image_list as $index => $image ) {
                  ?>
-                <div class="item background-image">
+                <a href="<?php echo $image['file']; ?>" data-featherlight="image" style="display:inline-block" class="item background-image">
                     <img class="owl-lazy" data-src="<?php echo $image['file']; ?>" data-hash="<?php echo $index; ?>" alt="<?php echo $post_title; ?>" >
-                </div>
+                </a>
                 <?php
                 }
                 ?>
