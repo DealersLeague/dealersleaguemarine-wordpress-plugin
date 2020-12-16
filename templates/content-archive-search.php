@@ -18,7 +18,7 @@ if ( empty( $hide_search_bar ) ) {
                         <select name="manufacturer" id="manufacturer" data-placeholder="<?php _e( 'Select Manufacturer', 'dlmarine' ); ?>">
                             <option value=""><?php _e( 'Select Manufacturer', 'dlmarine' ); ?></option>
                             <?php foreach ( $manufacturer_list as $manufacturer_name => $model_list ) { ?>
-                                <option value="<?php echo $manufacturer_name; ?>"><?php echo ucfirst( $manufacturer_name ); ?></option>
+                                <option value="<?php echo $manufacturer_name; ?>" <?php echo (isset($search_manufacturer) && $search_manufacturer == $manufacturer_name ? 'selected="selected"' : '') ?>><?php echo ucfirst( $manufacturer_name ); ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -33,7 +33,7 @@ if ( empty( $hide_search_bar ) ) {
                         <select name="category" id="category" data-placeholder="<?php _e( 'Select Category', 'dlmarine' ); ?>">
                             <option value=""><?php _e( 'Select Category', 'dlmarine' ); ?></option>
 	                        <?php foreach ( $category_list as $category ) { ?>
-                                <option value="<?php echo $category; ?>"><?php echo ucfirst( __( $category, 'dlmarine' ) ); ?></option>
+                                <option value="<?php echo $category; ?>" <?php echo (isset($search_category) && $search_category == $category ? 'selected="selected"' : '') ?>><?php echo ucfirst( __( $category, 'dlmarine' ) ); ?></option>
 	                        <?php } ?>
                         </select>
                     </div>
@@ -116,7 +116,7 @@ if ( empty( $hide_search_bar ) ) {
                                 <option value=""><?php _e('Country', 'dlmarine'); ?></option>
                                 <option <?php echo (isset($search_country) && $search_country == 'all' ? 'selected="selected"' : '') ?> value="all"><?php _e( 'All Countries', 'dlmarine' ); ?></option>
 	                            <?php foreach ( $country_list as $country_code ) { ?>
-                                    <option value="<?php echo $country_code; ?>"><?php echo Utils::get_country_name( $country_code ); ?></option>
+                                    <option value="<?php echo $country_code; ?>" <?php echo (isset($search_country) && $search_country == $country_code ? 'selected="selected"' : '') ?>><?php echo Utils::get_country_name( $country_code ); ?></option>
 	                            <?php } ?>
                             </select>
 
@@ -129,7 +129,7 @@ if ( empty( $hide_search_bar ) ) {
                                 <option value=""><?php _e('Colour', 'dlmarine'); ?></option>
                                 <option <?php echo (isset($search_colour) && $search_colour == 'all' ? 'selected="selected"' : '') ?> value="all"><?php _e('All Colours', 'dlmarine'); ?></option>
 	                            <?php foreach ( $colour_list as $colour ) { ?>
-                                    <option value="<?php echo $colour; ?>"><?php echo ucfirst( __( $colour, 'dlmarine' ) ); ?></option>
+                                    <option value="<?php echo $colour; ?>" <?php echo (isset($search_colour) && $search_colour == $colour ? 'selected="selected"' : '') ?>><?php echo ucfirst( __( $colour, 'dlmarine' ) ); ?></option>
 	                            <?php } ?>
                             </select>
 
