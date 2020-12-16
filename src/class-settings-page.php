@@ -80,6 +80,13 @@ class Settings_Page {
 						'onclick' => '',
 						'type'    => 'button'
 					),
+					array(
+						'id'      => 'dealers_league_marine_view_listings',
+						'name'    => __( 'View listings', 'dlmarine' ),
+						'desc' => __( 'This will let you see the list of boats in the Wordpress database. Not for editing listings, normally just used for debugging.', 'dlmarine' ),
+						'onclick' => '',
+						'type'    => 'button'
+					)
                 )
             );
 

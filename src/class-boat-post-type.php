@@ -39,7 +39,7 @@ class Boat_Post_Type {
 		    'public'             => true,
 		    'publicly_queryable' => true,
 		    'show_ui'            => true,
-		    'show_in_menu'       => true,
+		    'show_in_menu'       => false,
 		    'query_var'          => true,
 		    'rewrite'            => array( 'slug' => 'newboat' ),
 		    'capability_type'    => 'post',

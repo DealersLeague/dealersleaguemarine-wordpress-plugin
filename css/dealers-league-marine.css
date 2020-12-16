@@ -307,17 +307,17 @@ input.error, textarea.error, select.error {
     font-size: .9rem; 
     width: 25% !important;
     height:auto !important;
+    color: #7b838b;
 }
 
-.boat-info-item strong {
-    opacity: .6; 
+.item-title strong,
+.boat-info-item > span > strong { 
     text-transform: uppercase; 
     font-weight: 600;
 }
-
-.boat-info-item span,
-.boat-info-item span strong {
-    opacity: 1;  
+ 
+.item-title strong {
+    color: rgba(123, 131, 139, .6);
 }
 
 .videoWrapper {

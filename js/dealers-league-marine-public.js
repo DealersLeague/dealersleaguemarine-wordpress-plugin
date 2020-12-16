@@ -59,12 +59,26 @@
             });
         });
     
-        var select = $("select");
-        select.selectize({
+        var searchform = $("#advanced-searchform select");
+        searchform.selectize({
             onDropdownOpen: dropdownOpen,
             onDropdownClose: dropdownClose,
             allowEmptyOption: true,
         });
+	
+		var sorting = $("#sorting");
+        sorting.selectize({
+            onDropdownOpen: dropdownOpen,
+            onDropdownClose: dropdownClose,
+            allowEmptyOption: true,
+        });
+	
+		var newboat = $(".newboat select");
+        newboat.selectize({
+            onDropdownOpen: dropdownOpen,
+            onDropdownClose: dropdownClose,
+            allowEmptyOption: true,
+        }); 
 
         $(document).on( 'change', '#sorting', function(event) {
             var value = $(this).val();

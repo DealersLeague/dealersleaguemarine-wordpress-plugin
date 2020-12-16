@@ -2488,6 +2488,7 @@ header, footer {
     border-width: .1rem;
     outline: none !important;
     cursor: pointer;
+    line-height: 1;
 }
 .btn:hover, .btn:focus, .btn:active {
     outline: none !important;

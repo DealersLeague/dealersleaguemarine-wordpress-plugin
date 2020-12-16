@@ -113,63 +113,63 @@ $exclude_section_list = [
                         <h2 class="listing-heading"><?php _e('General Details', 'dlmarine' ); ?></h2>
                         <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">
                             <?php if (! empty( $manufacturer ) ) { ?>
-                                <div class="item boat-info-item">
+                                <div class="item boat-info-item item-title">
                                     <strong><?php _e('Manufacturer', 'dlmarine' ); ?></strong><br>
                                     <?php echo $manufacturer; ?>
                                 </div>
                             <?php } ?>
 
 	                        <?php if (! empty( $model ) ) { ?>
-                                <div class="item boat-info-item">
+                                <div class="item boat-info-item item-title">
                                     <strong><?php _e('Model', 'dlmarine' ); ?></strong><br>
 	                                <?php echo $model; ?>
                                 </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $boat_type ) ) { ?>
-                                <div class="item boat-info-item">
+                                <div class="item boat-info-item item-title">
                                     <strong><?php _e('Boat Type', 'dlmarine'); ?></strong><br>
-	                                <?php _e( $boat_type, 'dlmarine'); ?>
+	                                <?php _e( ucwords( $boat_type ), 'dlmarine'); ?>
                                 </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $condition ) ) { ?>
-                                <div class="item boat-info-item">
+                                <div class="item boat-info-item item-title">
                                     <strong><?php _e('Condition', 'dlmarine' ); ?></strong><br>
-	                                <?php _e( $condition, 'dlmarine'); ?>
+	                                <?php _e( ucwords( $condition ), 'dlmarine'); ?>
                                 </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $location ) ) { ?>
-                                <div class="item boat-info-item">
+                                <div class="item boat-info-item item-title">
                                     <strong><? _e('Location', 'dlmarine' ); ?></strong><br>
 	                                <?php echo $location; ?>
                                 </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $sale_status ) ) { ?>
-                                <div class="item boat-info-item">
+                                <div class="item boat-info-item item-title">
                                     <strong><?php _e('Sale Status', 'dlmarine' ); ?></strong><br>
-	                                <?php _e( $sale_status, 'dlmarine'); ?>
+	                                <?php _e( ucwords( $sale_status ), 'dlmarine'); ?>
                                 </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $loa ) ) { ?>
-                                <div class="item boat-info-item">
+                                <div class="item boat-info-item item-title">
                                     <strong><?php _e('LOA', 'dlmarine'); ?></strong><br>
 	                                <?php echo $loa; ?>
                                 </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $draft ) ) { ?>
-                                <div class="item boat-info-item">
+                                <div class="item boat-info-item item-title">
                                     <strong><?php _e('Draft', 'dlmarine'); ?></strong><br>
 	                                <?php echo $draft; ?>
                                 </div>
 	                        <?php } ?>
 
 	                        <?php if (! empty( $beam ) ) { ?>
-                                <div class="item boat-info-item">
+                                <div class="item boat-info-item item-title">
                                     <strong><?php _e('Beam', 'dlmarine' ); ?></strong><br>
 	                                <?php echo $beam; ?>
                                 </div>
@@ -202,7 +202,7 @@ $exclude_section_list = [
                                         $name = ( $field_name == 'vat' ) ? __('VAT', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
                                         $name = ( $field_name == 'boat_types' ) ? __('Category', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
                                         echo '<div class="item boat-info-item">';
-			                            echo '<span><strong>' .  $name . '</strong></span><br>';
+			                            echo '<span class="item-title"><strong>' .  $name . '</strong></span><br>';
 			                            echo '<span>' . ltrim( $val, ' ' ) . '</span>';
 			                            echo '</div>';
 		                            }
