@@ -100,9 +100,9 @@ if ( ! is_user_logged_in() ) {
                 <?php
                 foreach ( $image_list as $index => $image ) {
                  ?>
-                <div class="item background-image">
+                <a href="<?php echo $image['file']; ?>" data-featherlight="image" style="display:inline-block" class="item background-image">
                     <img class="owl-lazy" data-src="<?php echo $image['file']; ?>" data-hash="<?php echo $index; ?>" alt="<?php echo $post_title; ?>" >
-                </div>
+                </a>
                 <?php
                 }
                 ?>
@@ -409,8 +409,9 @@ if ( ! is_user_logged_in() ) {
                         <?php if ( ! empty( $panorama_list ) && is_array( $panorama_list ) ) { ?>
                         <section class="panorama-wrapper">
 	                        <?php foreach ( $panorama_list as $panorama ) { ?>
-
-                            <iframe src="<?php echo $panorama; ?>" width="100%" allow="fullscreen"></iframe>
+                                <div class='responsive-panorama'>
+                                    <iframe src="<?php echo $panorama; ?>" width="100%" allow="fullscreen"></iframe>
+                                </div>
 		                    <?php } ?>
                         </section>
                         <?php } ?>

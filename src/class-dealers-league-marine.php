@@ -80,12 +80,20 @@ class Dealers_League_Marine {
 		wp_enqueue_style( 'dealers-league-marine-owl-css' );
 
 		wp_register_style(
-			'dealers-league-marine-simple-lightbox-css',
-			plugins_url('css/simple-lightbox.css' , __DIR__ ),
+			'dealers-league-marine-featherlight-css',
+			plugins_url('css/featherlight.min.css' , __DIR__ ),
 			false,
 			'1.0.0'
 		);
-		wp_enqueue_style( 'dealers-league-marine-owl-css' );
+		wp_enqueue_style( 'dealers-league-marine-featherlight-css' );
+
+		wp_register_style(
+			'dealers-league-marine-panorama',
+			plugins_url('css/panorama.css' , __DIR__ ),
+			false,
+			'1.0.0'
+		);
+		wp_enqueue_style( 'dealers-league-marine-panorama' );
 
 		wp_register_style(
 			'dealers-league-marine-craigs-css',
@@ -123,13 +131,13 @@ class Dealers_League_Marine {
 		wp_enqueue_script( 'dealers-league-marine-bootstrap-js' );
 
 		wp_register_script(
-			'dealers-league-marine-simple-lightbox-js',
-			plugins_url( 'js/simple-lightbox.min.js' , __DIR__ ),
-			array( ),
+			'dealers-league-marine-featherlight-js',
+			plugins_url( 'js/featherlight.min.js' , __DIR__ ),
+			array( 'jquery' ),
 			false,
 			true
 		);
-		wp_enqueue_script( 'dealers-league-marine-simple-lightbox-js' );
+		wp_enqueue_script( 'dealers-league-marine-featherlight-js' );
 
 		wp_register_script(
 			'dealers-league-marine-selectize-js',
