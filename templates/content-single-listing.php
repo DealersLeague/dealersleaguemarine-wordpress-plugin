@@ -344,7 +344,7 @@ if ( ! is_user_logged_in() ) {
                 </div>
                 <!--============ End Listing Detail =========================================================-->
                 <!--============ Sidebar ====================================================================-->
-                <div class="col-md-4">
+                <div class="col-md-4" style="margin-top: 1rem;">
                     <aside class="sidebar">
                         <!--Author-->
                         <section>

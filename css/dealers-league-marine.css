@@ -261,6 +261,10 @@ input.error, textarea.error, select.error {
     margin-top:10px;
 }
 
+.social-icon:hover {
+    text-decoration: none !important;
+}
+
 .listing-heading {
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -332,4 +336,8 @@ input.error, textarea.error, select.error {
     width: 100%;
     height: 100%;
 }
- 
+
+.listing-details-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
