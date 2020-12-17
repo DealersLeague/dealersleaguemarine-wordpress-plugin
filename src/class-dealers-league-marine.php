@@ -279,6 +279,9 @@ class Dealers_League_Marine {
 														$currency = $listing_data[ 'listing_details' ][ 'sales_details' ][ 'price' ][ 'currency' ][ 0 ];
 														$subfield_text .= Utils::format_price( $sv, $currency );
 														break;
+													case 'city':
+														$subfield_text .= $sv . ', ';
+														break;
 													case 'country':
 														$subfield_text .= Utils::get_country_name( $sv );
 														break;
