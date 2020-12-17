@@ -280,7 +280,7 @@ class Dealers_League_Marine {
 														$subfield_text .= Utils::format_price( $sv, $currency );
 														break;
 													case 'country':
-														$subfield_text .= Utils::get_country_name( $sv ) . ', ';
+														$subfield_text .= Utils::get_country_name( $sv );
 														break;
 													default:
 														$sv = str_replace( array('-','_'), array(' ',' '),$sv );
