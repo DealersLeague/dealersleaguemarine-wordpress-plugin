@@ -1,6 +1,6 @@
 <?php
 
-namespace dealersleague\marine\wordpress;;
+namespace dealersleague\marine\wordpress;
 
 class Boat_Post_Type {
 

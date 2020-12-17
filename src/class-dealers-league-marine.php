@@ -321,6 +321,7 @@ class Dealers_League_Marine {
 					} elseif (! empty( $field_value ) ) {
 						$field_value = Utils::get_country_name( $field_value );
 						$unit = Utils::get_unity( $field_name );
+						$field_name = $field_name == 'n_engines' ? 'engines' : $field_name;
 						$transformed_fields[ $section_name ][ $field_name ] = ucwords( __( $field_value, 'dlmarine' ) ) . $unit;
 						$remove_section = false;
 					}
