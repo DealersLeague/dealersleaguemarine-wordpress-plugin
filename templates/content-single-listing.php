@@ -82,6 +82,14 @@ $exclude_section_list = [
 	'documents'
 ];
 
+
+// Tracking
+if ( ! is_user_logged_in() ) {
+    $visits = get_post_meta( $post_id, 'listing_visits', true );
+    $visits = empty( $visits ) ? 1 : intval( $visits ) + 1;
+	update_post_meta( $post_id, 'listing_visits', $visits );
+}
+
 ?>
 
 <section class="content">

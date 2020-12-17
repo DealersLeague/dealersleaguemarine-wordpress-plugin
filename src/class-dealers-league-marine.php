@@ -12,6 +12,7 @@ class Dealers_League_Marine {
 		(new Listing_Search_Shortcode())->init();
 		(new Listing_Shortcode())->init();
 		(new Webhook())->init();
+		(new Cron_Task())->init();
 		$this->api_object = new Api();
 		$this->api_object->init();
 
@@ -569,6 +570,7 @@ class Dealers_League_Marine {
 	 * Ajax handler to send listing enquiry emails
 	 */
 	public function send_enquiry() {
+		global $post;
 
 		$result = array(
 			'status'  => 'NOK',
@@ -652,6 +654,12 @@ class Dealers_League_Marine {
 				$sent = wp_mail( $to, $subject, $body, $headers );
 
 				if ( $sent ) {
+					// Tracking
+					if ( ! is_user_logged_in() ) {
+						$enquiries = get_post_meta( $post->ID, 'listing_enquiries', true );
+						$enquiries = empty( $enquiries ) ? 1 : $enquiries ++;
+						update_post_meta( $post->ID, 'listing_enquiries', $enquiries );
+					}
 					$result[ 'status' ]  = 'OK';
 					$result[ 'message' ] = '<span style="color:#058305;">' . __( 'Thank you for contacting us, we will be in touch soon.', 'dlmarine' ) . '</span>';
 				} else {

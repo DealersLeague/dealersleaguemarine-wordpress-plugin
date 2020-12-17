@@ -2,11 +2,12 @@
 try {
 
 	/**
-	 * Autoload fields, so we can add more classes in the same folder without manually loading them
+	 * Autoload classes, so we can add more classes in the same folder without manually loading them
 	 */
 	spl_autoload_register( static function ( $class ) {
-		$class = str_replace( 'Addcomm\Forms\Fields\\', '', $class );
-		$file  = __DIR__ . '/src/fields/' . $class . '.php';
+		$class = str_replace( 'dealersleague\marine\wordpress\\', '', $class );
+		$class = 'class-' . str_replace( '_', '-',  strtolower( $class ) );
+		$file  = __DIR__ . '/src/' . $class . '.php';
 		if ( file_exists( $file ) ) {
 			require_once( $file );
 		}

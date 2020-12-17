@@ -175,5 +175,22 @@ class Api {
 		return $listings;
 
 	}
+
+	/**
+	 * @param $listing_analytic_list
+	 *
+	 * @return array|mixed|string
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
+	 */
+	public function send_analytics( $listing_analytic_list ) {
+		$response = [];
+		if ( ! empty( $this->client ) ) {
+			$response = $this->client->sendAnalytics( $listing_analytic_list );
+		}
+
+		return $response;
+	}
+
 }
 
