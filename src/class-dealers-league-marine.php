@@ -279,8 +279,11 @@ class Dealers_League_Marine {
 														$currency = $listing_data[ 'listing_details' ][ 'sales_details' ][ 'price' ][ 'currency' ][ 0 ];
 														$subfield_text .= Utils::format_price( $sv, $currency );
 														break;
+													case 'city':
+														$subfield_text .= $sv  . (isset( $field_value['country'][0] ) ?  ', ' . Utils::get_country_name( $field_value['country'][0] ) : '' );
+														break;
 													case 'country':
-														$subfield_text .= Utils::get_country_name( $sv ) . ', ';
+														$subfield_text .= '';//Utils::get_country_name( $sv );
 														break;
 													default:
 														$sv = str_replace( array('-','_'), array(' ',' '),$sv );
@@ -321,6 +324,7 @@ class Dealers_League_Marine {
 					} elseif (! empty( $field_value ) ) {
 						$field_value = Utils::get_country_name( $field_value );
 						$unit = Utils::get_unity( $field_name );
+						$field_name = $field_name == 'n_engines' ? 'engines' : $field_name;
 						$transformed_fields[ $section_name ][ $field_name ] = ucwords( __( $field_value, 'dlmarine' ) ) . $unit;
 						$remove_section = false;
 					}

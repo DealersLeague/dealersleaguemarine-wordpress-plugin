@@ -274,8 +274,8 @@ if ( ! is_user_logged_in() ) {
                         <h2><?php _e('Enquiry', 'dlmarine'); ?></h2>
                         <div class="box">
                             <form class="form email" id="form_send_enquiry" method="post">
-                                <input type="hidden" name="enquiry['current_url]" value="<?php the_permalink();?>">
-                                <input type="hidden" name="enquiry['boat_name]" value="<?php echo $manufacturer.' '.$model;?>">
+                                <input type="hidden" name="enquiry[current_url]" value="<?php the_permalink();?>">
+                                <input type="hidden" name="enquiry[boat_name]" value="<?php echo $manufacturer.' '.$model;?>">
 
                                 <div class="success" style="display: none;"></div>
                                 <div class="error" style="display: none;"></div>
