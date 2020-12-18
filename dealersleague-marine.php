@@ -13,6 +13,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Version:           2.0.0
  * Author:            Walter Barcelos (walter@dealersleague.com), Joseph VanTine (joseph@dealersleague.com)
  * Text Domain:       dlmarine
+ * Domain Path:       /languages
  */
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -21,7 +22,9 @@ require_once __DIR__ . '/bootstrap.php';
 use dealersleague\marine\wordpress\Dealers_League_Marine;
 
 function dealers_league_marine_plugin() {
-	(new Dealers_League_Marine())->load();
+	$plugin = new Dealers_League_Marine();
+	$plugin->load();
+	$plugin->load_plugin_textdomain();
 }
 
 add_action( 'plugins_loaded', 'dealers_league_marine_plugin', 99 );
