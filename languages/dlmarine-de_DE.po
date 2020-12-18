@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-12-03 22:58+0000\n"
-"PO-Revision-Date: 2020-12-04 08:31+0000\n"
+"POT-Creation-Date: 2020-12-18 09:52+0000\n"
+"PO-Revision-Date: 2020-12-18 09:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -16,8 +16,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: vendor\n"
 
-#: languages/fields.php:2 languages/fields.php:368
-#: templates/content-single-listing.php:131
+#: languages/fields.php:2 languages/fields.php:394
+#: templates/content-single-listing.php:158
 msgid "Boat Type"
 msgstr "Boot-Typ"
 
@@ -29,7 +29,7 @@ msgstr "Anzeige"
 msgid "ID"
 msgstr "ID"
 
-#: languages/fields.php:5 languages/fields.php:114
+#: languages/fields.php:5 languages/fields.php:125
 msgid "Purpose"
 msgstr "Zweck"
 
@@ -41,7 +41,7 @@ msgstr "Verkauf"
 msgid "Rental"
 msgstr "Vermietung"
 
-#: languages/fields.php:8 languages/fields.php:14 languages/fields.php:133
+#: languages/fields.php:8 languages/fields.php:14 languages/fields.php:145
 msgid "Type"
 msgstr "Typ"
 
@@ -49,41 +49,41 @@ msgstr "Typ"
 msgid "Boat"
 msgstr "Boot"
 
-#: languages/fields.php:10 languages/fields.php:19 languages/fields.php:362
+#: languages/fields.php:10 languages/fields.php:19 languages/fields.php:388
 msgid "Trailer"
 msgstr "Liegeplatz"
 
-#: languages/fields.php:11 languages/fields.php:20 languages/fields.php:301
+#: languages/fields.php:11 languages/fields.php:20 languages/fields.php:320
 msgid "Engine"
 msgstr "Motor"
 
-#: languages/fields.php:12 languages/fields.php:393
+#: languages/fields.php:12 languages/fields.php:421
 msgid "Mooring"
 msgstr "Liegeplatz"
 
-#: languages/fields.php:13 languages/fields.php:276 languages/fields.php:286
+#: languages/fields.php:13 languages/fields.php:295 languages/fields.php:305
 #: templates/content-archive-search.php:107
 msgid "Other"
 msgstr "Andere"
 
-#: languages/fields.php:15 languages/fields.php:371
+#: languages/fields.php:15 languages/fields.php:397
 msgid "Motorboat"
 msgstr "Motorboot"
 
-#: languages/fields.php:16 languages/fields.php:369
+#: languages/fields.php:16 languages/fields.php:395
 msgid "Sailboat"
 msgstr "Segelboot"
 
-#: languages/fields.php:17 languages/fields.php:372
+#: languages/fields.php:17 languages/fields.php:398
 msgid "Inflatable"
 msgstr "Aufblasbar"
 
-#: languages/fields.php:18 languages/fields.php:373 languages/fields.php:623
+#: languages/fields.php:18 languages/fields.php:399 languages/fields.php:714
 #: src/class-utils.php:97
 msgid "Jetski"
 msgstr "Jetski"
 
-#: languages/fields.php:21 languages/fields.php:66
+#: languages/fields.php:21 languages/fields.php:69
 msgid "Status"
 msgstr "Status"
 
@@ -131,1882 +131,2244 @@ msgstr "Kurze Beschreibung"
 msgid "Please choose a language"
 msgstr "Sprache auswählen"
 
-#: languages/fields.php:33
+#: languages/fields.php:33 languages/fields.php:38
+msgid "languages.json"
+msgstr "languages.json"
+
+#: languages/fields.php:34
 msgid "text"
 msgstr "Text"
 
-#: languages/fields.php:34
+#: languages/fields.php:35
 msgid "Long Description"
 msgstr "Lange Beschreibung"
 
-#: languages/fields.php:35
+#: languages/fields.php:36
 msgid "External Link"
 msgstr "Externe URL"
 
-#: languages/fields.php:36
+#: languages/fields.php:37
+msgid "Please choose the language of the target website"
+msgstr "Sprache der Webseite auswählen"
+
+#: languages/fields.php:39
 msgid "Sales Details"
 msgstr "Verkaufsinformationen"
 
-#: languages/fields.php:37
+#: languages/fields.php:40
 msgid "Sale Class"
 msgstr "Verkausklasse"
 
-#: languages/fields.php:38 templates/content-archive-search.php:92
+#: languages/fields.php:41 templates/content-archive-search.php:92
 msgid "New"
 msgstr "Neu"
 
-#: languages/fields.php:39
+#: languages/fields.php:42
 msgid "Used"
 msgstr "Gebraucht"
 
-#: languages/fields.php:40
+#: languages/fields.php:43
 msgid "New (instock)"
 msgstr "Neu (auf Lager)"
 
-#: languages/fields.php:41
+#: languages/fields.php:44
 msgid "New (preordered)"
 msgstr "Neu (vorbestellt)"
 
-#: languages/fields.php:42
+#: languages/fields.php:45
 msgid "New (onordered)"
 msgstr "Neu (auf Bestellung)"
 
-#: languages/fields.php:43
+#: languages/fields.php:46
 msgid "Used (was in charter)"
 msgstr "Gebraucht (in Charter gewesen)"
 
-#: languages/fields.php:44
+#: languages/fields.php:47
 msgid "Demonstration (already in water)"
 msgstr "Vorführung (bereits im Wasser)"
 
-#: languages/fields.php:45
+#: languages/fields.php:48
 msgid "Demonstration (NOT in water)"
 msgstr "Vorführung (NICHT im Wasser)"
 
-#: languages/fields.php:46 templates/content-single-listing.php:152
+#: languages/fields.php:49 templates/content-single-listing.php:179
 msgid "Sale Status"
 msgstr "Verkausstatus"
 
-#: languages/fields.php:47
+#: languages/fields.php:50
 msgid "Under-offer"
 msgstr "Zum Angebot"
 
-#: languages/fields.php:48
+#: languages/fields.php:51
 msgid "Sold"
 msgstr "Verkauft"
 
-#: languages/fields.php:49
+#: languages/fields.php:52
 msgid "Available"
 msgstr "Zur Verfügung"
 
-#: languages/fields.php:50 templates/content-archive-listing.php:63
-#: templates/content-single-listing.php:138
+#: languages/fields.php:53 templates/content-archive-listing.php:63
+#: templates/content-single-listing.php:165
 msgid "Condition"
 msgstr "Zustand"
 
-#: languages/fields.php:51
+#: languages/fields.php:54
 msgid "As-new"
 msgstr "Wie neu"
 
-#: languages/fields.php:52
+#: languages/fields.php:55
 msgid "Excellent"
 msgstr "Exzellent"
 
-#: languages/fields.php:53
+#: languages/fields.php:56
 msgid "Good"
 msgstr "Gut"
 
-#: languages/fields.php:54
+#: languages/fields.php:57
 msgid "Damaged"
 msgstr "Beschädigt"
 
-#: languages/fields.php:55
+#: languages/fields.php:58
 msgid "Need-repair"
 msgstr "Reparaturbedarf"
 
-#: languages/fields.php:56 languages/fields.php:57
+#: languages/fields.php:59 languages/fields.php:60
 #: templates/content-archive-search.php:47
 msgid "Price"
 msgstr "Preis"
 
-#: languages/fields.php:58
+#: languages/fields.php:61
 msgid "currencies.json"
 msgstr "currencies.json"
 
-#: languages/fields.php:59
+#: languages/fields.php:62
 msgid "amount"
 msgstr "Anzahl"
 
-#: languages/fields.php:60 languages/fields.php:148 languages/fields.php:176
-#: languages/fields.php:487
+#: languages/fields.php:63 languages/fields.php:160 languages/fields.php:188
+#: languages/fields.php:562
 msgid "Fixed"
 msgstr "Fixiert"
 
-#: languages/fields.php:61
+#: languages/fields.php:64
 msgid "On-request"
 msgstr "Auf Anfrage"
 
-#: languages/fields.php:62
+#: languages/fields.php:65
 msgid "Negotiable"
 msgstr "Verhandlungsbasis"
 
-#: languages/fields.php:63
+#: languages/fields.php:66
 msgid "Auction"
 msgstr "Auktion"
 
-#: languages/fields.php:64
+#: languages/fields.php:67
 msgid "Share"
 msgstr "Teilen"
 
-#: languages/fields.php:65
+#: languages/fields.php:68
 msgid "VAT Status"
 msgstr "Mehrwertsteuer-Status"
 
-#: languages/fields.php:67
+#: languages/fields.php:70
 msgid "Paid"
 msgstr "Bezahlt"
 
-#: languages/fields.php:68
+#: languages/fields.php:71
 msgid "Not-paid"
 msgstr "Nicht bezahlt"
 
-#: languages/fields.php:69
+#: languages/fields.php:72
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: languages/fields.php:70 languages/fields.php:203 languages/fields.php:211
-#: languages/fields.php:217 languages/fields.php:221 languages/fields.php:223
-#: languages/fields.php:226
+#: languages/fields.php:73 languages/fields.php:222 languages/fields.php:230
+#: languages/fields.php:236 languages/fields.php:240 languages/fields.php:242
+#: languages/fields.php:245
 msgid "Area"
 msgstr "Ort"
 
-#: languages/fields.php:71
+#: languages/fields.php:74 languages/fields.php:82 languages/fields.php:91
+#: languages/fields.php:123 languages/fields.php:359 languages/fields.php:404
+msgid "countries.json"
+msgstr "countries.json"
+
+#: languages/fields.php:75
 msgid "Stated Separatly"
 msgstr "Separat ausgewiesen"
 
-#: languages/fields.php:72
+#: languages/fields.php:76
 msgid "Trade in Allowed"
 msgstr "Inzahlungnahme möglich"
 
-#: languages/fields.php:73
+#: languages/fields.php:77
 msgid "Trade In"
 msgstr "Inzahlungnahme möglich"
 
-#: languages/fields.php:74
+#: languages/fields.php:78
 msgid "Previous Owners"
 msgstr "Vorherige Besitzer"
 
-#: languages/fields.php:75
+#: languages/fields.php:79
 msgid "If boat is first hand, use \"0\"."
 msgstr "Wenn das Boot aus erster Hand kommt, verwenden Sie “0”."
 
-#: languages/fields.php:76 templates/content-archive-listing.php:67
-#: templates/content-single-listing.php:145
+#: languages/fields.php:80 templates/content-archive-listing.php:67
+#: templates/content-single-listing.php:172
 msgid "Location"
 msgstr "Standort"
 
-#: languages/fields.php:77 languages/fields.php:85
+#: languages/fields.php:81 languages/fields.php:90 languages/fields.php:122
+#: languages/fields.php:358 languages/fields.php:403
 msgid "Please choose a country"
 msgstr "Land auswählen"
 
-#: languages/fields.php:78
+#: languages/fields.php:83
 msgid "Mooring Available"
 msgstr "Liegeplatz verfügbar"
 
-#: languages/fields.php:79
+#: languages/fields.php:84
 msgid "Boat Details"
 msgstr "Bootsdetails"
 
-#: languages/fields.php:80 languages/fields.php:81
+#: languages/fields.php:85 languages/fields.php:86
 msgid "Boat Types"
 msgstr "Boots-Typen"
 
-#: languages/fields.php:82
+#: languages/fields.php:87
 msgid "boat-types.json"
 msgstr "boat-types.json"
 
-#: languages/fields.php:83
+#: languages/fields.php:88
 msgid "Construction Details"
 msgstr "Baueigenschaften"
 
-#: languages/fields.php:84 languages/fields.php:334 languages/fields.php:376
+#: languages/fields.php:89 languages/fields.php:357 languages/fields.php:402
 #: templates/content-archive-listing.php:61
 #: templates/content-archive-search.php:17
-#: templates/content-single-listing.php:117
+#: templates/content-single-listing.php:144
 msgid "Manufacturer"
 msgstr "Hersteller"
 
-#: languages/fields.php:86 languages/fields.php:335 languages/fields.php:377
+#: languages/fields.php:92 languages/fields.php:360 languages/fields.php:405
 #: templates/content-archive-listing.php:62
-#: templates/content-single-listing.php:124
+#: templates/content-single-listing.php:151
 msgid "Model"
 msgstr "Modell"
 
-#: languages/fields.php:87
+#: languages/fields.php:93
 msgid "Designer"
 msgstr "Designer"
 
-#: languages/fields.php:88
+#: languages/fields.php:94
 msgid "Boat Name"
 msgstr "Bootsname"
 
-#: languages/fields.php:89 languages/fields.php:347 languages/fields.php:378
+#: languages/fields.php:95 languages/fields.php:373 languages/fields.php:406
 msgid "Year Built"
 msgstr "Baujahr"
 
-#: languages/fields.php:90
+#: languages/fields.php:96
 msgid "Year Launched"
 msgstr "Erstwasserung"
 
-#: languages/fields.php:91
+#: languages/fields.php:97
 msgid "Last Refit"
 msgstr "Letzte Wartung"
 
-#: languages/fields.php:92
+#: languages/fields.php:98
 msgid "Cockpit Type"
 msgstr "Cockpit Typ"
 
-#: languages/fields.php:93 languages/fields.php:278
+#: languages/fields.php:99 languages/fields.php:297
 msgid "Aft"
 msgstr "Achterkabine"
 
-#: languages/fields.php:94
+#: languages/fields.php:100
 msgid "Center"
 msgstr "Mitte"
 
-#: languages/fields.php:95 languages/fields.php:283
+#: languages/fields.php:101 languages/fields.php:302
 msgid "Double"
 msgstr "Doppelt"
 
-#: languages/fields.php:96 languages/fields.php:602 src/class-utils.php:76
+#: languages/fields.php:102 languages/fields.php:690 src/class-utils.php:76
 msgid "Pilothouse"
 msgstr "Lotsenhaus"
 
-#: languages/fields.php:97
+#: languages/fields.php:103
 msgid "Steering Type"
 msgstr "Steuerung"
 
-#: languages/fields.php:98
+#: languages/fields.php:104
 msgid "Tiller"
 msgstr "Pinne"
 
-#: languages/fields.php:99
+#: languages/fields.php:105
 msgid "Single-wheel"
 msgstr "Einzelruder"
 
-#: languages/fields.php:100
+#: languages/fields.php:106
 msgid "Dual-wheel"
 msgstr "Dual-Rad"
 
-#: languages/fields.php:101 languages/fields.php:625 src/class-utils.php:99
+#: languages/fields.php:107 languages/fields.php:717 src/class-utils.php:99
 msgid "Flybridge"
 msgstr "Flybridge"
 
-#: languages/fields.php:102
+#: languages/fields.php:108 languages/fields.php:110 languages/fields.php:112
+#: languages/fields.php:197 languages/fields.php:199 languages/fields.php:445
+#: languages/fields.php:447 languages/fields.php:449 languages/fields.php:451
+#: languages/fields.php:453 languages/fields.php:455 languages/fields.php:457
+#: languages/fields.php:459 languages/fields.php:461 languages/fields.php:463
+#: languages/fields.php:465 languages/fields.php:467 languages/fields.php:469
+#: languages/fields.php:471 languages/fields.php:473 languages/fields.php:475
+#: languages/fields.php:477 languages/fields.php:479 languages/fields.php:482
+#: languages/fields.php:484 languages/fields.php:486 languages/fields.php:488
+#: languages/fields.php:490 languages/fields.php:492 languages/fields.php:494
+#: languages/fields.php:496 languages/fields.php:498 languages/fields.php:500
+#: languages/fields.php:502 languages/fields.php:504 languages/fields.php:506
+#: languages/fields.php:508 languages/fields.php:510 languages/fields.php:513
+#: languages/fields.php:515 languages/fields.php:517 languages/fields.php:519
+#: languages/fields.php:521 languages/fields.php:523 languages/fields.php:525
+#: languages/fields.php:527 languages/fields.php:529 languages/fields.php:531
+#: languages/fields.php:533 languages/fields.php:535 languages/fields.php:537
+msgid "Optional extra details"
+msgstr "Optionale zusätzliche Angaben"
+
+#: languages/fields.php:109
 msgid "Hard Top"
 msgstr "Hardtop"
 
-#: languages/fields.php:103
+#: languages/fields.php:111
 msgid "Convertible Top"
 msgstr "Cabrioverdeck"
 
-#: languages/fields.php:104
+#: languages/fields.php:113
 msgid "CE Certification"
 msgstr "CE-Zertifizierung"
 
-#: languages/fields.php:105
+#: languages/fields.php:114
 msgid "CE Design Category"
 msgstr "CE-Design Kategorie"
 
-#: languages/fields.php:106
+#: languages/fields.php:115
 msgid "A"
 msgstr "A"
 
-#: languages/fields.php:107
+#: languages/fields.php:116
 msgid "B"
 msgstr "B"
 
-#: languages/fields.php:108
+#: languages/fields.php:117
 msgid "C"
 msgstr "C"
 
-#: languages/fields.php:109
+#: languages/fields.php:118
 msgid "D"
 msgstr "D"
 
-#: languages/fields.php:110
+#: languages/fields.php:119
 msgid "CE Passenger Capacity"
 msgstr "CE-Passagier-Zertifizierung"
 
-#: languages/fields.php:111
+#: languages/fields.php:120
 msgid "Registration"
 msgstr "Registrierung"
 
-#: languages/fields.php:112
+#: languages/fields.php:121
 msgid "Flag"
 msgstr "Flagge"
 
-#: languages/fields.php:113
+#: languages/fields.php:124
 msgid "Port"
 msgstr "Hafen"
 
-#: languages/fields.php:115
+#: languages/fields.php:126
 msgid "Commercial"
 msgstr "Kommerziell"
 
-#: languages/fields.php:116
+#: languages/fields.php:127
 msgid "Private"
 msgstr "Privat"
 
-#: languages/fields.php:117
+#: languages/fields.php:128
 msgid "Dimensions"
 msgstr "Abmessungen"
 
-#: languages/fields.php:118 templates/content-archive-listing.php:64
-#: templates/content-single-listing.php:159
+#: languages/fields.php:129 templates/content-archive-listing.php:64
+#: templates/content-single-listing.php:186
 msgid "LOA"
 msgstr "Länge ü. A. (m)"
 
-#: languages/fields.php:119
+#: languages/fields.php:130
 msgid "Length overall"
 msgstr "Gesamtlänge"
 
-#: languages/fields.php:120
+#: languages/fields.php:131
 msgid "LWL"
 msgstr "Länge Wasserlinie"
 
-#: languages/fields.php:121 templates/content-archive-listing.php:65
-#: templates/content-single-listing.php:173
+#: languages/fields.php:132 templates/content-archive-listing.php:65
+#: templates/content-single-listing.php:200
 msgid "Beam"
 msgstr "Schiffsbreite"
 
-#: languages/fields.php:122
+#: languages/fields.php:133
 msgid "Draught"
 msgstr "Tiefgang"
 
-#: languages/fields.php:123
+#: languages/fields.php:134
 msgid "Draught Keelup"
 msgstr "Tiefgang"
 
-#: languages/fields.php:124
+#: languages/fields.php:135
 msgid "Clearance"
 msgstr "Durchfahrtshöhe"
 
-#: languages/fields.php:125 languages/fields.php:134
+#: languages/fields.php:136 languages/fields.php:146
 msgid "Displacement"
 msgstr "Verdrängung"
 
-#: languages/fields.php:126 languages/fields.php:576 languages/fields.php:599
+#: languages/fields.php:137 languages/fields.php:663 languages/fields.php:687
 #: src/class-utils.php:50 src/class-utils.php:73
 msgid "Hull"
 msgstr "Rumpf"
 
-#: languages/fields.php:127
+#: languages/fields.php:138
 msgid "HIN"
 msgstr "HIN"
 
-#: languages/fields.php:128
+#: languages/fields.php:139
 msgid "Colours"
 msgstr "Farben"
 
-#: languages/fields.php:129
+#: languages/fields.php:140
+msgid "Free text, for example: white, blue stripe with red dots"
+msgstr "Freier Text, zum Beispiel: weiß, blauer Streifen mit roten Punkten"
+
+#: languages/fields.php:141
 msgid "colours.json"
 msgstr "colours.json"
 
-#: languages/fields.php:130 languages/fields.php:229 languages/fields.php:240
-#: languages/fields.php:251 languages/fields.php:259 languages/fields.php:379
+#: languages/fields.php:142 languages/fields.php:248 languages/fields.php:259
+#: languages/fields.php:270 languages/fields.php:278 languages/fields.php:407
 msgid "Material"
 msgstr "Material"
 
-#: languages/fields.php:131
+#: languages/fields.php:143
 msgid "Please choose a material"
 msgstr "Material auswählen"
 
-#: languages/fields.php:132
+#: languages/fields.php:144
 msgid "materials.json"
 msgstr "materials.json"
 
-#: languages/fields.php:135
+#: languages/fields.php:147
 msgid "Planing"
 msgstr "Planung"
 
-#: languages/fields.php:136
+#: languages/fields.php:148
 msgid "Semi-displacement"
 msgstr "Halbgleiter"
 
-#: languages/fields.php:137
+#: languages/fields.php:149
 msgid "Keel Type"
 msgstr "Kiel Typ"
 
-#: languages/fields.php:138
+#: languages/fields.php:150
 msgid "Fin"
 msgstr "Flossenkiel"
 
-#: languages/fields.php:139
+#: languages/fields.php:151
 msgid "Full"
 msgstr "Gesamt"
 
-#: languages/fields.php:140
+#: languages/fields.php:152
 msgid "Bulb"
 msgstr "Birne"
 
-#: languages/fields.php:141
+#: languages/fields.php:153
 msgid "Winged"
 msgstr "Flügelkiel"
 
-#: languages/fields.php:142 languages/fields.php:188
+#: languages/fields.php:154 languages/fields.php:202
 msgid "Twin"
 msgstr "Doppelmotorisierung"
 
-#: languages/fields.php:143
+#: languages/fields.php:155
 msgid "Swing"
 msgstr "Schwenkkiel"
 
-#: languages/fields.php:144
+#: languages/fields.php:156
 msgid "Lifting"
 msgstr "Lifting"
 
-#: languages/fields.php:145
+#: languages/fields.php:157
 msgid "Canting"
 msgstr "Schwenkkiel"
 
-#: languages/fields.php:146
+#: languages/fields.php:158
 msgid "Daggerboard"
 msgstr "Schwert"
 
-#: languages/fields.php:147 languages/fields.php:574 src/class-utils.php:48
+#: languages/fields.php:159 languages/fields.php:661 src/class-utils.php:48
 msgid "Flat"
 msgstr "Flach"
 
-#: languages/fields.php:149
+#: languages/fields.php:161
 msgid "Keel Ballast"
 msgstr "Ballast"
 
-#: languages/fields.php:150
+#: languages/fields.php:162
 msgid "Drive"
 msgstr "Antrieb"
 
-#: languages/fields.php:151
+#: languages/fields.php:163
 msgid "No Engine"
 msgstr "Kein Antrieb"
 
-#: languages/fields.php:152
+#: languages/fields.php:164
 msgid "Has Engine?"
 msgstr "Mit Motor?"
 
-#: languages/fields.php:153
+#: languages/fields.php:165
 msgid "Propulsion"
 msgstr "Antrieb"
 
-#: languages/fields.php:154 languages/fields.php:333
+#: languages/fields.php:166 languages/fields.php:356
 msgid "Outboard"
 msgstr "Aussenborder"
 
-#: languages/fields.php:155 languages/fields.php:482
+#: languages/fields.php:167 languages/fields.php:557
 msgid "Stern"
 msgstr "Heck"
 
-#: languages/fields.php:156
+#: languages/fields.php:168
 msgid "Vdrive"
 msgstr "V-Antrieb"
 
-#: languages/fields.php:157
+#: languages/fields.php:169
 msgid "Shaft"
 msgstr "Welle"
 
-#: languages/fields.php:158 languages/fields.php:631 src/class-utils.php:105
+#: languages/fields.php:170 languages/fields.php:723 src/class-utils.php:105
 msgid "Jet"
 msgstr "Jet"
 
-#: languages/fields.php:159
+#: languages/fields.php:171
 msgid "Sail"
 msgstr "Segel"
 
-#: languages/fields.php:160
+#: languages/fields.php:172
 msgid "Pod"
 msgstr "Pod"
 
-#: languages/fields.php:161
+#: languages/fields.php:173
 msgid "Surface"
 msgstr "Oberfläche"
 
-#: languages/fields.php:162 languages/fields.php:490 languages/fields.php:496
+#: languages/fields.php:174 languages/fields.php:565 languages/fields.php:571
 msgid "Hydraulic"
 msgstr "Hydraulik"
 
-#: languages/fields.php:163
+#: languages/fields.php:175
 msgid "Forward"
 msgstr "Vorwärts"
 
-#: languages/fields.php:164
+#: languages/fields.php:176
 msgid "Propeller"
 msgstr "Propeller"
 
-#: languages/fields.php:165
+#: languages/fields.php:177
 msgid "Number of blades"
 msgstr "Anzahl der Propeller"
 
-#: languages/fields.php:166 languages/fields.php:306 languages/fields.php:314
-#: languages/fields.php:322
+#: languages/fields.php:178 languages/fields.php:325 languages/fields.php:333
+#: languages/fields.php:341
 msgid "Stainless"
 msgstr "Rostfrei"
 
-#: languages/fields.php:167 languages/fields.php:231 languages/fields.php:242
-#: languages/fields.php:253 languages/fields.php:261 languages/fields.php:308
-#: languages/fields.php:316 languages/fields.php:324 languages/fields.php:381
+#: languages/fields.php:179 languages/fields.php:250 languages/fields.php:261
+#: languages/fields.php:272 languages/fields.php:280 languages/fields.php:327
+#: languages/fields.php:335 languages/fields.php:343 languages/fields.php:409
 msgid "Aluminum"
 msgstr "Aluminium"
 
-#: languages/fields.php:168
+#: languages/fields.php:180
 msgid "Bronze"
 msgstr "Bronze"
 
-#: languages/fields.php:169 languages/fields.php:309 languages/fields.php:317
-#: languages/fields.php:325
+#: languages/fields.php:181 languages/fields.php:328 languages/fields.php:336
+#: languages/fields.php:344
 msgid "Plastic"
 msgstr "Kunststoff"
 
-#: languages/fields.php:170 languages/fields.php:232 languages/fields.php:243
-#: languages/fields.php:254 languages/fields.php:262 languages/fields.php:307
-#: languages/fields.php:315 languages/fields.php:323 languages/fields.php:380
+#: languages/fields.php:182 languages/fields.php:251 languages/fields.php:262
+#: languages/fields.php:273 languages/fields.php:281 languages/fields.php:326
+#: languages/fields.php:334 languages/fields.php:342 languages/fields.php:408
 msgid "Steel"
 msgstr "Stahl"
 
-#: languages/fields.php:171
+#: languages/fields.php:183
 msgid "Alloy"
 msgstr "Legierung"
 
-#: languages/fields.php:172
+#: languages/fields.php:184
 msgid "Singleprop"
 msgstr "Einzelpropeller"
 
-#: languages/fields.php:173
+#: languages/fields.php:185
 msgid "Duoprop"
 msgstr "Duoprop"
 
-#: languages/fields.php:174
+#: languages/fields.php:186
 msgid "IPS"
 msgstr "IPS"
 
-#: languages/fields.php:175 languages/fields.php:515
+#: languages/fields.php:187 languages/fields.php:590
 msgid "Folding"
 msgstr "Faltbar"
 
-#: languages/fields.php:177
+#: languages/fields.php:189
 msgid "Variable Pitch"
 msgstr "Verstellbar"
 
-#: languages/fields.php:178
+#: languages/fields.php:190
 msgid "Cruising Speed"
 msgstr "Marschgeschwindigkeit"
 
-#: languages/fields.php:179 languages/fields.php:385
+#: languages/fields.php:191 languages/fields.php:413
 msgid "Max Speed"
 msgstr "Max Geschwindigkeit"
 
-#: languages/fields.php:180
+#: languages/fields.php:192
 msgid "Cruising Consumption"
 msgstr "Verbrauch"
 
-#: languages/fields.php:181
+#: languages/fields.php:193
 msgid "Max Consumption"
 msgstr "Max Verbrauch"
 
-#: languages/fields.php:182
+#: languages/fields.php:194
 msgid "Range"
 msgstr "Distanz"
 
-#: languages/fields.php:183
+#: languages/fields.php:195
 msgid "Max Engine Power"
 msgstr "Max. Motorleistung"
 
-#: languages/fields.php:184
+#: languages/fields.php:196
 msgid "Bow Thruster"
 msgstr "Bugstrahlruder"
 
-#: languages/fields.php:185
+#: languages/fields.php:198
 msgid "Stern Thruster"
 msgstr "Heckstrahlruder"
 
-#: languages/fields.php:186
+#: languages/fields.php:200
 msgid "Control Type"
 msgstr "Kontrolltyp"
 
-#: languages/fields.php:187 languages/fields.php:282
+#: languages/fields.php:201 languages/fields.php:301
 msgid "Single"
 msgstr "Einzel"
 
-#: languages/fields.php:189
+#: languages/fields.php:203 languages/fields.php:204
 msgid "Lake Constance"
 msgstr "Bodensee"
 
-#: languages/fields.php:190
+#: languages/fields.php:205
 msgid "Rig Sails"
 msgstr "Rigg-Segel"
 
-#: languages/fields.php:191
+#: languages/fields.php:206 languages/fields.php:207
 msgid "Sailplan"
 msgstr "Segelplan"
 
-#: languages/fields.php:192 languages/fields.php:198
+#: languages/fields.php:208 languages/fields.php:216
+msgid "Select type of sail"
+msgstr "Segeltyp auswählen"
+
+#: languages/fields.php:209 languages/fields.php:217
 msgid "Sloop"
 msgstr "Slooptakelung"
 
-#: languages/fields.php:193 languages/fields.php:199 languages/fields.php:629
+#: languages/fields.php:210 languages/fields.php:218 languages/fields.php:721
 #: src/class-utils.php:103
 msgid "Ketch"
 msgstr "Ketsch"
 
-#: languages/fields.php:194 languages/fields.php:200 languages/fields.php:630
+#: languages/fields.php:211 languages/fields.php:219 languages/fields.php:722
 #: src/class-utils.php:104
 msgid "Yawl"
 msgstr "Jolle"
 
-#: languages/fields.php:195 languages/fields.php:201
+#: languages/fields.php:212 languages/fields.php:220
 msgid "Cutter"
 msgstr "Kutter"
 
-#: languages/fields.php:196 languages/fields.php:197
+#: languages/fields.php:213
+msgid "Number of masts"
+msgstr "Anzahl der Masten"
+
+#: languages/fields.php:214 languages/fields.php:215
 msgid "Main Sail"
 msgstr "Großsegel"
 
-#: languages/fields.php:202 languages/fields.php:269 languages/fields.php:280
-#: languages/fields.php:294 languages/fields.php:296 languages/fields.php:303
+#: languages/fields.php:221 languages/fields.php:288 languages/fields.php:299
+#: languages/fields.php:313 languages/fields.php:315 languages/fields.php:322
 msgid "Details"
 msgstr "Details"
 
-#: languages/fields.php:204 languages/fields.php:205
+#: languages/fields.php:223 languages/fields.php:224
 msgid "Jib"
 msgstr "Fock"
 
-#: languages/fields.php:206
+#: languages/fields.php:225
 msgid "Brand of Jib"
 msgstr "Marke des Vorsegel´s"
 
-#: languages/fields.php:207 languages/fields.php:214
+#: languages/fields.php:226 languages/fields.php:233
 msgid "Furling"
 msgstr "Curling"
 
-#: languages/fields.php:208 languages/fields.php:215
+#: languages/fields.php:227 languages/fields.php:234
 msgid "None"
 msgstr "Keine"
 
-#: languages/fields.php:209 languages/fields.php:216
+#: languages/fields.php:228 languages/fields.php:235
 msgid "Roller"
 msgstr "Roller"
 
-#: languages/fields.php:210
+#: languages/fields.php:229
 msgid "Selftacking"
 msgstr "Selftacking"
 
-#: languages/fields.php:212 languages/fields.php:213
+#: languages/fields.php:231 languages/fields.php:232
 msgid "Genoa"
 msgstr "Genua"
 
-#: languages/fields.php:218 languages/fields.php:219
+#: languages/fields.php:237 languages/fields.php:238
 msgid "Gennaker"
 msgstr "Gennaker"
 
-#: languages/fields.php:220
+#: languages/fields.php:239
 msgid "Gennaker Extra Details"
 msgstr "Gennaker zusätzliche Angaben"
 
-#: languages/fields.php:222
+#: languages/fields.php:241
 msgid "Spinnaker"
 msgstr "Spinnaker"
 
-#: languages/fields.php:224
+#: languages/fields.php:243
 msgid "Blister"
 msgstr "Blister"
 
-#: languages/fields.php:225
+#: languages/fields.php:244
 msgid "Blister Area"
 msgstr "Blister Area"
 
-#: languages/fields.php:227 languages/fields.php:228
+#: languages/fields.php:246 languages/fields.php:247
 msgid "Mast"
 msgstr "Mast"
 
-#: languages/fields.php:230 languages/fields.php:241 languages/fields.php:252
-#: languages/fields.php:260
+#: languages/fields.php:249 languages/fields.php:260 languages/fields.php:271
+#: languages/fields.php:279
 msgid "Wood"
 msgstr "Holz"
 
-#: languages/fields.php:233 languages/fields.php:244 languages/fields.php:255
-#: languages/fields.php:263
+#: languages/fields.php:252 languages/fields.php:263 languages/fields.php:274
+#: languages/fields.php:282
 msgid "Carbonfibre"
 msgstr "Carbonfaser"
 
-#: languages/fields.php:234
+#: languages/fields.php:253
 msgid "Height"
 msgstr "Höhe"
 
-#: languages/fields.php:235
+#: languages/fields.php:254
 msgid "Lowered Height"
 msgstr "Lowered Height"
 
-#: languages/fields.php:236
+#: languages/fields.php:255
 msgid "Lowering System"
 msgstr "Lowering System"
 
-#: languages/fields.php:237 languages/fields.php:248 languages/fields.php:256
-#: languages/fields.php:264
+#: languages/fields.php:256 languages/fields.php:267 languages/fields.php:275
+#: languages/fields.php:283
 msgid "Additional Info"
 msgstr "Zusätzliche Informationen"
 
-#: languages/fields.php:238 languages/fields.php:239
+#: languages/fields.php:257 languages/fields.php:258
 msgid "Boom"
 msgstr "Boom"
 
-#: languages/fields.php:245
+#: languages/fields.php:264
 msgid "Rodkick"
 msgstr "Rodkick"
 
-#: languages/fields.php:246
+#: languages/fields.php:265
 msgid "Lazy Jacks"
 msgstr "Lazy Jack"
 
-#: languages/fields.php:247
+#: languages/fields.php:266
 msgid "Lazy Bag"
 msgstr "Lazy Bag"
 
-#: languages/fields.php:249 languages/fields.php:250
+#: languages/fields.php:268 languages/fields.php:269
 msgid "Gennaker Boom"
 msgstr "Gennaker-Boom"
 
-#: languages/fields.php:257
+#: languages/fields.php:276
 msgid "Spinnaker Boom"
 msgstr "Spinnakerbaum"
 
-#: languages/fields.php:258
+#: languages/fields.php:277
 msgid "spinnaker Boom"
 msgstr "Spinnakerbaum"
 
-#: languages/fields.php:265
+#: languages/fields.php:284
 msgid "Winches"
 msgstr "Witschen"
 
-#: languages/fields.php:266 languages/fields.php:289 languages/fields.php:300
-#: languages/fields.php:340 languages/fields.php:359 languages/fields.php:489
-#: languages/fields.php:495 languages/fields.php:512 languages/fields.php:546
-#: languages/fields.php:627 src/class-utils.php:101
+#: languages/fields.php:285 languages/fields.php:308 languages/fields.php:319
+#: languages/fields.php:366 languages/fields.php:385 languages/fields.php:564
+#: languages/fields.php:570 languages/fields.php:587 languages/fields.php:621
+#: languages/fields.php:719 src/class-utils.php:101
 msgid "Electric"
 msgstr "Elektrisch"
 
-#: languages/fields.php:267 languages/fields.php:290 languages/fields.php:360
-#: languages/fields.php:488 languages/fields.php:494 languages/fields.php:511
-#: languages/fields.php:545
+#: languages/fields.php:286 languages/fields.php:309 languages/fields.php:386
+#: languages/fields.php:563 languages/fields.php:569 languages/fields.php:586
+#: languages/fields.php:620
 msgid "Manual"
 msgstr "Handbuch"
 
-#: languages/fields.php:268 languages/fields.php:277 languages/fields.php:287
-#: languages/fields.php:293 languages/fields.php:312 languages/fields.php:320
-#: languages/fields.php:328
+#: languages/fields.php:287 languages/fields.php:296 languages/fields.php:306
+#: languages/fields.php:312 languages/fields.php:331 languages/fields.php:339
+#: languages/fields.php:347 languages/fields.php:351
 msgid "Amount"
 msgstr "Anzahl"
 
-#: languages/fields.php:270 languages/fields.php:449
+#: languages/fields.php:289 languages/fields.php:511
 msgid "Interior"
 msgstr "Innenausstattung"
 
-#: languages/fields.php:271
+#: languages/fields.php:290
 msgid "Headroom"
 msgstr "Stehhöhe"
 
-#: languages/fields.php:272
+#: languages/fields.php:291
 msgid "Cabins"
 msgstr "Kabinen"
 
-#: languages/fields.php:273
+#: languages/fields.php:292
 msgid "Master"
 msgstr "Master"
 
-#: languages/fields.php:274
+#: languages/fields.php:293
 msgid "Guest"
 msgstr "Gast"
 
-#: languages/fields.php:275 languages/fields.php:285
+#: languages/fields.php:294 languages/fields.php:304
 msgid "Crew"
 msgstr "Crew"
 
-#: languages/fields.php:279 languages/fields.php:483
+#: languages/fields.php:298 languages/fields.php:558
 msgid "Bow"
 msgstr "Bug"
 
-#: languages/fields.php:281
+#: languages/fields.php:300
 msgid "Berths"
 msgstr "Liegeplätze"
 
-#: languages/fields.php:284
+#: languages/fields.php:303
 msgid "Saloon"
 msgstr "Salon"
 
-#: languages/fields.php:288
+#: languages/fields.php:307
 msgid "Toilets"
 msgstr "Toiletten"
 
-#: languages/fields.php:291
+#: languages/fields.php:310
 msgid "Vacuum"
 msgstr "Vakuum"
 
-#: languages/fields.php:292
+#: languages/fields.php:311
 msgid "Chemical"
 msgstr "Chemisch"
 
-#: languages/fields.php:295
+#: languages/fields.php:314
 msgid "Number of Showers"
 msgstr "Anzahl der Duschen"
 
-#: languages/fields.php:297 languages/fields.php:456
+#: languages/fields.php:316 languages/fields.php:524
 msgid "Heating"
 msgstr "Heizung"
 
-#: languages/fields.php:298
+#: languages/fields.php:317
 msgid "AC"
 msgstr "AC"
 
-#: languages/fields.php:299 languages/fields.php:342
+#: languages/fields.php:318 languages/fields.php:368
 msgid "Gas"
 msgstr "Gas"
 
-#: languages/fields.php:302 languages/fields.php:338
+#: languages/fields.php:321 languages/fields.php:364
 #: templates/content-archive-search.php:106
 msgid "Diesel"
 msgstr "Diesel"
 
-#: languages/fields.php:304
+#: languages/fields.php:323
 msgid "Tanks"
 msgstr "Tanks"
 
-#: languages/fields.php:305
+#: languages/fields.php:324
 msgid "Freshwater Tanks"
 msgstr "Frischwasser-Tanks"
 
-#: languages/fields.php:310 languages/fields.php:318 languages/fields.php:326
+#: languages/fields.php:329 languages/fields.php:337 languages/fields.php:345
 msgid "GRP"
 msgstr "GFK"
 
-#: languages/fields.php:311 languages/fields.php:319 languages/fields.php:327
+#: languages/fields.php:330 languages/fields.php:338 languages/fields.php:346
 msgid "Combined Volume"
 msgstr "Gesamtvolumen"
 
-#: languages/fields.php:313
+#: languages/fields.php:332
 msgid "Wastewater Tanks"
 msgstr "Abwassertanks"
 
-#: languages/fields.php:321
+#: languages/fields.php:340
 msgid "Fuel Tanks"
 msgstr "Treibstofftanks"
 
-#: languages/fields.php:329
+#: languages/fields.php:348
 msgid "Engine Data"
 msgstr "Motor-Daten"
 
-#: languages/fields.php:330
+#: languages/fields.php:349
+msgid "Additional Engine Details"
+msgstr "Zusätzliche Details zum Motor"
+
+#: languages/fields.php:350 languages/fields.php:352
+msgid "Number of Engines"
+msgstr "Anzahl der Propeller"
+
+#: languages/fields.php:353
 msgid "Serial Number"
 msgstr "Seriennummer"
 
-#: languages/fields.php:331
+#: languages/fields.php:354
 msgid "Engine Type"
 msgstr "Motor-Typ"
 
-#: languages/fields.php:332
+#: languages/fields.php:355
 msgid "Inboard"
 msgstr "Innenborder"
 
-#: languages/fields.php:336
+#: languages/fields.php:361
 msgid "Power"
 msgstr "Motorleistung"
 
-#: languages/fields.php:337 templates/content-archive-search.php:103
+#: languages/fields.php:362 templates/content-archive-search.php:103
 msgid "Fuel"
 msgstr "Kraftstoffart"
 
-#: languages/fields.php:339 templates/content-archive-search.php:105
+#: languages/fields.php:363
+msgid "Please choose a fuel type"
+msgstr "Wählen Sie eine Kraftstoffart"
+
+#: languages/fields.php:365 templates/content-archive-search.php:105
 msgid "Gasoline"
 msgstr "Benzin"
 
-#: languages/fields.php:341 languages/fields.php:628 src/class-utils.php:102
+#: languages/fields.php:367 languages/fields.php:720 src/class-utils.php:102
 msgid "Solar"
 msgstr "Solar"
 
-#: languages/fields.php:343
+#: languages/fields.php:369
 msgid "Hybrid"
 msgstr "Hybridantrieb"
 
-#: languages/fields.php:344
+#: languages/fields.php:370
 msgid "Gasoline/Oil"
 msgstr "Benzin/Öl"
 
-#: languages/fields.php:345
+#: languages/fields.php:371
 msgid "Propane"
 msgstr "Propangas"
 
-#: languages/fields.php:346
+#: languages/fields.php:372
 msgid "Ethanol"
 msgstr "Ethanol"
 
-#: languages/fields.php:348
+#: languages/fields.php:374
 msgid "Hours"
 msgstr "Stunden"
 
-#: languages/fields.php:349
+#: languages/fields.php:375
 msgid "Cylinders"
 msgstr "Zylinder"
 
-#: languages/fields.php:350
+#: languages/fields.php:376
 msgid "Strokes"
 msgstr "Hubzahl"
 
-#: languages/fields.php:351
+#: languages/fields.php:377
 msgid "Capacity"
 msgstr "Kapazität"
 
-#: languages/fields.php:352
+#: languages/fields.php:378
 msgid "Weight"
 msgstr "Gewicht"
 
-#: languages/fields.php:353
+#: languages/fields.php:379
 msgid "Cooling System"
 msgstr "Kühlsystem"
 
-#: languages/fields.php:354
+#: languages/fields.php:380
 msgid "Seawater"
 msgstr "Meerwasser"
 
-#: languages/fields.php:355
+#: languages/fields.php:381
 msgid "Keel"
 msgstr "Kiel"
 
-#: languages/fields.php:356
+#: languages/fields.php:382
 msgid "Two Circuits"
 msgstr "Doppelsteueranlage"
 
-#: languages/fields.php:357
+#: languages/fields.php:383
 msgid "Built-in"
 msgstr "Eingebaut"
 
-#: languages/fields.php:358
+#: languages/fields.php:384
 msgid "Starter Type"
 msgstr "Starttyp"
 
-#: languages/fields.php:361
+#: languages/fields.php:387
 msgid "Electric / Manual"
 msgstr "Elektrisch / Manuell"
 
-#: languages/fields.php:363
+#: languages/fields.php:389
 msgid "Trailer Details"
 msgstr "Anhänger Details"
 
-#: languages/fields.php:364
+#: languages/fields.php:390
 msgid "Trailer Type"
 msgstr "Anhänger Typ"
 
-#: languages/fields.php:365
+#: languages/fields.php:391
 msgid "Road"
 msgstr "Straße"
 
-#: languages/fields.php:366
+#: languages/fields.php:392
 msgid "Harbour"
 msgstr "Hafen"
 
-#: languages/fields.php:367
+#: languages/fields.php:393
 msgid "Storage"
 msgstr "Stauraum"
 
-#: languages/fields.php:370
+#: languages/fields.php:396
 msgid "Keelboat"
 msgstr "Kielboot"
 
-#: languages/fields.php:374 languages/fields.php:568 languages/fields.php:585
+#: languages/fields.php:400 languages/fields.php:655 languages/fields.php:673
 #: src/class-utils.php:42 src/class-utils.php:59
 msgid "Catamaran"
 msgstr "Katamaran"
 
-#: languages/fields.php:375
+#: languages/fields.php:401
 msgid "Canoe / Rowing"
 msgstr "Kanu/Kayak"
 
-#: languages/fields.php:382
+#: languages/fields.php:410
 msgid "Axles"
 msgstr "Achsen"
 
-#: languages/fields.php:383
+#: languages/fields.php:411
 msgid "braked"
 msgstr "Gebremst"
 
-#: languages/fields.php:384
+#: languages/fields.php:412
 msgid "Is the trailer braked?"
 msgstr "Ist der Anhänger gebremst?"
 
-#: languages/fields.php:386
+#: languages/fields.php:414
 msgid "Trailer Dimensions"
 msgstr "Trailer-Abmessungen"
 
-#: languages/fields.php:387 languages/fields.php:409
+#: languages/fields.php:415 languages/fields.php:438
 msgid "Length"
 msgstr "Länge"
 
-#: languages/fields.php:388 languages/fields.php:410
+#: languages/fields.php:416 languages/fields.php:439
 msgid "Width"
 msgstr "Breite"
 
-#: languages/fields.php:389
+#: languages/fields.php:417
 msgid "Axle Width"
 msgstr "Achsenbreite"
 
-#: languages/fields.php:390
+#: languages/fields.php:418
 msgid "Curb Weight"
 msgstr "Leergewicht"
 
-#: languages/fields.php:391
+#: languages/fields.php:419
 msgid "Payload"
 msgstr "Nutzlast"
 
-#: languages/fields.php:392
+#: languages/fields.php:420
 msgid "Total Weight"
 msgstr "Gesamtgewicht"
 
-#: languages/fields.php:394
+#: languages/fields.php:422
 msgid "Mooring Details"
 msgstr "Details zum Liegeplatz"
 
-#: languages/fields.php:395
+#: languages/fields.php:423
 msgid "Mooring Type"
 msgstr "Liegeplatz-Typ"
 
-#: languages/fields.php:396
+#: languages/fields.php:424
 msgid "Jetty"
 msgstr "Landungsbrücke"
 
-#: languages/fields.php:397
+#: languages/fields.php:425
 msgid "Buoy"
 msgstr "Rettungsboje"
 
-#: languages/fields.php:398
+#: languages/fields.php:426
 msgid "Swimming"
 msgstr "Schwimmend"
 
-#: languages/fields.php:399
+#: languages/fields.php:427
 msgid "Heated Hangar"
 msgstr "Beheizter Hangar"
 
-#: languages/fields.php:400
+#: languages/fields.php:428
 msgid "Unheated Hangar"
 msgstr "Ungeheizter Hangar"
 
-#: languages/fields.php:401
+#: languages/fields.php:429
 msgid "Outside"
 msgstr "Außen"
 
-#: languages/fields.php:402
+#: languages/fields.php:430
 msgid "Title"
 msgstr "Titel"
 
-#: languages/fields.php:403
+#: languages/fields.php:431
 msgid "City"
 msgstr "Stadt"
 
-#: languages/fields.php:404
+#: languages/fields.php:432
+msgid "Only City, not country or county."
+msgstr "Nur Stadt, nicht Land oder Kreis."
+
+#: languages/fields.php:433
 msgid "Marina Name"
 msgstr "Name des Yachthafens"
 
-#: languages/fields.php:405
+#: languages/fields.php:434
 msgid "Land included with berth"
 msgstr "Land mit Liegeplatz inbegriffen"
 
-#: languages/fields.php:406
+#: languages/fields.php:435
 msgid "Year Until"
 msgstr "Jahr bis"
 
-#: languages/fields.php:407
+#: languages/fields.php:436
 msgid "Year the mooring available till"
 msgstr "Liegeplatz verfügbar bis Jahr"
 
-#: languages/fields.php:408
+#: languages/fields.php:437
 msgid "Mooring Dimensions"
 msgstr "Abmessungen der Liegeplätze"
 
-#: languages/fields.php:411
+#: languages/fields.php:440
 msgid "Water Depth"
 msgstr "Wassertiefe"
 
-#: languages/fields.php:412
+#: languages/fields.php:441
 msgid "Max Boat Draught"
 msgstr "Max. Tiefgang des Bootes"
 
-#: languages/fields.php:413
+#: languages/fields.php:442
 msgid "Equipment"
 msgstr "Ausstattung"
 
-#: languages/fields.php:414
+#: languages/fields.php:443
 msgid "Navigation"
 msgstr "Navigation"
 
-#: languages/fields.php:415
+#: languages/fields.php:444
 msgid "Autopilot"
 msgstr "Autopilot"
 
-#: languages/fields.php:416
+#: languages/fields.php:446
 msgid "Automatic Steering Gear"
 msgstr "Automatisches Lenkgetriebe"
 
-#: languages/fields.php:417
+#: languages/fields.php:448
 msgid "Radar"
 msgstr "Radar"
 
-#: languages/fields.php:418
+#: languages/fields.php:450
 msgid "VHF radio"
 msgstr "UKW-Funk"
 
-#: languages/fields.php:419
+#: languages/fields.php:452
 msgid "GPS"
 msgstr "GPS"
 
-#: languages/fields.php:420
+#: languages/fields.php:454
 msgid "Plotter"
 msgstr "Kartenplotter"
 
-#: languages/fields.php:421
+#: languages/fields.php:456
 msgid "Compass"
 msgstr "Kompass"
 
-#: languages/fields.php:422
+#: languages/fields.php:458
 msgid "Echo Sounder"
 msgstr "Echolot"
 
-#: languages/fields.php:423
+#: languages/fields.php:460
 msgid "Speed Log"
 msgstr "Geschwindigkeitsanzeiger"
 
-#: languages/fields.php:424
+#: languages/fields.php:462
 msgid "Wind Indicator"
 msgstr "Windmessanlage"
 
-#: languages/fields.php:425
+#: languages/fields.php:464
 msgid "Fish Finder"
 msgstr "Fischfinder"
 
-#: languages/fields.php:426
+#: languages/fields.php:466
 msgid "AIS - Automatic Identification System"
 msgstr "AIS - Automatisches Identifikationssystem"
 
-#: languages/fields.php:427
+#: languages/fields.php:468
 msgid "SSB - single side band"
 msgstr "SSB Radio"
 
-#: languages/fields.php:428
+#: languages/fields.php:470
 msgid "NAVTEX"
 msgstr "NAVTEX"
 
-#: languages/fields.php:429
+#: languages/fields.php:472
 msgid "On-board Computer"
 msgstr "Bordcomputer"
 
-#: languages/fields.php:430
+#: languages/fields.php:474
 msgid "Position Lights"
 msgstr "Positionslichter"
 
-#: languages/fields.php:431
+#: languages/fields.php:476
 msgid "Rudder Angle Indicator"
 msgstr "Ruderstandsanzeige"
 
-#: languages/fields.php:432
+#: languages/fields.php:478
 msgid "Rev Indicator"
 msgstr "Reff Anzeige"
 
-#: languages/fields.php:433
+#: languages/fields.php:480
 msgid "Technical"
 msgstr "Technik"
 
-#: languages/fields.php:434
+#: languages/fields.php:481
 msgid "Battery"
 msgstr "Batterie"
 
-#: languages/fields.php:435
+#: languages/fields.php:483
 msgid "Battery Charger"
 msgstr "Batterieladegerät"
 
-#: languages/fields.php:436
+#: languages/fields.php:485
 msgid "Main Circuit Breaker"
 msgstr "Hauptschalter"
 
-#: languages/fields.php:437
+#: languages/fields.php:487
 msgid "Shore Supply 220V"
 msgstr "220V Landanschluss"
 
-#: languages/fields.php:438
+#: languages/fields.php:489
 msgid "Generator"
 msgstr "Generator"
 
-#: languages/fields.php:439
+#: languages/fields.php:491
 msgid "Solar Panels"
 msgstr "Solarpanel"
 
-#: languages/fields.php:440
+#: languages/fields.php:493
 msgid "Inverter"
 msgstr "Inverser"
 
-#: languages/fields.php:441
+#: languages/fields.php:495
 msgid "Rectifier"
 msgstr "Gleichrichter"
 
-#: languages/fields.php:442
+#: languages/fields.php:497
 msgid "Hour Meter"
 msgstr "Stundenmesser"
 
-#: languages/fields.php:443
+#: languages/fields.php:499
 msgid "Searchlight"
 msgstr "Suchscheinwerfer"
 
-#: languages/fields.php:444
+#: languages/fields.php:501
 msgid "Bow Floodlight"
 msgstr "Bugscheinwerfer"
 
-#: languages/fields.php:445
+#: languages/fields.php:503
 msgid "Under Water Light"
 msgstr "Unterwasserlicht"
 
-#: languages/fields.php:446
+#: languages/fields.php:505
 msgid "Under Water Paint"
 msgstr "Unterwasseranstrich"
 
-#: languages/fields.php:447
+#: languages/fields.php:507
 msgid "Davits"
 msgstr "Davids"
 
-#: languages/fields.php:448
+#: languages/fields.php:509
 msgid "Warm Water System"
 msgstr "Warmwasseranlage"
 
-#: languages/fields.php:450
+#: languages/fields.php:512
 msgid "Microwave"
 msgstr "Mikrowelle"
 
-#: languages/fields.php:451
+#: languages/fields.php:514
 msgid "Sink"
 msgstr "Waschbecken"
 
-#: languages/fields.php:452
+#: languages/fields.php:516
 msgid "Dishwasher"
 msgstr "Geschirrspüler"
 
-#: languages/fields.php:453
+#: languages/fields.php:518
 msgid "Watermaker"
 msgstr "Wasseraufbereiter"
 
-#: languages/fields.php:454
+#: languages/fields.php:520
 msgid "Washing Machine"
 msgstr "Waschmaschine"
 
-#: languages/fields.php:455
+#: languages/fields.php:522
 msgid "Dryer"
 msgstr "Trockner"
 
-#: languages/fields.php:457
+#: languages/fields.php:526
 msgid "Coolbox"
 msgstr "Kühlbox"
 
-#: languages/fields.php:458
+#: languages/fields.php:528
 msgid "Icemaker"
 msgstr "Eismaschine"
 
-#: languages/fields.php:459
+#: languages/fields.php:530
 msgid "Grill / Barbecue"
 msgstr "Grill"
 
-#: languages/fields.php:460
+#: languages/fields.php:532
 msgid "Extractor Hood"
 msgstr "Dunstabzugshaube"
 
-#: languages/fields.php:461
+#: languages/fields.php:534
 msgid "Bathtub"
 msgstr "Badewanne"
 
-#: languages/fields.php:462
+#: languages/fields.php:536
 msgid "Jacuzzi / Whirlpool"
 msgstr "Jacuzzi / Whirlpool"
 
-#: languages/fields.php:463
+#: languages/fields.php:538
 msgid "Entertainment"
 msgstr "Entertainment"
 
-#: languages/fields.php:464
+#: languages/fields.php:539
 msgid "Radio"
 msgstr "Radio"
 
-#: languages/fields.php:465
+#: languages/fields.php:540
 msgid "TV"
 msgstr "TV"
 
-#: languages/fields.php:466
+#: languages/fields.php:541
 msgid "DVD Player"
 msgstr "DVD-Abspielgerät"
 
-#: languages/fields.php:467
+#: languages/fields.php:542
 msgid "CD Player"
 msgstr "CD"
 
-#: languages/fields.php:468
+#: languages/fields.php:543
 msgid "Home Cinema"
 msgstr "Heimkino"
 
-#: languages/fields.php:469
+#: languages/fields.php:544
 msgid "MP3 Player"
 msgstr "MP3 Player"
 
-#: languages/fields.php:470
+#: languages/fields.php:545
 msgid "Bluetooth Connector"
 msgstr "Bluetooth Verbindung"
 
-#: languages/fields.php:471
+#: languages/fields.php:546
 msgid "Cockpit Speakers"
 msgstr "Lautsprecher im Cockpit"
 
-#: languages/fields.php:472
+#: languages/fields.php:547
 msgid "TV Antenna"
 msgstr "TV-Antenne"
 
-#: languages/fields.php:473
+#: languages/fields.php:548
 msgid "Has Antenna"
 msgstr "Mit Antenne"
 
-#: languages/fields.php:474
+#: languages/fields.php:549
 msgid "Sat"
 msgstr "Satellit"
 
-#: languages/fields.php:475
+#: languages/fields.php:550
 msgid "Sat Auto Search"
 msgstr "Automatische Sat-Suche"
 
-#: languages/fields.php:476
+#: languages/fields.php:551
 msgid "DVBT"
 msgstr "DVB-T"
 
-#: languages/fields.php:477
+#: languages/fields.php:552
 msgid "Satellite Phone"
 msgstr "Satellitentelefon"
 
-#: languages/fields.php:478
+#: languages/fields.php:553
 msgid "Satellite Internet"
 msgstr "Satelliten Internet"
 
-#: languages/fields.php:479 languages/fields.php:591 src/class-utils.php:65
+#: languages/fields.php:554 languages/fields.php:679 src/class-utils.php:65
 msgid "Deck"
 msgstr "Deck"
 
-#: languages/fields.php:480
+#: languages/fields.php:555
 msgid "Deck Showers"
 msgstr "Deckduschen"
 
-#: languages/fields.php:481
+#: languages/fields.php:556
 msgid "Deck Shower"
 msgstr "Deckdusche"
 
-#: languages/fields.php:484
+#: languages/fields.php:559
 msgid "Warm"
 msgstr "Warm"
 
-#: languages/fields.php:485
+#: languages/fields.php:560
 msgid "Bathing Platform"
 msgstr "Badeplattform"
 
-#: languages/fields.php:486
+#: languages/fields.php:561
 msgid "Has Bathing Platform"
 msgstr "Hat Badeplattform"
 
-#: languages/fields.php:491
+#: languages/fields.php:566
 msgid "Bathing Ladder"
 msgstr "Badeleiter"
 
-#: languages/fields.php:492
+#: languages/fields.php:567
 msgid "Gangway"
 msgstr "Gangway"
 
-#: languages/fields.php:493
+#: languages/fields.php:568
 msgid "Has Gangway"
 msgstr "Hat Gangway"
 
-#: languages/fields.php:497
+#: languages/fields.php:572
 msgid "Pulpit"
 msgstr "Bugkorb"
 
-#: languages/fields.php:498
+#: languages/fields.php:573
 msgid "Pushpit"
 msgstr "Heckkorb"
 
-#: languages/fields.php:499
+#: languages/fields.php:574
 msgid "Guard Rail"
 msgstr "Leitplanke"
 
-#: languages/fields.php:500
+#: languages/fields.php:575
 msgid "Stern Rail"
 msgstr "Heckreling"
 
-#: languages/fields.php:501
+#: languages/fields.php:576
 msgid "Teak Deck"
 msgstr "Teakdeck"
 
-#: languages/fields.php:502
+#: languages/fields.php:577
 msgid "Teak Cockpit"
 msgstr "Teak Cockpit"
 
-#: languages/fields.php:503
+#: languages/fields.php:578
 msgid "Cockpit Table"
 msgstr "Cockpittisch"
 
-#: languages/fields.php:504
+#: languages/fields.php:579
 msgid "Deck Cleaning System"
 msgstr "Deckswaschanlage"
 
-#: languages/fields.php:505
+#: languages/fields.php:580
 msgid "Wetbar"
 msgstr "Wetbar"
 
-#: languages/fields.php:506
+#: languages/fields.php:581
 msgid "Jet Ski"
 msgstr "Jet-Ski"
 
-#: languages/fields.php:507
+#: languages/fields.php:582
 msgid "Tender Garage"
 msgstr "Tender Garage"
 
-#: languages/fields.php:508
+#: languages/fields.php:583
 msgid "Heliport"
 msgstr "Heliport"
 
-#: languages/fields.php:509
+#: languages/fields.php:584
 msgid "Boat Crane"
 msgstr "Bootskran"
 
-#: languages/fields.php:510
+#: languages/fields.php:585
 msgid "Has Boat Crane"
 msgstr "Hat Bootskran"
 
-#: languages/fields.php:513
+#: languages/fields.php:588
 msgid "Equipment Rack"
 msgstr "Stauraum"
 
-#: languages/fields.php:514
+#: languages/fields.php:589
 msgid "Has Equipment Rack"
 msgstr "Hat Ausrüstungsständer"
 
-#: languages/fields.php:516
+#: languages/fields.php:591
 msgid "Suncushions"
 msgstr "Sonnenkissen"
 
-#: languages/fields.php:517
+#: languages/fields.php:592
 msgid "Covers"
 msgstr "Abdeckungen"
 
-#: languages/fields.php:518
+#: languages/fields.php:593
 msgid "Spray Hood"
 msgstr "Spritzhaube"
 
-#: languages/fields.php:519
+#: languages/fields.php:594
 msgid "Bimini Top"
 msgstr "Bimini-Top"
 
-#: languages/fields.php:520
+#: languages/fields.php:595
 msgid "Winter Cover"
 msgstr "Winterpersenning"
 
-#: languages/fields.php:521
+#: languages/fields.php:596
 msgid "Harbour Cover"
 msgstr "Hafen-Persenning"
 
-#: languages/fields.php:522
+#: languages/fields.php:597
 msgid "Full Cover"
 msgstr "Ganzverdeck"
 
-#: languages/fields.php:523
+#: languages/fields.php:598
 msgid "Transport Cover"
 msgstr "Transportpersenning"
 
-#: languages/fields.php:524
+#: languages/fields.php:599
 msgid "Camper Canvas"
 msgstr "Camperverdeck"
 
-#: languages/fields.php:525
+#: languages/fields.php:600
 msgid "Cockpit Cover"
 msgstr "Cockpit-Abdeckung"
 
-#: languages/fields.php:526
+#: languages/fields.php:601
 msgid "Flybridge Cover"
 msgstr "Flybridge-Persenning"
 
-#: languages/fields.php:527
+#: languages/fields.php:602
 msgid "Windscreen Cover"
 msgstr "Scheibenabdeckung"
 
-#: languages/fields.php:528
+#: languages/fields.php:603
 msgid "Prop Cover"
 msgstr "Propellerhaube"
 
-#: languages/fields.php:529
+#: languages/fields.php:604
 msgid "Sail Cover"
 msgstr "Segelpersenning"
 
-#: languages/fields.php:530
+#: languages/fields.php:605
 msgid "Sun Shades"
 msgstr "Sonnensegel"
 
-#: languages/fields.php:531
+#: languages/fields.php:606
 msgid "Sun Shade"
 msgstr "Sonnensegel"
 
-#: languages/fields.php:532
+#: languages/fields.php:607
 msgid "Fly"
 msgstr "Flybridge"
 
-#: languages/fields.php:533
+#: languages/fields.php:608
 msgid "Aftdeck"
 msgstr "Achterdeck"
 
-#: languages/fields.php:534
+#: languages/fields.php:609
 msgid "Safety"
 msgstr "Sicherheit"
 
-#: languages/fields.php:535
+#: languages/fields.php:610
 msgid "Fire Extinguish System"
 msgstr "Feuerlösch-Anlage"
 
-#: languages/fields.php:536
+#: languages/fields.php:611
 msgid "Fire Extinguisher"
 msgstr "Feuerlöscher"
 
-#: languages/fields.php:537
+#: languages/fields.php:612
 msgid "Life Raft"
 msgstr "Rettungsinsel"
 
-#: languages/fields.php:538
+#: languages/fields.php:613
 msgid "Life Jackets"
 msgstr "Rettungswesten"
 
-#: languages/fields.php:539
+#: languages/fields.php:614
 msgid "Life Belts"
 msgstr "Rettungsgürtel"
 
-#: languages/fields.php:540
+#: languages/fields.php:615
 msgid "Dan Buoy"
 msgstr "Rettungsboje"
 
-#: languages/fields.php:541
+#: languages/fields.php:616
 msgid "Epirb"
 msgstr "EPIRB"
 
-#: languages/fields.php:542
+#: languages/fields.php:617
 msgid "Radar Reflector"
 msgstr "Radarreflektor"
 
-#: languages/fields.php:543
+#: languages/fields.php:618
 msgid "Bilge Pump"
 msgstr "Bilgenpumpe"
 
-#: languages/fields.php:544
+#: languages/fields.php:619
 msgid "Has Bilge Pump"
 msgstr "Mit Bilgenpumpe"
 
-#: languages/fields.php:547
+#: languages/fields.php:622
 msgid "Automatic"
 msgstr "Automatisch"
 
-#: languages/fields.php:548
+#: languages/fields.php:623
 msgid "Self Bailing Valve"
 msgstr "Selbstlenzventil"
 
-#: languages/fields.php:549
+#: languages/fields.php:624
 msgid "Mob System"
 msgstr "MOB System"
 
-#: languages/fields.php:550
+#: languages/fields.php:625
 msgid "Alarm"
 msgstr "Alarm"
 
-#: languages/fields.php:551
+#: languages/fields.php:626
 msgid "Bilge Alarm"
 msgstr "Bilgenalarm"
 
-#: languages/fields.php:552
+#: languages/fields.php:627
 msgid "Gas Detector"
 msgstr "Gasmelder"
 
-#: languages/fields.php:553
+#: languages/fields.php:628
 msgid "Smoke Detector"
 msgstr "Rauchmelder"
 
-#: languages/fields.php:554
+#: languages/fields.php:629
 msgid "Emergency Tiller"
 msgstr "Notpinne"
 
-#: languages/fields.php:555
+#: languages/fields.php:630
 msgid "Spare Propeller"
 msgstr "Ersatzpropeller"
 
-#: languages/fields.php:556
+#: languages/fields.php:631
 msgid "Fog Horn"
 msgstr "Nebelhorn"
 
-#: languages/fields.php:557
+#: languages/fields.php:632
 msgid "Flagss"
 msgstr "Flaggen"
 
-#: languages/fields.php:558
+#: languages/fields.php:633
 msgid "Distress Signals"
 msgstr "Notsignalmittel"
 
-#: languages/fields.php:559
+#: languages/fields.php:634
 msgid "Jacklines"
 msgstr "Strecktau"
 
-#: languages/fields.php:560
+#: languages/fields.php:635
 msgid "Railing Net"
 msgstr "Relingsnetz"
 
-#: languages/fields.php:561
+#: languages/fields.php:636
 msgid "Safe"
 msgstr "Tresor"
 
-#: languages/fields.php:562
+#: languages/fields.php:637
 msgid "Layout"
 msgstr "Layout"
 
-#: languages/fields.php:563
+#: languages/fields.php:638
 msgid "Inside Steering"
 msgstr "Steuerstand innen"
 
-#: languages/fields.php:564
+#: languages/fields.php:639
 msgid "Outside Steering"
 msgstr "Steuerstand außen"
 
-#: languages/fields.php:565
+#: languages/fields.php:640
+msgid "Back2back Seats"
+msgstr "Back-to-back Sitze"
+
+#: languages/fields.php:641
 msgid "Single Front Seat"
 msgstr "Einzelsitze (Vorne)"
 
-#: languages/fields.php:567 languages/fields.php:583 src/class-utils.php:41
+#: languages/fields.php:642
+msgid "Media"
+msgstr "Medien"
+
+#: languages/fields.php:643
+msgid "Images"
+msgstr "Bilder"
+
+#: languages/fields.php:644
+msgid "Upload Images"
+msgstr "Bilder hochladen"
+
+#: languages/fields.php:645
+msgid "Panorama Images"
+msgstr "Panorama-Bilder"
+
+#: languages/fields.php:646
+msgid "Upload Paranorama Images"
+msgstr "Paranorama-Bilder hochladen"
+
+#: languages/fields.php:647
+msgid "Videos"
+msgstr "Videos"
+
+#: languages/fields.php:648
+msgid "Video URL"
+msgstr "Video URL"
+
+#: languages/fields.php:649
+msgid "Panorama Videos"
+msgstr "Panorama-Videos"
+
+#: languages/fields.php:650
+msgid "Panorama URL"
+msgstr "Panorama URL"
+
+#: languages/fields.php:651 templates/content-single-listing.php:247
+msgid "Documents"
+msgstr "Dokumente"
+
+#: languages/fields.php:652
+msgid "Upload Documents"
+msgstr "Dokumente hochladen"
+
+#: languages/fields.php:653
+msgid "sailboats"
+msgstr "Segelboot"
+
+#: languages/fields.php:654 languages/fields.php:671 src/class-utils.php:41
 #: src/class-utils.php:57
 msgid "Cabin"
 msgstr "Kabine"
 
-#: languages/fields.php:569 languages/fields.php:587 src/class-utils.php:43
+#: languages/fields.php:656 languages/fields.php:675 src/class-utils.php:43
 #: src/class-utils.php:61
 msgid "Classic"
 msgstr "Klassisch"
 
-#: languages/fields.php:570 src/class-utils.php:44
+#: languages/fields.php:657 src/class-utils.php:44
 msgid "Cruising"
 msgstr "Reisegeschwindigkeit"
 
-#: languages/fields.php:571 src/class-utils.php:45
+#: languages/fields.php:658 src/class-utils.php:45
 msgid "Daysailer"
 msgstr "Daysailer"
 
-#: languages/fields.php:572 src/class-utils.php:46
+#: languages/fields.php:659 src/class-utils.php:46
 msgid "Decksaloon"
 msgstr "Decksalon"
 
-#: languages/fields.php:573 languages/fields.php:618 src/class-utils.php:47
+#: languages/fields.php:660 languages/fields.php:708 src/class-utils.php:47
 #: src/class-utils.php:92
 msgid "Dinghy"
 msgstr "Beiboot"
 
-#: languages/fields.php:575 src/class-utils.php:49
+#: languages/fields.php:662 src/class-utils.php:49
 msgid "Gulet"
 msgstr "Gulet"
 
-#: languages/fields.php:577 src/class-utils.php:51
+#: languages/fields.php:664 src/class-utils.php:51
 msgid "Motorsailer"
 msgstr "Motorsegler"
 
-#: languages/fields.php:578 src/class-utils.php:52
+#: languages/fields.php:665 src/class-utils.php:52
 msgid "Racing"
 msgstr "Racing"
 
-#: languages/fields.php:579 src/class-utils.php:53
+#: languages/fields.php:666 src/class-utils.php:53
 msgid "Trimaran"
 msgstr "Trimaran"
 
-#: languages/fields.php:580 languages/fields.php:613 src/class-utils.php:54
+#: languages/fields.php:667 languages/fields.php:701 src/class-utils.php:54
 #: src/class-utils.php:87
 msgid "Yacht"
 msgstr "Yacht"
 
-#: languages/fields.php:581 src/class-utils.php:55
+#: languages/fields.php:668
+msgid "powerboats"
+msgstr "Motorboot"
+
+#: languages/fields.php:669 src/class-utils.php:55
 msgid "Airboat"
 msgstr "Luftkissenboot"
 
-#: languages/fields.php:582 src/class-utils.php:56
+#: languages/fields.php:670 src/class-utils.php:56
 msgid "Bowrider"
 msgstr "Bowrider"
 
-#: languages/fields.php:584 src/class-utils.php:58
+#: languages/fields.php:672 src/class-utils.php:58
 msgid "Cargo"
 msgstr "Fracht"
 
-#: languages/fields.php:586 src/class-utils.php:60
+#: languages/fields.php:674 src/class-utils.php:60
 msgid "Centerconsole"
 msgstr "Mittelkonsole"
 
-#: languages/fields.php:588 src/class-utils.php:62
+#: languages/fields.php:676 src/class-utils.php:62
 msgid "Cruiser"
 msgstr "Cruiser"
 
-#: languages/fields.php:589 src/class-utils.php:63
+#: languages/fields.php:677 src/class-utils.php:63
 msgid "Cuddycabin"
 msgstr "Cuddycabin"
 
-#: languages/fields.php:590 src/class-utils.php:64
+#: languages/fields.php:678 src/class-utils.php:64
 msgid "Daycruiser"
 msgstr "Daycruiser"
 
-#: languages/fields.php:592 src/class-utils.php:66
+#: languages/fields.php:680 src/class-utils.php:66
 msgid "Diving"
 msgstr "Tauchen"
 
-#: languages/fields.php:593 src/class-utils.php:67
+#: languages/fields.php:681 src/class-utils.php:67
 msgid "Dualconsole"
 msgstr "Dualconsole"
 
-#: languages/fields.php:594 languages/fields.php:619 src/class-utils.php:68
+#: languages/fields.php:682 languages/fields.php:709 src/class-utils.php:68
 #: src/class-utils.php:93
 msgid "Fishing"
 msgstr "Fischen"
 
-#: languages/fields.php:595 src/class-utils.php:69
+#: languages/fields.php:683 src/class-utils.php:69
 msgid "Floatinghome"
 msgstr "Floatinghome"
 
-#: languages/fields.php:596 src/class-utils.php:70
+#: languages/fields.php:684 src/class-utils.php:70
 msgid "Hardtop"
 msgstr "Hardtop"
 
-#: languages/fields.php:597 src/class-utils.php:71
+#: languages/fields.php:685 src/class-utils.php:71
 msgid "Highperformance"
 msgstr "Leistungsstark"
 
-#: languages/fields.php:598 src/class-utils.php:72
+#: languages/fields.php:686 src/class-utils.php:72
 msgid "Houseboat"
 msgstr "Hausboot"
 
-#: languages/fields.php:600 src/class-utils.php:74
+#: languages/fields.php:688 src/class-utils.php:74
 msgid "Narrow"
 msgstr "Narrow"
 
-#: languages/fields.php:601 src/class-utils.php:75
+#: languages/fields.php:689 src/class-utils.php:75
 msgid "Passenger"
 msgstr "Passagiere"
 
-#: languages/fields.php:603 src/class-utils.php:77
+#: languages/fields.php:691 src/class-utils.php:77
 msgid "Pontoon"
 msgstr "Pontoon-Boot"
 
-#: languages/fields.php:604 src/class-utils.php:78
+#: languages/fields.php:692 src/class-utils.php:78
 msgid "Runabout"
 msgstr "Runabout"
 
-#: languages/fields.php:605 src/class-utils.php:79
+#: languages/fields.php:693 src/class-utils.php:79
 msgid "Sloep"
 msgstr "Sleep"
 
-#: languages/fields.php:606 src/class-utils.php:80
+#: languages/fields.php:694 src/class-utils.php:80
 msgid "Skiandwake"
 msgstr "Skiandwake"
 
-#: languages/fields.php:607 src/class-utils.php:81
+#: languages/fields.php:695 src/class-utils.php:81
 msgid "Sport"
 msgstr "Sport"
 
-#: languages/fields.php:608 src/class-utils.php:82
+#: languages/fields.php:696 src/class-utils.php:82
 msgid "Submarine"
 msgstr "U-Boot"
 
-#: languages/fields.php:609 src/class-utils.php:83
+#: languages/fields.php:697 src/class-utils.php:83
 msgid "Trawler"
 msgstr "Trawler"
 
-#: languages/fields.php:610 src/class-utils.php:84
+#: languages/fields.php:698 src/class-utils.php:84
 msgid "Power Trimaran"
 msgstr "Power Trimaran"
 
-#: languages/fields.php:611 src/class-utils.php:85
+#: languages/fields.php:699 src/class-utils.php:85
 msgid "Utility"
 msgstr "Utility"
 
-#: languages/fields.php:612 src/class-utils.php:86
+#: languages/fields.php:700 src/class-utils.php:86
 msgid "Walkaround"
 msgstr "Walkaround"
 
-#: languages/fields.php:614 src/class-utils.php:88
+#: languages/fields.php:702
+msgid "inflatables"
+msgstr "Aufblasbar"
+
+#: languages/fields.php:703 src/class-utils.php:88
 msgid "RIB"
 msgstr "RIB"
 
-#: languages/fields.php:615 src/class-utils.php:89
+#: languages/fields.php:704 src/class-utils.php:89
 msgid "Soft"
 msgstr "Soft"
 
-#: languages/fields.php:616 src/class-utils.php:90
+#: languages/fields.php:705 src/class-utils.php:90
 msgid "Rafting"
 msgstr "Rafting"
 
-#: languages/fields.php:617 src/class-utils.php:91
+#: languages/fields.php:706
+msgid "small-boats"
+msgstr "Kleines Boot"
+
+#: languages/fields.php:707 src/class-utils.php:91
 msgid "Canoe"
 msgstr "Kanu"
 
-#: languages/fields.php:620 src/class-utils.php:94
+#: languages/fields.php:710 src/class-utils.php:94
 msgid "Kayak"
 msgstr "Kajak"
 
-#: languages/fields.php:621 src/class-utils.php:95
+#: languages/fields.php:711 src/class-utils.php:95
 msgid "Pedal"
 msgstr "Pedal"
 
-#: languages/fields.php:622 src/class-utils.php:96
+#: languages/fields.php:712 src/class-utils.php:96
 msgid "Rowing"
 msgstr "Rowing"
 
-#: languages/fields.php:624 src/class-utils.php:98
+#: languages/fields.php:713
+msgid "personal water craft"
+msgstr ""
+
+#: languages/fields.php:715 src/class-utils.php:98
 msgid "Gadget"
 msgstr "Gadget"
 
-#: languages/fields.php:626 src/class-utils.php:100
+#: languages/fields.php:716
+msgid "conditional"
+msgstr "Zustand"
+
+#: languages/fields.php:718 src/class-utils.php:100
 msgid "Mega Yacht"
 msgstr "Mega-Yacht"
 
-#: languages/fields.php:632 src/class-utils.php:106
+#: languages/fields.php:724 src/class-utils.php:106
 msgid "Offshore"
 msgstr "Offshore"
 
-#: languages/fields.php:633 src/class-utils.php:107
+#: languages/fields.php:725 src/class-utils.php:107
 msgid "Lobster"
 msgstr "Lobster"
 
-#: languages/fields.php:634 src/class-utils.php:108
+#: languages/fields.php:726 src/class-utils.php:108
 msgid "Crabber"
 msgstr "Kutter"
 
-#: languages/fields.php:635 src/class-utils.php:109
+#: languages/fields.php:727 src/class-utils.php:109
 msgid "Dragger"
 msgstr "Dragger"
 
-#: languages/fields.php:636 src/class-utils.php:110
+#: languages/fields.php:728 src/class-utils.php:110
 msgid "Longliner"
 msgstr "Longliner"
 
-#: languages/fields.php:637 src/class-utils.php:111
+#: languages/fields.php:729 src/class-utils.php:111
 msgid "Bay Boat"
 msgstr "Angelboot"
 
-#: languages/fields.php:638 src/class-utils.php:112
+#: languages/fields.php:730 src/class-utils.php:112
 msgid "Duck Boat"
 msgstr "Duck Boat"
 
-#: languages/fields.php:639 src/class-utils.php:113
+#: languages/fields.php:731 src/class-utils.php:113
 msgid "Tanker"
 msgstr "Tanker"
 
-#: languages/fields.php:640 src/class-utils.php:114
+#: languages/fields.php:732 src/class-utils.php:114
 msgid "Container Ship"
 msgstr "Container-Schiff"
+
+#: languages/fields.php:733
+msgid "Your Import Has Finished"
+msgstr ""
+
+#: languages/fields.php:734
+msgid "Your import has just finished. Here are the results:"
+msgstr ""
+
+#: languages/fields.php:735
+msgid "Date"
+msgstr "Datum"
+
+#: languages/fields.php:736
+msgid "Source"
+msgstr "Quelle"
+
+#: languages/fields.php:737
+msgid "Published"
+msgstr "Veröffentlicht"
+
+#: languages/fields.php:738
+msgid "Drafts"
+msgstr "Entwürfe"
+
+#: languages/fields.php:739
+msgid ""
+"The following listings have some issues. They have been saved as drafts. "
+"Please review them and amend any issues before they can be published."
+msgstr ""
+
+#: languages/fields.php:740
+msgid "If you have any questions, simply reply to this email!"
+msgstr ""
+"Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach auf "
+"diese E-Mail!"
+
+#: languages/fields.php:741
+msgid "Welcome back! Please signin to continue."
+msgstr "Willkommen zurück! Bitte melden Sie sich an, um fortzufahren."
+
+#: languages/fields.php:742
+msgid "Forgot password?"
+msgstr "Haben Sie Ihr Passwort vergessen?"
+
+#: languages/fields.php:743
+msgid "Sign In"
+msgstr "Einloggen"
+
+#: languages/fields.php:744
+msgid "Recover Password"
+msgstr "Passwort erstellen"
+
+#: languages/fields.php:745
+msgid "Repeat Password"
+msgstr "Passwort zurücksetzen"
+
+#: languages/fields.php:746
+msgid "Please, type your email below"
+msgstr "Bitte geben Sie Ihre E-Mail-Adresse unten ein"
+
+#: languages/fields.php:747
+msgid "Go to login"
+msgstr "Zur Anmeldung gehen"
+
+#: languages/fields.php:748
+msgid "Account activation"
+msgstr "Konto-Aktivierung"
+
+#: languages/fields.php:749
+msgid "Type your password"
+msgstr "Geben Sie Ihr Passwort ein"
+
+#: languages/fields.php:750
+msgid "Activate account"
+msgstr "Konto aktivieren"
+
+#: languages/fields.php:751
+msgid "Welcome to Dealers League Marine!"
+msgstr "Willkommen bei Dealers League Marine!"
+
+#: languages/fields.php:752
+msgid ""
+"A new account has been created for you on Dealers League Marine! This means "
+"you can now login and join your team. Before you login for the first time "
+"you will need to create a new password. Click the button below to create a "
+"new password."
+msgstr ""
+"Ein neues Konto wurde für Sie bei Dealers League Marine eingerichtet! Das "
+"bedeutet, dass Sie sich jetzt einloggen und Ihrem Team beitreten können. "
+"Bevor Sie sich zum ersten Mal einloggen, müssen Sie ein neues Passwort "
+"erstellen. Klicken Sie auf die Schaltfläche unten, um ein neues Passwort zu "
+"erstellen."
+
+#: languages/fields.php:753
+msgid "CREATE PASSWORD"
+msgstr "Passwort erstellen"
+
+#: languages/fields.php:754
+msgid "To help you get started here are a few guides you might find useful"
+msgstr ""
+"Um Ihnen den Einstieg zu erleichtern, finden Sie hier einige Leitfäden, die "
+"Ihnen nützlich sein könnten"
+
+#: languages/fields.php:755
+msgid "How to manage your account"
+msgstr "Wie Sie Ihr Konto verwalten"
+
+#: languages/fields.php:756
+msgid "How to create a new listing"
+msgstr "Wie man einen neuen Eintrag erstellt"
+
+#: languages/fields.php:757
+msgid "How to publish a new listing to your website"
+msgstr "Wie Sie einen neuen Eintrag auf Ihrer Webseite veröffentlichen"
+
+#: languages/fields.php:758
+msgid "If you need help with anything else, simply reply to this email!"
+msgstr ""
+"Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach auf "
+"diese E-Mail!"
+
+#: languages/fields.php:759
+msgid "Many Thanks"
+msgstr "Vielen Dank"
+
+#: languages/fields.php:760
+msgid "Operations Manager"
+msgstr "Betriebsleiter"
+
+#: languages/fields.php:761
+msgid "At least 6 characters long"
+msgstr ""
+
+#: languages/fields.php:762
+msgid "One lowercase character"
+msgstr "Gebraucht (in Charter gewesen)"
+
+#: languages/fields.php:763
+msgid "One uppercase character"
+msgstr ""
+
+#: languages/fields.php:764
+msgid "One number or symbol"
+msgstr "Anzahl der Ergebnisse ausblenden"
+
+#: languages/fields.php:765
+msgid ""
+"In addition to only showing boats if they are the same brand, turning this "
+"on will only show related boats if they are a similar length and price"
+msgstr ""
+
+#: languages/fields.php:766
+msgid ""
+"Add CSS here that you want added to the boat archive page and single boat "
+"pages. For example, to hide the theme header or change button color."
+msgstr ""
+"Fügen Sie hier CSS hinzu, die Sie zur Bootsarchivseite und zu den einzelnen "
+"Bootsseiten hinzufügen möchten. Zum Beispiel"
+
+#: languages/fields.php:767
+msgid "Privacy Link URL"
+msgstr "Datenschutz-Link"
+
+#: languages/fields.php:768
+msgid "Add Location"
+msgstr "Standort"
+
+#: languages/fields.php:769
+msgid "Location Data"
+msgstr "Standort-ID"
+
+#: languages/fields.php:770
+msgid "Location name"
+msgstr "Standort"
+
+#: languages/fields.php:771
+msgid "Main location"
+msgstr "Standort"
+
+#: languages/fields.php:772
+msgid "Invoicing location"
+msgstr "Details zur Rechnungsstellung"
+
+#: languages/fields.php:773
+msgid "Address (Type and press enter to validate)"
+msgstr "Bitte machen Sie eine Eingabe um hier zu suchen"
+
+#: languages/fields.php:774
+msgid "Info"
+msgstr "Info"
+
+#: languages/fields.php:775
+msgid "Enter the name"
+msgstr "Geben Sie den Bootsnamen ein"
+
+#: languages/fields.php:776
+msgid "Your Scheduled Listings Have Been Processed"
+msgstr ""
+
+#: languages/fields.php:777
+msgid "Here are the results:"
+msgstr "Anzahl der Ergebnisse ausblenden"
+
+#: languages/fields.php:778
+msgid "Sent To Website"
+msgstr "Webseite"
+
+#: languages/fields.php:779
+msgid "Not Published"
+msgstr "Veröffentlicht"
+
+#: languages/fields.php:780
+msgid ""
+"The following listings have some issues. Please review them and amend any "
+"issues before they can be published."
+msgstr ""
+
+#: languages/fields.php:781
+msgid ""
+"If provided used in correspondence and admin dashboard, if not provided, "
+"company will be used"
+msgstr ""
+"Falls vorhanden, in der Korrespondenz und im Verwaltungs-Dashboard verwendet"
+
+#: languages/fields.php:782
+msgid "Used for invoices and contracts, etc"
+msgstr "Wird für Rechnungen und Verträge verwendet"
 
 #: src/class-boat-post-type.php:21 src/class-boat-post-type.php:23
 msgid "Boats"
@@ -2032,7 +2394,7 @@ msgstr "Boot ansehen"
 msgid "Edit Boat"
 msgstr "Boot hinzufügen"
 
-#: src/class-boat-post-type.php:29 src/class-dealers-league-marine.php:607
+#: src/class-boat-post-type.php:29 src/class-dealers-league-marine.php:642
 msgid "View Boat"
 msgstr "Boot ansehen"
 
@@ -2060,76 +2422,76 @@ msgstr "Keine Boote "
 msgid "Enter the Boat name"
 msgstr "Geben Sie den Bootsnamen ein"
 
-#: src/class-dealers-league-marine.php:517
+#: src/class-dealers-league-marine.php:373
 msgid "listings"
 msgstr "Auflistungen"
 
-#: src/class-dealers-league-marine.php:519
+#: src/class-dealers-league-marine.php:375
 msgid "No listings found"
 msgstr "Keine Auflistungen gefunden"
 
-#: src/class-dealers-league-marine.php:536
-#: src/class-dealers-league-marine.php:627
+#: src/class-dealers-league-marine.php:571
+#: src/class-dealers-league-marine.php:668
 msgid "Missing data"
 msgstr "Fehlende Daten"
 
-#: src/class-dealers-league-marine.php:566
+#: src/class-dealers-league-marine.php:601
 msgid "Please complete recaptcha"
 msgstr "Bitte vervollständigen Sie recaptcha"
 
-#: src/class-dealers-league-marine.php:569
+#: src/class-dealers-league-marine.php:604
 msgid "The name is required"
 msgstr "Der Name ist erforderlich"
 
-#: src/class-dealers-league-marine.php:572
+#: src/class-dealers-league-marine.php:607
 msgid "The email is required"
 msgstr "Die E-Mail ist erforderlich"
 
-#: src/class-dealers-league-marine.php:574
+#: src/class-dealers-league-marine.php:609
 msgid "The email is not valid"
 msgstr "E-Mail ist ungültig"
 
-#: src/class-dealers-league-marine.php:577
+#: src/class-dealers-league-marine.php:612
 msgid "The phone is required"
 msgstr "Benutzerkonto ist erforderlich"
 
-#: src/class-dealers-league-marine.php:580
+#: src/class-dealers-league-marine.php:615
 msgid "The subject is required"
 msgstr "Benutzerkonto ist erforderlich"
 
-#: src/class-dealers-league-marine.php:583
+#: src/class-dealers-league-marine.php:618
 msgid "The message is required"
 msgstr "Die Nachricht ist erforderlich"
 
-#: src/class-dealers-league-marine.php:593
+#: src/class-dealers-league-marine.php:629
 msgid "New Survey Request from"
 msgstr "Neue Gutachten Anfrage von"
 
-#: src/class-dealers-league-marine.php:595
+#: src/class-dealers-league-marine.php:630
 msgid "New Survey Request"
 msgstr "Neue Gutachten Anfrage"
 
-#: src/class-dealers-league-marine.php:598
+#: src/class-dealers-league-marine.php:633
 msgid "New Boat Enquiry"
 msgstr "Neue Bootsanfrage"
 
-#: src/class-dealers-league-marine.php:599
+#: src/class-dealers-league-marine.php:634
 msgid "New Enquiry"
 msgstr "Neue Anfrage"
 
-#: src/class-dealers-league-marine.php:617
+#: src/class-dealers-league-marine.php:658
 msgid "Thank you for contacting us, we will be in touch soon."
 msgstr "Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen."
 
-#: src/class-dealers-league-marine.php:619
+#: src/class-dealers-league-marine.php:660
 msgid "Sorry there was an error. Message was not sent."
 msgstr "Es gab einen Fehler. Ihre Nachricht wurde nicht gesendet."
 
-#: src/class-listing-shortcode.php:216
+#: src/class-listing-shortcode.php:225
 msgid "Previous"
 msgstr "Vorherige"
 
-#: src/class-listing-shortcode.php:238
+#: src/class-listing-shortcode.php:247
 msgid "Next"
 msgstr "Nächste"
 
@@ -2165,1048 +2527,1058 @@ msgstr "API URL für externe Anfragen"
 msgid "Refresh listings"
 msgstr "Auflistungen aktualisieren"
 
-#: src/class-settings-page.php:149 src/class-settings-page.php:178
+#: src/class-settings-page.php:85
+msgid "View listings"
+msgstr "Auflistung ansehen"
+
+#: src/class-settings-page.php:86
+msgid ""
+"This will let you see the list of boats in the Wordpress database. Not for "
+"editing listings, normally just used for debugging."
+msgstr ""
+
+#: src/class-settings-page.php:156 src/class-settings-page.php:185
 msgid "Dealers League Marine Settings"
 msgstr "Dealers League Marine Einstellungen "
 
-#: src/class-settings-page.php:150
+#: src/class-settings-page.php:157
 msgid "Dealers League Marine"
 msgstr "Dealers League Marine "
 
-#: src/class-utils.php:127
+#: src/class-utils.php:141
 msgid "Germany"
 msgstr "Deutschland"
 
-#: src/class-utils.php:128
+#: src/class-utils.php:142
 msgid "United Kingdom"
 msgstr "Vereinigtes Königreich von Großbritannien"
 
-#: src/class-utils.php:129
+#: src/class-utils.php:143
 msgid "Andorra"
 msgstr "Andorra"
 
-#: src/class-utils.php:130
+#: src/class-utils.php:144
 msgid "United Arab Emirates"
 msgstr "Vereinigte Arabische Emirate"
 
-#: src/class-utils.php:131
+#: src/class-utils.php:145
 msgid "Afghanistan"
 msgstr "Afghanistan"
 
-#: src/class-utils.php:132
+#: src/class-utils.php:146
 msgid "Antigua and Barbuda"
 msgstr "Antigua und Barbuda"
 
-#: src/class-utils.php:133
+#: src/class-utils.php:147
 msgid "Anguilla"
 msgstr "Anguilla"
 
-#: src/class-utils.php:134
+#: src/class-utils.php:148
 msgid "Albania"
 msgstr "Albanien"
 
-#: src/class-utils.php:135
+#: src/class-utils.php:149
 msgid "Armenia"
 msgstr "Armenien"
 
-#: src/class-utils.php:136
+#: src/class-utils.php:150
 msgid "Angola"
 msgstr "Angola"
 
-#: src/class-utils.php:137
+#: src/class-utils.php:151
 msgid "Antarctica"
 msgstr "Antarktis"
 
-#: src/class-utils.php:138
+#: src/class-utils.php:152
 msgid "Argentina"
 msgstr "Argentinien"
 
-#: src/class-utils.php:139
+#: src/class-utils.php:153
 msgid "American Samoa"
 msgstr "Amerikanisch-Samoa"
 
-#: src/class-utils.php:140
+#: src/class-utils.php:154
 msgid "Austria"
 msgstr "Österreich"
 
-#: src/class-utils.php:141
+#: src/class-utils.php:155
 msgid "Australia"
 msgstr "Australien"
 
-#: src/class-utils.php:142
+#: src/class-utils.php:156
 msgid "Aruba"
 msgstr "Aruba"
 
-#: src/class-utils.php:143
+#: src/class-utils.php:157
 msgid "Åland Islands"
 msgstr "Ålandinseln"
 
-#: src/class-utils.php:144
+#: src/class-utils.php:158
 msgid "Azerbaijan"
 msgstr "Aserbaidschan"
 
-#: src/class-utils.php:145
+#: src/class-utils.php:159
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnien und Herzegovina"
 
-#: src/class-utils.php:146
+#: src/class-utils.php:160
 msgid "Barbados"
 msgstr "Barbados"
 
-#: src/class-utils.php:147
+#: src/class-utils.php:161
 msgid "Bangladesh"
 msgstr "Bangladesch"
 
-#: src/class-utils.php:148
+#: src/class-utils.php:162
 msgid "Belgium"
 msgstr "Belgien"
 
-#: src/class-utils.php:149
+#: src/class-utils.php:163
 msgid "Burkina Faso"
 msgstr "Burkina Faso"
 
-#: src/class-utils.php:150
+#: src/class-utils.php:164
 msgid "Bulgaria"
 msgstr "Bulgarien"
 
-#: src/class-utils.php:151
+#: src/class-utils.php:165
 msgid "Bahrain"
 msgstr "Bahrain (Bahrein)"
 
-#: src/class-utils.php:152
+#: src/class-utils.php:166
 msgid "Burundi"
 msgstr "Burundi"
 
-#: src/class-utils.php:153
+#: src/class-utils.php:167
 msgid "Benin"
 msgstr "Benin"
 
-#: src/class-utils.php:154
+#: src/class-utils.php:168
 msgid "Saint Barthélemy"
 msgstr "Saint-Barthélemy"
 
-#: src/class-utils.php:155
+#: src/class-utils.php:169
 msgid "Bermuda"
 msgstr "Bermuda"
 
-#: src/class-utils.php:156
+#: src/class-utils.php:170
 msgid "Brunei Darussalam"
 msgstr "Brunei"
 
-#: src/class-utils.php:157
+#: src/class-utils.php:171
 msgid "Bolivia (Plurinational State of)"
 msgstr "Bolivien"
 
-#: src/class-utils.php:158
+#: src/class-utils.php:172
 msgid "Bonaire, Sint Eustatius and Saba"
 msgstr "Bonaire, St. Eustatius und Saba"
 
-#: src/class-utils.php:159
+#: src/class-utils.php:173
 msgid "Brazil"
 msgstr "Brasilien"
 
-#: src/class-utils.php:160
+#: src/class-utils.php:174
 msgid "Bahamas"
 msgstr "Bahamas"
 
-#: src/class-utils.php:161
+#: src/class-utils.php:175
 msgid "Bhutan"
 msgstr "Bhutan"
 
-#: src/class-utils.php:162
+#: src/class-utils.php:176
 msgid "Bouvet Island"
 msgstr "Bouvetinsel"
 
-#: src/class-utils.php:163
+#: src/class-utils.php:177
 msgid "Botswana"
 msgstr "Botswana"
 
-#: src/class-utils.php:164
+#: src/class-utils.php:178
 msgid "Belarus"
 msgstr "Weißrußland (Belarus)"
 
-#: src/class-utils.php:165
+#: src/class-utils.php:179
 msgid "Belize"
 msgstr "Belize"
 
-#: src/class-utils.php:166
+#: src/class-utils.php:180
 msgid "Canada"
 msgstr "Kanada"
 
-#: src/class-utils.php:167
+#: src/class-utils.php:181
 msgid "Cocos (Keeling) Islands"
 msgstr "Kokosinseln (Keeling)"
 
-#: src/class-utils.php:168
+#: src/class-utils.php:182
 msgid "Congo, Democratic Republic of the"
 msgstr "Kongo"
 
-#: src/class-utils.php:169
+#: src/class-utils.php:183
 msgid "Central African Republic"
 msgstr "Zentralafrikanische Republik"
 
-#: src/class-utils.php:170
+#: src/class-utils.php:184
 msgid "Congo"
 msgstr "Kongo"
 
-#: src/class-utils.php:171
+#: src/class-utils.php:185
 msgid "Switzerland"
 msgstr "Schweiz"
 
-#: src/class-utils.php:172
+#: src/class-utils.php:186
 msgid "Côte d'Ivoire"
 msgstr "Elfenbeinküste"
 
-#: src/class-utils.php:173
+#: src/class-utils.php:187
 msgid "Cook Islands"
 msgstr "Cook-Inseln"
 
-#: src/class-utils.php:174
+#: src/class-utils.php:188
 msgid "Chile"
 msgstr "Chile"
 
-#: src/class-utils.php:175
+#: src/class-utils.php:189
 msgid "Cameroon"
 msgstr "Kamerun"
 
-#: src/class-utils.php:176
+#: src/class-utils.php:190
 msgid "China"
 msgstr "China"
 
-#: src/class-utils.php:177
+#: src/class-utils.php:191
 msgid "Colombia"
 msgstr "Kolumbien"
 
-#: src/class-utils.php:178
+#: src/class-utils.php:192
 msgid "Costa Rica"
 msgstr "Costa Rica"
 
-#: src/class-utils.php:179
+#: src/class-utils.php:193
 msgid "Cuba"
 msgstr "Kuba"
 
-#: src/class-utils.php:180
+#: src/class-utils.php:194
 msgid "Cabo Verde"
 msgstr "Kap Verde"
 
-#: src/class-utils.php:181
+#: src/class-utils.php:195
 msgid "Curaçao"
 msgstr "Curaçao"
 
-#: src/class-utils.php:182
+#: src/class-utils.php:196
 msgid "Christmas Island"
 msgstr "Weihnachtsinsel (Austr.Verwaltung)"
 
-#: src/class-utils.php:183
+#: src/class-utils.php:197
 msgid "Cyprus"
 msgstr "Zypern"
 
-#: src/class-utils.php:184
+#: src/class-utils.php:198
 msgid "Czechia"
 msgstr "Tschechische Republik"
 
-#: src/class-utils.php:185
+#: src/class-utils.php:199
 msgid "Djibouti"
 msgstr "Dschibuti"
 
-#: src/class-utils.php:186
+#: src/class-utils.php:200
 msgid "Denmark"
 msgstr "Dänemark"
 
-#: src/class-utils.php:187
+#: src/class-utils.php:201
 msgid "Dominica"
 msgstr "Dominica"
 
-#: src/class-utils.php:188
+#: src/class-utils.php:202
 msgid "Dominican Republic"
 msgstr "Dominikanische Republik"
 
-#: src/class-utils.php:189
+#: src/class-utils.php:203
 msgid "Algeria"
 msgstr "Algerien"
 
-#: src/class-utils.php:190
+#: src/class-utils.php:204
 msgid "Ecuador"
 msgstr "Ecuador"
 
-#: src/class-utils.php:191
+#: src/class-utils.php:205
 msgid "Estonia"
 msgstr "Estland"
 
-#: src/class-utils.php:192
+#: src/class-utils.php:206
 msgid "Egypt"
 msgstr "Ägypten"
 
-#: src/class-utils.php:193
+#: src/class-utils.php:207
 msgid "Western Sahara"
 msgstr "Westsahara Eigenst.Staat"
 
-#: src/class-utils.php:194
+#: src/class-utils.php:208
 msgid "Eritrea"
 msgstr "Eritrea"
 
-#: src/class-utils.php:195
+#: src/class-utils.php:209
 msgid "Spain"
 msgstr "Spanien"
 
-#: src/class-utils.php:196
+#: src/class-utils.php:210
 msgid "Ethiopia"
 msgstr "Äthiopien"
 
-#: src/class-utils.php:197
+#: src/class-utils.php:211
 msgid "Finland"
 msgstr "Finnland"
 
-#: src/class-utils.php:198
+#: src/class-utils.php:212
 msgid "Fiji"
 msgstr "Fidschi"
 
-#: src/class-utils.php:199
+#: src/class-utils.php:213
 msgid "Falkland Islands (Malvinas)"
 msgstr "Falklandinseln (Malvinen)"
 
-#: src/class-utils.php:200
+#: src/class-utils.php:214
 msgid "Micronesia (Federated States of)"
 msgstr "Mikronesien"
 
-#: src/class-utils.php:201
+#: src/class-utils.php:215
 msgid "Faroe Islands"
 msgstr "Faeroeer Inseln Dän.Verwaltung"
 
-#: src/class-utils.php:202
+#: src/class-utils.php:216
 msgid "France"
 msgstr "Frankreich"
 
-#: src/class-utils.php:203
+#: src/class-utils.php:217
 msgid "Gabon"
 msgstr "Gabun"
 
-#: src/class-utils.php:204
+#: src/class-utils.php:218
 msgid "Grenada"
 msgstr "Grenada"
 
-#: src/class-utils.php:205
+#: src/class-utils.php:219
 msgid "Georgia"
 msgstr "Georgien"
 
-#: src/class-utils.php:206
+#: src/class-utils.php:220
 msgid "French Guiana"
 msgstr "Französisch Guayana"
 
-#: src/class-utils.php:207
+#: src/class-utils.php:221
 msgid "Guernsey"
 msgstr "Guernsey"
 
-#: src/class-utils.php:208
+#: src/class-utils.php:222
 msgid "Ghana"
 msgstr "Ghana"
 
-#: src/class-utils.php:209
+#: src/class-utils.php:223
 msgid "Gibraltar"
 msgstr "Gibraltar"
 
-#: src/class-utils.php:210
+#: src/class-utils.php:224
 msgid "Greenland"
 msgstr "Grönland"
 
-#: src/class-utils.php:211
+#: src/class-utils.php:225
 msgid "Gambia"
 msgstr "Gambia"
 
-#: src/class-utils.php:212
+#: src/class-utils.php:226
 msgid "Guinea"
 msgstr "Guinea"
 
-#: src/class-utils.php:213
+#: src/class-utils.php:227
 msgid "Guadeloupe"
 msgstr "Guadeloupe"
 
-#: src/class-utils.php:214
+#: src/class-utils.php:228
 msgid "Equatorial Guinea"
 msgstr "Papua-Neuguinea"
 
-#: src/class-utils.php:215
+#: src/class-utils.php:229
 msgid "Greece"
 msgstr "Griechenland"
 
-#: src/class-utils.php:216
+#: src/class-utils.php:230
 msgid "South Georgia and the South Sandwich Islands"
 msgstr "Südgeorgien und Süd-Sandwich-Insel"
 
-#: src/class-utils.php:217
+#: src/class-utils.php:231
 msgid "Guatemala"
 msgstr "Guatemala"
 
-#: src/class-utils.php:218
+#: src/class-utils.php:232
 msgid "Guam"
 msgstr "Guam"
 
-#: src/class-utils.php:219
+#: src/class-utils.php:233
 msgid "Guinea-Bissau"
 msgstr "Guinea-Bissau"
 
-#: src/class-utils.php:220
+#: src/class-utils.php:234
 msgid "Guyana"
 msgstr "Guyana"
 
-#: src/class-utils.php:221
+#: src/class-utils.php:235
 msgid "Hong Kong"
 msgstr "Hong Kong"
 
-#: src/class-utils.php:222
+#: src/class-utils.php:236
 msgid "Heard Island and McDonald Islands"
 msgstr "Heard und Mc Donald Inseln (unter Austr.Verw.)"
 
-#: src/class-utils.php:223
+#: src/class-utils.php:237
 msgid "Honduras"
 msgstr "Honduras"
 
-#: src/class-utils.php:224
+#: src/class-utils.php:238
 msgid "Croatia"
 msgstr "Kroatien"
 
-#: src/class-utils.php:225
+#: src/class-utils.php:239
 msgid "Haiti"
 msgstr "Haiti"
 
-#: src/class-utils.php:226
+#: src/class-utils.php:240
 msgid "Hungary"
 msgstr "Ungarn"
 
-#: src/class-utils.php:227
+#: src/class-utils.php:241
 msgid "Indonesia"
 msgstr "Indonesien"
 
-#: src/class-utils.php:228
+#: src/class-utils.php:242
 msgid "Ireland"
 msgstr "Irland"
 
-#: src/class-utils.php:229
+#: src/class-utils.php:243
 msgid "Israel"
 msgstr "Israel"
 
-#: src/class-utils.php:230
+#: src/class-utils.php:244
 msgid "Isle of Man"
 msgstr "Isle of Man"
 
-#: src/class-utils.php:231
+#: src/class-utils.php:245
 msgid "India"
 msgstr "Indien"
 
-#: src/class-utils.php:232
+#: src/class-utils.php:246
 msgid "British Indian Ocean Territory"
 msgstr "Brit.Terr.Im Indischen Ozean"
 
-#: src/class-utils.php:233
+#: src/class-utils.php:247
 msgid "Iraq"
 msgstr "Irak"
 
-#: src/class-utils.php:234
+#: src/class-utils.php:248
 msgid "Iran (Islamic Republic of)"
 msgstr "Iran"
 
-#: src/class-utils.php:235
+#: src/class-utils.php:249
 msgid "Iceland"
 msgstr "Island"
 
-#: src/class-utils.php:236
+#: src/class-utils.php:250
 msgid "Italy"
 msgstr "Italien"
 
-#: src/class-utils.php:237
+#: src/class-utils.php:251
 msgid "Jersey"
 msgstr "Jersey"
 
-#: src/class-utils.php:238
+#: src/class-utils.php:252
 msgid "Jamaica"
 msgstr "Jamaika"
 
-#: src/class-utils.php:239
+#: src/class-utils.php:253
 msgid "Jordan"
 msgstr "Jordanien"
 
-#: src/class-utils.php:240
+#: src/class-utils.php:254
 msgid "Japan"
 msgstr "Japan"
 
-#: src/class-utils.php:241
+#: src/class-utils.php:255
 msgid "Kenya"
 msgstr "Kenia"
 
-#: src/class-utils.php:242
+#: src/class-utils.php:256
 msgid "Kyrgyzstan"
 msgstr "Kirgisistan"
 
-#: src/class-utils.php:243
+#: src/class-utils.php:257
 msgid "Cambodia"
 msgstr "Kambodscha"
 
-#: src/class-utils.php:244
+#: src/class-utils.php:258
 msgid "Kiribati"
 msgstr "Kiribati"
 
-#: src/class-utils.php:245
+#: src/class-utils.php:259
 msgid "Comoros"
 msgstr "Komoren"
 
-#: src/class-utils.php:246
+#: src/class-utils.php:260
 msgid "Saint Kitts and Nevis"
 msgstr "St. Kitts und Nevis"
 
-#: src/class-utils.php:247
+#: src/class-utils.php:261
 msgid "Korea (Democratic People's Republic of)"
 msgstr "Korea"
 
-#: src/class-utils.php:248
+#: src/class-utils.php:262
 msgid "Korea, Republic of"
 msgstr "Korea"
 
-#: src/class-utils.php:249
+#: src/class-utils.php:263
 msgid "Kuwait"
 msgstr "Kuwait"
 
-#: src/class-utils.php:250
+#: src/class-utils.php:264
 msgid "Cayman Islands"
 msgstr "Kaimaninseln"
 
-#: src/class-utils.php:251
+#: src/class-utils.php:265
 msgid "Kazakhstan"
 msgstr "Kasachstan"
 
-#: src/class-utils.php:252
+#: src/class-utils.php:266
 msgid "Lao People's Democratic Republic"
 msgstr "Laos"
 
-#: src/class-utils.php:253
+#: src/class-utils.php:267
 msgid "Lebanon"
 msgstr "Libanon"
 
-#: src/class-utils.php:254
+#: src/class-utils.php:268
 msgid "Saint Lucia"
 msgstr "Saint Lucia"
 
-#: src/class-utils.php:255
+#: src/class-utils.php:269
 msgid "Liechtenstein"
 msgstr "Liechtenstein"
 
-#: src/class-utils.php:256
+#: src/class-utils.php:270
 msgid "Sri Lanka"
 msgstr "Sri Lanka"
 
-#: src/class-utils.php:257
+#: src/class-utils.php:271
 msgid "Liberia"
 msgstr "Liberiern"
 
-#: src/class-utils.php:258
+#: src/class-utils.php:272
 msgid "Lesotho"
 msgstr "Lesotho"
 
-#: src/class-utils.php:259
+#: src/class-utils.php:273
 msgid "Lithuania"
 msgstr "Litauen"
 
-#: src/class-utils.php:260
+#: src/class-utils.php:274
 msgid "Luxembourg"
 msgstr "Luxemburg"
 
-#: src/class-utils.php:261
+#: src/class-utils.php:275
 msgid "Latvia"
 msgstr "Lettland"
 
-#: src/class-utils.php:262
+#: src/class-utils.php:276
 msgid "Libya"
 msgstr "Libysch-Arabische Dschamahirija"
 
-#: src/class-utils.php:263
+#: src/class-utils.php:277
 msgid "Morocco"
 msgstr "Marokko"
 
-#: src/class-utils.php:264
+#: src/class-utils.php:278
 msgid "Monaco"
 msgstr "Monaco"
 
-#: src/class-utils.php:265
+#: src/class-utils.php:279
 msgid "Moldova, Republic of"
 msgstr "Moldavien"
 
-#: src/class-utils.php:266
+#: src/class-utils.php:280
 msgid "Montenegro"
 msgstr "Montenegro"
 
-#: src/class-utils.php:267
+#: src/class-utils.php:281
 msgid "Saint Martin (French part)"
 msgstr "Saint Martin"
 
-#: src/class-utils.php:268
+#: src/class-utils.php:282
 msgid "Madagascar"
 msgstr "Madagaskar"
 
-#: src/class-utils.php:269
+#: src/class-utils.php:283
 msgid "Marshall Islands"
 msgstr "Marshall-Inseln"
 
-#: src/class-utils.php:270
+#: src/class-utils.php:284
 msgid "North Macedonia"
 msgstr "Mazedonien"
 
-#: src/class-utils.php:271
+#: src/class-utils.php:285
 msgid "Mali"
 msgstr "Mali"
 
-#: src/class-utils.php:272
+#: src/class-utils.php:286
 msgid "Myanmar"
 msgstr "Myanmar"
 
-#: src/class-utils.php:273
+#: src/class-utils.php:287
 msgid "Mongolia"
 msgstr "Mongolin"
 
-#: src/class-utils.php:274
+#: src/class-utils.php:288
 msgid "Macao"
 msgstr "Macao"
 
-#: src/class-utils.php:275
+#: src/class-utils.php:289
 msgid "Northern Mariana Islands"
 msgstr "Marianen, Nördliche"
 
-#: src/class-utils.php:276
+#: src/class-utils.php:290
 msgid "Martinique"
 msgstr "Martinique"
 
-#: src/class-utils.php:277
+#: src/class-utils.php:291
 msgid "Mauritania"
 msgstr "Mauretanien"
 
-#: src/class-utils.php:278
+#: src/class-utils.php:292
 msgid "Montserrat"
 msgstr "Montserrat"
 
-#: src/class-utils.php:279
+#: src/class-utils.php:293
 msgid "Malta"
 msgstr "Malta"
 
-#: src/class-utils.php:280
+#: src/class-utils.php:294
 msgid "Mauritius"
 msgstr "Mauritius"
 
-#: src/class-utils.php:281
+#: src/class-utils.php:295
 msgid "Maldives"
 msgstr "Malediven"
 
-#: src/class-utils.php:282
+#: src/class-utils.php:296
 msgid "Malawi"
 msgstr "Malawi"
 
-#: src/class-utils.php:283
+#: src/class-utils.php:297
 msgid "Mexico"
 msgstr "Mexiko"
 
-#: src/class-utils.php:284
+#: src/class-utils.php:298
 msgid "Malaysia"
 msgstr "Malaysien"
 
-#: src/class-utils.php:285
+#: src/class-utils.php:299
 msgid "Mozambique"
 msgstr "Mosambik"
 
-#: src/class-utils.php:286
+#: src/class-utils.php:300
 msgid "Namibia"
 msgstr "Namibia"
 
-#: src/class-utils.php:287
+#: src/class-utils.php:301
 msgid "New Caledonia"
 msgstr "Neu-Kaledonien"
 
-#: src/class-utils.php:288
+#: src/class-utils.php:302
 msgid "Niger"
 msgstr "Niger"
 
-#: src/class-utils.php:289
+#: src/class-utils.php:303
 msgid "Norfolk Island"
 msgstr "Weihnachtsinsel"
 
-#: src/class-utils.php:290
+#: src/class-utils.php:304
 msgid "Nigeria"
 msgstr "Nigeria"
 
-#: src/class-utils.php:291
+#: src/class-utils.php:305
 msgid "Nicaragua"
 msgstr "Nicaragua"
 
-#: src/class-utils.php:292
+#: src/class-utils.php:306
 msgid "Netherlands"
 msgstr "Niederlande"
 
-#: src/class-utils.php:293
+#: src/class-utils.php:307
 msgid "Norway"
 msgstr "Norwegen"
 
-#: src/class-utils.php:294
+#: src/class-utils.php:308
 msgid "Nepal"
 msgstr "Nepal"
 
-#: src/class-utils.php:295
+#: src/class-utils.php:309
 msgid "Nauru"
 msgstr "Nauru"
 
-#: src/class-utils.php:296
+#: src/class-utils.php:310
 msgid "Niue"
 msgstr "Niue"
 
-#: src/class-utils.php:297
+#: src/class-utils.php:311
 msgid "New Zealand"
 msgstr "Neuseeland"
 
-#: src/class-utils.php:298
+#: src/class-utils.php:312
 msgid "Oman"
 msgstr "Oman"
 
-#: src/class-utils.php:299
+#: src/class-utils.php:313
 msgid "Panama"
 msgstr "Panama"
 
-#: src/class-utils.php:300
+#: src/class-utils.php:314
 msgid "Peru"
 msgstr "Peru"
 
-#: src/class-utils.php:301
+#: src/class-utils.php:315
 msgid "French Polynesia"
 msgstr "Französisch-Polynesien"
 
-#: src/class-utils.php:302
+#: src/class-utils.php:316
 msgid "Papua New Guinea"
 msgstr "Papua-Neuguinea"
 
-#: src/class-utils.php:303
+#: src/class-utils.php:317
 msgid "Philippines"
 msgstr "Philippinen"
 
-#: src/class-utils.php:304
+#: src/class-utils.php:318
 msgid "Pakistan"
 msgstr "Pakistan"
 
-#: src/class-utils.php:305
+#: src/class-utils.php:319
 msgid "Poland"
 msgstr "Polen"
 
-#: src/class-utils.php:306
+#: src/class-utils.php:320
 msgid "Saint Pierre and Miquelon"
 msgstr "St.Pierre und Miquelon"
 
-#: src/class-utils.php:307
+#: src/class-utils.php:321
 msgid "Pitcairn"
 msgstr "Pitcairn"
 
-#: src/class-utils.php:308
+#: src/class-utils.php:322
 msgid "Puerto Rico"
 msgstr "Puerto Rico"
 
-#: src/class-utils.php:309
+#: src/class-utils.php:323
 msgid "Palestine, State of"
 msgstr "Palästina"
 
-#: src/class-utils.php:310
+#: src/class-utils.php:324
 msgid "Portugal"
 msgstr "Portugal"
 
-#: src/class-utils.php:311
+#: src/class-utils.php:325
 msgid "Palau"
 msgstr "Palau"
 
-#: src/class-utils.php:312
+#: src/class-utils.php:326
 msgid "Paraguay"
 msgstr "Paraguay"
 
-#: src/class-utils.php:313
+#: src/class-utils.php:327
 msgid "Qatar"
 msgstr "Katar"
 
-#: src/class-utils.php:314
+#: src/class-utils.php:328
 msgid "Réunion"
 msgstr "Réunion"
 
-#: src/class-utils.php:315
+#: src/class-utils.php:329
 msgid "Romania"
 msgstr "Rumänien"
 
-#: src/class-utils.php:316
+#: src/class-utils.php:330
 msgid "Serbia"
 msgstr "Serbien"
 
-#: src/class-utils.php:317
+#: src/class-utils.php:331
 msgid "Russian Federation"
 msgstr "Russische Föderation"
 
-#: src/class-utils.php:318
+#: src/class-utils.php:332
 msgid "Rwanda"
 msgstr "Ruanda"
 
-#: src/class-utils.php:319
+#: src/class-utils.php:333
 msgid "Saudi Arabia"
 msgstr "Saudi-Arabien"
 
-#: src/class-utils.php:320
+#: src/class-utils.php:334
 msgid "Solomon Islands"
 msgstr "Salomonen"
 
-#: src/class-utils.php:321
+#: src/class-utils.php:335
 msgid "Seychelles"
 msgstr "Seychellen"
 
-#: src/class-utils.php:322
+#: src/class-utils.php:336
 msgid "Sudan"
 msgstr "Sudan"
 
-#: src/class-utils.php:323
+#: src/class-utils.php:337
 msgid "Sweden"
 msgstr "Schweden"
 
-#: src/class-utils.php:324
+#: src/class-utils.php:338
 msgid "Singapore"
 msgstr "Singapur"
 
-#: src/class-utils.php:325
+#: src/class-utils.php:339
 msgid "Saint Helena, Ascension and Tristan da Cunha"
 msgstr "St. Helena"
 
-#: src/class-utils.php:326
+#: src/class-utils.php:340
 msgid "Slovenia"
 msgstr "Slowenien"
 
-#: src/class-utils.php:327
+#: src/class-utils.php:341
 msgid "Svalbard and Jan Mayen"
 msgstr "Spitzbergen und Jan Mayen"
 
-#: src/class-utils.php:328
+#: src/class-utils.php:342
 msgid "Slovakia"
 msgstr "Slowakai"
 
-#: src/class-utils.php:329
+#: src/class-utils.php:343
 msgid "Sierra Leone"
 msgstr "Sierra Leone"
 
-#: src/class-utils.php:330
+#: src/class-utils.php:344
 msgid "San Marino"
 msgstr "San Marino"
 
-#: src/class-utils.php:331
+#: src/class-utils.php:345
 msgid "Senegal"
 msgstr "Senegal"
 
-#: src/class-utils.php:332
+#: src/class-utils.php:346
 msgid "Somalia"
 msgstr "Somalia"
 
-#: src/class-utils.php:333
+#: src/class-utils.php:347
 msgid "Suriname"
 msgstr "Suriname"
 
-#: src/class-utils.php:334
+#: src/class-utils.php:348
 msgid "South Sudan"
 msgstr "Sudan"
 
-#: src/class-utils.php:335
+#: src/class-utils.php:349
 msgid "Sao Tome and Principe"
 msgstr "Sao Tome und Principe"
 
-#: src/class-utils.php:336
+#: src/class-utils.php:350
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: src/class-utils.php:337
+#: src/class-utils.php:351
 msgid "Sint Maarten (Dutch part)"
 msgstr "Sint Maarten"
 
-#: src/class-utils.php:338
+#: src/class-utils.php:352
 msgid "Syrian Arab Republic"
 msgstr "Arabische Republik Syrien"
 
-#: src/class-utils.php:339
+#: src/class-utils.php:353
 msgid "Eswatini"
 msgstr "Eswatini"
 
-#: src/class-utils.php:340
+#: src/class-utils.php:354
 msgid "Turks and Caicos Islands"
 msgstr "Turks- und Caicosinseln"
 
-#: src/class-utils.php:341
+#: src/class-utils.php:355
 msgid "Chad"
 msgstr "Tschad"
 
-#: src/class-utils.php:342
+#: src/class-utils.php:356
 msgid "French Southern Territories"
 msgstr "Franz. Südgebiete"
 
-#: src/class-utils.php:343
+#: src/class-utils.php:357
 msgid "Togo"
 msgstr "Togo"
 
-#: src/class-utils.php:344
+#: src/class-utils.php:358
 msgid "Thailand"
 msgstr "Thailand"
 
-#: src/class-utils.php:345
+#: src/class-utils.php:359
 msgid "Tajikistan"
 msgstr "Tadschikistan"
 
-#: src/class-utils.php:346
+#: src/class-utils.php:360
 msgid "Tokelau"
 msgstr "Tokelau"
 
-#: src/class-utils.php:347
+#: src/class-utils.php:361
 msgid "Timor-Leste"
 msgstr "Osttimor"
 
-#: src/class-utils.php:348
+#: src/class-utils.php:362
 msgid "Turkmenistan"
 msgstr "Turkmenistan"
 
-#: src/class-utils.php:349
+#: src/class-utils.php:363
 msgid "Tunisia"
 msgstr "Tunesien"
 
-#: src/class-utils.php:350
+#: src/class-utils.php:364
 msgid "Tonga"
 msgstr "Tonga"
 
-#: src/class-utils.php:351
+#: src/class-utils.php:365
 msgid "Turkey"
 msgstr "Turkei"
 
-#: src/class-utils.php:352
+#: src/class-utils.php:366
 msgid "Trinidad and Tobago"
 msgstr "Trinidad und Tobago"
 
-#: src/class-utils.php:353
+#: src/class-utils.php:367
 msgid "Tuvalu"
 msgstr "Tuvalu"
 
-#: src/class-utils.php:354
+#: src/class-utils.php:368
 msgid "Taiwan, Province of China"
 msgstr "Taiwan"
 
-#: src/class-utils.php:355
+#: src/class-utils.php:369
 msgid "Tanzania, United Republic of"
 msgstr "Tansania"
 
-#: src/class-utils.php:356
+#: src/class-utils.php:370
 msgid "Ukraine"
 msgstr "Ukraine"
 
-#: src/class-utils.php:357
+#: src/class-utils.php:371
 msgid "Uganda"
 msgstr "Uganda"
 
-#: src/class-utils.php:358
+#: src/class-utils.php:372
 msgid "United States Minor Outlying Islands"
 msgstr "Amerikanisch-Ozeanien"
 
-#: src/class-utils.php:359
+#: src/class-utils.php:373
 msgid "United States of America"
 msgstr "Vereinigte Staaten von Amerika"
 
-#: src/class-utils.php:360
+#: src/class-utils.php:374
 msgid "Uruguay"
 msgstr "Uruguay"
 
-#: src/class-utils.php:361
+#: src/class-utils.php:375
 msgid "Uzbekistan"
 msgstr "Uzbekistan"
 
-#: src/class-utils.php:362
+#: src/class-utils.php:376
 msgid "Holy See"
 msgstr "Heiliger Stuhl"
 
-#: src/class-utils.php:363
+#: src/class-utils.php:377
 msgid "Saint Vincent and the Grenadines"
 msgstr "St. Vincent und die Grenadinen"
 
-#: src/class-utils.php:364
+#: src/class-utils.php:378
 msgid "Venezuela (Bolivarian Republic of)"
 msgstr "Venezuela"
 
-#: src/class-utils.php:365
+#: src/class-utils.php:379
 msgid "Virgin Islands (British)"
 msgstr "Britische Jungferninseln"
 
-#: src/class-utils.php:366
+#: src/class-utils.php:380
 msgid "Virgin Islands (U.S.)"
 msgstr "Amerikanische Jungferninseln"
 
-#: src/class-utils.php:367
+#: src/class-utils.php:381
 msgid "Viet Nam"
 msgstr "Vietnam"
 
-#: src/class-utils.php:368
+#: src/class-utils.php:382
 msgid "Vanuatu"
 msgstr "Vanuatu"
 
-#: src/class-utils.php:369
+#: src/class-utils.php:383
 msgid "Wallis and Futuna"
 msgstr "Wallis und Futuna Inseln"
 
-#: src/class-utils.php:370
+#: src/class-utils.php:384
 msgid "Samoa"
 msgstr "Samoa"
 
-#: src/class-utils.php:371
+#: src/class-utils.php:385
 msgid "Yemen"
 msgstr "Yemen"
 
-#: src/class-utils.php:372
+#: src/class-utils.php:386
 msgid "Mayotte"
 msgstr "Mayotte"
 
-#: src/class-utils.php:373
+#: src/class-utils.php:387
 msgid "South Africa"
 msgstr "Südafrika"
 
-#: src/class-utils.php:374
+#: src/class-utils.php:388
 msgid "Zambia"
 msgstr "Sambia"
 
-#: src/class-utils.php:375
+#: src/class-utils.php:389
 msgid "Zimbabwe"
 msgstr "Simbabwe"
 
-#: src/class-utils.php:388 src/class-utils.php:389 src/class-utils.php:390
-#: src/class-utils.php:391 src/class-utils.php:392 src/class-utils.php:393
-#: src/class-utils.php:400 src/class-utils.php:405 src/class-utils.php:406
-#: src/class-utils.php:407 src/class-utils.php:412 src/class-utils.php:413
+#: src/class-utils.php:402 src/class-utils.php:403 src/class-utils.php:404
+#: src/class-utils.php:405 src/class-utils.php:406 src/class-utils.php:407
+#: src/class-utils.php:414 src/class-utils.php:419 src/class-utils.php:420
+#: src/class-utils.php:421 src/class-utils.php:426 src/class-utils.php:427
 msgid "m"
 msgstr "m"
 
-#: src/class-utils.php:394 src/class-utils.php:395 src/class-utils.php:396
-#: src/class-utils.php:403 src/class-utils.php:408 src/class-utils.php:409
-#: src/class-utils.php:410
+#: src/class-utils.php:408 src/class-utils.php:409 src/class-utils.php:410
+#: src/class-utils.php:417 src/class-utils.php:422 src/class-utils.php:423
+#: src/class-utils.php:424
 msgid "kg"
 msgstr "kg"
 
-#: src/class-utils.php:397
+#: src/class-utils.php:411
 msgid "lh"
 msgstr "l/h"
 
-#: src/class-utils.php:398
+#: src/class-utils.php:412
 msgid "nm"
 msgstr "nm"
 
-#: src/class-utils.php:399
+#: src/class-utils.php:413
 msgid "hp"
 msgstr "PS"
 
-#: src/class-utils.php:401
+#: src/class-utils.php:415
 msgid "L"
 msgstr "l"
 
-#: src/class-utils.php:402
+#: src/class-utils.php:416
 msgid "cm3"
 msgstr "cm³"
 
-#: src/class-utils.php:404
+#: src/class-utils.php:418
 msgid "kmh"
 msgstr "km/h"
 
-#: src/class-utils.php:411
+#: src/class-utils.php:425
 msgid "m2"
 msgstr "m²"
 
@@ -3236,7 +3608,7 @@ msgid "Highest Price First"
 msgstr "Höchster Preis zuerst"
 
 #: templates/content-archive-listing.php:66
-#: templates/content-single-listing.php:166
+#: templates/content-single-listing.php:193
 msgid "Draft"
 msgstr "Entwurf"
 
@@ -3246,7 +3618,7 @@ msgid "Select Manufacturer"
 msgstr "Hersteller auswählen"
 
 #: templates/content-archive-search.php:32
-#: templates/content-single-listing.php:203
+#: templates/content-single-listing.php:230
 msgid "Category"
 msgstr "Kategorie"
 
@@ -3307,312 +3679,131 @@ msgstr "Farbe"
 msgid "All Colours"
 msgstr "Alle Farben"
 
-#: templates/content-single-listing.php:18
+#: templates/content-single-listing.php:32
 #, php-format
 msgid "I have read and agreed to the %sPrivacy Policy%s"
 msgstr "Ich habe die %sDatenschutzerklärung%s gelesen und verstanden"
 
-#: templates/content-single-listing.php:105
+#: templates/content-single-listing.php:132
 msgid "Description"
 msgstr "Beschreibung"
 
-#: templates/content-single-listing.php:113
+#: templates/content-single-listing.php:140
 msgid "General Details"
 msgstr "Generelle Information"
 
-#: templates/content-single-listing.php:202
+#: templates/content-single-listing.php:229
 msgid "VAT"
 msgstr "MwSt."
 
-#: templates/content-single-listing.php:220
-msgid "Documents"
-msgstr "Dokumente"
-
-#: templates/content-single-listing.php:261
-#: templates/content-single-listing.php:339
+#: templates/content-single-listing.php:288
+#: templates/content-single-listing.php:373
 msgid "Enquiry"
 msgstr "Anfrage"
 
-#: templates/content-single-listing.php:272
+#: templates/content-single-listing.php:299
 msgid "Name"
 msgstr "Name"
 
-#: templates/content-single-listing.php:273
+#: templates/content-single-listing.php:300
 msgid "Your Name"
 msgstr "Name des Kontos"
 
-#: templates/content-single-listing.php:278
+#: templates/content-single-listing.php:305
 msgid "Email"
 msgstr "E-Mail"
 
-#: templates/content-single-listing.php:279
+#: templates/content-single-listing.php:306
 msgid "Your Email"
 msgstr "Ihre E-Mail-Adresse"
 
-#: templates/content-single-listing.php:284
+#: templates/content-single-listing.php:311
 msgid "Phone"
 msgstr "Telefon"
 
-#: templates/content-single-listing.php:285
+#: templates/content-single-listing.php:312
 msgid "Your Phone"
 msgstr "Ihr Profil"
 
-#: templates/content-single-listing.php:290
+#: templates/content-single-listing.php:317
 msgid "Subject"
 msgstr "Thema"
 
-#: templates/content-single-listing.php:292
+#: templates/content-single-listing.php:319
 msgid "Choose an option"
 msgstr "Wählen Sie eine Option aus"
 
-#: templates/content-single-listing.php:293
+#: templates/content-single-listing.php:320
 msgid "Viewing"
 msgstr "Schwenkkiel"
 
-#: templates/content-single-listing.php:294
+#: templates/content-single-listing.php:321
 msgid "Availability"
 msgstr "Verfügbarkeit"
 
-#: templates/content-single-listing.php:295
+#: templates/content-single-listing.php:322
 msgid "Pricing"
 msgstr "Preis"
 
-#: templates/content-single-listing.php:296
+#: templates/content-single-listing.php:323
 msgid "Further Information"
 msgstr "Weitere Information"
 
-#: templates/content-single-listing.php:298
+#: templates/content-single-listing.php:325
 msgid "Request Survey"
 msgstr "Anfrage Datum"
 
-#: templates/content-single-listing.php:306
+#: templates/content-single-listing.php:334
 msgid "Message"
 msgstr "Nachricht"
 
-#: templates/content-single-listing.php:322
+#: templates/content-single-listing.php:356
 msgid "Send"
 msgstr "Senden"
 
-#: templates/content-single-listing.php:342
+#: templates/content-single-listing.php:376
 msgid "Print"
 msgstr "Drucken"
 
-#: templates/content-single-listing.php:345
+#: templates/content-single-listing.php:379
 msgid "Watch Video"
 msgstr "Video ansehen"
 
-#: templates/content-single-listing.php:352
+#: templates/content-single-listing.php:386
 msgid "Share on Facebook"
 msgstr "Auf Facebook teilen"
 
-#: templates/content-single-listing.php:359
+#: templates/content-single-listing.php:393
 msgid "Share on Twitter"
 msgstr "Auf Twitter teilen"
 
-#: templates/content-single-listing.php:363 templates/single-listing.php:227
+#: templates/content-single-listing.php:397
 msgid "Thought you might like this"
 msgstr "Ich denke, daß dies von Interesse sein dürfte"
 
-#: templates/content-single-listing.php:365 templates/single-listing.php:227
+#: templates/content-single-listing.php:399
 msgid "Hi, Thought this might interest you"
 msgstr "Hi, das dürfte Sie interessieren"
 
-#: templates/content-single-listing.php:367
+#: templates/content-single-listing.php:401
 msgid "Share via email"
 msgstr "Per E-Mail teilen"
 
-#: templates/content-single-listing.php:371 templates/single-listing.php:231
+#: templates/content-single-listing.php:405
 msgid "Check out this boat"
 msgstr "Schauen Sie dieses Boot an"
 
-#: templates/content-single-listing.php:373
+#: templates/content-single-listing.php:407
 msgid "Share via WhatsApp"
 msgstr "Auf WhatsApp teilen"
 
-#: templates/content-single-listing.php:378
+#: templates/content-single-listing.php:412
 msgid "Print this page"
 msgstr "Diese Seite ausdrucken"
 
 #: templates/item-listing-list.php:41
 msgid "View Listing"
 msgstr "Auflistung ansehen"
-
-#~ msgid "languages.json"
-#~ msgstr "languages.json"
-
-#~ msgid "Please choose the language of the target website"
-#~ msgstr "Sprache der Webseite auswählen"
-
-#~ msgid "countries.json"
-#~ msgstr "countries.json"
-
-#~ msgid "Optional extra details"
-#~ msgstr "Optionale zusätzliche Angaben"
-
-#~ msgid "Free text, for example: white, blue stripe with red dots"
-#~ msgstr "Freier Text, zum Beispiel: weiß, blauer Streifen mit roten Punkten"
-
-#~ msgid "Select type of sail"
-#~ msgstr "Segeltyp auswählen"
-
-#~ msgid "Number of masts"
-#~ msgstr "Anzahl der Masten"
-
-#~ msgid "Additional Engine Details"
-#~ msgstr "Zusätzliche Details zum Motor"
-
-#~ msgid "Please choose a fuel type"
-#~ msgstr "Wählen Sie eine Kraftstoffart"
-
-#~ msgid "Only City, not country or county."
-#~ msgstr "Nur Stadt, nicht Land oder Kreis."
-
-#~ msgid "Back2back Seats"
-#~ msgstr "Back-to-back Sitze"
-
-#~ msgid "Media"
-#~ msgstr "Medien"
-
-#~ msgid "Images"
-#~ msgstr "Bilder"
-
-#~ msgid "Upload Images"
-#~ msgstr "Bilder hochladen"
-
-#~ msgid "Panorama Images"
-#~ msgstr "Panorama-Bilder"
-
-#~ msgid "Upload Paranorama Images"
-#~ msgstr "Paranorama-Bilder hochladen"
-
-#~ msgid "Videos"
-#~ msgstr "Videos"
-
-#~ msgid "Video URL"
-#~ msgstr "Video URL"
-
-#~ msgid "Panorama Videos"
-#~ msgstr "Panorama-Videos"
-
-#~ msgid "Panorama URL"
-#~ msgstr "Panorama URL"
-
-#~ msgid "Upload Documents"
-#~ msgstr "Dokumente hochladen"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Welcome back! Please signin to continue."
-#~ msgid "Welcome back! Please signin to continue."
-#~ msgstr "Willkommen zurück! Bitte melden Sie sich an, um fortzufahren."
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Forgot password?"
-#~ msgid "Forgot password?"
-#~ msgstr "Haben Sie Ihr Passwort vergessen?"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Sign In"
-#~ msgid "Sign In"
-#~ msgstr "Einloggen"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Recover Password"
-#~ msgid "Recover Password"
-#~ msgstr "Passwort erstellen"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Please, type your email below"
-#~ msgid "Please, type your email below"
-#~ msgstr "Bitte geben Sie Ihre E-Mail-Adresse unten ein"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Go to login"
-#~ msgid "Go to login"
-#~ msgstr "Zur Anmeldung gehen"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Account activation"
-#~ msgid "Account activation"
-#~ msgstr "Konto-Aktivierung"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Type your password"
-#~ msgid "Type your password"
-#~ msgstr "Geben Sie Ihr Passwort ein"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Activate account"
-#~ msgid "Activate account"
-#~ msgstr "Konto aktivieren"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Welcome to Dealers League Marine!"
-#~ msgid "Welcome to Dealers League Marine!"
-#~ msgstr "Willkommen bei Dealers League Marine!"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "A new account has been created for you on Dealers League Marine! This means you can now login and join your team. Before you login for the first time you will need to create a new password. Click the button below to create a new password."
-#~ msgid "A new account has been created for you on Dealers League Marine! This means you can now login and join your team. Before you login for the first time you will need to create a new password. Click the button below to create a new password."
-#~ msgstr "Ein neues Konto wurde für Sie bei Dealers League Marine eingerichtet! Das bedeutet, dass Sie sich jetzt einloggen und Ihrem Team beitreten können. Bevor Sie sich zum ersten Mal einloggen, müssen Sie ein neues Passwort erstellen. Klicken Sie auf die Schaltfläche unten, um ein neues Passwort zu erstellen."
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "CREATE PASSWORD"
-#~ msgid "CREATE PASSWORD"
-#~ msgstr "Passwort erstellen"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "To help you get started here are a few guides you might find useful"
-#~ msgid "To help you get started here are a few guides you might find useful"
-#~ msgstr "Um Ihnen den Einstieg zu erleichtern, finden Sie hier einige Leitfäden, die Ihnen nützlich sein könnten"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "How to manage your account"
-#~ msgid "How to manage your account"
-#~ msgstr "Wie Sie Ihr Konto verwalten"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "How to create a new listing"
-#~ msgid "How to create a new listing"
-#~ msgstr "Wie man einen neuen Eintrag erstellt"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "How to publish a new listing to your website"
-#~ msgid "How to publish a new listing to your website"
-#~ msgstr "Wie Sie einen neuen Eintrag auf Ihrer Webseite veröffentlichen"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "If you need help with anything else, simply reply to this email!"
-#~ msgid "If you need help with anything else, simply reply to this email!"
-#~ msgstr "Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach auf diese E-Mail!"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Many Thanks"
-#~ msgid "Many Thanks"
-#~ msgstr "Vielen Dank"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Operations Manager"
-#~ msgid "Operations Manager"
-#~ msgstr "Betriebsleiter"
 
 #~ msgid "Listing Managment"
 #~ msgstr "Anzeigenverwaltung"
@@ -5586,10 +5777,6 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Konto hinzufügen"
 
 #~ msgctxt "app"
-#~ msgid "Add CSS here that you want added to the boat archive page and single boat pages. For example"
-#~ msgstr "Fügen Sie hier CSS hinzu, die Sie zur Bootsarchivseite und zu den einzelnen Bootsseiten hinzufügen möchten. Zum Beispiel"
-
-#~ msgctxt "app"
 #~ msgid "Add Field"
 #~ msgstr "Feld hinzufügen"
 
@@ -5702,8 +5889,12 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Liegeplatz"
 
 #~ msgctxt "app"
-#~ msgid "Beta means there are some areas of this product that still don't represent the final qualtiy we aim to offer"
-#~ msgstr "Beta bedeutet, dass es einige Bereiche dieses Produkts gibt, die noch nicht die endgültige Qualität darstellen, die wir anbieten wollen"
+#~ msgid ""
+#~ "Beta means there are some areas of this product that still don't "
+#~ "represent the final qualtiy we aim to offer"
+#~ msgstr ""
+#~ "Beta bedeutet, dass es einige Bereiche dieses Produkts gibt, die noch "
+#~ "nicht die endgültige Qualität darstellen, die wir anbieten wollen"
 
 #~ msgctxt "app"
 #~ msgid "Billing"
@@ -5795,7 +5986,8 @@ msgstr "Auflistung ansehen"
 
 #~ msgctxt "app"
 #~ msgid "Click button to add new phone number"
-#~ msgstr "Klicken Sie auf die Schaltfläche, um eine neue Telefonnummer hinzuzufügen"
+#~ msgstr ""
+#~ "Klicken Sie auf die Schaltfläche, um eine neue Telefonnummer hinzuzufügen"
 
 #~ msgctxt "app"
 #~ msgid "Close"
@@ -5938,10 +6130,6 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Daten"
 
 #~ msgctxt "app"
-#~ msgid "Date"
-#~ msgstr "Datum"
-
-#~ msgctxt "app"
 #~ msgid "Date Newest to Oldest"
 #~ msgstr "Datum Neuestes bis Ältestes"
 
@@ -6010,8 +6198,15 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Deaktivierungsfeld kann nicht leer sein"
 
 #~ msgctxt "app"
-#~ msgid "Disabling an account will cause all users to loose access and disable the display of content on their website and pause all exports and imports. This does not delete the account and not data will get deleted."
-#~ msgstr "Die Deaktivierung eines Kontos führt dazu, dass alle Benutzer den Zugang verlieren und die Anzeige von Inhalten auf ihrer Webseite deaktivieren und alle Exporte und Importe unterbrechen. Dadurch wird das Konto nicht gelöscht und es werden keine Daten gelöscht."
+#~ msgid ""
+#~ "Disabling an account will cause all users to loose access and disable the "
+#~ "display of content on their website and pause all exports and imports. "
+#~ "This does not delete the account and not data will get deleted."
+#~ msgstr ""
+#~ "Die Deaktivierung eines Kontos führt dazu, dass alle Benutzer den Zugang "
+#~ "verlieren und die Anzeige von Inhalten auf ihrer Webseite deaktivieren "
+#~ "und alle Exporte und Importe unterbrechen. Dadurch wird das Konto nicht "
+#~ "gelöscht und es werden keine Daten gelöscht."
 
 #~ msgctxt "app"
 #~ msgid "Display Settings"
@@ -6020,10 +6215,6 @@ msgstr "Auflistung ansehen"
 #~ msgctxt "app"
 #~ msgid "Divehi"
 #~ msgstr "Divehi, Divehi, Maledivisch"
-
-#~ msgctxt "app"
-#~ msgid "Drafts"
-#~ msgstr "Entwürfe"
 
 #~ msgctxt "app"
 #~ msgid "Dutch"
@@ -6243,7 +6434,8 @@ msgstr "Auflistung ansehen"
 
 #~ msgctxt "app"
 #~ msgid "Error setting a role to a user. Error : erro"
-#~ msgstr "Fehler beim Festlegen einer Rolle für einen Benutzer. Fehler : fehler"
+#~ msgstr ""
+#~ "Fehler beim Festlegen einer Rolle für einen Benutzer. Fehler : fehler"
 
 #~ msgctxt "app"
 #~ msgid "Error updating an user password. Error : erro"
@@ -6518,10 +6710,6 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Video Taste ausblenden?"
 
 #~ msgctxt "app"
-#~ msgid "Hide number of results"
-#~ msgstr "Anzahl der Ergebnisse ausblenden"
-
-#~ msgctxt "app"
 #~ msgid "Host"
 #~ msgstr "Hosting"
 
@@ -6538,12 +6726,10 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Wenn das Boot aus erster Hand kommt"
 
 #~ msgctxt "app"
-#~ msgid "If provided used in correspondence and admin dashboard"
-#~ msgstr "Falls vorhanden, in der Korrespondenz und im Verwaltungs-Dashboard verwendet"
-
-#~ msgctxt "app"
 #~ msgid "If the button doesn’t work you can click on this link"
-#~ msgstr "Falls die Schaltfläche nicht funktioniert, können Sie auf diesen Link klicken"
+#~ msgstr ""
+#~ "Falls die Schaltfläche nicht funktioniert, können Sie auf diesen Link "
+#~ "klicken"
 
 #~ msgctxt "app"
 #~ msgid "If you have any questions"
@@ -6583,15 +6769,13 @@ msgstr "Auflistung ansehen"
 
 #~ msgctxt "app"
 #~ msgid "In addition to only showing boats if they are the same brand"
-#~ msgstr "Zusätzlich dazu, dass Boote nur gezeigt werden, wenn es sich um die gleiche Marke handelt"
+#~ msgstr ""
+#~ "Zusätzlich dazu, dass Boote nur gezeigt werden, wenn es sich um die "
+#~ "gleiche Marke handelt"
 
 #~ msgctxt "app"
 #~ msgid "Inactive Accounts"
 #~ msgstr "Inaktive Konten"
-
-#~ msgctxt "app"
-#~ msgid "Info"
-#~ msgstr "Info"
 
 #~ msgctxt "app"
 #~ msgid "Instagrem"
@@ -6636,10 +6820,6 @@ msgstr "Auflistung ansehen"
 #~ msgctxt "app"
 #~ msgid "Invoicing Address"
 #~ msgstr "Rechnungsadresse"
-
-#~ msgctxt "app"
-#~ msgid "Invoicing Details"
-#~ msgstr "Details zur Rechnungsstellung"
 
 #~ msgctxt "app"
 #~ msgid "Ip"
@@ -6802,10 +6982,6 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Daten zur Auflistung fehlen"
 
 #~ msgctxt "app"
-#~ msgid "Location ID"
-#~ msgstr "Standort-ID"
-
-#~ msgctxt "app"
 #~ msgid "Locations"
 #~ msgstr "Orte"
 
@@ -6830,8 +7006,12 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Hauptnavigation"
 
 #~ msgctxt "app"
-#~ msgid "Making changes to this image will override the original. This cannot be undone."
-#~ msgstr "Änderungen an diesem Bild überschreiben das Original. Dies kann nicht rückgängig gemacht werden."
+#~ msgid ""
+#~ "Making changes to this image will override the original. This cannot be "
+#~ "undone."
+#~ msgstr ""
+#~ "Änderungen an diesem Bild überschreiben das Original. Dies kann nicht "
+#~ "rückgängig gemacht werden."
 
 #~ msgctxt "app"
 #~ msgid "Manage"
@@ -7146,10 +7326,6 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Datenschutz"
 
 #~ msgctxt "app"
-#~ msgid "Privacy Link"
-#~ msgstr "Datenschutz-Link"
-
-#~ msgctxt "app"
 #~ msgid "Privacy link URL required"
 #~ msgstr "Datenschutz-Link URL erforderlich"
 
@@ -7172,10 +7348,6 @@ msgstr "Auflistung ansehen"
 #~ msgctxt "app"
 #~ msgid "Publish Now"
 #~ msgstr "Jetzt publizieren"
-
-#~ msgctxt "app"
-#~ msgid "Published"
-#~ msgstr "Veröffentlicht"
 
 #~ msgctxt "app"
 #~ msgid "Publishing To"
@@ -7228,10 +7400,6 @@ msgstr "Auflistung ansehen"
 #~ msgctxt "app"
 #~ msgid "Resend Code"
 #~ msgstr "Code erneut senden"
-
-#~ msgctxt "app"
-#~ msgid "Reset Password"
-#~ msgstr "Passwort zurücksetzen"
 
 #~ msgctxt "app"
 #~ msgid "Road Map"
@@ -7414,24 +7582,19 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Skype"
 
 #~ msgctxt "app"
-#~ msgid "Small Boat"
-#~ msgstr "Kleines Boot"
-
-#~ msgctxt "app"
 #~ msgid "Solo"
 #~ msgstr "Solo"
 
 #~ msgctxt "app"
-#~ msgid "Someone requested to reset the password for your account. If this was you"
-#~ msgstr "Jemand hat darum gebeten, das Passwort für Ihr Konto zurückzusetzen. Wenn dies Sie waren"
+#~ msgid ""
+#~ "Someone requested to reset the password for your account. If this was you"
+#~ msgstr ""
+#~ "Jemand hat darum gebeten, das Passwort für Ihr Konto zurückzusetzen. Wenn "
+#~ "dies Sie waren"
 
 #~ msgctxt "app"
 #~ msgid "Something was wrong"
 #~ msgstr "Etwas stimmte nicht"
-
-#~ msgctxt "app"
-#~ msgid "Source"
-#~ msgstr "Quelle"
 
 #~ msgctxt "app"
 #~ msgid "Source ID"
@@ -7554,24 +7717,39 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Das bereitgestellte Aktivierungs-Token ist abgelaufen"
 
 #~ msgctxt "app"
-#~ msgid "The provided password has to contains a capital letters , numbers and special characters"
-#~ msgstr "Das angegebene Passwort muss Großbuchstaben, Zahlen und Sonderzeichen enthalten"
+#~ msgid ""
+#~ "The provided password has to contains a capital letters , numbers and "
+#~ "special characters"
+#~ msgstr ""
+#~ "Das angegebene Passwort muss Großbuchstaben, Zahlen und Sonderzeichen "
+#~ "enthalten"
 
 #~ msgctxt "app"
 #~ msgid "The provided password is empty"
 #~ msgstr "Das Passwort ist erforderlich"
 
 #~ msgctxt "app"
-#~ msgid "The provided password must contain a capital letters, numbers and special characters"
-#~ msgstr "Das angegebene Passwort muss Großbuchstaben, Zahlen und Sonderzeichen enthalten"
+#~ msgid ""
+#~ "The provided password must contain a capital letters, numbers and special "
+#~ "characters"
+#~ msgstr ""
+#~ "Das angegebene Passwort muss Großbuchstaben, Zahlen und Sonderzeichen "
+#~ "enthalten"
 
 #~ msgctxt "app"
-#~ msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"
-#~ msgstr "Die hochgeladene Datei überschreitet die Richtlinie MAX_FILE_SIZE, die im HTML-Formular angegeben wurde"
+#~ msgid ""
+#~ "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified "
+#~ "in the HTML form"
+#~ msgstr ""
+#~ "Die hochgeladene Datei überschreitet die Richtlinie MAX_FILE_SIZE, die im "
+#~ "HTML-Formular angegeben wurde"
 
 #~ msgctxt "app"
-#~ msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
-#~ msgstr "Die hochgeladene Datei überschreitet die Richtlinie upload_max_filesize in php.ini"
+#~ msgid ""
+#~ "The uploaded file exceeds the upload_max_filesize directive in php.ini"
+#~ msgstr ""
+#~ "Die hochgeladene Datei überschreitet die Richtlinie upload_max_filesize "
+#~ "in php.ini"
 
 #~ msgctxt "app"
 #~ msgid "The uploaded file was only partially uploaded"
@@ -7579,7 +7757,9 @@ msgstr "Auflistung ansehen"
 
 #~ msgctxt "app"
 #~ msgid "There was an error placing the order, please try again later"
-#~ msgstr "Bei der Bestellung ist ein Fehler aufgetreten, bitte versuchen Sie es später noch einmal"
+#~ msgstr ""
+#~ "Bei der Bestellung ist ein Fehler aufgetreten, bitte versuchen Sie es "
+#~ "später noch einmal"
 
 #~ msgctxt "app"
 #~ msgid "There were a few errors"
@@ -7626,10 +7806,6 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Geben Sie DEAKTIVIEREN ein, um dieses Konto zu deaktivieren."
 
 #~ msgctxt "app"
-#~ msgid "Type and press enter to validate"
-#~ msgstr "Bitte machen Sie eine Eingabe um hier zu suchen"
-
-#~ msgctxt "app"
 #~ msgid "U U I D"
 #~ msgstr "U U I D"
 
@@ -7671,7 +7847,8 @@ msgstr "Auflistung ansehen"
 
 #~ msgctxt "app"
 #~ msgid "Upload folder doesn't exist or is not writable"
-#~ msgstr "Der Ordner zum Hochladen existiert nicht oder ist nicht beschreibbar"
+#~ msgstr ""
+#~ "Der Ordner zum Hochladen existiert nicht oder ist nicht beschreibbar"
 
 #~ msgctxt "app"
 #~ msgid "Url"
@@ -7680,14 +7857,6 @@ msgstr "Auflistung ansehen"
 #~ msgctxt "app"
 #~ msgid "Url Pattern"
 #~ msgstr "URL-Muster"
-
-#~ msgctxt "app"
-#~ msgid "Used (was in charter"
-#~ msgstr "Gebraucht (in Charter gewesen)"
-
-#~ msgctxt "app"
-#~ msgid "Used for invoices and contracts"
-#~ msgstr "Wird für Rechnungen und Verträge verwendet"
 
 #~ msgctxt "app"
 #~ msgid "User"
@@ -7782,10 +7951,6 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Web-Einstellungen erfolgreich gespeichert"
 
 #~ msgctxt "app"
-#~ msgid "Website"
-#~ msgstr "Webseite"
-
-#~ msgctxt "app"
 #~ msgid "Website Authentication"
 #~ msgstr "Authentifizierung der Webseite"
 
@@ -7839,7 +8004,8 @@ msgstr "Auflistung ansehen"
 
 #~ msgctxt "app"
 #~ msgid "You need to set start and end date for all the selected services"
-#~ msgstr "Sie müssen Start- und Enddatum für alle ausgewählten Dienste festlegen"
+#~ msgstr ""
+#~ "Sie müssen Start- und Enddatum für alle ausgewählten Dienste festlegen"
 
 #~ msgctxt "app"
 #~ msgid "Your Account"
@@ -7850,20 +8016,34 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Ihr Konto wurde aktiviert! Bitte klicken Sie "
 
 #~ msgctxt "app"
-#~ msgid "Your account has been activated!. Please, login with your credentials."
-#~ msgstr "Ihr Konto wurde aktiviert! Bitte melden Sie sich mit Ihren Zugangsdaten an."
+#~ msgid ""
+#~ "Your account has been activated!. Please, login with your credentials."
+#~ msgstr ""
+#~ "Ihr Konto wurde aktiviert! Bitte melden Sie sich mit Ihren Zugangsdaten "
+#~ "an."
 
 #~ msgctxt "app"
 #~ msgid "Your account is now active!"
 #~ msgstr "Ihr Konto ist jetzt aktiv!"
 
 #~ msgctxt "app"
-#~ msgid "Your account is now active! This means you can now login and get started. Before you login for the first time you will need to create a new password. Click the button below to create a new password."
-#~ msgstr "Ihr Konto ist jetzt aktiv! Das bedeutet, dass Sie sich jetzt einloggen und loslegen können. Bevor Sie sich zum ersten Mal einloggen, müssen Sie ein neues Passwort erstellen. Klicken Sie auf die Schaltfläche unten, um ein neues Passwort zu erstellen."
+#~ msgid ""
+#~ "Your account is now active! This means you can now login and get started. "
+#~ "Before you login for the first time you will need to create a new "
+#~ "password. Click the button below to create a new password."
+#~ msgstr ""
+#~ "Ihr Konto ist jetzt aktiv! Das bedeutet, dass Sie sich jetzt einloggen "
+#~ "und loslegen können. Bevor Sie sich zum ersten Mal einloggen, müssen Sie "
+#~ "ein neues Passwort erstellen. Klicken Sie auf die Schaltfläche unten, um "
+#~ "ein neues Passwort zu erstellen."
 
 #~ msgctxt "app"
-#~ msgid "Your account is now active. This means you can login and publish listings as normal."
-#~ msgstr "Ihr Konto ist jetzt aktiv. Das bedeutet, dass Sie sich wie gewohnt einloggen und Inserate veröffentlichen können."
+#~ msgid ""
+#~ "Your account is now active. This means you can login and publish listings "
+#~ "as normal."
+#~ msgstr ""
+#~ "Ihr Konto ist jetzt aktiv. Das bedeutet, dass Sie sich wie gewohnt "
+#~ "einloggen und Inserate veröffentlichen können."
 
 #~ msgctxt "app"
 #~ msgid "Your account is now disabled"
@@ -7874,12 +8054,19 @@ msgstr "Auflistung ansehen"
 #~ msgstr "Ihr Kontostatus wurde aktualisiert"
 
 #~ msgctxt "app"
-#~ msgid "Your account status is now disabled. If you believe this is an error or if you have any questions"
-#~ msgstr "Ihr Kontostatus ist jetzt deaktiviert. Wenn Sie glauben, dass dies ein Fehler ist oder wenn Sie Fragen haben"
+#~ msgid ""
+#~ "Your account status is now disabled. If you believe this is an error or "
+#~ "if you have any questions"
+#~ msgstr ""
+#~ "Ihr Kontostatus ist jetzt deaktiviert. Wenn Sie glauben, dass dies ein "
+#~ "Fehler ist oder wenn Sie Fragen haben"
 
 #~ msgctxt "app"
-#~ msgid "Your activation token is invalid or this account was already activated"
-#~ msgstr "Ihr Aktivierungs-Token ist ungültig oder dieses Konto wurde bereits aktiviert"
+#~ msgid ""
+#~ "Your activation token is invalid or this account was already activated"
+#~ msgstr ""
+#~ "Ihr Aktivierungs-Token ist ungültig oder dieses Konto wurde bereits "
+#~ "aktiviert"
 
 #~ msgctxt "app"
 #~ msgid "Zhuang"
