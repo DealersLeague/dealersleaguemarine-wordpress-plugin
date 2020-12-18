@@ -590,9 +590,9 @@ class Dealers_League_Marine {
 				);
 				$verify_response = file_get_contents( $url_checker );
 				$response_data   = json_decode( $verify_response );
-				if ( empty( $response_data->success ) ) {
-					$can_send_recaptcha = false;
-				}
+
+				$can_send_recaptcha = ! empty( $response_data->success );
+
 			}
 
 			$error_messages = [];
@@ -614,7 +614,7 @@ class Dealers_League_Marine {
 			if ( empty( $_POST[ 'enquiry' ][ 'subject' ] ) ) {
 				$error_messages[] = __( 'The subject is required', 'dlmarine' );
 			}
-			if ( empty( $_POST[ 'enquiry' ][ 'message' ] ) ) {
+			if ( $_POST[ 'enquiry' ][ 'subject' ] != 'request_survey' && empty( $_POST[ 'enquiry' ][ 'message' ] ) ) {
 				$error_messages[] = __( 'The message is required', 'dlmarine' );
 			}
 
@@ -624,12 +624,12 @@ class Dealers_League_Marine {
 				$boat_name   = $_POST[ 'enquiry' ][ 'boat_name' ];
 
 				if ( $_POST[ 'enquiry' ][ 'subject' ] == 'request_survey' ) {
-					$to = 'survey email from options';
+					$survey_email = $settings->get_integration_option_val( 'EMS Boot Check', 'survey_email' );
+					$to = $survey_email;
 					$subject = __( 'New Survey Request from', 'dlmarine' ) . ' ' . get_bloginfo( 'name' );
-					$survey_partners_privacy_notice = rwmb_meta( 'survey_partners_privacy_notice', array( 'object_type' => 'setting' ), 'boats' );
 					$body =  '<p style="margin-bottom:10px;">' . __( 'New Survey Request', 'dlmarine' ) . '</p> ';
 				} else {
-					$to = 'email contact from options';
+					$to = $settings->get_option_val( 'email' );;
 					$subject = $boat_name . ' ' . __( 'New Boat Enquiry', 'dlmarine' );
 					$body =  '<p style="margin-bottom:10px;">' . __( 'New Enquiry', 'dlmarine' ) . '</p> ';
 				}
@@ -661,7 +661,7 @@ class Dealers_League_Marine {
 				}
 
 			} else {
-				$result[ 'message' ] = '<span style="color:#058305;">' . implode( '<br>', $error_messages ) . '</span>';
+				$result[ 'message' ] = '<span style="color:#FF0000;">' . implode( '<br>', $error_messages ) . '</span>';
 			}
 
 		} else {

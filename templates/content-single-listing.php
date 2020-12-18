@@ -5,10 +5,24 @@ use dealersleague\marine\wordpress\Utils;
 
 $settings = new Settings_Page();
 $settings->refresh_options();
+
 // Options for recaptcha
 $recaptcha_site_key   = $settings->get_integration_option_val( 'Google reCAPTCHA', 'site_key' );
 $recaptcha_secret_key = $settings->get_integration_option_val( 'Google reCAPTCHA', 'secret_key' );
 $show_recaptcha       = ! empty( $recaptcha_site_key ) && ! empty( $recaptcha_secret_key );
+
+// Options for survey
+$survey_active       = false;
+$survey_email        = $settings->get_integration_option_val( 'EMS Boot Check', 'survey_email' );
+$survey_link         = $settings->get_integration_option_val( 'EMS Boot Check', 'survey_link' );
+$survey_privacy_text = $settings->get_integration_option_val( 'EMS Boot Check', 'survey_privacy_notice' );
+if ( ! empty( $survey_email ) && ! empty( $survey_link ) && ! empty( $survey_privacy_text ) ) {
+	$survey_active = true;
+	$link = '<a target="_blank" href="'.$survey_link.'">'.$survey_link.'</a>';
+	$survey_privacy_text = str_replace( '{survey_link}', $link, $survey_privacy_text );
+}
+
+
 // Privacy link option
 $privacy_policy_page_link = $settings->get_web_settings_option_val( 'privacy_link' );
 $video_placement = $settings->get_web_settings_option_val( 'video_placement' );
@@ -301,24 +315,31 @@ if ( ! is_user_logged_in() ) {
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="subject" class="col-form-label"><?php _e('Subject', 'dlmarine'); ?></label>
-                                            <select name="enquiry[subject]" id="subject" required="required">
+                                            <select name="enquiry[subject]" id="enquiry-subject" required="required">
                                                 <option value=""><?php _e('Choose an option', 'dlmarine'); ?></option>
                                                 <option value="<?php _e('Viewing', 'dlmarine'); ?>"><?php _e('Viewing', 'dlmarine'); ?></option>
                                                 <option value="<?php _e('Availability', 'dlmarine'); ?>"><?php _e('Availability', 'dlmarine'); ?></option>
                                                 <option value="<?php _e('Pricing', 'dlmarine'); ?>"><?php _e('Pricing', 'dlmarine'); ?></option>
                                                 <option value="<?php _e('Further Information', 'dlmarine'); ?>"><?php _e('Further Information', 'dlmarine'); ?></option>
-
+                                                <?php if ( $survey_active ) { ?>
                                                 <option value="request_survey"><?php _e('Request Survey', 'dlmarine'); ?></option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!--end form-group-->
-                                <div class="form-group">
+                                <div id="message-wrapper" class="form-group">
                                     <label for="message" class="col-form-label"><?php _e('Message', 'dlmarine'); ?></label>
                                     <textarea name="enquiry[message]" id="message" class="form-control" rows="4" style="resize: none;"></textarea>
                                 </div>
+	                            <?php if ( $survey_active ) { ?>
+                                <div id="survey-wrapper" class="form-group" style="display:none;">
+                                    <span><?php echo $survey_privacy_text; ?></span>
+                                </div>
+                                <?php } ?>
+
                                 <?php if ( ! empty( $gdpr_message ) ) { ?>
                                 <div class="form-group">
                                     <label>
