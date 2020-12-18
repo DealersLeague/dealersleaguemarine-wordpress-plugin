@@ -16,7 +16,6 @@ class Dealers_League_Marine {
 		$this->api_object = new Api();
 		$this->api_object->init();
 
-		add_action( 'init', array( $this, 'load_textdomain' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'public_scripts' ) );
 
@@ -29,9 +28,12 @@ class Dealers_League_Marine {
  
 	}
 
-	public function load_textdomain() {
-        load_plugin_textdomain( 'dlmarine', false, basename( dirname( __FILE__ ) ) . '/languages' );
+
+	public function load_plugin_textdomain() {
+		load_plugin_textdomain( 'dlmarine', FALSE, basename( plugin_dir_path(  dirname( __FILE__  ) ) ) . '/languages/' );
+
 	}
+
 
 	public function admin_scripts(): void {
 		wp_register_style( 'dealers-league-marine-admin-css', plugins_url( 'css/dealers-league-marine-admin.css', __DIR__ ), false, '1.0.1' );
