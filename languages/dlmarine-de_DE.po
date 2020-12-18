@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-12-18 09:52+0000\n"
-"PO-Revision-Date: 2020-12-18 09:53+0000\n"
+"POT-Creation-Date: 2020-12-18 13:47+0000\n"
+"PO-Revision-Date: 2020-12-18 13:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -78,7 +78,7 @@ msgstr "Segelboot"
 msgid "Inflatable"
 msgstr "Aufblasbar"
 
-#: languages/fields.php:18 languages/fields.php:399 languages/fields.php:714
+#: languages/fields.php:18 languages/fields.php:399 languages/fields.php:713
 #: src/class-utils.php:97
 msgid "Jetski"
 msgstr "Jetski"
@@ -412,7 +412,7 @@ msgstr "Einzelruder"
 msgid "Dual-wheel"
 msgstr "Dual-Rad"
 
-#: languages/fields.php:107 languages/fields.php:717 src/class-utils.php:99
+#: languages/fields.php:107 languages/fields.php:716 src/class-utils.php:99
 msgid "Flybridge"
 msgstr "Flybridge"
 
@@ -499,7 +499,7 @@ msgstr "Abmessungen"
 #: languages/fields.php:129 templates/content-archive-listing.php:64
 #: templates/content-single-listing.php:186
 msgid "LOA"
-msgstr "Länge ü. A. (m)"
+msgstr "Länge ü. A."
 
 #: languages/fields.php:130
 msgid "Length overall"
@@ -512,7 +512,7 @@ msgstr "Länge Wasserlinie"
 #: languages/fields.php:132 templates/content-archive-listing.php:65
 #: templates/content-single-listing.php:200
 msgid "Beam"
-msgstr "Schiffsbreite"
+msgstr "Breite"
 
 #: languages/fields.php:133
 msgid "Draught"
@@ -652,7 +652,7 @@ msgstr "V-Antrieb"
 msgid "Shaft"
 msgstr "Welle"
 
-#: languages/fields.php:170 languages/fields.php:723 src/class-utils.php:105
+#: languages/fields.php:170 languages/fields.php:722 src/class-utils.php:105
 msgid "Jet"
 msgstr "Jet"
 
@@ -794,12 +794,12 @@ msgstr "Segeltyp auswählen"
 msgid "Sloop"
 msgstr "Slooptakelung"
 
-#: languages/fields.php:210 languages/fields.php:218 languages/fields.php:721
+#: languages/fields.php:210 languages/fields.php:218 languages/fields.php:720
 #: src/class-utils.php:103
 msgid "Ketch"
 msgstr "Ketsch"
 
-#: languages/fields.php:211 languages/fields.php:219 languages/fields.php:722
+#: languages/fields.php:211 languages/fields.php:219 languages/fields.php:721
 #: src/class-utils.php:104
 msgid "Yawl"
 msgstr "Jolle"
@@ -935,7 +935,7 @@ msgstr "Witschen"
 #: languages/fields.php:285 languages/fields.php:308 languages/fields.php:319
 #: languages/fields.php:366 languages/fields.php:385 languages/fields.php:564
 #: languages/fields.php:570 languages/fields.php:587 languages/fields.php:621
-#: languages/fields.php:719 src/class-utils.php:101
+#: languages/fields.php:718 src/class-utils.php:101
 msgid "Electric"
 msgstr "Elektrisch"
 
@@ -1084,7 +1084,7 @@ msgstr "Wählen Sie eine Kraftstoffart"
 msgid "Gasoline"
 msgstr "Benzin"
 
-#: languages/fields.php:367 languages/fields.php:720 src/class-utils.php:102
+#: languages/fields.php:367 languages/fields.php:719 src/class-utils.php:102
 msgid "Solar"
 msgstr "Solar"
 
@@ -2090,139 +2090,111 @@ msgstr "Pedal"
 msgid "Rowing"
 msgstr "Rowing"
 
-#: languages/fields.php:713
-msgid "personal water craft"
-msgstr ""
-
-#: languages/fields.php:715 src/class-utils.php:98
+#: languages/fields.php:714 src/class-utils.php:98
 msgid "Gadget"
 msgstr "Gadget"
 
-#: languages/fields.php:716
+#: languages/fields.php:715
 msgid "conditional"
 msgstr "Zustand"
 
-#: languages/fields.php:718 src/class-utils.php:100
+#: languages/fields.php:717 src/class-utils.php:100
 msgid "Mega Yacht"
 msgstr "Mega-Yacht"
 
-#: languages/fields.php:724 src/class-utils.php:106
+#: languages/fields.php:723 src/class-utils.php:106
 msgid "Offshore"
 msgstr "Offshore"
 
-#: languages/fields.php:725 src/class-utils.php:107
+#: languages/fields.php:724 src/class-utils.php:107
 msgid "Lobster"
 msgstr "Lobster"
 
-#: languages/fields.php:726 src/class-utils.php:108
+#: languages/fields.php:725 src/class-utils.php:108
 msgid "Crabber"
 msgstr "Kutter"
 
-#: languages/fields.php:727 src/class-utils.php:109
+#: languages/fields.php:726 src/class-utils.php:109
 msgid "Dragger"
 msgstr "Dragger"
 
-#: languages/fields.php:728 src/class-utils.php:110
+#: languages/fields.php:727 src/class-utils.php:110
 msgid "Longliner"
 msgstr "Longliner"
 
-#: languages/fields.php:729 src/class-utils.php:111
+#: languages/fields.php:728 src/class-utils.php:111
 msgid "Bay Boat"
 msgstr "Angelboot"
 
-#: languages/fields.php:730 src/class-utils.php:112
+#: languages/fields.php:729 src/class-utils.php:112
 msgid "Duck Boat"
 msgstr "Duck Boat"
 
-#: languages/fields.php:731 src/class-utils.php:113
+#: languages/fields.php:730 src/class-utils.php:113
 msgid "Tanker"
 msgstr "Tanker"
 
-#: languages/fields.php:732 src/class-utils.php:114
+#: languages/fields.php:731 src/class-utils.php:114
 msgid "Container Ship"
 msgstr "Container-Schiff"
 
-#: languages/fields.php:733
-msgid "Your Import Has Finished"
-msgstr ""
-
-#: languages/fields.php:734
-msgid "Your import has just finished. Here are the results:"
-msgstr ""
-
-#: languages/fields.php:735
+#: languages/fields.php:732
 msgid "Date"
 msgstr "Datum"
 
-#: languages/fields.php:736
+#: languages/fields.php:733
 msgid "Source"
 msgstr "Quelle"
 
-#: languages/fields.php:737
+#: languages/fields.php:734
 msgid "Published"
 msgstr "Veröffentlicht"
 
-#: languages/fields.php:738
+#: languages/fields.php:735
 msgid "Drafts"
 msgstr "Entwürfe"
 
-#: languages/fields.php:739
-msgid ""
-"The following listings have some issues. They have been saved as drafts. "
-"Please review them and amend any issues before they can be published."
-msgstr ""
-
-#: languages/fields.php:740
-msgid "If you have any questions, simply reply to this email!"
-msgstr ""
-"Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach auf "
-"diese E-Mail!"
-
-#: languages/fields.php:741
-msgid "Welcome back! Please signin to continue."
-msgstr "Willkommen zurück! Bitte melden Sie sich an, um fortzufahren."
-
-#: languages/fields.php:742
+#: languages/fields.php:736
 msgid "Forgot password?"
 msgstr "Haben Sie Ihr Passwort vergessen?"
 
-#: languages/fields.php:743
+#: languages/fields.php:737
 msgid "Sign In"
 msgstr "Einloggen"
 
-#: languages/fields.php:744
+#: languages/fields.php:738
 msgid "Recover Password"
 msgstr "Passwort erstellen"
 
-#: languages/fields.php:745
+#: languages/fields.php:739
 msgid "Repeat Password"
 msgstr "Passwort zurücksetzen"
 
-#: languages/fields.php:746
+#: languages/fields.php:740
 msgid "Please, type your email below"
 msgstr "Bitte geben Sie Ihre E-Mail-Adresse unten ein"
 
-#: languages/fields.php:747
+#: languages/fields.php:741
 msgid "Go to login"
 msgstr "Zur Anmeldung gehen"
 
-#: languages/fields.php:748
+#: languages/fields.php:742
 msgid "Account activation"
 msgstr "Konto-Aktivierung"
 
-#: languages/fields.php:749
+#: languages/fields.php:743
 msgid "Type your password"
 msgstr "Geben Sie Ihr Passwort ein"
 
-#: languages/fields.php:750
+#: languages/fields.php:744
 msgid "Activate account"
 msgstr "Konto aktivieren"
 
-#: languages/fields.php:751
+#: languages/fields.php:745
 msgid "Welcome to Dealers League Marine!"
 msgstr "Willkommen bei Dealers League Marine!"
 
-#: languages/fields.php:752
+#: languages/fields.php:746
 msgid ""
 "A new account has been created for you on Dealers League Marine! This means "
 "you can now login and join your team. Before you login for the first time "
@@ -2235,138 +2207,104 @@ msgstr ""
 "erstellen. Klicken Sie auf die Schaltfläche unten, um ein neues Passwort zu "
 "erstellen."
 
-#: languages/fields.php:753
-msgid "CREATE PASSWORD"
-msgstr "Passwort erstellen"
-
-#: languages/fields.php:754
+#: languages/fields.php:747
 msgid "To help you get started here are a few guides you might find useful"
 msgstr ""
 "Um Ihnen den Einstieg zu erleichtern, finden Sie hier einige Leitfäden, die "
 "Ihnen nützlich sein könnten"
 
-#: languages/fields.php:755
+#: languages/fields.php:748
 msgid "How to manage your account"
 msgstr "Wie Sie Ihr Konto verwalten"
 
-#: languages/fields.php:756
+#: languages/fields.php:749
 msgid "How to create a new listing"
 msgstr "Wie man einen neuen Eintrag erstellt"
 
-#: languages/fields.php:757
+#: languages/fields.php:750
 msgid "How to publish a new listing to your website"
 msgstr "Wie Sie einen neuen Eintrag auf Ihrer Webseite veröffentlichen"
 
-#: languages/fields.php:758
+#: languages/fields.php:751
 msgid "If you need help with anything else, simply reply to this email!"
 msgstr ""
 "Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach auf "
 "diese E-Mail!"
 
-#: languages/fields.php:759
+#: languages/fields.php:752
 msgid "Many Thanks"
 msgstr "Vielen Dank"
 
-#: languages/fields.php:760
+#: languages/fields.php:753
 msgid "Operations Manager"
 msgstr "Betriebsleiter"
 
-#: languages/fields.php:761
-msgid "At least 6 characters long"
-msgstr ""
-
-#: languages/fields.php:762
-msgid "One lowercase character"
-msgstr "Gebraucht (in Charter gewesen)"
-
-#: languages/fields.php:763
-msgid "One uppercase character"
-msgstr ""
-
-#: languages/fields.php:764
-msgid "One number or symbol"
-msgstr "Anzahl der Ergebnisse ausblenden"
-
-#: languages/fields.php:765
-msgid ""
-"In addition to only showing boats if they are the same brand, turning this "
-"on will only show related boats if they are a similar length and price"
-msgstr ""
-
-#: languages/fields.php:766
-msgid ""
-"Add CSS here that you want added to the boat archive page and single boat "
-"pages. For example, to hide the theme header or change button color."
-msgstr ""
-"Fügen Sie hier CSS hinzu, die Sie zur Bootsarchivseite und zu den einzelnen "
-"Bootsseiten hinzufügen möchten. Zum Beispiel"
-
-#: languages/fields.php:767
+#: languages/fields.php:754
 msgid "Privacy Link URL"
 msgstr "Datenschutz-Link"
 
-#: languages/fields.php:768
+#: languages/fields.php:755
 msgid "Add Location"
 msgstr "Standort"
 
-#: languages/fields.php:769
+#: languages/fields.php:756
 msgid "Location Data"
 msgstr "Standort-ID"
 
-#: languages/fields.php:770
+#: languages/fields.php:757
 msgid "Location name"
 msgstr "Standort"
 
-#: languages/fields.php:771
+#: languages/fields.php:758
 msgid "Main location"
 msgstr "Standort"
 
-#: languages/fields.php:772
+#: languages/fields.php:759
 msgid "Invoicing location"
 msgstr "Details zur Rechnungsstellung"
 
-#: languages/fields.php:773
+#: languages/fields.php:760
 msgid "Address (Type and press enter to validate)"
 msgstr "Bitte machen Sie eine Eingabe um hier zu suchen"
 
-#: languages/fields.php:774
+#: languages/fields.php:761
 msgid "Info"
 msgstr "Info"
 
-#: languages/fields.php:775
+#: languages/fields.php:762
 msgid "Enter the name"
 msgstr "Geben Sie den Bootsnamen ein"
 
-#: languages/fields.php:776
+#: languages/fields.php:763
 msgid "Your Scheduled Listings Have Been Processed"
-msgstr ""
+msgstr "Y"
 
-#: languages/fields.php:777
+#: languages/fields.php:764
 msgid "Here are the results:"
 msgstr "Anzahl der Ergebnisse ausblenden"
 
-#: languages/fields.php:778
+#: languages/fields.php:765
 msgid "Sent To Website"
 msgstr "Webseite"
 
-#: languages/fields.php:779
+#: languages/fields.php:766
 msgid "Not Published"
 msgstr "Veröffentlicht"
 
-#: languages/fields.php:780
+#: languages/fields.php:767
 msgid ""
 "The following listings have some issues. Please review them and amend any "
 "issues before they can be published."
-msgstr ""
+msgstr "T."
 
-#: languages/fields.php:781
+#: languages/fields.php:768
 msgid ""
 "If provided used in correspondence and admin dashboard, if not provided, "
 "company will be used"
 msgstr ""
 "Falls vorhanden, in der Korrespondenz und im Verwaltungs-Dashboard verwendet"
 
-#: languages/fields.php:782
+#: languages/fields.php:769
 msgid "Used for invoices and contracts, etc"
 msgstr "Wird für Rechnungen und Verträge verwendet"
 
@@ -2394,7 +2332,7 @@ msgstr "Boot ansehen"
 msgid "Edit Boat"
 msgstr "Boot hinzufügen"
 
-#: src/class-boat-post-type.php:29 src/class-dealers-league-marine.php:642
+#: src/class-boat-post-type.php:29 src/class-dealers-league-marine.php:644
 msgid "View Boat"
 msgstr "Boot ansehen"
 
@@ -2422,68 +2360,68 @@ msgstr "Keine Boote "
 msgid "Enter the Boat name"
 msgstr "Geben Sie den Bootsnamen ein"
 
-#: src/class-dealers-league-marine.php:373
+#: src/class-dealers-league-marine.php:375
 msgid "listings"
 msgstr "Auflistungen"
 
-#: src/class-dealers-league-marine.php:375
+#: src/class-dealers-league-marine.php:377
 msgid "No listings found"
 msgstr "Keine Auflistungen gefunden"
 
-#: src/class-dealers-league-marine.php:571
-#: src/class-dealers-league-marine.php:668
+#: src/class-dealers-league-marine.php:573
+#: src/class-dealers-league-marine.php:670
 msgid "Missing data"
 msgstr "Fehlende Daten"
 
-#: src/class-dealers-league-marine.php:601
+#: src/class-dealers-league-marine.php:603
 msgid "Please complete recaptcha"
 msgstr "Bitte vervollständigen Sie recaptcha"
 
-#: src/class-dealers-league-marine.php:604
+#: src/class-dealers-league-marine.php:606
 msgid "The name is required"
 msgstr "Der Name ist erforderlich"
 
-#: src/class-dealers-league-marine.php:607
+#: src/class-dealers-league-marine.php:609
 msgid "The email is required"
 msgstr "Die E-Mail ist erforderlich"
 
-#: src/class-dealers-league-marine.php:609
+#: src/class-dealers-league-marine.php:611
 msgid "The email is not valid"
 msgstr "E-Mail ist ungültig"
 
-#: src/class-dealers-league-marine.php:612
+#: src/class-dealers-league-marine.php:614
 msgid "The phone is required"
 msgstr "Benutzerkonto ist erforderlich"
 
-#: src/class-dealers-league-marine.php:615
+#: src/class-dealers-league-marine.php:617
 msgid "The subject is required"
 msgstr "Benutzerkonto ist erforderlich"
 
-#: src/class-dealers-league-marine.php:618
+#: src/class-dealers-league-marine.php:620
 msgid "The message is required"
 msgstr "Die Nachricht ist erforderlich"
 
-#: src/class-dealers-league-marine.php:629
+#: src/class-dealers-league-marine.php:631
 msgid "New Survey Request from"
 msgstr "Neue Gutachten Anfrage von"
 
-#: src/class-dealers-league-marine.php:630
+#: src/class-dealers-league-marine.php:632
 msgid "New Survey Request"
 msgstr "Neue Gutachten Anfrage"
 
-#: src/class-dealers-league-marine.php:633
+#: src/class-dealers-league-marine.php:635
 msgid "New Boat Enquiry"
 msgstr "Neue Bootsanfrage"
 
-#: src/class-dealers-league-marine.php:634
+#: src/class-dealers-league-marine.php:636
 msgid "New Enquiry"
 msgstr "Neue Anfrage"
 
-#: src/class-dealers-league-marine.php:658
+#: src/class-dealers-league-marine.php:660
 msgid "Thank you for contacting us, we will be in touch soon."
 msgstr "Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen."
 
-#: src/class-dealers-league-marine.php:660
+#: src/class-dealers-league-marine.php:662
 msgid "Sorry there was an error. Message was not sent."
 msgstr "Es gab einen Fehler. Ihre Nachricht wurde nicht gesendet."
 
@@ -2529,7 +2467,7 @@ msgstr "Auflistungen aktualisieren"
 
 #: src/class-settings-page.php:85
 msgid "View listings"
-msgstr "Auflistung ansehen"
+msgstr "Mehr Information"
 
 #: src/class-settings-page.php:86
 msgid ""
@@ -3610,7 +3548,7 @@ msgstr "Höchster Preis zuerst"
 #: templates/content-archive-listing.php:66
 #: templates/content-single-listing.php:193
 msgid "Draft"
-msgstr "Entwurf"
+msgstr "Tiefgang"
 
 #: templates/content-archive-search.php:18
 #: templates/content-archive-search.php:19
@@ -3803,7 +3741,31 @@ msgstr "Diese Seite ausdrucken"
 
 #: templates/item-listing-list.php:41
 msgid "View Listing"
-msgstr "Auflistung ansehen"
+msgstr "Mehr Information"
+
+#~ msgid ""
+#~ "Add CSS here that you want added to the boat archive page and single boat "
+#~ "pages. For example, to hide the theme header or change button color."
+#~ msgstr ""
+#~ "Fügen Sie hier CSS hinzu, die Sie zur Bootsarchivseite und zu den "
+#~ "einzelnen Bootsseiten hinzufügen möchten. Zum Beispiel"
+
+#~ msgid "CREATE PASSWORD"
+#~ msgstr "Passwort erstellen"
+
+#~ msgid "One lowercase character"
+#~ msgstr "Gebraucht (in Charter gewesen)"
+
+#~ msgid "One number or symbol"
+#~ msgstr "Anzahl der Ergebnisse ausblenden"
+
+#~ msgid "If you have any questions, simply reply to this email!"
+#~ msgstr ""
+#~ "Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach "
+#~ "auf diese E-Mail!"
+
+#~ msgid "Welcome back! Please signin to continue."
+#~ msgstr "Willkommen zurück! Bitte melden Sie sich an, um fortzufahren."
 
 #~ msgid "Listing Managment"
 #~ msgstr "Anzeigenverwaltung"
