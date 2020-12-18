@@ -230,7 +230,7 @@ if ( ! is_user_logged_in() ) {
 			                <?php if (! empty( $condition ) ) { ?>
                                 <div class="item boat-info-item item-title">
                                     <strong><?php _e('Condition', 'dlmarine' ); ?></strong><br>
-					                <?php echo $condition; ?>
+	                                <?php _e( ucwords( $condition ), 'dlmarine'); ?>
                                 </div>
 			                <?php } ?>
 
