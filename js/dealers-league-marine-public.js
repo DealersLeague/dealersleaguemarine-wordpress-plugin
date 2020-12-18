@@ -14,6 +14,16 @@
 
     });
 
+    $(document).on('change', '#enquiry-subject', function(event) {
+        if ( $(this).val() == 'request_survey' ) {
+            $('#message-wrapper').css('display', 'none');
+            $('#survey-wrapper').css('display', 'block');
+        } else {
+            $('#message-wrapper').css('display', 'block');
+            $('#survey-wrapper').css('display', 'none');
+        }
+    });
+
     // Enquiry
     $(document).on('submit', '#form_send_enquiry', function(event) {
         event.preventDefault();
