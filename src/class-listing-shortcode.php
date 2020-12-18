@@ -11,7 +11,7 @@ class Listing_Shortcode {
 	}
 
 	/**
-	 * Usage: [listing_archive category="my category" manufacturer="my manufacturer" country="DE"]
+	 * Usage: [listing_archive category="my category" manufacturer="my manufacturer" country="DE" condition="new|used"]
 	 *
 	 * @param mixed $attr
 	 *
@@ -40,6 +40,15 @@ class Listing_Shortcode {
 			$conditions[] = array(
 				'key'     => 'listing_category',
 				'value'   => strtolower( $search_category ),
+				'compare' => '=',
+			);
+		}
+
+		$search_condition = $attr[ 'condition' ] ?? $_GET['condition'] ?? '';
+		if ( ! empty( $search_condition ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_sale_class',
+				'value'   => strtolower( $search_condition ),
 				'compare' => '=',
 			);
 		}

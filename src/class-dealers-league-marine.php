@@ -16,6 +16,7 @@ class Dealers_League_Marine {
 		$this->api_object = new Api();
 		$this->api_object->init();
 
+		add_action( 'init', array( $this, 'load_textdomain' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'public_scripts' ) );
 
@@ -24,11 +25,12 @@ class Dealers_League_Marine {
 		add_action( 'wp_ajax_dealers-league-marine_send_enquiry', array( $this, 'send_enquiry' ) );
 		add_action( 'wp_ajax_nopriv_dealers-league-marine_send_enquiry', array( $this, 'send_enquiry' ) );
 
-		//add_filter( 'single_template', array( $this, 'load_single_template' ) );
-		//add_filter( 'singular_template', array( $this, 'load_single_template' ) );
-
 		add_filter( 'the_content', array( $this, 'listing_content' ), -1 ); 
  
+	}
+
+	public function load_textdomain() {
+        load_plugin_textdomain( 'dlmarine', false, basename( dirname( __FILE__ ) ) . '/languages' );
 	}
 
 	public function admin_scripts(): void {
@@ -199,18 +201,6 @@ class Dealers_League_Marine {
 		wp_enqueue_script( 'dealers-league-marine-js' );
 
 	}
-
-
-	public function load_single_template( $template ) {
-		global $post;
-
-		if ( Boat_Post_Type::get_post_type_name() === $post->post_type && locate_template( array( 'single-' . Boat_Post_Type::get_post_type_name() . '.php' ) ) !== $template ) {
-			return plugin_dir_path( __FILE__ ) . '../templates/single-listing.php';
-		}
-
-		return $template;
-	}
-
 
 	public function listing_content( $content ) {
 		global $post;
