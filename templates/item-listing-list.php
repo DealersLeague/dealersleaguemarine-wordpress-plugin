@@ -2,9 +2,9 @@
     <div class="wrapper">
         <div class="image">
             <h3>
-                <a href="#" class="tag category"><?php echo $category; ?></a>
+                <a href="#" class="tag category"><?php echo __( ucfirst( $category ) , 'dlmarine' ); ?></a>
                 <a href="<?php echo get_permalink( $listing->ID ); ?>" class="title"><?php echo $manufacturer . ' ' . $model; ?></a>
-                <span class="tag"><?php echo $sale_status; ?></span>
+                <span class="tag"><?php echo __(  ucfirst( $sale_status ), 'dlmarine' ); ?></span>
             </h3>
             <a href="<?php echo get_permalink( $listing->ID ); ?>" class="image-wrapper background-image">
                 <img src="<?php echo $featured_image; ?>" alt="">
