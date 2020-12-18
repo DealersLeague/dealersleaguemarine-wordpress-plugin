@@ -33,7 +33,7 @@ if ( empty( $hide_search_bar ) ) {
                         <select name="category" id="category" data-placeholder="<?php _e( 'Select Category', 'dlmarine' ); ?>">
                             <option value=""><?php _e( 'Select Category', 'dlmarine' ); ?></option>
 	                        <?php foreach ( $category_list as $category ) { ?>
-                                <option value="<?php echo $category; ?>" <?php echo (isset($search_category) && $search_category == $category ? 'selected="selected"' : '') ?>><?php echo ucfirst( __( $category, 'dlmarine' ) ); ?></option>
+                                <option value="<?php echo $category; ?>" <?php echo (isset($search_category) && $search_category == $category ? 'selected="selected"' : '') ?>><?php echo __( ucfirst( $category ), 'dlmarine' ); ?></option>
 	                        <?php } ?>
                         </select>
                     </div>

@@ -75,12 +75,29 @@ $boat_type    = get_post_meta( $post_id, 'listing_boat_type', true );
 $manufacturer = get_post_meta( $post_id, 'listing_manufacturer', true );
 $model        = get_post_meta( $post_id, 'listing_model', true );
 $condition    = get_post_meta( $post_id, 'listing_condition', true );
-$condition    = str_replace( '-', ' ', $condition );
-$location     = get_post_meta( $post_id, 'listing_location', true );
-$sale_status  = get_post_meta( $post_id, 'listing_sale_status', true );
-$loa          = get_post_meta( $post_id, 'listing_loa', true ) . Utils::get_unity( 'loa' );
-$draft        = get_post_meta( $post_id, 'listing_draught', true ) . Utils::get_unity( 'draught' );
-$beam         = get_post_meta( $post_id, 'listing_beam', true ) . Utils::get_unity( 'beam' );
+$sale_class   = get_post_meta( $post_id, 'listing_sale_class', true );
+if ( in_array( $sale_class, array( 'new','new-instock','new-onorder','new-inorder') ) ) {
+    $condition = 'New';
+} else {
+	$condition = ucfirst( str_replace( '-', ' ', $condition ) );
+}
+$vat_status     = get_post_meta( $post_id, 'listing_vat_status', true );
+$vat_area       = get_post_meta( $post_id, 'listing_vat_paid_area', true );
+$vat_separately = get_post_meta( $post_id, 'listing_vat_stated_separately', true );
+$city           = get_post_meta( $post_id, 'listing_location_city', true );
+$country        = get_post_meta( $post_id, 'listing_location_country', true );
+$price          = get_post_meta( $post_id, 'listing_price', true );
+$currency       = get_post_meta( $post_id, 'listing_currency', true );
+$price          = Utils::format_price( $price, $currency );
+$currency       = Utils::get_currency_symbol( $currency );
+$location       = get_post_meta( $post_id, 'listing_location', true );
+$sale_status    = get_post_meta( $post_id, 'listing_sale_status', true );
+$loa            = get_post_meta( $post_id, 'listing_loa', true );
+$loa            = empty( $loa ) ? '' : $loa . Utils::get_unity( 'loa' );
+$draft          = get_post_meta( $post_id, 'listing_draught', true );
+$draft          = empty( $draft ) ? '' : $draft . Utils::get_unity( 'draught' );
+$beam           = get_post_meta( $post_id, 'listing_beam', true );
+$beam           = empty( $beam ) ? '' : $beam . Utils::get_unity( 'beam' );
 
 // Panorama
 $panorama_list = maybe_unserialize( get_post_meta( $post_id, 'listing_panorama', true ) );
@@ -88,6 +105,7 @@ $panorama_list = maybe_unserialize( get_post_meta( $post_id, 'listing_panorama',
 // Loop sections
 $exclude_section_list = [
 	'advert',
+    'sales_details',
 	'listing_managment',
 	'images',
 	'panorama_images',
@@ -201,6 +219,51 @@ if ( ! is_user_logged_in() ) {
 	                                <?php echo $beam; ?>
                                 </div>
 	                        <?php } ?>
+                        </div>
+                    </section>
+                    <!--end Details-->
+
+                    <!--Sales Details-->
+                    <section>
+                        <h2 class="listing-heading"><?php _e('Sales Details', 'dlmarine' ); ?></h2>
+                        <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">
+			                <?php if (! empty( $condition ) ) { ?>
+                                <div class="item boat-info-item item-title">
+                                    <strong><?php _e('Condition', 'dlmarine' ); ?></strong><br>
+					                <?php echo $condition; ?>
+                                </div>
+			                <?php } ?>
+
+			                <?php if (! empty( $price ) ) { ?>
+                                <div class="item boat-info-item item-title">
+                                    <strong><?php _e('Price', 'dlmarine' ); ?></strong><br>
+					                <?php echo $currency . $price; ?>
+                                </div>
+			                <?php } ?>
+
+			                <?php if (! empty( $vat_status ) ) { ?>
+                                <div class="item boat-info-item">
+                                    <span class="item-title"><strong><?php _e('VAT', 'dlmarine' ); ?></strong></span>
+                                    <br>
+                                    <span>
+                                        <strong><?php _e('status', 'dlmarine' ); ?>:</strong> <?php echo __( ucfirst( $vat_status ), 'dlmarine' ); ?>
+                                        <?php if( ! empty( $vat_area ) ) { ?>
+                                            <br><strong><?php _e('paid area', 'dlmarine' ); ?>:</strong> <?php echo __( $vat_area, 'dlmarine' ); ?>
+                                        <?php } ?>
+                                        <?php if ( $vat_separately == 'on' ) { ?>
+                                            <br><strong><?php _e('stated separatly', 'dlmarine' ); ?></strong>
+                                        <?php } ?>
+                                    </span>
+                                </div>
+			                <?php } ?>
+
+			                <?php if (! empty( $city ) && ! empty( $country) ) { ?>
+                                <div class="item boat-info-item item-title">
+                                    <strong><?php _e('Location', 'dlmarine' ); ?></strong><br>
+					                <?php $country = Utils::get_country_name( $country ); ?>
+                                    <?php echo $city .', ' . $country; ?>
+                                </div>
+			                <?php } ?>
                         </div>
                     </section>
                     <!--end Details-->

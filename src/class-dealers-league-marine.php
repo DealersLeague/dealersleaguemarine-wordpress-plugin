@@ -296,9 +296,11 @@ class Dealers_League_Marine {
 									$subfield_text .= Utils::get_boat_type_name( $subfield_value ) . '<br>';
 								} else {
 									$subfield_value = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_value );
-									$subfield_name = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_name );
-									$unit = Utils::get_unity( $subfield_name );
-									$subfield_text .= ucwords( __( $subfield_value, 'dlmarine' ) ) . $unit . '<br>';
+									if ( ! empty ( $subfield_value ) ) {
+										$subfield_name = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_name );
+										$unit = Utils::get_unity( $subfield_name );
+										$subfield_text .= ucwords( __( $subfield_value, 'dlmarine' ) ) . $unit . '<br>';
+									}
 								}
 								$subfield_text = str_replace(
 									['<br>On', 'On<br>'],
@@ -317,7 +319,7 @@ class Dealers_League_Marine {
 						$field_value = Utils::get_country_name( $field_value );
 						$unit = Utils::get_unity( $field_name );
 						$field_name = $field_name == 'n_engines' ? 'engines' : $field_name;
-						$transformed_fields[ $section_name ][ $field_name ] = ucwords( __( $field_value, 'dlmarine' ) ) . $unit;
+						$transformed_fields[ $section_name ][ $field_name ] = __( ucwords( $field_value ), 'dlmarine' ) . $unit;
 						$remove_section = false;
 					}
 
@@ -337,7 +339,7 @@ class Dealers_League_Marine {
 
 				}
 				if ( $remove_section ) {
-					unset( $transformed_fields[ $section_name ] );
+					//unset( $transformed_fields[ $section_name ] );
 				}
 
 			}
@@ -420,7 +422,7 @@ class Dealers_League_Marine {
 		}
 
 		if ( isset( $json_data['listing']['listing_meta']['advert']['advert_type'] ) ) {
-			$boat_type = $json_data['listing']['listing_meta']['advert']['advert_type'];
+			$boat_type = $json_data['listing']['listing_meta']['advert']['advert_type_ui'];
 			update_post_meta( $post_id, 'listing_boat_type', $boat_type );
 		} else {
 			delete_post_meta( $post_id, 'listing_boat_type' );
@@ -475,9 +477,9 @@ class Dealers_League_Marine {
 			delete_post_meta( $post_id, 'listing_fuel' );
 		}
 
-		if ( isset( $json_data['listing']['engine_data']['engine_data']['year_built'] ) ) {
-			$model = $json_data['listing']['engine_data']['engine_data']['year_built'];
-			update_post_meta( $post_id, 'listing_year_built', $model );
+		if ( isset( $json_data['listing']['boat_details']['construction_details']['year_built'] ) ) {
+			$year = $json_data['listing']['boat_details']['construction_details']['year_built'];
+			update_post_meta( $post_id, 'listing_year_built', $year );
 		} else {
 			delete_post_meta( $post_id, 'listing_year_built' );
 		}
@@ -501,6 +503,20 @@ class Dealers_League_Marine {
 			update_post_meta( $post_id, 'listing_vat_status', $vat_status );
 		} else {
 			delete_post_meta( $post_id, 'listing_vat_status' );
+		}
+
+		if ( isset( $json_data['listing']['listing_details']['sales_details']['vat']['paid_area'][0] ) ) {
+			$vat_paid_area = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['vat']['paid_area'][0];
+			update_post_meta( $post_id, 'listing_vat_paid_area', $vat_paid_area );
+		} else {
+			delete_post_meta( $post_id, 'listing_vat_paid_area' );
+		}
+
+		if ( isset( $json_data['listing']['listing_details']['sales_details']['vat']['stated_separatly'][0] ) && $json_data['listing']['listing_details']['sales_details']['vat']['stated_separatly'][0] == 'on' ) {
+			$vat_stated_separatly = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['vat']['stated_separatly'][0];
+			update_post_meta( $post_id, 'listing_vat_stated_separately', $vat_stated_separatly );
+		} else {
+			delete_post_meta( $post_id, 'listing_vat_stated_separatly' );
 		}
 
 		if ( isset( $json_data['listing']['listing_details']['sales_details']['location']['country'][0] ) ) {
