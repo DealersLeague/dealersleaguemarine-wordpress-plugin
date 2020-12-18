@@ -181,7 +181,7 @@
            else {
                $(this).parent().removeClass("hover");
            }
-        });
+        })
     
         if( $(".owl-carousel").length ){
             var galleryCarousel = $(".gallery-carousel");
@@ -194,7 +194,7 @@
                 navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
                 autoHeight: true,
                 dots: false
-            });
+            })
     
             $(".tabs-slider").owlCarousel({
                 loop: false,
@@ -207,9 +207,10 @@
                 touchDrag: false,
                 pullDrag: false,
                 freeDrag: false
-            });
-    
-            $(".full-width-carousel").owlCarousel({
+            })
+            
+            var fullWidthCarousel = $(".full-width-carousel")
+            fullWidthCarousel.owlCarousel({
                 loop: true,
                 margin: 10,
                 nav: true,
@@ -232,7 +233,15 @@
                         autoWidth: false
                     }
                 }
-            });
+            })
+
+            fullWidthCarousel.on('initialized.owl.carousel', function(event) {
+              isSlidePortrait()
+            })
+
+            fullWidthCarousel.on('loaded.owl.lazy', function(event) {
+                isSlidePortrait()
+            })
     
             $(".gallery-carousel-thumbs").owlCarousel({
                 loop: false,
@@ -252,6 +261,19 @@
                 var hash = $(this).find(".active").find("img").attr("data-hash");
                 $(".gallery-carousel-thumbs").find("a[href='#" + hash + "']").trigger("click");
             });
+        }
+
+        function isSlidePortrait() {
+            var images = $( '.owl-item .item img' )
+            images.each( function() {
+                var h = $( this ).height()
+                var w = $( this ).width()
+
+                if ( h >= w ) {
+                    $( this ).addClass( 'portrait-item-image' )
+                    $( this ).parent( '.item' ).addClass( 'portrait-item' )
+                }
+            })
         }
  
     //  Bootstrap tooltip initialization

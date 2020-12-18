@@ -341,3 +341,13 @@ input.error, textarea.error, select.error {
     display: flex;
     flex-wrap: wrap;
 }
+
+.portrait-item {
+    background-size: auto 100% !important;
+}
+
+.portrait-item-image { 
+    max-height: 100% !important;
+    width: auto !important;
+    margin: auto !important; 
+}
