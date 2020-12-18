@@ -29,8 +29,8 @@
                 ?>
 
                 <li>
-                    <figure><?php echo $field_name; ?></figure>
-                    <aside><?php echo $field_value; ?></aside>
+                    <figure><?php echo __( $field_name, 'dlmarine'); ?></figure>
+                    <aside><?php echo __($field_value, 'dlmarine'); ?></aside>
                 </li>
                 <?php
                     }
