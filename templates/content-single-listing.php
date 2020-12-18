@@ -124,7 +124,7 @@ if ( ! is_user_logged_in() ) {
                     <!--Details-->
                     <section>
                         <h2 class="listing-heading"><?php _e('General Details', 'dlmarine' ); ?></h2>
-                        <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">
+                        <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items listing-details-grid">
                             <?php if (! empty( $manufacturer ) ) { ?>
                                 <div class="item boat-info-item item-title">
                                     <strong><?php _e('Manufacturer', 'dlmarine' ); ?></strong><br>
@@ -207,7 +207,7 @@ if ( ! is_user_logged_in() ) {
                             if ( ! in_array( $section_name, $exclude_section_list ) && ! empty( $section ) ) {
 	                            echo '<section>';
 	                            echo '<h2 class="listing-heading">' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlmarine' ) . '</h2>';
-                                echo ' <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items">';
+                                echo ' <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items listing-details-grid">';
 	                            foreach ( $section as $field_name => $field_value ) {
                                     if( ! empty( $field_value ) ) {
                                         $val = str_replace( '_', ' ', $field_value );
