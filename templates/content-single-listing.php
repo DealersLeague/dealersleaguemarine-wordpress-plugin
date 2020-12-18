@@ -209,7 +209,12 @@ if ( ! is_user_logged_in() ) {
                         <section>
                             <?php foreach ( $videos as $video ) { 
                                 echo '<div class="videoWrapper" id="video-wrapper">';
-                                    echo wp_oembed_get( $video );  
+	                            $oembed = wp_oembed_get( $video );
+	                            if ( $oembed ) {
+		                            echo $oembed;
+	                            } else {
+		                            echo '<p>' . __( 'Click here to watch the video:', 'dlmarine' ) . ' <a href="' . $video . '">' . $video . '</a></p>';
+	                            }
                                 echo '</div>';
                             } ?>
                         </section>
@@ -421,7 +426,12 @@ if ( ! is_user_logged_in() ) {
                             <section>
                                 <?php foreach ( $videos as $video ) {  
                                     echo '<div class="videoWrapper">';
-                                        echo wp_oembed_get( $video );  
+	                                $oembed = wp_oembed_get( $video );
+	                                if ( $oembed ) {
+		                                echo $oembed;
+	                                } else {
+		                                echo '<p>' . __( 'Click here to watch the video:', 'dlmarine' ) . ' <a href="' . $video . '">' . $video . '</a></p>';
+	                                }
                                     echo '</div>';  
                                 } ?>
                             </section>
