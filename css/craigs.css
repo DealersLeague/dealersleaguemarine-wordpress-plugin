@@ -1536,16 +1536,19 @@ Headers:		'Varela Round', sans-serif;
 .owl-carousel .owl-dots {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    text-align: center;
+    text-align: center; 
 }
 .owl-carousel .owl-dots .owl-dot {
     display: inline-block;
+    border: none;
+    background: transparent;
+    padding:0;
 }
 .owl-carousel .owl-dots .owl-dot span {
     background-color: #000;
     opacity: .3;
-    height: 1rem;
-    width: 1rem;
+    height: .6rem;
+    width: .6rem;
     border-radius: 50%;
     display: inline-block;
     margin: 0 .5rem;
@@ -1595,7 +1598,9 @@ Headers:		'Varela Round', sans-serif;
     top: 0;
     bottom: 0;
     margin: auto;
-    height: 2rem;
+    height: 3rem;
+    border: none;
+background: transparent;
 }
 .owl-carousel.gallery-carousel .owl-nav .owl-prev i, .owl-carousel.gallery-carousel .owl-nav .owl-next i, .owl-carousel.full-width-carousel .owl-nav .owl-prev i, .owl-carousel.full-width-carousel .owl-nav .owl-next i {
     background-color: #ff0000;

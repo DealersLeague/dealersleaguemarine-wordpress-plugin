@@ -271,7 +271,37 @@
                 var hash = $(this).find(".active").find("img").attr("data-hash");
                 $(".gallery-carousel-thumbs").find("a[href='#" + hash + "']").trigger("click");
             });
+ 
         }
+
+        // shortcode slider 
+        $(".archive-carousel").owlCarousel({
+            loop:true,
+            margin:10, 
+            stagePadding: 100,
+            lazyLoad:true,
+            lazyLoadEager: 1,
+            autoplay:true,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true, 
+            responsive:{
+                0:{
+                    items:1
+                },
+                750:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                },
+                1280:{
+                    items:4
+                },
+                1500:{
+                    items:5
+                }
+            }
+        })
 
         function isSlidePortrait() {
             var images = $( '.owl-item .item img' )
@@ -369,8 +399,17 @@
     //  Read More
     
         readMore(); 
+
+    // Accordion
+        var allPanels = $('.listing-accordion > .listing-details-grid').hide()
+        
+        $('.listing-accordion > h2').click(function() {
+            allPanels.slideUp()
+            $(this).next('.listing-details-grid').slideDown()
+            return false
+        })
       
-    })(jQuery);
+    })(jQuery)
       
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Functions

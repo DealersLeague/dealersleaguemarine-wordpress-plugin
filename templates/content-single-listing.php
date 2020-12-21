@@ -140,6 +140,14 @@ if ( ! is_user_logged_in() ) {
                 ?>
             </div>
         </section>
+
+        <div class="container">
+            <div class="row flex-column-reverse flex-md-row">
+                <div class="col-md-12">
+                    <h1><?php echo $post_title; ?><span style="float:right"><?php echo $currency . $price; ?></span></h1>
+                </div>
+            </div>
+        </div>
         <!--end Gallery Carousel-->
         <div class="container">
             <div class="row flex-column-reverse flex-md-row">
@@ -283,12 +291,14 @@ if ( ! is_user_logged_in() ) {
                         </section>
                     <?php } ?>
 
+                    <section class="listing-accordion">
+
                     <?php
 
 	                    foreach ( $transformed_data as $section_name => $section ) {
                             if ( ! in_array( $section_name, $exclude_section_list ) && ! empty( $section ) ) {
-	                            echo '<section>';
-	                            echo '<h2 class="listing-heading">' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlmarine' ) . '</h2>';
+	                            
+	                            echo '<h2 class="listing-heading">' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlmarine' ) . '<i class="fa fa-sort-down"></i></h2>';
                                 echo ' <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items listing-details-grid">';
 	                            foreach ( $section as $field_name => $field_value ) {
                                     if( ! empty( $field_value ) ) {
@@ -302,13 +312,14 @@ if ( ! is_user_logged_in() ) {
 			                            echo '</div>';
 		                            }
 	                            }
-                                echo '</div>';
-	                            echo '</section>';
+                                echo '</div>'; 
                             }
 
 	                    }
 
                     ?>
+
+                    </section>
 
                     <?php if ( ! empty( $document_list ) ) {
 

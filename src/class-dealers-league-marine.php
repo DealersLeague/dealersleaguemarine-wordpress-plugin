@@ -11,6 +11,7 @@ class Dealers_League_Marine {
 		(new Boat_Post_Type())->init();
 		(new Listing_Search_Shortcode())->init();
 		(new Listing_Shortcode())->init();
+		(new Listing_Carousel_Shortcode())->init();
 		(new Webhook())->init();
 		(new Cron_Task())->init();
 		$this->api_object = new Api();

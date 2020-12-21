@@ -351,3 +351,36 @@ input.error, textarea.error, select.error {
     width: auto !important;
     margin: auto !important; 
 }
+
+.listing-accordion {
+    border-bottom: 1px solid #000;
+}
+
+.listing-accordion .listing-heading {
+    border-top: 1px solid #000;
+    font-size: 16px;
+    padding-top:.5rem;
+    line-height: 1;
+    display: flex;
+}
+
+.listing-accordion .listing-heading i {
+    margin-left: auto;
+    margin-top: -4px;
+}
+
+.archive-carousel {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    margin-bottom: 3rem !important;
+}
+
+.archive-carousel-item { 
+    display: block;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
