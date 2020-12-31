@@ -12,7 +12,7 @@ if ( empty( $hide_search_bar ) ) {
         <div class="main-search-form">
             <div class="form-row">
 	            <?php if ( ! $hide_manufacturer ) { ?>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="form-group">
                         <label for="manufacturer" class="col-form-label"><?php _e( 'Manufacturer', 'dlmarine' ); ?></label>
                         <select name="manufacturer" id="manufacturer" data-placeholder="<?php _e( 'Select Manufacturer', 'dlmarine' ); ?>">
@@ -27,7 +27,7 @@ if ( empty( $hide_search_bar ) ) {
                 <?php } ?>
                 <!--end col-md-3-->
 	            <?php if ( ! $hide_category ) { ?>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="form-group">
                         <label for="category" class="col-form-label"><?php _e( 'Category', 'dlmarine' ); ?></label>
                         <select name="category" id="category" data-placeholder="<?php _e( 'Select Category', 'dlmarine' ); ?>">
@@ -42,7 +42,7 @@ if ( empty( $hide_search_bar ) ) {
 	            <?php } ?>
                 <!--end col-md-3-->
 	            <?php if ( ! $hide_price ) { ?>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="form-group">
                         <label for="price" class="col-form-label"><?php _e( 'Price', 'dlmarine' ); ?></label>
                         <select name="price" id="price" data-placeholder="<?php _e( 'Select Price', 'dlmarine' ); ?>">
@@ -59,7 +59,7 @@ if ( empty( $hide_search_bar ) ) {
 	            <?php } ?>
                 <!--end col-md-3-->
                 <!--
-                <div class="col-md-3 col-sm-3">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="form-group">
                         <label for="input-location" class="col-form-label">Where?</label>
                         <input name="location" type="text" class="form-control" id="input-location" placeholder="Enter Location">
@@ -67,7 +67,7 @@ if ( empty( $hide_search_bar ) ) {
                     </div> 
                 </div>
                 end col-md-3-->
-                <div class="col-md-3 col-sm-3">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <button type="submit" class="btn btn-primary width-100"><?php _e( 'Search', 'dlmarine' ); ?></button>
                 </div>
                 <!--end col-md-3-->
@@ -85,7 +85,7 @@ if ( empty( $hide_search_bar ) ) {
                 <div class="wrapper">
                     <div class="form-row">
 	                    <?php if ( ! $hide_age ) { ?>
-                        <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
                               
                             <select name="age" id="age" data-placeholder="<?php _e( 'Age', 'dlmarine' ); ?>" >
                                 <option value=""><?php _e('Age', 'dlmarine'); ?></option>
@@ -98,7 +98,7 @@ if ( empty( $hide_search_bar ) ) {
                         </div>
                         <?php } ?>
 	                    <?php if ( ! $hide_fuel_type ) { ?>
-                        <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
                               
                             <select name="fuel" id="fuel" data-placeholder="<?php _e( 'Fuel', 'dlmarine' ); ?>" >
                                 <option value=""><?php _e( 'Fuel Type', 'dlmarine' ); ?></option>
@@ -110,7 +110,7 @@ if ( empty( $hide_search_bar ) ) {
                         </div>
 	                    <?php } ?>
 	                    <?php if ( ! $hide_country ) { ?>
-                        <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
                               
                             <select name="country" id="country" data-placeholder="<?php _e( 'Country', 'dlmarine' ); ?>" >
                                 <option value=""><?php _e('Country', 'dlmarine'); ?></option>
@@ -123,7 +123,7 @@ if ( empty( $hide_search_bar ) ) {
                         </div>
                         <?php } ?>
 	                    <?php if ( ! $hide_colour ) { ?>
-                        <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
                               
                             <select name="colour" id="colour" data-placeholder="<?php _e( 'Colour', 'dlmarine' ); ?>" >
                                 <option value=""><?php _e('Colour', 'dlmarine'); ?></option>

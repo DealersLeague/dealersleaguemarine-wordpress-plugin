@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-12-18 13:47+0000\n"
-"PO-Revision-Date: 2020-12-18 13:48+0000\n"
+"POT-Creation-Date: 2020-12-30 10:43+0000\n"
+"PO-Revision-Date: 2020-12-30 17:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -17,9 +17,8 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: vendor\n"
 
 #: languages/fields.php:2 languages/fields.php:394
-#: templates/content-single-listing.php:158
 msgid "Boat Type"
-msgstr "Boot-Typ"
+msgstr "Bootskategorie"
 
 #: languages/fields.php:3
 msgid "Advert"
@@ -30,8 +29,9 @@ msgid "ID"
 msgstr "ID"
 
 #: languages/fields.php:5 languages/fields.php:125
+#: templates/content-single-listing.php:344
 msgid "Purpose"
-msgstr "Zweck"
+msgstr "Nutzung"
 
 #: languages/fields.php:6
 msgid "Sales"
@@ -43,7 +43,7 @@ msgstr "Vermietung"
 
 #: languages/fields.php:8 languages/fields.php:14 languages/fields.php:145
 msgid "Type"
-msgstr "Typ"
+msgstr "Rumpfart"
 
 #: languages/fields.php:9 src/class-boat-post-type.php:22
 msgid "Boat"
@@ -76,7 +76,7 @@ msgstr "Segelboot"
 
 #: languages/fields.php:17 languages/fields.php:398
 msgid "Inflatable"
-msgstr "Aufblasbar"
+msgstr "Schlauchboot"
 
 #: languages/fields.php:18 languages/fields.php:399 languages/fields.php:713
 #: src/class-utils.php:97
@@ -157,7 +157,7 @@ msgstr "Verkaufsinformationen"
 
 #: languages/fields.php:40
 msgid "Sale Class"
-msgstr "Verkausklasse"
+msgstr "Verkauf-Status"
 
 #: languages/fields.php:41 templates/content-archive-search.php:92
 msgid "New"
@@ -191,7 +191,7 @@ msgstr "Vorführung (bereits im Wasser)"
 msgid "Demonstration (NOT in water)"
 msgstr "Vorführung (NICHT im Wasser)"
 
-#: languages/fields.php:49 templates/content-single-listing.php:179
+#: languages/fields.php:49 templates/content-single-listing.php:294
 msgid "Sale Status"
 msgstr "Verkausstatus"
 
@@ -208,7 +208,7 @@ msgid "Available"
 msgstr "Zur Verfügung"
 
 #: languages/fields.php:53 templates/content-archive-listing.php:63
-#: templates/content-single-listing.php:165
+#: templates/content-single-listing.php:280
 msgid "Condition"
 msgstr "Zustand"
 
@@ -248,7 +248,7 @@ msgstr "Anzahl"
 #: languages/fields.php:63 languages/fields.php:160 languages/fields.php:188
 #: languages/fields.php:562
 msgid "Fixed"
-msgstr "Fixiert"
+msgstr "Festkiel"
 
 #: languages/fields.php:64
 msgid "On-request"
@@ -286,7 +286,7 @@ msgstr "Unbekannt"
 #: languages/fields.php:236 languages/fields.php:240 languages/fields.php:242
 #: languages/fields.php:245
 msgid "Area"
-msgstr "Ort"
+msgstr "Segelfläche"
 
 #: languages/fields.php:74 languages/fields.php:82 languages/fields.php:91
 #: languages/fields.php:123 languages/fields.php:359 languages/fields.php:404
@@ -305,7 +305,7 @@ msgstr "Inzahlungnahme möglich"
 msgid "Trade In"
 msgstr "Inzahlungnahme möglich"
 
-#: languages/fields.php:78
+#: languages/fields.php:78 templates/content-single-listing.php:351
 msgid "Previous Owners"
 msgstr "Vorherige Besitzer"
 
@@ -314,7 +314,8 @@ msgid "If boat is first hand, use \"0\"."
 msgstr "Wenn das Boot aus erster Hand kommt, verwenden Sie “0”."
 
 #: languages/fields.php:80 templates/content-archive-listing.php:67
-#: templates/content-single-listing.php:172
+#: templates/content-single-listing.php:287
+#: templates/content-single-listing.php:322
 msgid "Location"
 msgstr "Standort"
 
@@ -346,13 +347,14 @@ msgstr "Baueigenschaften"
 #: languages/fields.php:89 languages/fields.php:357 languages/fields.php:402
 #: templates/content-archive-listing.php:61
 #: templates/content-archive-search.php:17
-#: templates/content-single-listing.php:144
+#: templates/content-single-listing.php:252
 msgid "Manufacturer"
 msgstr "Hersteller"
 
 #: languages/fields.php:92 languages/fields.php:360 languages/fields.php:405
 #: templates/content-archive-listing.php:62
-#: templates/content-single-listing.php:151
+#: templates/content-single-listing.php:259
+#: templates/content-single-listing.php:266
 msgid "Model"
 msgstr "Modell"
 
@@ -382,19 +384,19 @@ msgstr "Cockpit Typ"
 
 #: languages/fields.php:99 languages/fields.php:297
 msgid "Aft"
-msgstr "Achterkabine"
+msgstr "Achtercockpit"
 
 #: languages/fields.php:100
 msgid "Center"
-msgstr "Mitte"
+msgstr "Mittelcockpit"
 
 #: languages/fields.php:101 languages/fields.php:302
 msgid "Double"
-msgstr "Doppelt"
+msgstr "Doppelcockpit"
 
 #: languages/fields.php:102 languages/fields.php:690 src/class-utils.php:76
 msgid "Pilothouse"
-msgstr "Lotsenhaus"
+msgstr "Pilothouse"
 
 #: languages/fields.php:103
 msgid "Steering Type"
@@ -444,11 +446,11 @@ msgstr "Hardtop"
 msgid "Convertible Top"
 msgstr "Cabrioverdeck"
 
-#: languages/fields.php:113
+#: languages/fields.php:113 templates/content-single-listing.php:365
 msgid "CE Certification"
 msgstr "CE-Zertifizierung"
 
-#: languages/fields.php:114
+#: languages/fields.php:114 templates/content-single-listing.php:372
 msgid "CE Design Category"
 msgstr "CE-Design Kategorie"
 
@@ -468,7 +470,7 @@ msgstr "C"
 msgid "D"
 msgstr "D"
 
-#: languages/fields.php:119
+#: languages/fields.php:119 templates/content-single-listing.php:379
 msgid "CE Passenger Capacity"
 msgstr "CE-Passagier-Zertifizierung"
 
@@ -476,11 +478,11 @@ msgstr "CE-Passagier-Zertifizierung"
 msgid "Registration"
 msgstr "Registrierung"
 
-#: languages/fields.php:121
+#: languages/fields.php:121 templates/content-single-listing.php:330
 msgid "Flag"
 msgstr "Flagge"
 
-#: languages/fields.php:124
+#: languages/fields.php:124 templates/content-single-listing.php:337
 msgid "Port"
 msgstr "Hafen"
 
@@ -497,9 +499,9 @@ msgid "Dimensions"
 msgstr "Abmessungen"
 
 #: languages/fields.php:129 templates/content-archive-listing.php:64
-#: templates/content-single-listing.php:186
+#: templates/content-single-listing.php:301
 msgid "LOA"
-msgstr "Länge ü. A."
+msgstr "L.ü.A."
 
 #: languages/fields.php:130
 msgid "Length overall"
@@ -510,7 +512,7 @@ msgid "LWL"
 msgstr "Länge Wasserlinie"
 
 #: languages/fields.php:132 templates/content-archive-listing.php:65
-#: templates/content-single-listing.php:200
+#: templates/content-single-listing.php:315
 msgid "Beam"
 msgstr "Breite"
 
@@ -554,7 +556,7 @@ msgstr "colours.json"
 #: languages/fields.php:142 languages/fields.php:248 languages/fields.php:259
 #: languages/fields.php:270 languages/fields.php:278 languages/fields.php:407
 msgid "Material"
-msgstr "Material"
+msgstr "Rumpfmaterial"
 
 #: languages/fields.php:143
 msgid "Please choose a material"
@@ -566,7 +568,7 @@ msgstr "materials.json"
 
 #: languages/fields.php:147
 msgid "Planing"
-msgstr "Planung"
+msgstr "Gleiter"
 
 #: languages/fields.php:148
 msgid "Semi-displacement"
@@ -582,11 +584,11 @@ msgstr "Flossenkiel"
 
 #: languages/fields.php:151
 msgid "Full"
-msgstr "Gesamt"
+msgstr "Langkiel"
 
 #: languages/fields.php:152
 msgid "Bulb"
-msgstr "Birne"
+msgstr "Festkiel mit Bombe"
 
 #: languages/fields.php:153
 msgid "Winged"
@@ -594,7 +596,7 @@ msgstr "Flügelkiel"
 
 #: languages/fields.php:154 languages/fields.php:202
 msgid "Twin"
-msgstr "Doppelmotorisierung"
+msgstr "Kimmkiel"
 
 #: languages/fields.php:155
 msgid "Swing"
@@ -602,19 +604,19 @@ msgstr "Schwenkkiel"
 
 #: languages/fields.php:156
 msgid "Lifting"
-msgstr "Lifting"
+msgstr "Hubkiel"
 
 #: languages/fields.php:157
 msgid "Canting"
-msgstr "Schwenkkiel"
+msgstr "Kippkiel"
 
 #: languages/fields.php:158
 msgid "Daggerboard"
-msgstr "Schwert"
+msgstr "Kielschwert"
 
 #: languages/fields.php:159 languages/fields.php:661 src/class-utils.php:48
 msgid "Flat"
-msgstr "Flach"
+msgstr "Plattboden"
 
 #: languages/fields.php:161
 msgid "Keel Ballast"
@@ -642,7 +644,7 @@ msgstr "Aussenborder"
 
 #: languages/fields.php:167 languages/fields.php:557
 msgid "Stern"
-msgstr "Heck"
+msgstr "Z-Antrieb"
 
 #: languages/fields.php:168
 msgid "Vdrive"
@@ -650,31 +652,31 @@ msgstr "V-Antrieb"
 
 #: languages/fields.php:169
 msgid "Shaft"
-msgstr "Welle"
+msgstr "Antrieb mit Welle"
 
 #: languages/fields.php:170 languages/fields.php:722 src/class-utils.php:105
 msgid "Jet"
-msgstr "Jet"
+msgstr "Strahlantrieb"
 
 #: languages/fields.php:171
 msgid "Sail"
-msgstr "Segel"
+msgstr "Saildrive"
 
 #: languages/fields.php:172
 msgid "Pod"
-msgstr "Pod"
+msgstr "POD-Antrieb"
 
 #: languages/fields.php:173
 msgid "Surface"
-msgstr "Oberfläche"
+msgstr "Oberflächenantrieb"
 
 #: languages/fields.php:174 languages/fields.php:565 languages/fields.php:571
 msgid "Hydraulic"
-msgstr "Hydraulik"
+msgstr "Hydraulik-Antrieb"
 
 #: languages/fields.php:175
 msgid "Forward"
-msgstr "Vorwärts"
+msgstr "Forward Drive"
 
 #: languages/fields.php:176
 msgid "Propeller"
@@ -750,7 +752,7 @@ msgstr "Verbrauch"
 msgid "Max Consumption"
 msgstr "Max Verbrauch"
 
-#: languages/fields.php:194
+#: languages/fields.php:194 templates/content-single-listing.php:358
 msgid "Range"
 msgstr "Distanz"
 
@@ -1009,11 +1011,11 @@ msgstr "Heizung"
 
 #: languages/fields.php:317
 msgid "AC"
-msgstr "AC"
+msgstr "Heizung über Klimaanlage"
 
 #: languages/fields.php:318 languages/fields.php:368
 msgid "Gas"
-msgstr "Gas"
+msgstr "Gasheizung"
 
 #: languages/fields.php:321 languages/fields.php:364
 #: templates/content-archive-search.php:106
@@ -1054,7 +1056,7 @@ msgstr "Zusätzliche Details zum Motor"
 
 #: languages/fields.php:350 languages/fields.php:352
 msgid "Number of Engines"
-msgstr "Anzahl der Propeller"
+msgstr "Anzahl der Motoren"
 
 #: languages/fields.php:353
 msgid "Serial Number"
@@ -1074,7 +1076,7 @@ msgstr "Motorleistung"
 
 #: languages/fields.php:362 templates/content-archive-search.php:103
 msgid "Fuel"
-msgstr "Kraftstoffart"
+msgstr "Treibstoff"
 
 #: languages/fields.php:363
 msgid "Please choose a fuel type"
@@ -1162,15 +1164,15 @@ msgstr "Anhänger Typ"
 
 #: languages/fields.php:391
 msgid "Road"
-msgstr "Straße"
+msgstr "Bootstrailer"
 
 #: languages/fields.php:392
 msgid "Harbour"
-msgstr "Hafen"
+msgstr "Hafentrailer"
 
 #: languages/fields.php:393
 msgid "Storage"
-msgstr "Stauraum"
+msgstr "Stellplatz/Trailer"
 
 #: languages/fields.php:396
 msgid "Keelboat"
@@ -1231,31 +1233,31 @@ msgstr "Details zum Liegeplatz"
 
 #: languages/fields.php:423
 msgid "Mooring Type"
-msgstr "Liegeplatz-Typ"
+msgstr "Liegeplatz"
 
 #: languages/fields.php:424
 msgid "Jetty"
-msgstr "Landungsbrücke"
+msgstr "Fester Steg"
 
 #: languages/fields.php:425
 msgid "Buoy"
-msgstr "Rettungsboje"
+msgstr "Bojenliegeplatz"
 
 #: languages/fields.php:426
 msgid "Swimming"
-msgstr "Schwimmend"
+msgstr "Schwimmsteg"
 
 #: languages/fields.php:427
 msgid "Heated Hangar"
-msgstr "Beheizter Hangar"
+msgstr "Halle beheizt"
 
 #: languages/fields.php:428
 msgid "Unheated Hangar"
-msgstr "Ungeheizter Hangar"
+msgstr "Halle unbeheizt"
 
 #: languages/fields.php:429
 msgid "Outside"
-msgstr "Außen"
+msgstr "Aussenlager"
 
 #: languages/fields.php:430
 msgid "Title"
@@ -1599,7 +1601,7 @@ msgstr "Heckkorb"
 
 #: languages/fields.php:574
 msgid "Guard Rail"
-msgstr "Leitplanke"
+msgstr "Seereling"
 
 #: languages/fields.php:575
 msgid "Stern Rail"
@@ -1659,7 +1661,7 @@ msgstr "Sonnenkissen"
 
 #: languages/fields.php:592
 msgid "Covers"
-msgstr "Abdeckungen"
+msgstr "Persenninge"
 
 #: languages/fields.php:593
 msgid "Spray Hood"
@@ -1885,7 +1887,7 @@ msgstr "Panorama-Videos"
 msgid "Panorama URL"
 msgstr "Panorama URL"
 
-#: languages/fields.php:651 templates/content-single-listing.php:247
+#: languages/fields.php:651 templates/content-single-listing.php:476
 msgid "Documents"
 msgstr "Dokumente"
 
@@ -2056,7 +2058,7 @@ msgstr "Walkaround"
 
 #: languages/fields.php:702
 msgid "inflatables"
-msgstr "Aufblasbar"
+msgstr "Schlauchboote"
 
 #: languages/fields.php:703 src/class-utils.php:88
 msgid "RIB"
@@ -2102,9 +2104,9 @@ msgstr "Zustand"
 msgid "Mega Yacht"
 msgstr "Mega-Yacht"
 
-#: languages/fields.php:723 src/class-utils.php:106
+#: languages/fields.php:723 src/class-utils.php:106 src/class-utils.php:442
 msgid "Offshore"
-msgstr "Offshore"
+msgstr "Außerhalb von Küstengewässern"
 
 #: languages/fields.php:724 src/class-utils.php:107
 msgid "Lobster"
@@ -2257,7 +2259,7 @@ msgstr "Standort"
 
 #: languages/fields.php:758
 msgid "Main location"
-msgstr "Standort"
+msgstr "Hauptsitz"
 
 #: languages/fields.php:759
 msgid "Invoicing location"
@@ -2276,35 +2278,25 @@ msgid "Enter the name"
 msgstr "Geben Sie den Bootsnamen ein"
 
 #: languages/fields.php:763
-msgid "Your Scheduled Listings Have Been Processed"
-msgstr "Y"
+msgid "Here are the results:"
+msgstr "Hier die Ergebnisse:"
 
 #: languages/fields.php:764
-msgid "Here are the results:"
-msgstr "Anzahl der Ergebnisse ausblenden"
-
-#: languages/fields.php:765
 msgid "Sent To Website"
 msgstr "Webseite"
 
-#: languages/fields.php:766
+#: languages/fields.php:765
 msgid "Not Published"
 msgstr "Veröffentlicht"
 
-#: languages/fields.php:767
-msgid ""
-"The following listings have some issues. Please review them and amend any "
-"issues before they can be published."
-msgstr "T."
-
-#: languages/fields.php:768
+#: languages/fields.php:766
 msgid ""
 "If provided used in correspondence and admin dashboard, if not provided, "
 "company will be used"
 msgstr ""
 "Falls vorhanden, in der Korrespondenz und im Verwaltungs-Dashboard verwendet"
 
-#: languages/fields.php:769
+#: languages/fields.php:767
 msgid "Used for invoices and contracts, etc"
 msgstr "Wird für Rechnungen und Verträge verwendet"
 
@@ -2332,7 +2324,7 @@ msgstr "Boot ansehen"
 msgid "Edit Boat"
 msgstr "Boot hinzufügen"
 
-#: src/class-boat-post-type.php:29 src/class-dealers-league-marine.php:644
+#: src/class-boat-post-type.php:29 src/class-dealers-league-marine.php:661
 msgid "View Boat"
 msgstr "Boot ansehen"
 
@@ -2354,74 +2346,74 @@ msgstr "Keine Boote gefunden."
 
 #: src/class-boat-post-type.php:34
 msgid "No boats found in Trash."
-msgstr "Keine Boote "
+msgstr "Keine Boote gefunden."
 
 #: src/class-boat-post-type.php:65
 msgid "Enter the Boat name"
 msgstr "Geben Sie den Bootsnamen ein"
 
-#: src/class-dealers-league-marine.php:375
+#: src/class-dealers-league-marine.php:378
 msgid "listings"
 msgstr "Auflistungen"
 
-#: src/class-dealers-league-marine.php:377
+#: src/class-dealers-league-marine.php:380
 msgid "No listings found"
 msgstr "Keine Auflistungen gefunden"
 
-#: src/class-dealers-league-marine.php:573
-#: src/class-dealers-league-marine.php:670
+#: src/class-dealers-league-marine.php:590
+#: src/class-dealers-league-marine.php:687
 msgid "Missing data"
 msgstr "Fehlende Daten"
 
-#: src/class-dealers-league-marine.php:603
+#: src/class-dealers-league-marine.php:620
 msgid "Please complete recaptcha"
 msgstr "Bitte vervollständigen Sie recaptcha"
 
-#: src/class-dealers-league-marine.php:606
+#: src/class-dealers-league-marine.php:623
 msgid "The name is required"
 msgstr "Der Name ist erforderlich"
 
-#: src/class-dealers-league-marine.php:609
+#: src/class-dealers-league-marine.php:626
 msgid "The email is required"
 msgstr "Die E-Mail ist erforderlich"
 
-#: src/class-dealers-league-marine.php:611
+#: src/class-dealers-league-marine.php:628
 msgid "The email is not valid"
 msgstr "E-Mail ist ungültig"
 
-#: src/class-dealers-league-marine.php:614
+#: src/class-dealers-league-marine.php:631
 msgid "The phone is required"
 msgstr "Benutzerkonto ist erforderlich"
 
-#: src/class-dealers-league-marine.php:617
+#: src/class-dealers-league-marine.php:634
 msgid "The subject is required"
 msgstr "Benutzerkonto ist erforderlich"
 
-#: src/class-dealers-league-marine.php:620
+#: src/class-dealers-league-marine.php:637
 msgid "The message is required"
 msgstr "Die Nachricht ist erforderlich"
 
-#: src/class-dealers-league-marine.php:631
+#: src/class-dealers-league-marine.php:648
 msgid "New Survey Request from"
 msgstr "Neue Gutachten Anfrage von"
 
-#: src/class-dealers-league-marine.php:632
+#: src/class-dealers-league-marine.php:649
 msgid "New Survey Request"
 msgstr "Neue Gutachten Anfrage"
 
-#: src/class-dealers-league-marine.php:635
+#: src/class-dealers-league-marine.php:652
 msgid "New Boat Enquiry"
 msgstr "Neue Bootsanfrage"
 
-#: src/class-dealers-league-marine.php:636
+#: src/class-dealers-league-marine.php:653
 msgid "New Enquiry"
 msgstr "Neue Anfrage"
 
-#: src/class-dealers-league-marine.php:660
+#: src/class-dealers-league-marine.php:677
 msgid "Thank you for contacting us, we will be in touch soon."
 msgstr "Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen."
 
-#: src/class-dealers-league-marine.php:662
+#: src/class-dealers-league-marine.php:679
 msgid "Sorry there was an error. Message was not sent."
 msgstr "Es gab einen Fehler. Ihre Nachricht wurde nicht gesendet."
 
@@ -2443,7 +2435,7 @@ msgstr "Benutzername"
 
 #: src/class-settings-page.php:63
 msgid "Your Dealers League Marine Username"
-msgstr "Ihr Dealers League Marine Benutzername "
+msgstr "Ihr Dealers League Marine Benutzername"
 
 #: src/class-settings-page.php:67
 msgid "API Key"
@@ -2451,7 +2443,7 @@ msgstr "API-Schlüssel"
 
 #: src/class-settings-page.php:68
 msgid "API Key provided by Dealers League SL"
-msgstr "API-Schlüssel zur Verfügung gestellt von Dealers League SL "
+msgstr "API-Schlüssel zur Verfügung gestellt von Dealers League SL"
 
 #: src/class-settings-page.php:73
 msgid "API URL"
@@ -2474,14 +2466,16 @@ msgid ""
 "This will let you see the list of boats in the Wordpress database. Not for "
 "editing listings, normally just used for debugging."
 msgstr ""
+"Damit können Sie die Liste der Boote in der Wordpress-Datenbank sehen. Nicht "
+"zum Bearbeiten von Listen, normalerweise nur zur Fehlersuche verwendet."
 
 #: src/class-settings-page.php:156 src/class-settings-page.php:185
 msgid "Dealers League Marine Settings"
-msgstr "Dealers League Marine Einstellungen "
+msgstr "Dealers League Marine Einstellungen"
 
 #: src/class-settings-page.php:157
 msgid "Dealers League Marine"
-msgstr "Dealers League Marine "
+msgstr "Dealers League Marine"
 
 #: src/class-utils.php:141
 msgid "Germany"
@@ -3506,7 +3500,7 @@ msgstr "PS"
 
 #: src/class-utils.php:415
 msgid "L"
-msgstr "l"
+msgstr "L"
 
 #: src/class-utils.php:416
 msgid "cm3"
@@ -3519,6 +3513,18 @@ msgstr "km/h"
 #: src/class-utils.php:425
 msgid "m2"
 msgstr "m²"
+
+#: src/class-utils.php:441
+msgid "Ocean"
+msgstr "Hochsee"
+
+#: src/class-utils.php:443
+msgid "Inshore"
+msgstr "Küstennahne Gewässer"
+
+#: src/class-utils.php:444
+msgid "Sheltered waters"
+msgstr "Geschützte Gewässer"
 
 #: templates/content-archive-listing.php:10
 msgid "Sort by:"
@@ -3546,7 +3552,7 @@ msgid "Highest Price First"
 msgstr "Höchster Preis zuerst"
 
 #: templates/content-archive-listing.php:66
-#: templates/content-single-listing.php:193
+#: templates/content-single-listing.php:308
 msgid "Draft"
 msgstr "Tiefgang"
 
@@ -3556,7 +3562,8 @@ msgid "Select Manufacturer"
 msgstr "Hersteller auswählen"
 
 #: templates/content-archive-search.php:32
-#: templates/content-single-listing.php:230
+#: templates/content-single-listing.php:273
+#: templates/content-single-listing.php:451
 msgid "Category"
 msgstr "Kategorie"
 
@@ -3611,7 +3618,7 @@ msgstr "Alle Länder"
 #: templates/content-archive-search.php:128
 #: templates/content-archive-search.php:129
 msgid "Colour"
-msgstr "Farbe"
+msgstr "Rumpffarbe"
 
 #: templates/content-archive-search.php:130
 msgid "All Colours"
@@ -3622,126 +3629,159 @@ msgstr "Alle Farben"
 msgid "I have read and agreed to the %sPrivacy Policy%s"
 msgstr "Ich habe die %sDatenschutzerklärung%s gelesen und verstanden"
 
-#: templates/content-single-listing.php:132
-msgid "Description"
-msgstr "Beschreibung"
+#: templates/content-single-listing.php:166
+msgid "EU taxed (document existent)"
+msgstr "EU-versteuert (Beleg)"
 
-#: templates/content-single-listing.php:140
-msgid "General Details"
-msgstr "Generelle Information"
+#: templates/content-single-listing.php:168
+msgid "VAT Paid"
+msgstr "MwSt. bezahlt"
 
-#: templates/content-single-listing.php:229
-msgid "VAT"
-msgstr "MwSt."
+#: templates/content-single-listing.php:173
+msgid "VAT Stated Separatly"
+msgstr "MwSt Separat ausgewiesen"
 
-#: templates/content-single-listing.php:288
-#: templates/content-single-listing.php:373
-msgid "Enquiry"
-msgstr "Anfrage"
-
-#: templates/content-single-listing.php:299
-msgid "Name"
-msgstr "Name"
-
-#: templates/content-single-listing.php:300
-msgid "Your Name"
-msgstr "Name des Kontos"
-
-#: templates/content-single-listing.php:305
-msgid "Email"
-msgstr "E-Mail"
-
-#: templates/content-single-listing.php:306
-msgid "Your Email"
-msgstr "Ihre E-Mail-Adresse"
-
-#: templates/content-single-listing.php:311
-msgid "Phone"
-msgstr "Telefon"
-
-#: templates/content-single-listing.php:312
-msgid "Your Phone"
-msgstr "Ihr Profil"
-
-#: templates/content-single-listing.php:317
-msgid "Subject"
-msgstr "Thema"
-
-#: templates/content-single-listing.php:319
-msgid "Choose an option"
-msgstr "Wählen Sie eine Option aus"
-
-#: templates/content-single-listing.php:320
-msgid "Viewing"
-msgstr "Schwenkkiel"
-
-#: templates/content-single-listing.php:321
-msgid "Availability"
-msgstr "Verfügbarkeit"
-
-#: templates/content-single-listing.php:322
-msgid "Pricing"
-msgstr "Preis"
-
-#: templates/content-single-listing.php:323
-msgid "Further Information"
-msgstr "Weitere Information"
-
-#: templates/content-single-listing.php:325
-msgid "Request Survey"
-msgstr "Anfrage Datum"
-
-#: templates/content-single-listing.php:334
-msgid "Message"
-msgstr "Nachricht"
-
-#: templates/content-single-listing.php:356
-msgid "Send"
-msgstr "Senden"
-
-#: templates/content-single-listing.php:376
-msgid "Print"
-msgstr "Drucken"
-
-#: templates/content-single-listing.php:379
-msgid "Watch Video"
-msgstr "Video ansehen"
-
-#: templates/content-single-listing.php:386
+#: templates/content-single-listing.php:183
 msgid "Share on Facebook"
 msgstr "Auf Facebook teilen"
 
-#: templates/content-single-listing.php:393
+#: templates/content-single-listing.php:190
 msgid "Share on Twitter"
 msgstr "Auf Twitter teilen"
 
-#: templates/content-single-listing.php:397
+#: templates/content-single-listing.php:194
 msgid "Thought you might like this"
 msgstr "Ich denke, daß dies von Interesse sein dürfte"
 
-#: templates/content-single-listing.php:399
+#: templates/content-single-listing.php:196
 msgid "Hi, Thought this might interest you"
 msgstr "Hi, das dürfte Sie interessieren"
 
-#: templates/content-single-listing.php:401
+#: templates/content-single-listing.php:198
 msgid "Share via email"
 msgstr "Per E-Mail teilen"
 
-#: templates/content-single-listing.php:405
+#: templates/content-single-listing.php:202
 msgid "Check out this boat"
 msgstr "Schauen Sie dieses Boot an"
 
-#: templates/content-single-listing.php:407
+#: templates/content-single-listing.php:204
 msgid "Share via WhatsApp"
 msgstr "Auf WhatsApp teilen"
 
-#: templates/content-single-listing.php:412
+#: templates/content-single-listing.php:209
 msgid "Print this page"
 msgstr "Diese Seite ausdrucken"
+
+#: templates/content-single-listing.php:218
+#: templates/content-single-listing.php:517
+msgid "Enquiry"
+msgstr "Anfrage"
+
+#: templates/content-single-listing.php:221
+msgid "Watch Video"
+msgstr "Video ansehen"
+
+#: templates/content-single-listing.php:248
+msgid "General Details"
+msgstr "Generelle Information"
+
+#: templates/content-single-listing.php:397
+#: templates/content-single-listing.php:416
+msgid "Click here to watch the video:"
+msgstr "Klicken Sie hier, um das Video anzusehen:"
+
+#: templates/content-single-listing.php:450
+msgid "VAT"
+msgstr "MwSt"
+
+#: templates/content-single-listing.php:528
+msgid "Name"
+msgstr "Name"
+
+#: templates/content-single-listing.php:529
+msgid "Your Name"
+msgstr "Ihr Name"
+
+#: templates/content-single-listing.php:534
+msgid "Email"
+msgstr "E-Mail"
+
+#: templates/content-single-listing.php:535
+msgid "Your Email"
+msgstr "Ihre E-Mail-Adresse"
+
+#: templates/content-single-listing.php:540
+msgid "Phone"
+msgstr "Telefon"
+
+#: templates/content-single-listing.php:541
+msgid "Your Phone"
+msgstr "Ihre Telefonnummer"
+
+#: templates/content-single-listing.php:546
+msgid "Subject"
+msgstr "Grund Ihres Kontaktes"
+
+#: templates/content-single-listing.php:548
+msgid "Choose an option"
+msgstr "Wählen Sie eine Option aus"
+
+#: templates/content-single-listing.php:549
+msgid "Viewing"
+msgstr "Besichtigung"
+
+#: templates/content-single-listing.php:550
+msgid "Availability"
+msgstr "Verfügbarkeit"
+
+#: templates/content-single-listing.php:551
+msgid "Pricing"
+msgstr "Preis"
+
+#: templates/content-single-listing.php:552
+msgid "Further Information"
+msgstr "Weitere Information"
+
+#: templates/content-single-listing.php:554
+msgid "Request Survey"
+msgstr "Gutachtenanfrage"
+
+#: templates/content-single-listing.php:563
+msgid "Message"
+msgstr "Nachricht"
+
+#: templates/content-single-listing.php:585
+msgid "Send"
+msgstr "Senden"
+
+#: templates/item-listing-list.php:40
+msgid "As New"
+msgstr "Wie neu"
 
 #: templates/item-listing-list.php:41
 msgid "View Listing"
 msgstr "Mehr Information"
+
+#~ msgid "Description"
+#~ msgstr "Beschreibung"
+
+#~ msgid "Print"
+#~ msgstr "Drucken"
+
+#~ msgid "stated separatly"
+#~ msgstr "Separat ausgewiesen"
+
+#~ msgid "status"
+#~ msgstr "Status"
+
+#~ msgid "Your Scheduled Listings Have Been Processed"
+#~ msgstr "Y"
+
+#~ msgid ""
+#~ "The following listings have some issues. Please review them and amend any "
+#~ "issues before they can be published."
+#~ msgstr "T."
 
 #~ msgid ""
 #~ "Add CSS here that you want added to the boat archive page and single boat "
@@ -5813,10 +5853,6 @@ msgstr "Mehr Information"
 #~ msgctxt "app"
 #~ msgid "Are you sure?"
 #~ msgstr "Sind Sie sicher?"
-
-#~ msgctxt "app"
-#~ msgid "As New"
-#~ msgstr "Wie neu"
 
 #~ msgctxt "app"
 #~ msgid "Auth Key"

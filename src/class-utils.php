@@ -435,6 +435,25 @@ class Utils {
 
 	}
 
+	public static function get_ce_design_category( $field_name ) {
+
+		//$field_name = strtoupper( $field_name );
+
+		$category_list = array(
+			'a' => __( 'Ocean', 'dlmarine' ),
+			'b' => __( 'Offshore', 'dlmarine' ),
+			'c' => __( 'Inshore', 'dlmarine' ),
+			'd' => __( 'Sheltered waters', 'dlmarine' ),
+		); 
+
+		if ( array_key_exists( $field_name , $category_list ) ) {
+			return $category_list[ $field_name ];
+		}
+
+		return '';
+
+	}
+
 	
 	public static function get_long_description( $listing_json_data ) {
 		// Description

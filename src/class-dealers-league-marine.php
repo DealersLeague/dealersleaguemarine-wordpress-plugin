@@ -231,7 +231,7 @@ class Dealers_League_Marine {
 	 */
 	public function transform_listing_data( $listing_data ) {
 
-		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption' ];
+		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption', 'boat_name', 'previous_owners', 'range', 'ce_certification', 'ce_design_category', 'ce_passenger_capacity', 'colours_tags', 'year_built', 'year_launched', 'last_refit', 'clearance', 'displacement', 'keel_type' ];
 		$transformed_fields = [];
 
 		foreach ( $listing_data as $tab ) {

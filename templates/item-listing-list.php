@@ -3,8 +3,7 @@
         <div class="image">
             <h3>
                 <a href="#" class="tag category"><?php echo __( ucfirst( $category ) , 'dlmarine' ); ?></a>
-                <a href="<?php echo get_permalink( $listing->ID ); ?>" class="title"><?php echo $manufacturer . ' ' . $model; ?></a>
-                <span class="tag"><?php echo __(  ucfirst( $sale_status ), 'dlmarine' ); ?></span>
+                <a href="<?php echo get_permalink( $listing->ID ); ?>" class="title"><?php echo $manufacturer . ' ' . $model; ?></a> 
             </h3>
             <a href="<?php echo get_permalink( $listing->ID ); ?>" class="image-wrapper background-image">
                 <img src="<?php echo $featured_image; ?>" alt="">
@@ -19,9 +18,9 @@
             <?php echo $currency . $price; ?>
         </div>
         <!--end meta-->
-        <div class="description">
+        <!--<div class="description">
             <p><?php echo $short_description_text; ?></p>
-        </div>
+        </div>-->
         <div class="additional-info">
             <ul>
                 <?php foreach ( $meta_field_list as $field_name => $field_value ) {
@@ -29,15 +28,16 @@
                 ?>
 
                 <li>
-                    <figure><?php echo __( $field_name, 'dlmarine'); ?></figure>
-                    <aside><?php echo __($field_value, 'dlmarine'); ?></aside>
+                    <strong><?php echo __( $field_name, 'dlmarine'); ?></strong>
+                    <?php echo __($field_value, 'dlmarine'); ?> 
                 </li>
                 <?php
                     }
-                    } ?>
+                } ?>
             </ul>
         </div>
         <!--end description-->
+        <?php __( 'As New', 'dlmarine' ); ?>
         <a href="<?php echo get_permalink( $listing->ID ); ?>" class="detail text-caps underline"><?php _e('View Listing', 'dlmarine'); ?></a>
     </div>
 </div>

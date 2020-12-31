@@ -1275,16 +1275,16 @@ Headers:		'Varela Round', sans-serif;
     position: relative;
     margin-left: 27rem;
 }
-.items:not(.selectize-input).list .item .additional-info ul {
-    background-color: #f9f9f9;
-    border-radius: .3rem;
-    margin-bottom: 0;
-    padding: .5rem;
+.items:not(.selectize-input).list .item .additional-info ul { 
+    margin-bottom: 0; 
+    display: flex;
+    flex-wrap: wrap;
 }
 .items:not(.selectize-input).list .item .additional-info ul li {
-    display: inline-block;
-    margin-right: 3rem;
     font-size: .8rem;
+    font-size: .8rem;
+    width: 50%;
+    margin-top: 0;
 }
 .items:not(.selectize-input).list .item .additional-info ul li figure {
     float: none;
@@ -3591,7 +3591,7 @@ textarea.form-control {
     }
     .items:not(.selectize-input).list .item h3, .items:not(.selectize-input).list.compact .item h3 {
         left: 2rem;
-        bottom: 8rem;
+        bottom: 2rem;
         top: inherit;
     }
     .items:not(.selectize-input).list .item h3 a:not(.category), .items:not(.selectize-input).list.compact .item h3 a:not(.category) {
@@ -3605,9 +3605,9 @@ textarea.form-control {
     }
     .items:not(.selectize-input).list .item h3 .tag:not(.category), .items:not(.selectize-input).list.compact .item h3 .tag:not(.category) {
         position: absolute;
-        top: -15rem;
+        top: -3rem;
         bottom: auto;
-        left: 0;
+        left: 4rem;
         background-color: #fff;
         border: none;
     }
@@ -3626,8 +3626,10 @@ textarea.form-control {
         color: #fff;
     }
     .items:not(.selectize-input).list .item .price, .items:not(.selectize-input).list.compact .item .price {
-        top: 24.5rem;
-        bottom: auto;
+        top: unset;
+        bottom: 1.5rem;
+        right: 2rem;
+        left: unset;
     }
     .items:not(.selectize-input).list .item .description, .items:not(.selectize-input).list.compact .item .description {
         position: relative;
@@ -3641,7 +3643,7 @@ textarea.form-control {
     }
     .items:not(.selectize-input).list .item .meta, .items:not(.selectize-input).list.compact .item .meta {
         background-color: #f8f8f8;
-        padding: 1.8rem;
+        padding: 1rem 2rem;
         font-size: 1.2rem;
         width: 100%;
         white-space: nowrap;

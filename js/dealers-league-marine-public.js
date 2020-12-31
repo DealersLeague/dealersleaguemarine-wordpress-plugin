@@ -24,6 +24,12 @@
         }
     });
 
+    // TODO
+    $('#form_send_enquiry_btn').click( function() {
+         
+        //selectize.setValue('something', false);
+    })
+
     // Enquiry
     $(document).on('submit', '#form_send_enquiry', function(event) {
         event.preventDefault();
@@ -278,7 +284,7 @@
         $(".archive-carousel").owlCarousel({
             loop:true,
             margin:10, 
-            stagePadding: 100,
+            
             lazyLoad:true,
             lazyLoadEager: 1,
             autoplay:true,
@@ -286,13 +292,16 @@
             autoplayHoverPause:true, 
             responsive:{
                 0:{
-                    items:1
+                    items:1,
+                    stagePadding: 25
                 },
                 750:{
-                    items:2
+                    items:2,
+                    stagePadding: 50
                 },
                 1000:{
-                    items:3
+                    items:3,
+                    stagePadding: 100
                 },
                 1280:{
                     items:4
@@ -404,7 +413,7 @@
         var allPanels = $('.listing-accordion > .listing-details-grid').hide()
         
         $('.listing-accordion > h2').click(function() {
-            allPanels.slideUp()
+            allPanels.not( $(this).next('.listing-details-grid') ).slideUp()
             $(this).next('.listing-details-grid').slideDown()
             return false
         })
