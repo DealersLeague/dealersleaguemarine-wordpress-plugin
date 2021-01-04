@@ -239,8 +239,8 @@ class Dealers_League_Marine {
 			'dimensions'           => [ 'clearance', 'displacement' ],
 			'hull'                 => [ 'keel_type', 'keel_ballast' ],
 		];
-		
-		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption', 'antenna', 'deck_shower', 'sun_shade' ];
+
+		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption', 'antenna', 'deck_shower', 'sun_shade', 'position' ];
 
 		$transformed_fields = [];
 
@@ -266,7 +266,7 @@ class Dealers_League_Marine {
 
 									if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! empty( $subfield_value[0] ) && ! in_array( $subfield_name, $exclude_field_name ) ) {
 										$subfield_name = str_replace( '_', ' ', Utils::check_translation( $subfield_name ) );
-										$subfield_text .= '<strong>' . __( $subfield_name, 'dlmarine' ) . ( strtolower($subfield_value[0]) == 'on' ? '</strong>' :  ':</strong>');
+										$subfield_text .= strtolower($subfield_value[0]) == 'on' ? '' : '<strong>' . __( $subfield_name, 'dlmarine' ) . ( strtolower($subfield_value[0]) == 'on' ? '</strong>' :  ':</strong>');
 									}
 
 									foreach ( $subfield_value as $index => $sv ) {

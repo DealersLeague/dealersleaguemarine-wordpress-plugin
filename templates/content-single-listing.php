@@ -532,8 +532,10 @@ if ( ! is_user_logged_in() ) {
                                         $name = ( $field_name == 'vat' ) ? __('VAT', 'dlmarine') : $field_name;//__( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
                                         $name = ( $field_name == 'boat_types' ) ? __('Category', 'dlmarine') : $field_name;//__( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
                                         echo '<div class="item boat-info-item">';
-                                        echo '<span class="item-title"><strong>' .  Utils::check_translation( $name ) . '</strong></span>: ';
-                                        echo '<span>' . ltrim( Utils::check_translation( $val ), ' ' ) . '</span>';
+                                        echo '<span class="item-title"><strong>' .  Utils::check_translation( $name ) . '</strong></span>';
+                                        if ( ! empty( trim($val) ) && trim($val) != '<br>' && trim( $val ) != ' <br><strong> </strong>   ' && trim( strtolower($val) ) != 'on' ) {
+	                                        echo ':  <span>' . ltrim( Utils::check_translation( $val ), ' ' ) . '</span>';
+                                        }
                                         echo '</div>';
                                     }
                                 }
