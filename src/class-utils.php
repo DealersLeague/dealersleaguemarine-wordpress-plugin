@@ -535,7 +535,7 @@ class Utils {
 	 * @return mixed|string|void
 	 */
 	public static function check_translation( $text ) {
-		if ( strtolower($text)=='curb_weight') {
+		if ( strtolower($text)=='length') {
 			$test = '';
 		}
 		$path = plugin_dir_path( __FILE__ ) . '../json/fields.json';
@@ -606,15 +606,21 @@ class Utils {
 
 		if ( isset( self::$tab_texts[ $text ] ) ) {
 			$text_to_return =  self::$tab_texts[ $text ];
+			$text_to_return = str_replace( '_', ' ', $text_to_return );
+			$text_to_return = __( ucwords( $text_to_return ), 'dlmarine' );
 		} elseif ( isset( self::$section_texts[ $text ] ) ) {
 			$text_to_return =  self::$section_texts[ $text ];
+			$text_to_return = str_replace( '_', ' ', $text_to_return );
+			$text_to_return = __( ucwords( $text_to_return ), 'dlmarine' );
 		} elseif ( isset( self::$fields_texts[ $text ] ) ) {
 			$text_to_return = self::$fields_texts[ $text ];
+			$text_to_return = str_replace( '_', ' ', $text_to_return );
+			$text_to_return = __( ucwords( $text_to_return ), 'dlmarine' );
 		} elseif ( isset( self::$subfields_texts[ $text ] ) ) {
 			$text_to_return = self::$subfields_texts[ $text ];
-		}
-
-		if ( empty( $text_to_return ) || strpos( $text_to_return, '_') !== false ) {
+			$text_to_return = str_replace( '_', ' ', $text_to_return );
+			$text_to_return = __( ucwords( $text_to_return ), 'dlmarine' );
+		}elseif ( empty( $text_to_return ) || strpos( $text_to_return, '_') !== false ) {
 
 			$original   = $text;
 			$text       = str_replace( '_', ' ', $text );
