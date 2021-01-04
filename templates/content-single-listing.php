@@ -523,17 +523,17 @@ if ( ! is_user_logged_in() ) {
                         foreach ( $transformed_data as $section_name => $section ) {
                             if ( ! in_array( $section_name, $exclude_section_list ) && ! empty( $section ) ) {
                                 
-                                echo '<h2 class="listing-heading">' . __( ucwords( str_replace( '_', ' ', $section_name ) ), 'dlmarine' ) . '<i class="fa fa-sort-down"></i></h2>';
+                                echo '<h2 class="listing-heading">' . Utils::check_translation( $section_name ) . '<i class="fa fa-sort-down"></i></h2>';
                                 echo ' <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-3-items listing-details-grid">';
                                 foreach ( $section as $field_name => $field_value ) {
                                     if( ! empty( $field_value ) ) {
                                         $val = str_replace( '_', ' ', $field_value );
                                         $val = str_replace( '-', ' ', $val );
-                                        $name = ( $field_name == 'vat' ) ? __('VAT', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
-                                        $name = ( $field_name == 'boat_types' ) ? __('Category', 'dlmarine') : __( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
+                                        $name = ( $field_name == 'vat' ) ? __('VAT', 'dlmarine') : $field_name;//__( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
+                                        $name = ( $field_name == 'boat_types' ) ? __('Category', 'dlmarine') : $field_name;//__( ucwords( str_replace( '_', ' ', $field_name ) ), 'dlmarine');
                                         echo '<div class="item boat-info-item">';
-                                        echo '<span class="item-title"><strong>' .  $name . '</strong></span>: ';
-                                        echo '<span>' . ltrim( $val, ' ' ) . '</span>';
+                                        echo '<span class="item-title"><strong>' .  Utils::check_translation( $name ) . '</strong></span>: ';
+                                        echo '<span>' . ltrim( Utils::check_translation( $val ), ' ' ) . '</span>';
                                         echo '</div>';
                                     }
                                 }

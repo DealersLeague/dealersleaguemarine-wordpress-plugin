@@ -240,7 +240,7 @@ class Dealers_League_Marine {
 			'hull'                 => [ 'keel_type', 'keel_ballast' ],
 		];
 
-		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption' ];
+		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption', 'volume', 'antenna' ];
 		$transformed_fields = [];
 
 		foreach ( $listing_data as $tab ) {
@@ -264,8 +264,8 @@ class Dealers_League_Marine {
 								if ( is_array( $subfield_value ) ) {
 
 									if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! empty( $subfield_value[0] ) && ! in_array( $subfield_name, $exclude_field_name ) ) {
-										$subfield_name = str_replace( '_', ' ', $subfield_name );
-										$subfield_text .= '<strong>' . __( $subfield_name, 'dlmarine' ) . ( $subfield_value[0] == 'on' ? '</strong>' :  ':</strong>');
+										$subfield_name = str_replace( '_', ' ', Utils::check_translation( $subfield_name ) );
+										$subfield_text .= '<strong>' . __( $subfield_name, 'dlmarine' ) . ( strtolower($subfield_value[0]) == 'on' ? '</strong>' :  ':</strong>');
 									}
 
 									foreach ( $subfield_value as $index => $sv ) {
@@ -295,7 +295,7 @@ class Dealers_League_Marine {
 														$subfield_text .= '';//Utils::get_country_name( $sv );
 														break;
 													default:
-														$sv = str_replace( array('-','_'), array(' ',' '),$sv );
+														$sv = str_replace( array('-','_'), array(' ',' '),Utils::check_translation($sv) );
 														$unit = Utils::get_unity( $subfield_name );
 														$unit = empty( $unit ) ? Utils::get_unity( $field_name ) : $unit;
 														$subfield_text .= ' ' . ucwords( $sv ) . $unit .'<br>';
@@ -305,23 +305,23 @@ class Dealers_League_Marine {
 									}
 
 								} elseif ( $subfield_name != 'checked' && $subfield_name != $field_name && ! in_array( $subfield_name, $exclude_field_name ) && ! is_numeric( $subfield_name ))  {
-
 									$translated = Utils::check_translation( $subfield_value );
-
+									$unit = Utils::get_unity( $subfield_name );
+									$subfield_name = Utils::check_translation($subfield_name);
 									$subfield_value = str_replace( array('-','_'), array(' ',' '), ' ', $translated );
 									$subfield_name = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_name );
-									$unit = Utils::get_unity( $subfield_name );
 									$subfield_text .= '<strong>' . __( $subfield_name, 'dlmarine' ) . '</strong>' . ' ' . $subfield_value . $unit . ' ';
 								} elseif ( $field_name =='boat_types' ) {
 									$subfield_text .= Utils::get_boat_type_name( $subfield_value ) . '<br>';
 								} else {
 									$translated = Utils::check_translation( $subfield_value );
-
+									$subfield_name = Utils::check_translation($subfield_name);
 									$subfield_value = str_replace( array('-','_'), array(' ',' '), ' ',  $translated );
 									if ( ! empty ( $subfield_value ) ) {
 										$subfield_name = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_name );
 										$unit = Utils::get_unity( $subfield_name );
-										$subfield_text .= ucwords( $subfield_value ) . $unit . '<br>';
+										$subfield_name = Utils::check_translation($subfield_name);
+										$subfield_text .= ucwords( Utils::check_translation($subfield_value) ) . $unit . '<br>';
 									}
 								}
 								$subfield_text = str_replace(
@@ -343,7 +343,7 @@ class Dealers_League_Marine {
 						$translated = Utils::check_translation( $field_value );
 
 						$unit = Utils::get_unity( $field_name );
-						$field_name = $field_name == 'n_engines' ? 'engines' : $field_name;
+						$field_name = $field_name == 'n_engines' ? __( 'engines', 'dlmarine' ) : Utils::check_translation( $field_name );
 						$transformed_fields[ $section_name ][ $field_name ] = ucwords( $translated ) . $unit;
 						$remove_section = false;
 					}

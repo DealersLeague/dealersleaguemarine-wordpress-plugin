@@ -4,6 +4,13 @@ namespace dealersleague\marine\wordpress;
 
 class Utils {
 
+	public static $fields_json;
+
+	public static $subfields_texts = array();
+	public static $fields_texts = array();
+	public static $section_texts = array();
+	public static $tab_texts = array();
+
 	public static $currency_list = array(
 		'EUR' => '&euro;',
 		'GBP' => '&pound;',
@@ -528,14 +535,92 @@ class Utils {
 	 * @return mixed|string|void
 	 */
 	public static function check_translation( $text ) {
-		$original = $text;
-		$translated = __( $text, 'dlmarine' );
-		$translated = strtolower( $original ) == strtolower( $translated ) ? __( strtoupper( $text ) , 'dlmarine' ) : $translated;
-		$translated = strtolower( $original ) == strtolower( $translated ) ? __( strtolower( $text ) , 'dlmarine' ) : $translated;
-		$translated = strtolower( $original ) == strtolower( $translated ) ? __( ucfirst( $text ) , 'dlmarine' ) : $translated;
-		$translated = strtolower( $original ) == strtolower( $translated ) ? __( ucwords( $text ) , 'dlmarine' ) : $translated;
 
-		return strtolower( $original ) == strtolower( $translated ) ? $original : $translated;
+		$path = plugin_dir_path( __FILE__ ) . '../json/fields.json';
+		if ( empty( self::$fields_json ) && file_exists( $path ) ) {
+			self::$fields_json = json_decode( file_get_contents( $path ), true );
+		}
+
+		foreach ( self::$fields_json['tabs'] as $tab ) {
+			if ( ! isset( self::$tab_texts[ $tab['id'] ] ) ) {
+				self::$tab_texts[ $tab['id'] ] = __( $tab['name'], 'dlmarine' );
+			}
+
+			foreach ( $tab['sections'] as $section ) {
+				if ( ! isset( self::$section_texts[ $section['id'] ] ) ) {
+					self::$section_texts[ $section['id'] ] = __( $section['name'], 'dlmarine' );
+				}
+				foreach ( $section['fields' ] as $field ) {
+
+					if ( isset( $field['fields'] ) ) {
+
+						foreach ( $field['fields' ]  as $subfield) {
+							if ( ! isset( self::$subfields_texts[ $subfield[ 'id' ] ] ) ) {
+
+								if ( ! empty( $subfield[ 'name' ] ) ) {
+									self::$subfields_texts[ $field[ 'id' ] ] = __( $subfield[ 'name' ], 'dlmarine' );
+								} elseif ( ! empty( $subfield[ 'label' ] ) ) {
+									self::$subfields_texts[ $field[ 'id' ] ] = __( $subfield[ 'label' ], 'dlmarine' );
+								} else {
+									self::$subfields_texts[ $subfield[ 'id' ] ] = $subfield[ 'id' ];
+								}
+
+								/*if ( ! empty( $subfield[ 'options' ] ) && is_array( $subfield[ 'options' ] ) ) {
+									foreach ( $subfield[ 'options' ] as $option => $text ) {
+										self::$subfields_texts[ $option ] = __( $text, 'dlmarine' );
+									}
+								}*/
+
+							}
+						}
+					} else {
+						if ( ! isset( self::$fields_texts[ $field[ 'id' ] ] ) ) {
+
+							if ( ! empty( $field[ 'name' ] ) ) {
+								self::$fields_texts[ $field[ 'id' ] ] = __( $field[ 'name' ], 'dlmarine' );
+							} elseif ( ! empty( $field[ 'label' ] ) ) {
+								self::$fields_texts[ $field[ 'id' ] ] = __( $field[ 'label' ], 'dlmarine' );
+							} else {
+								self::$fields_texts[ $field[ 'id' ] ] = $field[ 'id' ];
+							}
+
+							/*
+							if ( ! empty( $field[ 'options' ] ) && is_array( $field['options'] ) ) {
+								foreach ( $field[ 'options' ] as $option => $text ) {
+									self::$fields_texts[ $option ] = __( $text, 'dlmarine' );
+								}
+							}*/
+
+						}
+					}
+
+				}
+
+			}
+
+		}
+
+		if ( isset( self::$tab_texts[ $text ] ) ) {
+			$text_to_return =  self::$tab_texts[ $text ];
+		} elseif ( isset( self::$section_texts[ $text ] ) ) {
+			$text_to_return =  self::$section_texts[ $text ];
+		} elseif ( isset( self::$fields_texts[ $text ] ) ) {
+			$text_to_return = self::$fields_texts[ $text ];
+		} elseif ( isset( self::$subfields_texts[ $text ] ) ) {
+			$text_to_return = self::$subfields_texts[ $text ];
+		} else {
+			$original = $text;
+			$text   = str_replace( '_', ' ', $text );
+			$translated = __( $text, 'dlmarine' );
+			$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtoupper( $text ), 'dlmarine' ) : $translated;
+			$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtolower( $text ), 'dlmarine' ) : $translated;
+			$translated = strtolower( $text ) == strtolower( $translated ) ? __( ucfirst( $text ), 'dlmarine' ) : $translated;
+			$translated = strtolower( $text ) == strtolower( $translated ) ? __( ucwords( $text ), 'dlmarine' ) : $translated;
+
+			$text_to_return = strtolower( $original ) == strtolower( $translated ) ? $original : $translated;
+		}
+
+		return $text_to_return;
 	}
 
 }

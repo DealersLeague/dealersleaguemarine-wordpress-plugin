@@ -1,0 +1,3213 @@
+{
+    "tabs" : [
+        {
+            "id": "listing_meta",
+            "name": "Boat Type",
+            "sections": [
+                {
+                    "id": "advert",
+                    "name": "Advert",
+                    "fields": [
+                        {
+                            "id": "id",
+                            "name": "ID",
+                            "type": "text",
+                            "hidden": true,
+                            "required": true,
+                            "pattern": "[-a-zA-Z0-9_]+"
+                        },
+                        {
+                            "id": "advert_purpose",
+                            "name": "Purpose",
+                            "type": "select",
+                            "default": "sale",
+                            "hidden": true,
+                            "hide_search": true,
+                            "required": true,
+                            "options" :   {
+                                "sales" : "Sales",
+                                "rental" : "Rental"
+                            }
+                        },
+                        {
+                            "id": "advert_type",
+                            "name": "Type",
+                            "type": "select",
+                            "hidden": "true",
+                            "default": "boat",
+                            "required": true,
+                            "hide_search": true,
+                            "options" :   {
+                                "boat" : "Boat",
+                                "trailer" : "Trailer",
+                                "engine" : "Engine",
+                                "mooring" : "Mooring",
+                                "other" : "Other"
+                            }
+                        },
+                        {
+                            "id": "advert_type_ui",
+                            "name": "Type",
+                            "type": "advert_type",
+                            "default": "motorboat",
+                            "required": true,
+                            "hide_search": true,
+                            "options" :   {
+                                "motorboat" : "Motorboat",
+                                "sailboat" : "Sailboat",
+                                "inflatable" : "Inflatable",
+                                "jetski" : "Jetski",
+                                "trailer" : "Trailer", 
+                                "engine" : "Engine" 
+                            }
+                        },
+                        {
+                            "id": "advert_status",
+                            "name": "Status",
+                            "type": "select",
+                            "default": "active",
+                            "hidden": true,
+                            "required": true,
+                            "hide_search": true,
+                            "options" :   {
+                                "active" : "Active",
+                                "inactive" : "Inactive"
+                            }
+                        },
+                        {
+                            "id": "modified",
+                            "name": "Modified",
+                            "type": "datetime",
+                            "hidden": true,
+                            "required": true,
+                            "pattern": "Y-m-d H:i:s"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id" : "listing_details",
+            "name" : "Listing Details",
+            "sections" : [
+                {
+                    "id" : "listing_managment",
+                    "name" : "Listing Management",
+                    "fields" : [
+                        {
+                            "id" : "location_id",
+                            "name" : "Office Location",
+                            "type" : "select",
+                            "required" : true,
+                            "_comment" : "prefill with main location",
+                            "options" : {
+                                "entity" : "location"
+                            }
+                        },
+                        {
+                            "id" : "internal_code",
+                            "name" : "Internal Code",
+                            "type" : "text",
+                            "description" : "Optional. For internal use only"
+                        },
+                        {
+                            "id" : "short_description",
+                            "name" : "Short Description",
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "repeater" : true,
+                            "_comment" : "Only one language per row",
+                            "fields" : [
+                                {
+                                    "id" : "language",
+                                    "type" : "select",
+                                    "label" : "Please choose a language",
+                                    "_comment" : "Default to main language",
+                                    "options" : {
+                                        "file" : "languages.json"
+                                    }
+                                },
+                                {
+                                    "id" : "short_description_text",
+                                    "name": "text",
+                                    "type" : "text",
+                                    "configuration" : {
+                                        "max" : 60
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "long_description",
+                            "name" : "Long Description",
+                            "type" : "WYSIWYG",
+                            "repeater" : true,
+                            "_comment" : "Only one language per row"
+                        },
+                        {
+                            "id" : "external_link",
+                            "name" : "External Link",
+                            "type" : "input_group",
+                            "position": "append",
+                            "repeater" : true,
+                            "_comment" : "Only one language per row",
+                            "fields" : [ 
+                                {
+                                    "id" : "url",
+                                    "type" : "url"
+                                },
+                                {
+                                    "id" : "language",
+                                    "type" : "select",
+                                    "label" : "Please choose the language of the target website",
+                                    "_comment" : "Default to main language",
+                                    "options" : {
+                                        "file" : "languages.json"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id" : "sales_details",
+                    "name" : "Sales Details",
+                    "fields" : [
+                        {
+                            "id" : "sale_class",
+                            "name" : "Sale Class",
+                            "type" : "select",
+                            "hide_search": true,
+                            "class" : "col-4 pd-0",
+                            "required" : true,
+                            "options" : {
+                                "new" : "New",
+                                "used" : "Used",
+                                "new-instock" : "New (instock)",
+                                "new-inorder" : "New (preordered)",
+                                "new-onorder" : "New (onordered)", 
+                                "used-excharter" : "Used (was in charter)",
+                                "demo-inwater" : "Demonstration (already in water)",
+                                "demo-exhibition" : "Demonstration (NOT in water)"
+                            }
+                        },
+                        {
+                            "id" : "sale_status",
+                            "name" : "Sale Status",
+                            "type" : "select",
+                            "hide_search": true,
+                            "class" : "col-4 pd-0",
+                            "required" : true,
+                            "options" : {
+                                "under-offer" : "Under-offer",
+                                "sold" : "Sold",
+                                "available": "Available"
+                            }
+                        },
+                        {
+                            "id" : "condition",
+                            "name" : "Condition",
+                            "type" : "select",
+                            "hide_search": true,
+                            "class" : "col-4 pd-0",
+                            "condition" : {
+                                "id" : "sale_class",
+                                "value" : "new,new-instock,new-onorder,new-inorder",
+                                "operator" : "in",
+                                "action" : "hide"
+                            },
+                            "options" : {
+                                "as-new" : "As-new",
+                                "excellent" : "Excellent",
+                                "good" : "Good",
+                                "damaged" : "Damaged",
+                                "need-repair" : "Need-repair"
+                            }
+                        },
+                        {
+                            "id" : "price",
+                            "name" : "Price",
+                            "type" : "input_group",
+                            "position": "both",
+                            "required" : true,
+                            "placeholder" : "Price",
+                            "fields" : [
+                                {
+                                    "id" : "currency",
+                                    "type" : "select",
+                                    "options" :   {
+                                        "file" : "currencies.json"
+                                    }
+                                },
+                                {
+                                    "id" : "price",
+                                    "name": "amount",
+                                    "type" : "text"
+                                },
+                                {
+                                    "id" : "type",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" :   {
+                                        "fixed" : "Fixed",
+                                        "on-request" : "On-request",
+                                        "negotiable" : "Negotiable",
+                                        "auction" : "Auction",
+                                        "share" : "Share"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "vat",
+                            "name" : "VAT Status",
+                            "type" : "input_group",
+                            "repeater" : true,
+                            "position": "both",
+                            "fields" : [
+                                {
+                                    "id" : "status",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "placeholder" : "Status",
+                                    "options" : {
+                                        "paid" : "Paid",
+                                        "not-paid" : "Not-paid",
+                                        "unknown" : "Unknown"
+                                    },
+                                    "_comment": "vat_included false: not paid"
+                                },
+                                {
+                                    "id" : "paid_area",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "placeholder" : "Area",
+                                    "options" : {
+                                        "file" : "countries.json"
+                                    },
+                                    "_comment": "eu_tax true => EU"
+                                },
+                                {
+                                    "id" : "stated_separatly",
+                                    "name" : "Stated Separatly",
+                                    "type" : "bool",
+                                    "_comment": "vat_stated"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "trade_in_allowed",
+                            "name" : "Trade in Allowed",
+                            "label" : "Trade In",
+                            "type" : "bool",
+                            "_comment": "trade-in check if exists first"
+                        },
+                        {
+                            "id" : "previous_owners",
+                            "name" : "Previous Owners",
+                            "type" : "number",
+                            "configuration" : {
+                                "min" : 0 
+                            }, 
+                            "_commnet" : "if no info given - this node should be omitted / not in the XML",
+                            "description" : "If boat is first hand, use \"0\"."
+                        },
+                        {
+                            "id" : "location",
+                            "name" : "Location",
+                            "type" : "input_group",
+                            "position" : "both",
+                            "required" : true,
+                            "fields" : [
+                                {
+                                    "id" : "country",
+                                    "type" : "select",
+                                    "label" : "Please choose a country",
+                                    "options" : {
+                                        "file" : "countries.json"
+                                    }
+                                },
+                                {
+                                    "id" : "city",
+                                    "type" : "geocode",
+                                    "_comment": "vessel_lying"
+                                },
+                                {
+                                    "id" : "mooring_available",
+                                    "name" : "Mooring Available",
+                                    "type" : "bool"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id" : "boat_details",
+            "name" : "Boat Details",
+            "sections" : [
+                {
+                    "id" : "boat_types",
+                    "name" : "Boat Types",
+                    "fields" : [
+                        {
+                            "id" : "boat_types",
+                            "name" : "Boat Types",
+                            "type" : "select",
+                            "multiple" : true,
+                            "options" : {
+                                "file" : "boat-types.json"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id" : "construction_details",
+                    "name" : "Construction Details",
+                    "fields" : [
+                        {
+                            "id" : "manufacturer",
+                            "name" : "Manufacturer",
+                            "type" : "input_group",
+                            "required": true,
+                            "position" : "append",
+                            "fields" : [
+                                {
+                                    "id" : "name",
+                                    "type" : "text"
+                                },
+                                {
+                                    "id" : "country",
+                                    "type" : "select",
+                                    "label" : "Please choose a country",
+                                    "options" : {
+                                        "file" : "countries.json"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "model",
+                            "name" : "Model",
+                            "required": true,
+                            "type" : "text"
+                        },
+                        {
+                            "id" : "designer",
+                            "name" : "Designer",
+                            "type" : "text"
+                        },
+                        {
+                            "id" : "boat_name",
+                            "name" : "Boat Name",
+                            "type" : "text"
+                        },
+                        {
+                            "id" : "year_built",
+                            "required": true,
+                            "name" : "Year Built",
+                            "type" : "number",
+                            "configuration" : {
+                                "step": 1,
+                                "min" : 1700,
+                                "max" : 2200
+                            }
+                        },
+                        {
+                            "id" : "year_launched",
+                            "name" : "Year Launched",
+                            "type" : "number",
+                            "configuration" : {
+                                "step": 1,
+                                "min" : 1700,
+                                "max" : 2200
+                            }
+                        },
+                        {
+                            "id" : "last_refit",
+                            "name" : "Last Refit",
+                            "type" : "number",
+                            "configuration" : {
+                                "step": 1,
+                                "min" : 1700,
+                                "max" : 2200
+                            }
+                        },
+                        {
+                            "id" : "cockpit_type",
+                            "name" : "Cockpit Type",
+                            "type" : "select",
+                            "hide_search": true,
+                            "options" : {
+                                "aft" : "Aft",
+                                "center" : "Center",
+                                "double" : "Double",
+                                "pilothouse" : "Pilothouse"
+                            }
+                        },
+                        {
+                            "id" : "steering_type",
+                            "name" : "Steering Type",
+                            "type" : "select",
+                            "hide_search": true,
+                            "options" : {
+                                "tiller" : "Tiller",
+                                "single-wheel" : "Single-wheel",
+                                "dual-wheel" : "Dual-wheel"
+                            }
+                        },
+                        {
+                            "id" : "flybridge",
+                            "name" : "Flybridge",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "hard_top",
+                            "name" : "Hard Top",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "convertible_top",
+                            "name" : "Convertible Top",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "ce_certification",
+                            "name" : "CE Certification",
+                            "type" : "text"
+                        },
+                        {
+                            "id" : "ce_design_category",
+                            "name" : "CE Design Category",
+                            "type" : "select",
+                            "hide_search": true,
+                            "options" : {
+                                "a" : "A",
+                                "b" : "B",
+                                "c" : "C",
+                                "d" : "D"
+                            }
+                        },
+                        {
+                            "id" : "ce_passenger_capacity",
+                            "name" : "CE Passenger Capacity",
+                            "type" : "number",
+                            "configuration" : {
+                                "min" : 0 
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id" : "registration",
+                    "name" : "Registration",
+                    "fields" : [
+                        {
+                            "id" : "flag",
+                            "name" : "Flag",
+                            "type" : "select",
+                            "label" : "Please choose a country",
+                            "options" : {
+                                "file" : "countries.json"
+                            }
+                        },
+                        {
+                            "id" : "port",
+                            "name" : "Port",
+                            "type" : "text"
+                        },
+                        {
+                            "id" : "purpose",
+                            "name" : "Purpose",
+                            "type" : "select",
+                            "hide_search": true,
+                            "options" : {
+                                "commercial" : "Commercial",
+                                "private" : "Private"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id" : "dimensions",
+                    "name" : "Dimensions",
+                    "fields" : [
+                        {
+                            "id" : "loa",
+                            "name" : "LOA",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "description" : "Length overall",
+                            "required" : true,
+                            "fields" : [
+                                {
+                                    "id" : "number",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0.01,
+                                        "max" : 460.00
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "lwl",
+                            "name" : "LWL",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "fields" : [
+                                {
+                                    "id" : "number",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0.01,
+                                        "max" : 460.00
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "beam",
+                            "name" : "Beam",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "fields" : [
+                                {
+                                    "id" : "number",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0.01,
+                                        "max" : 460.00
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "draught",
+                            "name" : "Draught",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "fields" : [
+                                {
+                                    "id" : "number",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0.01,
+                                        "max" : 460.00
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "draught_keelup",
+                            "name" : "Draught Keelup",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "fields" : [
+                                {
+                                    "id" : "number",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0.01,
+                                        "max" : 460.00
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "clearance",
+                            "name" : "Clearance",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "fields" : [
+                                {
+                                    "id" : "number",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0.01,
+                                        "max" : 460.00
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "displacement",
+                            "name" : "Displacement",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "fields" : [
+                                {
+                                    "id" : "number",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0 
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "kg"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id" : "hull",
+                    "name" : "Hull",
+                    "fields" : [
+                        {
+                            "id" : "hin",
+                            "name" : "HIN",
+                            "type" : "text",
+                            "_comment": "hull_number"
+                        },
+                        {
+                            "id" : "colours",
+                            "name" : "Colours",
+                            "type" : "text", 
+                            "placeholder" : "Free text, for example: white, blue stripe with red dots",
+                            "_comment": "hull_colour"
+                        },
+                        { 
+                            "id" : "colours_tags",
+                            "type" : "select",
+                            "multiple" : true,
+                            "configuration" : {
+                                "max" : 3
+                            },
+                            "options" : {
+                                "file" : "colours.json"
+                            } 
+                        },
+                        {
+                            "id" : "material",
+                            "name" : "Material",
+                            "label" : "Please choose a material",
+                            "type" : "select",
+                            "options" : {
+                                "file" : "materials.json"
+                            }
+                        },
+                        {
+                            "id" : "type",
+                            "name" : "Type",
+                            "type" : "select",
+                            "hide_search": true,
+                            "options" : {
+                                "displacement" : "Displacement",
+                                "planing" : "Planing",
+                                "semi-displacement" : "Semi-displacement"
+                            },
+                            "_comment": "hull_type"
+                        },
+                        {
+                            "id" : "keel_type",
+                            "name" : "Keel Type",
+                            "type" : "select",
+                            "hide_search": true,
+                            "options" : {
+                                "fin" : "Fin",
+                                "full" : "Full",
+                                "bulb" : "Bulb",
+                                "winged" : "Winged",
+                                "twin" : "Twin",
+                                "swing" : "Swing",
+                                "lifting" : "Lifting",
+                                "canting" : "Canting",
+                                "daggerboard" : "Daggerboard",
+                                "flat" : "Flat",
+                                "fixed " : "Fixed"
+                            }
+                        },
+                        {
+                            "id" : "keel_ballast",
+                            "name" : "Keel Ballast",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "fields" : [
+                                {
+                                    "id" : "number",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0 
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "kg"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id" : "drive",
+                    "name" : "Drive",
+                    "fields" : [
+                        {
+                            "id" : "no_engine",
+                            "name" : "No Engine",
+                            "label" : "Has Engine?",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "propulsion",
+                            "name" : "Propulsion",
+                            "type" : "select",
+                            "hide_search": true,
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            },
+                            "options" : {
+                                "outboard" : "Outboard",
+                                "stern" : "Stern",
+                                "vdrive" : "Vdrive",
+                                "shaft" : "Shaft",
+                                "jet" : "Jet",
+                                "sail" : "Sail",
+                                "pod" : "Pod",
+                                "surface" : "Surface",
+                                "hydraulic" : "Hydraulic",
+                                "forward" : "Forward"
+                            }
+                        },
+                        {
+                            "id" : "propeller",
+                            "name" : "Propeller",
+                            "type" : "input_group",
+                            "position" : "both",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            },
+                            "fields" : [
+                                {
+                                    "id" : "blades",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0 
+                                    },
+                                    "placeholder" : "Number of blades"
+                                },
+                                {
+                                    "id" : "material",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" : {
+                                        "stainless" : "Stainless",
+                                        "aluminum" : "Aluminum",
+                                        "bronze" : "Bronze",
+                                        "plastic" : "Plastic",
+                                        "steel" : "Steel",
+                                        "alloy" : "Alloy"
+                                    }
+                                },
+                                {
+                                    "id" : "content",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" : {
+                                        "singleprop" : "Singleprop",
+                                        "duoprop" : "Duoprop",
+                                        "ips" : "IPS",
+                                        "folding" : "Folding",
+                                        "fixed" : "Fixed",
+                                        "variable-pitch" : "Variable Pitch"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "cruising_speed",
+                            "name" : "Cruising Speed",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            },
+                            "fields" : [
+                                {
+                                    "id" : "speed",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 1.0,
+                                        "max" : 210.0
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "kg"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "max_speed",
+                            "name" : "Max Speed",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            },
+                            "fields" : [
+                                {
+                                    "id" : "speed",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 1.0,
+                                        "max" : 210.0
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "kg"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "cruising_consumption",
+                            "name" : "Cruising Consumption",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            },
+                            "fields" : [
+                                {
+                                    "id" : "consumption",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 1.0,
+                                        "max" : 9000.0
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "lh"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "max_consumption",
+                            "name" : "Max Consumption",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            },
+                            "fields" : [
+                                {
+                                    "id" : "consumption",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 1.0,
+                                        "max" : 9000.0
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "lh"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "range",
+                            "name" : "Range",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            },
+                            "fields" : [
+                                {
+                                    "id" : "range",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0 
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "nm"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "max_engine_power",
+                            "name" : "Max Engine Power",
+                            "type" : "input_group",
+                            "position" : "append",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            },
+                            "fields" : [
+                                {
+                                    "id" : "power",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0 
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "hp"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "bow_thruster",
+                            "name" : "Bow Thruster",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            }
+                        },
+                        {
+                            "id" : "stern_thruster",
+                            "name" : "Stern Thruster",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            }
+                        },
+                        {
+                            "id" : "control_type",
+                            "name" : "Control Type",
+                            "type" : "text",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            },
+                            "options" : {
+                                "single" : "Single",
+                                "twin" : "Twin"
+                            }
+                        },
+                        {
+                            "id" : "lake_constance",
+                            "name" : "Lake Constance",
+                            "label" : "Lake Constance",
+                            "type" : "bool",
+                            "condition" : {
+                                "id" : "no_engine",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "hide"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id" : "rig_sails",
+                    "name" : "Rig Sails",
+                    "fields" : [
+                        {
+                            "id" : "sailplan",
+                            "name" : "Sailplan",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "sailplan_details",
+                            "name" : "Sailplan",
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "class" : "hide",
+                            "condition" : {
+                                "id" : "sailplan",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            },  
+                            "fields" : [ 
+                                {
+                                    "id" : "type",
+                                    "type" : "select",
+                                    "label" : "Select type of sail", 
+                                    "options" : {
+                                        "sloop" : "Sloop",
+                                        "ketch" : "Ketch",
+                                        "yawl" : "Yawl",
+                                        "cutter" : "Cutter"
+                                    }
+                                },
+                                {
+                                    "id" : "masts",
+                                    "type" : "number",
+                                    "placeholder" : "Number of masts"
+                                } 
+                            ]
+                        },
+ 
+
+                        {
+                            "id" : "main_sail",
+                            "name" : "Main Sail",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "_main_sail",
+                            "name" : "Main Sail",
+                            "type" : "input_group",
+                            "position": "both", 
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "main_sail",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            },  
+                            "fields" : [ 
+                                {
+                                    "id" : "type",
+                                    "type" : "select",
+                                    "label" : "Select type of sail", 
+                                    "options" : {
+                                        "sloop" : "Sloop",
+                                        "ketch" : "Ketch",
+                                        "yawl" : "Yawl",
+                                        "cutter" : "Cutter"
+                                    }
+                                },
+                                {
+                                    "id" : "details",
+                                    "type" : "text",
+                                    "placeholder" : "Details"
+                                }, 
+                                {
+                                    "id" : "area",
+                                    "type" : "number",
+                                    "placeholder" : "Area"
+                                } 
+                            ]
+                        },
+
+
+                        {
+                            "id" : "jib",
+                            "name" : "Jib",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "_jib",
+                            "name" : "Jib",
+                            "type" : "input_group",
+                            "position": "both", 
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "jib",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            },  
+                            "fields" : [ 
+                                {
+                                    "id" : "brand",
+                                    "type" : "text",
+                                    "placeholder" : "Brand of Jib"
+                                },
+                                {
+                                    "id" : "furling",
+                                    "type" : "select",
+                                    "label" : "Furling", 
+                                    "options" : {
+                                        "sloop" : "None",
+                                        "ketch" : "Roller" 
+                                    }
+                                },
+                                {
+                                    "id" : "selftacking",
+                                    "name" : "Selftacking",
+                                    "type" : "bool" 
+                                }, 
+                                {
+                                    "id" : "area",
+                                    "type" : "number",
+                                    "placeholder" : "Area"
+                                } 
+                            ]
+                        },
+
+                        {
+                            "id" : "genoa",
+                            "name" : "Genoa",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "_genoa",
+                            "name" : "Genoa",
+                            "type" : "input_group",
+                            "position": "both", 
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "genoa",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            },  
+                            "fields" : [  
+                                {
+                                    "id" : "furling",
+                                    "type" : "select",
+                                    "label" : "Furling", 
+                                    "options" : {
+                                        "sloop" : "None",
+                                        "ketch" : "Roller" 
+                                    }
+                                }, 
+                                {
+                                    "id" : "area",
+                                    "type" : "number",
+                                    "placeholder" : "Area"
+                                } 
+                            ]
+                        },
+
+                        {
+                            "id" : "gennaker",
+                            "name" : "Gennaker",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "_gennaker",
+                            "name" : "Gennaker",
+                            "type" : "input_group",
+                            "position": "both", 
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "gennaker",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            },  
+                            "fields" : [  
+                                {
+                                    "id" : "details",
+                                    "type" : "text",
+                                    "placeholder" : "Gennaker Extra Details"
+                                },
+                                {
+                                    "id" : "area",
+                                    "type" : "number",
+                                    "placeholder" : "Area"
+                                } 
+                            ]
+                        },
+
+                        {
+                            "id" : "spinnaker",
+                            "name" : "Spinnaker",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "spinnaker_area",
+                            "type" : "number",
+                            "placeholder" : "Area",
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "spinnaker",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            }
+                        },
+
+                        {
+                            "id" : "blister",
+                            "name" : "Blister",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "blister_area",
+                            "name" : "Blister Area",
+                            "type" : "number",
+                            "placeholder" : "Area",
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "blister",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            }
+                        },
+                        
+                        {
+                            "id" : "mast",
+                            "name" : "Mast",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "_mast",
+                            "name" : "Mast",
+                            "type" : "input_group",
+                            "position": "both", 
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "mast",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            },  
+                            "fields" : [  
+                                {
+                                    "id" : "material",
+                                    "type" : "select",
+                                    "label" : "Material", 
+                                    "options" : {
+                                        "wood" : "Wood",
+                                        "aluminum" : "Aluminum",
+                                        "steel" : "Steel",
+                                        "carbonfibre" : "Carbonfibre" 
+                                    }
+                                },
+                                {
+                                    "id" : "height",
+                                    "type" : "number",
+                                    "placeholder" : "Height"
+                                },
+                                {
+                                    "id" : "lowered_height",
+                                    "type" : "number",
+                                    "placeholder" : "Lowered Height"
+                                },
+                                {
+                                    "id" : "lowering_system",
+                                    "type" : "bool",
+                                    "placeholder" : "Lowering System"
+                                },
+                                {
+                                    "id" : "details",
+                                    "type" : "text",
+                                    "placeholder" : "Additional Info"
+                                }
+                            ]
+                        },
+
+                        {
+                            "id" : "boom",
+                            "name" : "Boom",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "_boom",
+                            "name" : "Boom",
+                            "type" : "input_group",
+                            "position": "both", 
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "boom",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            },  
+                            "fields" : [  
+                                {
+                                    "id" : "material",
+                                    "type" : "select",
+                                    "label" : "Material", 
+                                    "options" : {
+                                        "wood" : "Wood",
+                                        "aluminum" : "Aluminum",
+                                        "steel" : "Steel",
+                                        "carbonfibre" : "Carbonfibre" 
+                                    }
+                                },
+                                {
+                                    "id" : "rodkick",
+                                    "type" : "bool",
+                                    "placeholder" : "Rodkick"
+                                },
+                                {
+                                    "id" : "lazy_jacks",
+                                    "type" : "bool",
+                                    "placeholder" : "Lazy Jacks"
+                                },
+                                {
+                                    "id" : "lazy_bag",
+                                    "type" : "bool",
+                                    "placeholder" : "Lazy Bag"
+                                },
+                                {
+                                    "id" : "details",
+                                    "type" : "text",
+                                    "placeholder" : "Additional Info"
+                                }
+                            ]
+                        },
+
+                        {
+                            "id" : "gennaker_boom",
+                            "name" : "Gennaker Boom",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "_gennaker_boom",
+                            "name" : "Gennaker Boom",
+                            "type" : "input_group",
+                            "position": "both", 
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "gennaker_boom",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            },  
+                            "fields" : [  
+                                {
+                                    "id" : "material",
+                                    "type" : "select",
+                                    "label" : "Material", 
+                                    "options" : {
+                                        "wood" : "Wood",
+                                        "aluminum" : "Aluminum",
+                                        "steel" : "Steel",
+                                        "carbonfibre" : "Carbonfibre" 
+                                    }
+                                }, 
+                                {
+                                    "id" : "details",
+                                    "type" : "text",
+                                    "placeholder" : "Additional Info"
+                                }
+                            ]
+                        },
+
+                        {
+                            "id" : "spinnaker_boom",
+                            "name" : "Spinnaker Boom",
+                            "type" : "bool" 
+                        },
+                        {
+                            "id" : "_spinnaker_boom",
+                            "name" : "spinnaker Boom",
+                            "type" : "input_group",
+                            "position": "both", 
+                            "class" : "hide", 
+                            "condition" : {
+                                "id" : "spinnaker_boom",
+                                "value" : true,
+                                "operator" : "=",
+                                "action" : "d-block"
+                            },  
+                            "fields" : [  
+                                {
+                                    "id" : "material",
+                                    "type" : "select",
+                                    "label" : "Material", 
+                                    "options" : {
+                                        "wood" : "Wood",
+                                        "aluminum" : "Aluminum",
+                                        "steel" : "Steel",
+                                        "carbonfibre" : "Carbonfibre" 
+                                    }
+                                }, 
+                                {
+                                    "id" : "details",
+                                    "type" : "text",
+                                    "placeholder" : "Additional Info"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "winches",
+                            "name" : "Winches",
+                            "type" : "input_group",
+                            "position": "both",
+                            "repeater" : true, 
+                            "fields" : [
+                                {
+                                    "id" : "type",
+                                    "type" : "select", 
+                                    "options" : {
+                                        "electric" : "Electric",
+                                        "manual" : "Manual"
+                                    }
+                                },
+                                {
+                                    "id" : "amount",
+                                    "type" : "number", 
+                                    "placeholder" : "Amount"
+                                },
+                                {
+                                    "id" : "details",
+                                    "type" : "text", 
+                                    "placeholder" : "Details"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id" : "interior",
+                    "name" : "Interior",
+                    "fields" : [
+                        {
+                            "id" : "headroom",
+                            "name" : "Headroom",
+                            "type" : "input_group",
+                            "position" : "append",  
+                            "fields" : [
+                                {
+                                    "id" : "number",
+                                    "type" : "number",
+                                    "configuration" : {
+                                        "min" : 0.01,
+                                        "max" : 460.00
+                                    }
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "cabins",
+                            "name" : "Cabins",
+                            "type" : "input_group",
+                            "position": "both",
+                            "repeater" : true, 
+                            "fields" : [
+                                {
+                                    "id" : "type",
+                                    "type" : "select", 
+                                    "options" : {
+                                        "master" : "Master",
+                                        "guest" : "Guest",
+                                        "crew" : "Crew",
+                                        "other" : "Other"
+                                    },
+                                    "_comment": "if exists cabin, set to Other here"
+                                },
+                                {
+                                    "id" : "amount",
+                                    "type" : "number",
+                                    "class" : "wd-100",
+                                    "placeholder" : "Amount"
+                                },
+                                {
+                                    "id" : "position",
+                                    "type" : "select", 
+                                    "options" : {
+                                        "aft" : "Aft",
+                                        "bow" : "Bow" 
+                                    }
+                                },
+                                
+                                {
+                                    "id" : "details",
+                                    "type" : "text",
+                                    "class" : "wd-100",
+                                    "placeholder" : "Details"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "berths",
+                            "name" : "Berths",
+                            "type" : "input_group",
+                            "position": "both",
+                            "repeater" : true, 
+                            "fields" : [
+                                {
+                                    "id" : "type",
+                                    "type" : "select", 
+                                    "options" : {
+                                        "single" : "Single",
+                                        "double" : "Double",
+                                        "saloon" : "Saloon",
+                                        "crew" : "Crew",
+                                        "other" : "Other"
+                                    }
+                                },
+                                {
+                                    "id" : "amount",
+                                    "type" : "number",
+                                    "class" : "wd-100",
+                                    "placeholder" : "Amount"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "toilets",
+                            "name" : "Toilets",
+                            "type" : "input_group",
+                            "position": "both",
+                            "repeater" : true, 
+                            "fields" : [
+                                {
+                                    "id" : "type",
+                                    "type" : "select", 
+                                    "options" : {
+                                        "electric" : "Electric",
+                                        "manual" : "Manual",
+                                        "vacuum" : "Vacuum",
+                                        "chemical" : "Chemical" 
+                                    }
+                                },
+                                {
+                                    "id" : "amount",
+                                    "type" : "number",
+                                    "class" : "wd-100",
+                                    "placeholder" : "Amount"
+                                },
+                                {
+                                    "id" : "details",
+                                    "type" : "text", 
+                                    "placeholder" : "Details"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "showers",
+                            "name" : "Number of Showers",
+                            "type" : "Number", 
+                            "placeholder" : "Details"
+                        },
+                        {
+                            "id" : "heating",
+                            "name" : "Heating",
+                            "type" : "input_group",
+                            "position": "both", 
+                            "fields" : [
+                                {
+                                    "id" : "type",
+                                    "type" : "select", 
+                                    "options" : {
+                                        "ac" : "AC",
+                                        "gas" : "Gas",
+                                        "electric" : "Electric",
+                                        "engine" : "Engine",
+                                        "diesel" : "Diesel"
+                                    }
+                                },
+                                {
+                                    "id" : "details",
+                                    "type" : "text", 
+                                    "placeholder" : "Details"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id" : "tanks",
+                    "name" : "Tanks",
+                    "fields" : [
+                        {
+                            "id" : "freshwater",
+                            "name" : "Freshwater Tanks",
+                            "type" : "input_group",
+                            "position": "both",
+                            "_comment": "water_tank",
+                            "fields" : [
+                                {
+                                    "id" : "material",
+                                    "type" : "select", 
+                                    "options" : {
+                                        "stainless" : "Stainless",
+                                        "steel" : "Steel",
+                                        "aluminum" : "Aluminum",
+                                        "plastic" : "Plastic",
+                                        "grp" : "GRP"
+                                    }
+                                },
+                                {
+                                    "id" : "volume",
+                                    "type" : "number",
+                                    "placeholder" : "Combined Volume",
+                                    "_comment": "value itself"
+                                },
+                                {
+                                    "id" : "amount",
+                                    "type" : "number",
+                                    "placeholder" : "Amount",
+                                    "_comment": "quantity"
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "l"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "wastewater",
+                            "name" : "Wastewater Tanks",
+                            "type" : "input_group",
+                            "position": "both",
+                            "_comment": "holding_tank",
+                            "fields" : [
+                                {
+                                    "id" : "material",
+                                    "type" : "select", 
+                                    "options" : {
+                                        "stainless" : "Stainless",
+                                        "steel" : "Steel",
+                                        "aluminum" : "Aluminum",
+                                        "plastic" : "Plastic",
+                                        "grp" : "GRP"
+                                    }
+                                },
+                                {
+                                    "id" : "volume",
+                                    "type" : "number",
+                                    "placeholder" : "Combined Volume"
+                                },
+                                {
+                                    "id" : "amount",
+                                    "type" : "number",
+                                    "placeholder" : "Amount"
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "l"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "fuel",
+                            "name" : "Fuel Tanks",
+                            "type" : "input_group",
+                            "position": "both",
+                            "_comment": "tankage",
+                            "fields" : [
+                                {
+                                    "id" : "material",
+                                    "type" : "select", 
+                                    "options" : {
+                                        "stainless" : "Stainless",
+                                        "steel" : "Steel",
+                                        "aluminum" : "Aluminum",
+                                        "plastic" : "Plastic",
+                                        "grp" : "GRP"
+                                    }
+                                },
+                                {
+                                    "id" : "volume",
+                                    "type" : "number",
+                                    "placeholder" : "Combined Volume"
+                                },
+                                {
+                                    "id" : "amount",
+                                    "type" : "number",
+                                    "placeholder" : "Amount"
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "l"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id" : "engine_data",
+            "name" : "Engine Data",
+            "sections" : [
+                {
+                    "id" : "engine_data",
+                    "name" : "Additional Engine Details",
+                    "fields" : [
+                        {
+                            "id" : "n_engines",
+                            "name" : "Number of Engines",
+                            "label" : "Number of Engines",
+                            "type" : "number",
+                            "class" : "wd-100",
+                            "placeholder" : "Amount"
+                        },
+                        {
+                            "id" : "serial_number",
+                            "name" : "Serial Number",
+                            "type" : "text" 
+                        },
+                        {
+                            "id" : "engine_type",
+                            "name" : "Engine Type",
+                            "type" : "select",
+                            "options" : {
+                                "inboard" : "Inboard",
+                                "outboard" : "Outboard" 
+                            },
+                            "_comment": "engine_location check contains word inboard or outboard"
+                        },
+                        {
+                            "id" : "manufacturer",
+                            "name" : "Manufacturer",
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "_comment": "engine_manufacturer",
+                            "fields" : [
+                                {
+                                    "id" : "country",
+                                    "type" : "select",
+                                    "label" : "Please choose a country", 
+                                    "options" : {
+                                        "file" : "countries.json"
+                                    }
+                                },
+                                {
+                                    "id" : "manufacturer",
+                                    "type" : "text" 
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "model",
+                            "name" : "Model",
+                            "type" : "text" 
+                        },
+                        {
+                            "id" : "power",
+                            "name" : "Power",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "power",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "hp"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "fuel",
+                            "name" : "Fuel",
+                            "type" : "select",
+                            "label" : "Please choose a fuel type", 
+                            "options" : {
+                                "diesel" : "Diesel",
+                                "gasoline" : "Gasoline",
+                                "electric" : "Electric",
+                                "solar" : "Solar",
+                                "gas" : "Gas",
+                                "hybrid" : "Hybrid",
+                                "gasoline-oil" : "Gasoline/Oil",
+                                "propane" : "Propane",
+                                "ethanol" : "Ethanol"
+                            }
+                        },
+                        {
+                            "id" : "year_built",
+                            "name" : "Year Built",
+                            "type" : "number",
+                            "configuration" : {
+                                "step": 1,
+                                "min" : 1700,
+                                "max" : 2200
+                            }
+                        },
+                        {
+                            "id" : "hours",
+                            "name" : "Hours",
+                            "type" : "number" 
+                        },
+                        {
+                            "id" : "cylinders",
+                            "name" : "Cylinders",
+                            "type" : "number" 
+                        },
+                        {
+                            "id" : "strokes",
+                            "name" : "Strokes",
+                            "type" : "number" 
+                        },
+                        {
+                            "id" : "capacity",
+                            "name" : "Capacity",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "capacity",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "cm3"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "weight",
+                            "name" : "Weight",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "weight",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "kg"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "cooling_system",
+                            "name" : "Cooling System",
+                            "type" : "select", 
+                            "options" : {
+                                "seawater" : "Seawater",
+                                "keel" : "Keel",
+                                "two-circuits" : "Two Circuits",
+                                "builtin" : "Built-in"
+                            }
+                        },
+                        {
+                            "id" : "starter_type",
+                            "name" : "Starter Type",
+                            "type" : "select", 
+                            "options" : {
+                                "electric" : "Electric",
+                                "manual" : "Manual",
+                                "electric-manual" : "Electric / Manual" 
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id" : "trailer_data",
+            "name" : "Trailer",
+            "sections" : [ 
+                {
+                    "id" : "trailer_details",
+                    "name" : "Trailer Details",
+                    "fields" : [
+                        {
+                            "id" : "trailer_type",
+                            "name" : "Trailer Type",
+                            "type" : "select", 
+                            "options" : {
+                                "road" : "Road",
+                                "harbour" : "Harbour",
+                                "storage" : "Storage",
+                                "trolley" : "Trolley"
+                            }
+                        },
+                        {
+                            "id" : "boat_types_trailer",
+                            "name" : "Boat Type",
+                            "type" : "select", 
+                            "multiple" : true, 
+                            "options" : {
+                                "sailboat" : "Sailboat",
+                                "keelboat" : "Keelboat",
+                                "motorboat" : "Motorboat",
+                                "inflatable" : "Inflatable",
+                                "jetski" : "Jetski",
+                                "catamaran" : "Catamaran",
+                                "canoe-rowing" : "Canoe / Rowing"
+                            }
+                        },
+                        {
+                            "id" : "manufacturer",
+                            "name" : "Manufacturer",
+                            "type" : "input_group",
+                            "position": "prepend",  
+                            "fields" : [
+                                {
+                                    "id" : "country",
+                                    "type" : "select",
+                                    "label" : "Please choose a country", 
+                                    "options" : {
+                                        "file" : "countries.json"
+                                    }
+                                },
+                                {
+                                    "id" : "manufacturer",
+                                    "type" : "text" 
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "model",
+                            "name" : "Model",
+                            "type" : "text" 
+                        },
+                        {
+                            "id" : "year_built",
+                            "name" : "Year Built",
+                            "type" : "number",
+                            "configuration" : {
+                                "step": 1,
+                                "min" : 1700,
+                                "max" : 2200
+                            }
+                        },
+                        {
+                            "id" : "material",
+                            "name" : "Material",
+                            "type" : "select",  
+                            "options" : {
+                                 
+                                "steel" : "Steel",
+                                "aluminum" : "Aluminum"
+                            }
+                        },
+                        {
+                            "id" : "axles",
+                            "name" : "Axles",
+                            "type" : "number" 
+                        },
+                        {
+                            "id" : "braked",
+                            "name" : "braked",
+                            "label" : "Is the trailer braked?",
+                            "type" : "bool" 
+                        }, 
+                        {
+                            "id" : "max_speed",
+                            "name" : "Max Speed",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "max_speed",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "kmh"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id" : "trailer_dimensions",
+                    "name" : "Trailer Dimensions",
+                    "fields" : [ 
+                        {
+                            "id" : "length",
+                            "name" : "Length",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "length",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "width",
+                            "name" : "Width",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "width",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "axle_width",
+                            "name" : "Axle Width",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "axle_width",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "curb_weight",
+                            "name" : "Curb Weight",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "curb_weight",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "kg"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "payload",
+                            "name" : "Payload",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "payload",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "kg"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "total_weight",
+                            "name" : "Total Weight",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "total_weight",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "kg"
+                                }
+                            ]
+                        } 
+                    ]
+                }
+            ]
+        },
+        {
+            "id" : "mooring_data",
+            "name" : "Mooring",
+            "sections" : [
+                {
+                    "id" : "mooring_details",
+                    "name" : "Mooring Details",
+                    "fields" : [
+                        {
+                            "id" : "mooring_type",
+                            "name" : "Mooring Type",
+                            "type" : "select",  
+                            "options" : { 
+                                "jetty" : "Jetty",
+                                "buoy" : "Buoy",
+                                "swimming" : "Swimming",
+                                "hangar-heated" : "Heated Hangar",
+                                "hangar-unheated" : "Unheated Hangar",
+                                "outside" : "Outside"
+                            }
+                        }, 
+                        {
+                            "id" : "title",
+                            "name" : "Title",
+                            "type" : "text" 
+                        }, 
+                        {
+                            "id" : "town",
+                            "name" : "City",
+                            "type" : "text",
+                            "description" : "Only City, not country or county." 
+                        }, 
+                        {
+                            "id" : "marina",
+                            "name" : "Marina Name",
+                            "type" : "text" 
+                        }, 
+                        {
+                            "id" : "with_land",
+                            "name" : "Land included with berth",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "area",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m2"
+                                }
+                            ]
+                        }, 
+                        {
+                            "id" : "year_until",
+                            "name" : "Year Until",
+                            "type" : "number",
+                            "configuration" : {
+                                "step": 1,
+                                "min" : 1900,
+                                "max" : 2200
+                            },
+                            "description" : "Year the mooring available till"
+                        }
+                    ]
+                },
+                {
+                    "id" : "mooring_dimensions",
+                    "name" : "Mooring Dimensions",
+                    "fields" : [
+                        {
+                            "id" : "length",
+                            "name" : "Length",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "length",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "width",
+                            "name" : "Width",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "width",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "water_depth",
+                            "name" : "Water Depth",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "water_depth",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        }, 
+                        {
+                            "id" : "max_boat_draught",
+                            "name" : "Max Boat Draught",
+                            "type" : "input_group",
+                            "position": "append",  
+                            "fields" : [
+                                {
+                                    "id" : "max_boat_draught",
+                                    "type" : "number" 
+                                },
+                                {
+                                    "id" : "unit",
+                                    "type" : "input_group_text",
+                                    "value" : "m"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id" : "equipment_data",
+            "name" : "Equipment",
+            "sections" : [
+                {
+                    "id" : "navigation",
+                    "name" : "Navigation",
+                    "fields" : [
+                        {
+                            "id" : "autopilot",
+                            "name" : "Autopilot",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "automatic_steering_gear",
+                            "name" : "Automatic Steering Gear",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "radar",
+                            "name" : "Radar",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "vhf",
+                            "name" : "VHF radio",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "gps",
+                            "name" : "GPS",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "plotter",
+                            "name" : "Plotter",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "compass",
+                            "name" : "Compass",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "depth_instrument",
+                            "name" : "Echo Sounder",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "speed_instrument",
+                            "name" : "Speed Log",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "wind_instrument",
+                            "name" : "Wind Indicator",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "fishfinder",
+                            "name" : "Fish Finder",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "ais",
+                            "name" : "AIS - Automatic Identification System",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "ssb",
+                            "name" : "SSB - single side band",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "navtex",
+                            "name" : "NAVTEX",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "on_board_computer",
+                            "name" : "On-board Computer",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "navigation_lights",
+                            "name" : "Position Lights",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "rudder_indicator",
+                            "name" : "Rudder Angle Indicator",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "rev_counter",
+                            "name" : "Rev Indicator",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        }
+                    ]
+                },
+                {
+                    "id" : "technics",
+                    "name" : "Technical",
+                    "fields" : [
+                        {
+                            "id" : "battery",
+                            "name" : "Battery",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "battery_charger",
+                            "name" : "Battery Charger",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "main_circuit_breaker",
+                            "name" : "Main Circuit Breaker",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        }, 
+                        {
+                            "id" : "shore_supply",
+                            "name" : "Shore Supply 220V",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        }, 
+                        {
+                            "id" : "generator",
+                            "name" : "Generator",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "solar_panels",
+                            "name" : "Solar Panels",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },  
+                        {
+                            "id" : "inverter",
+                            "name" : "Inverter",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        }, 
+                        {
+                            "id" : "rectifier",
+                            "name" : "Rectifier",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "hour_meter",
+                            "name" : "Hour Meter",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "search_light",
+                            "name" : "Searchlight",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "bow_floodlight",
+                            "name" : "Bow Floodlight",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "under_water_light",
+                            "name" : "Under Water Light",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "under_water_paint",
+                            "name" : "Under Water Paint",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "davits",
+                            "name" : "Davits",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "warm_water_system",
+                            "name" : "Warm Water System",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        }
+                    ]
+                },
+                {
+                    "id" : "interior",
+                    "name" : "Interior",
+                    "fields" : [ 
+                        {
+                            "id" : "microwave",
+                            "name" : "Microwave",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "sink",
+                            "name" : "Sink",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "dishwasher",
+                            "name" : "Dishwasher",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "watermaker",
+                            "name" : "Watermaker",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "washing_machine",
+                            "name" : "Washing Machine",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "dryer",
+                            "name" : "Dryer",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "heating",
+                            "name" : "Heating",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "coolbox",
+                            "name" : "Coolbox",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "icemaker",
+                            "name" : "Icemaker",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "barbecue_grill",
+                            "name" : "Grill / Barbecue",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "extractor_hood",
+                            "name" : "Extractor Hood",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "bathtub",
+                            "name" : "Bathtub",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        },
+                        {
+                            "id" : "jacuzzi",
+                            "name" : "Jacuzzi / Whirlpool",
+                            "type" : "checkbox_text",
+                            "placeholder" : "Optional extra details"
+                        }
+                    ]
+                },
+                {
+                    "id" : "entertainment",
+                    "name" : "Entertainment",
+                    "fields" : [
+                        {
+                            "id" : "radio",
+                            "name" : "Radio",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "tv",
+                            "name" : "TV",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "dvd_player",
+                            "name" : "DVD Player",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "cd_player",
+                            "name" : "CD Player",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "home_cinema",
+                            "name" : "Home Cinema",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "mp3_player",
+                            "name" : "MP3 Player",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "bluetooth_connector",
+                            "name" : "Bluetooth Connector",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "cockpit_speakers",
+                            "name" : "Cockpit Speakers",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "tv_antenna",
+                            "name" : "TV Antenna",
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "fields" : [
+                                {
+                                    "id" : "antenna",
+                                    "name" : "Has Antenna",
+                                    "type" : "bool"
+                                },
+                                {
+                                    "id" : "type",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" : {
+                                        "sat" : "Sat",
+                                        "sat_auto_search" : "Sat Auto Search",
+                                        "dvbt" : "DVBT"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "satellite_phone",
+                            "name" : "Satellite Phone",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "satellite_internet",
+                            "name" : "Satellite Internet",
+                            "type" : "bool"
+                        }
+                    ]
+                },
+                {
+                    "id" : "deck",
+                    "name" : "Deck",
+                    "fields" : [
+                        {
+                            "id" : "deck_showers",
+                            "name" : "Deck Showers",
+                            "repeater": true,
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "fields" : [
+                                {
+                                    "id" : "deck_shower",
+                                    "name" : "Deck Shower",
+                                    "type" : "bool"
+                                },
+                                {
+                                    "id" : "position",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" : {
+                                        "stern" : "Stern",
+                                        "bow" : "Bow"
+                                    }
+                                },
+                                {
+                                    "id" : "warm",
+                                    "name" : "Warm",
+                                    "type" : "bool"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "bathing_platform",
+                            "name" : "Bathing Platform",
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "fields" : [
+                                {
+                                    "id" : "bathing_platform",
+                                    "name" : "Has Bathing Platform",
+                                    "type" : "bool"
+                                },
+                                {
+                                    "id" : "type",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" : {
+                                        "fixed" : "Fixed",
+                                        "manual" : "Manual",
+                                        "electric" : "Electric",
+                                        "hydraulic": "Hydraulic"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "bathing_ladder",
+                            "name" : "Bathing Ladder",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "gangway",
+                            "name" : "Gangway",
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "fields" : [
+                                {
+                                    "id" : "gangway",
+                                    "name" : "Has Gangway",
+                                    "type" : "bool"
+                                },
+                                {
+                                    "id" : "type",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" : {
+                                        "manual" : "Manual",
+                                        "electric" : "Electric",
+                                        "hydraulic": "Hydraulic"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "pulpit",
+                            "name" : "Pulpit",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "pushpit",
+                            "name" : "Pushpit",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "guard_rail",
+                            "name" : "Guard Rail",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "stern_rail",
+                            "name" : "Stern Rail",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "teak_deck",
+                            "name" : "Teak Deck",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "teak_cockpit",
+                            "name" : "Teak Cockpit",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "cockpit_table",
+                            "name" : "Cockpit Table",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "deck_cleaning_system",
+                            "name" : "Deck Cleaning System",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "wetbar",
+                            "name" : "Wetbar",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "jet_ski",
+                            "name" : "Jet Ski",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "tender_garage",
+                            "name" : "Tender Garage",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "heliport",
+                            "name" : "Heliport",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "boat_crane",
+                            "name" : "Boat Crane",
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "fields" : [
+                                {
+                                    "id" : "boat_crane",
+                                    "name" : "Has Boat Crane",
+                                    "type" : "bool"
+                                },
+                                {
+                                    "id" : "type",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" : {
+                                        "manual" : "Manual",
+                                        "electric" : "Electric"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "equipment_rack",
+                            "name" : "Equipment Rack",
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "fields" : [
+                                {
+                                    "id" : "equipment_rack",
+                                    "name" : "Has Equipment Rack",
+                                    "type" : "bool"
+                                },
+                                {
+                                    "id" : "folding",
+                                    "name" : "Folding",
+                                    "type" : "bool"
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "suncushions",
+                            "name" : "Suncushions",
+                            "type" : "bool"
+                        }
+                    ]
+                },
+                {
+                    "id" : "covers",
+                    "name" : "Covers",
+                    "fields" : [
+                        {
+                            "id" : "spray_hood",
+                            "name" : "Spray Hood",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "bimini_top",
+                            "name" : "Bimini Top",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "winter_cover",
+                            "name" : "Winter Cover",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "harbour_cover",
+                            "name" : "Harbour Cover",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "full_cover",
+                            "name" : "Full Cover",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "transport_cover",
+                            "name" : "Transport Cover",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "camper_canvas",
+                            "name" : "Camper Canvas",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "cockpit_cover",
+                            "name" : "Cockpit Cover",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "flybridge_cover",
+                            "name" : "Flybridge Cover",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "windscreen_cover",
+                            "name" : "Windscreen Cover",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "prop_cover",
+                            "name" : "Prop Cover",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "sail_cover",
+                            "name" : "Sail Cover",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "sun_shades",
+                            "name" : "Sun Shades",
+                            "repeater": true,
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "fields" : [
+                                {
+                                    "id" : "sun_shade",
+                                    "name" : "Sun Shade",
+                                    "type" : "bool"
+                                },
+                                {
+                                    "id" : "position",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" : {
+                                        "fly" : "Fly",
+                                        "aftdeck" : "Aftdeck"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id" : "safety",
+                    "name" : "Safety",
+                    "fields" : [
+                        {
+                            "id" : "fire_extinguish_system",
+                            "name" : "Fire Extinguish System",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "fire_extinguisher",
+                            "name" : "Fire Extinguisher",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "life_raft",
+                            "name" : "Life Raft",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "life_jackets",
+                            "name" : "Life Jackets",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "life_belts",
+                            "name" : "Life Belts",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "dan_buoy",
+                            "name" : "Dan Buoy",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "epirb",
+                            "name" : "Epirb",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "radar_reflector",
+                            "name" : "Radar Reflector",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "bilge_pump",
+                            "name" : "Bilge Pump",
+                            "type" : "input_group",
+                            "position": "prepend",
+                            "fields" : [
+                                {
+                                    "id" : "bilge_pump",
+                                    "name" : "Has Bilge Pump",
+                                    "type" : "bool"
+                                },
+                                {
+                                    "id" : "type",
+                                    "type" : "select",
+                                    "hide_search": true,
+                                    "options" : {
+                                        "manual" : "Manual",
+                                        "electric" : "Electric",
+                                        "automatic" : "Automatic"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id" : "self_bailing_valve",
+                            "name" : "Self Bailing Valve",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "mob_system",
+                            "name" : "Mob System",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "alarm",
+                            "name" : "Alarm",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "bilge_alarm",
+                            "name" : "Bilge Alarm",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "gas_detector",
+                            "name" : "Gas Detector",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "smoke_detector",
+                            "name" : "Smoke Detector",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "emergency_tiller",
+                            "name" : "Emergency Tiller",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "spare_propeller",
+                            "name" : "Spare Propeller",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "fog_horn",
+                            "name" : "Fog Horn",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "flags",
+                            "name" : "Flagss",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "distress_signals",
+                            "name" : "Distress Signals",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "jacklines",
+                            "name" : "Jacklines",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "railing_net",
+                            "name" : "Railing Net",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "safe",
+                            "name" : "Safe",
+                            "type" : "bool"
+                        }
+                    ]
+                },
+                {
+                    "id": "layout",
+                    "name": "Layout",
+                    "fields": [
+                        {
+                            "id" : "inside_steering",
+                            "name" : "Inside Steering",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "outside_steering",
+                            "name" : "Outside Steering",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "back2back_seats",
+                            "name" : "Back2back Seats",
+                            "type" : "bool"
+                        },
+                        {
+                            "id" : "single_front_seat",
+                            "name" : "Single Front Seat",
+                            "type" : "bool"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id" : "media",
+            "name" : "Media",
+            "hideInSearch": true,
+            "sections" : [
+                {
+                    "id" : "images",
+                    "name" : "Images",
+                    "fields" : [
+                        {
+                            "id": "image_upload",
+                            "name": "Upload Images",
+                            "type": "image_upload",
+                            "hideInSearch": true
+                        }
+                    ]
+                },
+                {
+                    "id" : "panorama_images",
+                    "name" : "Panorama Images",
+                    "fields" : [
+                        {
+                            "id": "image_panorama_upload",
+                            "name": "Upload Paranorama Images",
+                            "type": "image_panorama_upload",
+                            "hideInSearch": true
+                        }
+                    ]
+                },
+                {
+                    "id" : "videos",
+                    "name" : "Videos",
+                    "fields" : [
+                        {
+                            "id" : "video_upload",
+                            "name": "Video URL",
+                            "repeater" : true,
+                            "type" : "video_upload",
+                            "hideInSearch": true
+                        }
+                    ]
+                },
+                {
+                    "id" : "panoramas",
+                    "name" : "Panorama Videos",
+                    "fields" : [
+                        {
+                            "id" : "video_panorama",
+                            "name": "Panorama URL",
+                            "repeater" : true,
+                            "type" : "video_upload",
+                            "hideInSearch": true
+                        }
+                    ]
+                },
+                {
+                    "id" : "documents",
+                    "name" : "Documents",
+                    "fields" : [
+                        {
+                            "id": "document_upload",
+                            "name": "Upload Documents",
+                            "type": "document_upload",
+                            "hideInSearch": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+} 
