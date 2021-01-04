@@ -252,7 +252,7 @@ class Dealers_League_Marine {
 
 				$transformed_fields[ $section_name ] = [];
 				foreach ( $section as $field_name => $field_value ) {
-
+					
 					// If the field is excluded, we just ignore it and pass to the next
 					if ( isset( $exclude_section_field[ $section_name ] ) && in_array( $field_name, $exclude_section_field[ $section_name ] ) ) {
 						continue;
@@ -324,7 +324,7 @@ class Dealers_League_Marine {
 									$translated = Utils::check_translation( $subfield_value );
 									$unit = Utils::get_unity( $subfield_name );
 									$subfield_name = Utils::check_translation($subfield_name);
-									$subfield_value = str_replace( array('-','_'), array(' ',' '), ' ', $translated );
+									//$subfield_value = str_replace( array('-','_'), array(' ',' '), ' ', $translated );
 									$subfield_name = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_name );
 									$subfield_text .= '<strong>' . __( $subfield_name, 'dlmarine' ) . '</strong>' . ' ' . $subfield_value . $unit . ' ';
 								} elseif ( $field_name =='boat_types' ) {
@@ -341,8 +341,8 @@ class Dealers_League_Marine {
 									}
 								}
 								$subfield_text = str_replace(
-									['<br>On', 'On<br>'],
-									['', ''],
+									['On', '<br>On', 'On<br>'],
+									['', '', ''],
 									$subfield_text
 								);
 								$remove_section = empty( $subfield_text );
