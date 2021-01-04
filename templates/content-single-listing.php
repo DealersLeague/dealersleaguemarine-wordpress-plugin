@@ -153,6 +153,11 @@ $exclude_section_list = [
     'dimensions'
 ];
 
+// listing[boat_details][drive][no_engine]
+if ( ! empty( $listing_json_data['listing']['boat_details']['drive']['no_engine'] ) ) {
+	$exclude_section_list[] = 'drive';
+}
+
 
 // Tracking
 if ( ! is_user_logged_in() ) {
