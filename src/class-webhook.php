@@ -41,7 +41,7 @@ class Webhook {
 	 */
 	private function is_auth( $settings ) {
 
-		$has_supplied_credentials = ! empty( $_SERVER[ 'PHP_AUTH_USER' ] ) && ! empty( $_SERVER[ 'PHP_AUTH_PW' ] );
+		$has_supplied_credentials = ! empty( $_SERVER[ 'PHP_AUTH_PW' ] );
 
 		$settings->refresh_options();
 		$api_url      = $settings->get_option_val( 'dealers_league_marine_api_url' );
