@@ -231,6 +231,12 @@ class Dealers_League_Marine {
 	 */
 	public function transform_listing_data( $listing_data ) {
 
+		$exclude_section_field = [
+			'registration'         => [ 'flag', 'port', 'purpose' ],
+			'sales_details'        => [ 'previous_owners' ],
+			'construction_details' => [ 'ce_certification', 'ce_design_category', 'ce_passenger_capacity' ],
+		];
+
 		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption', 'boat_name', 'previous_owners', 'range', 'ce_certification', 'ce_design_category', 'ce_passenger_capacity', 'colours_tags', 'year_built', 'year_launched', 'last_refit', 'clearance', 'displacement', 'keel_type' ];
 		$transformed_fields = [];
 
@@ -242,6 +248,11 @@ class Dealers_League_Marine {
 
 				$transformed_fields[ $section_name ] = [];
 				foreach ( $section as $field_name => $field_value ) {
+
+					// If the field is excluded, we just ignore it and pass to the next
+					if ( isset( $exclude_section_field[ $section_name ] ) && in_array( $field_name, $exclude_section_field[ $section_name ] ) ) {
+						continue;
+					}
 
 					if ( is_array( $field_value ) ) {
 						$subfield_text = '';
