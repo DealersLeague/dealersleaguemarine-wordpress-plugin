@@ -434,8 +434,8 @@ class Utils {
 			'max_boat_draught' => __( 'm', 'dlmarine' ),
 		);
 
-		if ( array_key_exists( $field_name , $unity_list ) ) {
-			return $unity_list[ $field_name  ];
+		if ( array_key_exists( strtolower( $field_name ) , $unity_list ) ) {
+			return $unity_list[ strtolower( $field_name )  ];
 		}
 
 		return '';
@@ -535,9 +535,7 @@ class Utils {
 	 * @return mixed|string|void
 	 */
 	public static function check_translation( $text ) {
-		if ( strtolower($text)=='length') {
-			$test = '';
-		}
+
 		$path = plugin_dir_path( __FILE__ ) . '../json/fields.json';
 		if ( empty( self::$fields_json ) && file_exists( $path ) ) {
 			self::$fields_json = json_decode( file_get_contents( $path ), true );

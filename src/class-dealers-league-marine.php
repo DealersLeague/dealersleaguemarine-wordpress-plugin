@@ -258,15 +258,28 @@ class Dealers_League_Marine {
 						continue;
 					}
 
+					if ( $section_name== 'rig_sails' && in_array( $field_name, array( 'sailplan', 'main_sail', 'jib', 'genoa', 'gennaker', 'spinnaker', 'blister', 'mast', 'boom', 'gennaker_boom', 'spinnaker_boom', ) ) ) {
+						continue;
+					}
+
+
 					if ( is_array( $field_value ) ) {
 						$subfield_text = '';
 						foreach ( $field_value as $subfield_name => $subfield_value ) {
+							$unit = '';
+							$unit = empty( $unit ) ? Utils::get_unity( $subfield_name ) : $unit;
 							if ( ! empty( $subfield_value ) ) {
-								if ( is_array( $subfield_value ) ) {
 
+								//$subfield_text .= empty( $subfield_text ) && ( in_array( $subfield_name, $exclude_field_name ) || count( $field_value ) <=1 ) ? '' : '<br>';
+
+								if ( is_array( $subfield_value ) ) {
 									if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! empty( $subfield_value[0] ) && ! in_array( $subfield_name, $exclude_field_name ) ) {
 										$subfield_name = str_replace( '_', ' ', Utils::check_translation( $subfield_name ) );
-										$subfield_text .= strtolower($subfield_value[0]) == 'on' ? '' : '<strong>' . __( $subfield_name, 'dlmarine' ) . ( strtolower($subfield_value[0]) == 'on' ? '</strong>' :  ':</strong>');
+										if ( count( $field_value ) == 1 ) {
+											$subfield_text .= '(<strong>' . __( $subfield_name, 'dlmarine' ) . ':</strong>';
+										} else {
+											$subfield_text .= strtolower( $subfield_value[ 0 ] ) == 'on' ? '' : '<br><strong>' . __( $subfield_name, 'dlmarine' ) . ':</strong>';
+										}
 									}
 
 									foreach ( $subfield_value as $index => $sv ) {
@@ -297,12 +310,14 @@ class Dealers_League_Marine {
 														break;
 													default:
 														$sv = str_replace( array('-','_'), array(' ',' '),Utils::check_translation($sv) );
-														$unit = Utils::get_unity( $subfield_name );
-														$unit = empty( $unit ) ? Utils::get_unity( $field_name ) : $unit;
-														$subfield_text .= ' ' . ucwords( $sv ) . $unit .'<br>';
+														$subfield_text .= ' ' . ucwords( $sv ) . $unit;
 												}
 											}
 										}
+									}
+
+									if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! empty( $subfield_value[0] ) && ! in_array( $subfield_name, $exclude_field_name ) && count( $field_value ) == 1 ) {
+										$subfield_text .= ')';
 									}
 
 								} elseif ( $subfield_name != 'checked' && $subfield_name != $field_name && ! in_array( $subfield_name, $exclude_field_name ) && ! is_numeric( $subfield_name ))  {
@@ -315,12 +330,12 @@ class Dealers_League_Marine {
 								} elseif ( $field_name =='boat_types' ) {
 									$subfield_text .= Utils::get_boat_type_name( $subfield_value ) . '<br>';
 								} else {
+									$unit = Utils::get_unity( $subfield_name );
 									$translated = Utils::check_translation( $subfield_value );
 									$subfield_name = Utils::check_translation($subfield_name);
 									$subfield_value = str_replace( array('-','_'), array(' ',' '), ' ',  $translated );
 									if ( ! empty ( $subfield_value ) ) {
 										$subfield_name = str_replace( array('-','_'), array(' ',' '), ' ', $subfield_name );
-										$unit = Utils::get_unity( $subfield_name );
 										$subfield_name = Utils::check_translation($subfield_name);
 										$subfield_text .= ucwords( Utils::check_translation($subfield_value) ) . $unit . '<br>';
 									}
@@ -339,11 +354,9 @@ class Dealers_League_Marine {
 						}
 
 					} elseif (! empty( $field_value ) ) {
-						$field_value = Utils::get_country_name( $field_value );
-
-						$translated = Utils::check_translation( $field_value );
-
 						$unit = Utils::get_unity( $field_name );
+						$field_value = Utils::get_country_name( $field_value );
+						$translated = Utils::check_translation( $field_value );
 						$field_name = $field_name == 'n_engines' ? __( 'engines', 'dlmarine' ) : Utils::check_translation( $field_name );
 						$transformed_fields[ $section_name ][ $field_name ] = ucwords( $translated ) . $unit;
 						$remove_section = false;
