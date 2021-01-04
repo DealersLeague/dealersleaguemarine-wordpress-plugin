@@ -535,7 +535,9 @@ class Utils {
 	 * @return mixed|string|void
 	 */
 	public static function check_translation( $text ) {
-
+		if ( strtolower($text)=='curb_weight') {
+			$test = '';
+		}
 		$path = plugin_dir_path( __FILE__ ) . '../json/fields.json';
 		if ( empty( self::$fields_json ) && file_exists( $path ) ) {
 			self::$fields_json = json_decode( file_get_contents( $path ), true );
@@ -600,6 +602,8 @@ class Utils {
 
 		}
 
+		$text_to_return = '';
+
 		if ( isset( self::$tab_texts[ $text ] ) ) {
 			$text_to_return =  self::$tab_texts[ $text ];
 		} elseif ( isset( self::$section_texts[ $text ] ) ) {
@@ -608,9 +612,12 @@ class Utils {
 			$text_to_return = self::$fields_texts[ $text ];
 		} elseif ( isset( self::$subfields_texts[ $text ] ) ) {
 			$text_to_return = self::$subfields_texts[ $text ];
-		} else {
-			$original = $text;
-			$text   = str_replace( '_', ' ', $text );
+		}
+
+		if ( empty( $text_to_return ) || strpos( $text_to_return, '_') !== false ) {
+
+			$original   = $text;
+			$text       = str_replace( '_', ' ', $text );
 			$translated = __( $text, 'dlmarine' );
 			$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtoupper( $text ), 'dlmarine' ) : $translated;
 			$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtolower( $text ), 'dlmarine' ) : $translated;
