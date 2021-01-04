@@ -234,10 +234,13 @@ class Dealers_League_Marine {
 		$exclude_section_field = [
 			'registration'         => [ 'flag', 'port', 'purpose' ],
 			'sales_details'        => [ 'previous_owners' ],
-			'construction_details' => [ 'ce_certification', 'ce_design_category', 'ce_passenger_capacity' ],
+			'drive'                => [ 'range' ], 
+			'construction_details' => [ 'manufacturer', 'model', 'designer', 'boat_name', 'year_built', 'year_launched', 'last_refit', 'ce_certification', 'ce_design_category', 'ce_passenger_capacity',  ],
+			'dimensions'           => [ 'clearance', 'displacement' ],
+			'hull'                 => [ 'keel_type', 'keel_ballast' ],
 		];
 
-		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption', 'boat_name', 'previous_owners', 'range', 'ce_certification', 'ce_design_category', 'ce_passenger_capacity', 'colours_tags', 'year_built', 'year_launched', 'last_refit', 'clearance', 'displacement', 'keel_type' ];
+		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption' ];
 		$transformed_fields = [];
 
 		foreach ( $listing_data as $tab ) {
