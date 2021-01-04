@@ -15,7 +15,7 @@
         <?php echo ($n_videos ? '<div class="price" ' . ($n_images ? 'style="left: 7rem;"' : '') . '><i class="fa fa-video-camera"></i> ' . $n_videos . '</div>' : ''); ?>
              
         <div class="meta">
-            <?php echo $currency . $price; ?>
+	        <?php echo $currency . $price; ?>
         </div>
         <!--end meta-->
         <!--<div class="description">

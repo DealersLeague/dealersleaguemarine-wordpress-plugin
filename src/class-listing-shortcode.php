@@ -164,10 +164,14 @@ class Listing_Shortcode {
 		if ( ! empty( $sort ) ) {
 			$sort_params = explode( '_', $sort );
 			if ( $sort_params[0] == 'price' ) {
-				$args['orderby']  = 'meta_value_num';
-				$args['meta_key'] = 'listing_price';
+				$args[ 'orderby' ]  = 'meta_value_num';
+				$args[ 'meta_key' ] = 'listing_price';
+
 			} else {
-				$args['orderby'] = 'date';
+				//$args['orderby'] = 'publish_date';
+
+				$args['orderby']  = 'meta_value';
+				$args['meta_key'] = 'listing_publish_date';
 			}
 			$args['order'] = strtoupper( $sort_params[1] ); // ASC, DESC
 			$args['suppress_filters'] = true;
