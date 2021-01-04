@@ -244,6 +244,8 @@ class Dealers_League_Marine {
 
 		$transformed_fields = [];
 
+		$has_colours = false;
+
 		foreach ( $listing_data as $tab ) {
 
 			foreach ( $tab as $section_name => $section ) {
@@ -252,7 +254,7 @@ class Dealers_League_Marine {
 
 				$transformed_fields[ $section_name ] = [];
 				foreach ( $section as $field_name => $field_value ) {
-					
+
 					// If the field is excluded, we just ignore it and pass to the next
 					if ( isset( $exclude_section_field[ $section_name ] ) && in_array( $field_name, $exclude_section_field[ $section_name ] ) ) {
 						continue;
@@ -262,6 +264,24 @@ class Dealers_League_Marine {
 						continue;
 					}
 
+					if ( $section_name == 'hull' && ( $field_name == 'colours' || $field_name == 'colours_tags' ) ) {
+						if ( $field_name == 'colours' && ! empty( $field_value ) ) {
+							$has_colours = true;
+						}
+
+						if ( $field_name == 'colours_tags' && $has_colours ) {
+							continue;
+						} elseif (  $field_name == 'colours_tags' && ! $has_colours && ! empty( $field_value ) ) {
+							$c_text = [];
+							foreach ( $field_value as $c ) {
+								$c_text[] = Utils::check_translation( trim( ucfirst( $c ) ) );
+							}
+							if ( ! empty( $c_text ) ) {
+								$field_value = implode( ', ', $c_text );
+							}
+							$field_name = 'colours';
+						}
+					}
 
 					if ( is_array( $field_value ) ) {
 						$subfield_text = '';
