@@ -70,6 +70,8 @@ if ( empty( $listing_json_data['listing']['media']['videos']['video_upload'][0] 
     $videos = $listing_json_data['listing']['media']['videos']['video_upload'];
 }
 
+$post_id      = get_the_ID();
+
 // Panorama
 $panorama_list = maybe_unserialize( get_post_meta( $post_id, 'listing_panorama', true ) );
 if ( empty( $panorama_list ) || ! is_array( $panorama_list ) ) {
@@ -84,7 +86,6 @@ if ( ! $panorama_list && ! $videos ) {
 
 
 // Details
-$post_id      = get_the_ID();
 $post_title   = get_the_title();
 $boat_type    = get_post_meta( $post_id, 'listing_boat_type', true );
 $manufacturer = get_post_meta( $post_id, 'listing_manufacturer', true );
@@ -119,7 +120,7 @@ $beam                  = empty( $beam ) ? '' : $beam . Utils::get_unity( 'beam' 
 $flag                  = $listing_json_data['listing']['boat_details']['registration']['flag'];
 $port                  = $listing_json_data['listing']['boat_details']['registration']['port'];
 $purpose               = $listing_json_data['listing']['boat_details']['registration']['purpose'];
-$previous_owners       = $listing_json_data['listing']['sales_details']['previous_owners'];
+$previous_owners       = $listing_json_data['listing']['listing_details']['sales_details']['previous_owners'];
 $range                 = get_post_meta( $post_id, 'range', true );
 $range                 = empty( $range ) ? '' : $range . Utils::get_unity( 'range' );
 $ce_certification      = $listing_json_data['listing']['boat_details']['construction_details']['ce_certification'];

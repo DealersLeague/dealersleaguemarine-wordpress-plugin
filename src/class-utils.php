@@ -522,4 +522,20 @@ class Utils {
 		return substr_compare( $string, $test, $strlen - $testlen, $testlen ) === 0;
 	}
 
+	/**
+	 * @param $text
+	 *
+	 * @return mixed|string|void
+	 */
+	public static function check_translation( $text ) {
+		$original = $text;
+		$translated = __( $text, 'dlmarine' );
+		$translated = strtolower( $original ) == strtolower( $translated ) ? __( strtoupper( $text ) , 'dlmarine' ) : $translated;
+		$translated = strtolower( $original ) == strtolower( $translated ) ? __( strtolower( $text ) , 'dlmarine' ) : $translated;
+		$translated = strtolower( $original ) == strtolower( $translated ) ? __( ucfirst( $text ) , 'dlmarine' ) : $translated;
+		$translated = strtolower( $original ) == strtolower( $translated ) ? __( ucwords( $text ) , 'dlmarine' ) : $translated;
+
+		return strtolower( $original ) == strtolower( $translated ) ? $original : $translated;
+	}
+
 }
