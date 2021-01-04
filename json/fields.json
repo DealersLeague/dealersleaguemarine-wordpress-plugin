@@ -2193,12 +2193,7 @@
                                 "hangar-unheated" : "Unheated Hangar",
                                 "outside" : "Outside"
                             }
-                        }, 
-                        {
-                            "id" : "title",
-                            "name" : "Title",
-                            "type" : "text" 
-                        }, 
+                        },
                         {
                             "id" : "town",
                             "name" : "City",
