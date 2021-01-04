@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-01-04 14:21+0000\n"
-"PO-Revision-Date: 2021-01-04 14:43+0000\n"
+"POT-Creation-Date: 2021-01-04 14:58+0000\n"
+"PO-Revision-Date: 2021-01-04 15:03+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -1534,7 +1534,7 @@ msgstr "Lautsprecher im Cockpit"
 
 #: languages/fields.php:548
 msgid "TV Antenna"
-msgstr "TV-Antenne"
+msgstr "TV Antenne"
 
 #: languages/fields.php:549
 msgid "Has Antenna"
@@ -1546,7 +1546,7 @@ msgstr "Satellit"
 
 #: languages/fields.php:551
 msgid "Sat Auto Search"
-msgstr "Automatische Sat-Suche"
+msgstr "Satellit"
 
 #: languages/fields.php:552
 msgid "DVBT"
@@ -1654,7 +1654,7 @@ msgstr "Hat Bootskran"
 
 #: languages/fields.php:589
 msgid "Equipment Rack"
-msgstr "Stauraum"
+msgstr "Geräteträger"
 
 #: languages/fields.php:590
 msgid "Has Equipment Rack"
@@ -1817,7 +1817,7 @@ msgid "Fog Horn"
 msgstr "Nebelhorn"
 
 #: languages/fields.php:633
-msgid "Flagss"
+msgid "Flags"
 msgstr "Flaggen"
 
 #: languages/fields.php:634

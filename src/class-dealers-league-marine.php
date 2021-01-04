@@ -239,8 +239,9 @@ class Dealers_League_Marine {
 			'dimensions'           => [ 'clearance', 'displacement' ],
 			'hull'                 => [ 'keel_type', 'keel_ballast' ],
 		];
+		
+		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption', 'antenna', 'deck_shower', 'sun_shade' ];
 
-		$exclude_field_name = [ 'number', 'power', 'name', 'speed', 'currency', 'city', 'country', 'type', 'consumption', 'volume', 'antenna' ];
 		$transformed_fields = [];
 
 		foreach ( $listing_data as $tab ) {

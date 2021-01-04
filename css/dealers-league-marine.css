@@ -497,6 +497,24 @@ input.error, textarea.error, select.error {
         margin: 0 !important;
     }
 
+    .form.hero-form .main-search-form .form-group label {
+        margin-bottom: 0 !important;
+        font-size: 1rem !important; 
+    }
+
+    .form.hero-form .selectize-input.items.full.has-options.has-items {
+        padding: 0.3rem .5rem !important;
+        font-size: .8rem !important;
+    }
+
+    .form.hero-form .btn.btn-primary.width-100 {
+        font-size: 1rem !important;
+    }
+
+    .form.hero-form .form-group {
+        margin-bottom: 0.5rem;
+    }
+
     .items:not(.selectize-input).list .item .additional-info ul {
         background-color: #fff;
         padding: 0;
@@ -516,5 +534,44 @@ input.error, textarea.error, select.error {
 
     .listing-mobile-order-first {
         order:1;
+    }
+
+    .box { 
+        box-shadow: 0 .1rem 2rem rgba(0,0,0,0) !important;
+        padding: 0 !important;
+        border-radius: 0 !important;  
+    }
+
+    .owl-next,
+    .owl-prev {
+        padding: 0 !important; 
+    }
+
+    .owl-carousel.gallery-carousel .owl-nav .owl-next, .owl-carousel.full-width-carousel .owl-nav .owl-next {
+        margin-right: 1rem !important;
+    }
+
+    .owl-carousel.gallery-carousel .owl-nav .owl-next, .owl-carousel.full-width-carousel .owl-nav .owl-prev {
+        margin-left: 1rem !important;
+    }
+    .owl-carousel.gallery-carousel .owl-nav .owl-prev i, .owl-carousel.full-width-carousel .owl-nav .owl-prev i {
+        margin: 0 !important;
+    }
+
+    .owl-item {
+        height: 300px !important;
+    }
+
+    .items:not(.selectize-input).list .item .wrapper .image .background-image, .items:not(.selectize-input).list.compact .item .wrapper .image .background-image {
+        height: 15rem !important; 
+    }
+
+    .items:not(.selectize-input).list .item .meta, .items:not(.selectize-input).list.compact .item .meta {
+        background-color: #fff !important; 
+    }
+
+    .items:not(.selectize-input).list .item .price, .items:not(.selectize-input).list.compact .item .price {
+        top: 5% !important;
+        bottom: unset !important; 
     }
 }
