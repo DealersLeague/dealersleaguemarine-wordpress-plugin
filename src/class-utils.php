@@ -646,7 +646,7 @@ class Utils {
 		}
 
 		if ( strtolower( $text_to_return ) == 'volume' ) {
-			$text_to_return = __( 'Volume', 'dlmarine' );
+			$text_to_return = __( 'volume', 'dlmarine' );
 		}
 		return $text_to_return;
 	}

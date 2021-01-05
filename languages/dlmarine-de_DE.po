@@ -2369,6 +2369,14 @@ msgstr ""
 msgid "volume"
 msgstr "Volumen"
 
+#: languages/fields.php:782
+msgid "Volume"
+msgstr "Volumen"
+
+#: languages/fields.php:782
+msgid "VOLUME"
+msgstr "VOLUMEN"
+
 #: languages/fields.php:783
 msgid "Bahamian dollar"
 msgstr "Bahama-Dollar"
