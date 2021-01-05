@@ -327,6 +327,14 @@ input.error, textarea.error, select.error {
     left: 50%;
     margin-bottom: 3rem !important;
 }
+ 
+.owl-carousel .owl-nav.disabled {
+    display: block;
+}
+
+.owl-carousel.single-image .owl-nav.disabled {
+    display: none;
+}
 
 .boat-info-item { 
     font-size: .9rem;  

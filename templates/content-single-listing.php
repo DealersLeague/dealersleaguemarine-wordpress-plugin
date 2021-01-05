@@ -137,6 +137,7 @@ $displacement          = $listing_json_data['listing']['boat_details']['dimensio
 $displacement          = empty( $displacement ) ? '' : $displacement . Utils::get_unity( 'displacement' );
 $keel_ballast          = $listing_json_data['listing']['boat_details']['hull']['keel_ballast']['number'][0];
 $keel_ballast          = empty( $keel_ballast ) ? '' : $keel_ballast . Utils::get_unity( 'keel_ballast' );
+$n_images              = get_post_meta( $post_id, 'listing_n_images', true );
 
 // Loop sections
 $exclude_section_list = [
@@ -172,7 +173,7 @@ if ( ! is_user_logged_in() ) {
     <section class="block">
 <!-- START Gallery Carousel -->
         <section class="single-boat-owl-carousel">
-            <div class="owl-carousel full-width-carousel" style="min-height: 300px;width:100%;">
+            <div class="owl-carousel full-width-carousel<?php echo ( $n_images == '1' ? ' single-image' : '' ); ?>" style="min-height: 300px;width:100%;">
                 <?php
                 foreach ( $image_list as $index => $image ) {
                  ?>
