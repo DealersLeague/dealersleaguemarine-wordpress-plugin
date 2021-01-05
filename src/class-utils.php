@@ -404,7 +404,9 @@ class Utils {
 	}
 
 	public static function get_unity( $field_name ) {
-
+		if ( $field_name == 'speed') {
+			$test = '';
+		}
 		$unity_list = array(
 			'loa'              => __( 'm', 'dlmarine' ),
 			'lwl'              => __( 'm', 'dlmarine' ),
@@ -414,15 +416,16 @@ class Utils {
 			'clearance'        => __( 'm', 'dlmarine' ),
 			'displacement'     => __( 'kg', 'dlmarine' ),
 			'keel_ballast'     => __( 'kg', 'dlmarine' ),
-			'speed'            => __( 'kg', 'dlmarine' ),
+			'speed'            => __( 'kmh', 'dlmarine' ),
 			'consumption'      => __( 'lh', 'dlmarine' ),
 			'range'            => __( 'nm', 'dlmarine' ),
 			'power'            => __( 'hp', 'dlmarine' ),
 			'headroom'         => __( 'm', 'dlmarine' ),
 			'volume'           => __( 'L', 'dlmarine' ),
 			'capacity'         => __( 'cm3', 'dlmarine' ),
-			'wight'            => __( 'kg', 'dlmarine' ),
+			'weight'           => __( 'kg', 'dlmarine' ),
 			'max_speed'        => __( 'kmh', 'dlmarine' ),
+			'cruising_speed'   => __( 'kmh', 'dlmarine' ),
 			'length'           => __( 'm', 'dlmarine' ),
 			'width'            => __( 'm', 'dlmarine' ),
 			'axle_width'       => __( 'm', 'dlmarine' ),
@@ -536,9 +539,6 @@ class Utils {
 	 */
 	public static function check_translation( $text ) {
 
-		if ( strtolower( $text ) == 'freshwater' ) {
-			$test = '';
-		}
 		$path = plugin_dir_path( __FILE__ ) . '../json/fields.json';
 		if ( empty( self::$fields_json ) && file_exists( $path ) ) {
 			self::$fields_json = json_decode( file_get_contents( $path ), true );
