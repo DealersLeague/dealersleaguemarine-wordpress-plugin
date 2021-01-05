@@ -588,7 +588,7 @@ class Utils {
 							} elseif ( ! empty( $field[ 'label' ] ) ) {
 								self::$fields_texts[ $field[ 'id' ] ] = __( $field[ 'label' ], 'dlmarine' );
 							} else {
-								self::$fields_texts[ $field[ 'id' ] ] = $field[ 'id' ];
+								self::$fields_texts[ $field[ 'id' ] ] = __( $field[ 'id' ], 'dlmarine' );
 							}
 
 						}
@@ -645,6 +645,9 @@ class Utils {
 			}
 		}
 
+		if ( strtolower( $text_to_return ) == 'volume' ) {
+			$text_to_return = __( 'Volume', 'dlmarine' );
+		}
 		return $text_to_return;
 	}
 
