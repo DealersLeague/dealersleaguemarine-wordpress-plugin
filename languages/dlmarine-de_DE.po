@@ -1064,7 +1064,7 @@ msgstr "Treibstofftanks"
 
 #: languages/fields.php:350
 msgid "Engine Data"
-msgstr "Motor-Daten"
+msgstr "Motor"
 
 #: languages/fields.php:351
 msgid "Additional Engine Details"
@@ -1124,7 +1124,7 @@ msgstr "Ethanol"
 
 #: languages/fields.php:376
 msgid "Hours"
-msgstr "Stunden"
+msgstr "Betriebsstunden"
 
 #: languages/fields.php:377
 msgid "Cylinders"
@@ -1429,7 +1429,7 @@ msgstr "Solarpanel"
 
 #: languages/fields.php:496
 msgid "Inverter"
-msgstr "Inverser"
+msgstr "Inverter"
 
 #: languages/fields.php:498
 msgid "Rectifier"
@@ -1597,7 +1597,7 @@ msgstr "Badeplattform"
 
 #: languages/fields.php:564
 msgid "Has Bathing Platform"
-msgstr "Hat Badeplattform"
+msgstr "Badeplattform"
 
 #: languages/fields.php:569
 msgid "Bathing Ladder"
@@ -1789,7 +1789,7 @@ msgstr "Bilgenpumpe"
 
 #: languages/fields.php:622
 msgid "Has Bilge Pump"
-msgstr "Mit Bilgenpumpe"
+msgstr "Bilgenpumpe"
 
 #: languages/fields.php:625
 msgid "Automatic"
@@ -2364,6 +2364,10 @@ msgstr "Real"
 #: languages/fields.php:782
 msgid "BSD"
 msgstr ""
+
+#: languages/fields.php:782
+msgid "volume"
+msgstr "Volumen"
 
 #: languages/fields.php:783
 msgid "Bahamian dollar"
