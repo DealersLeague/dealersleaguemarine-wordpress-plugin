@@ -299,7 +299,7 @@ if ( ! is_user_logged_in() ) {
 <!-- END Videos -->
 
 <!-- START Sidebar -->
-                <?php if ( $panorama_list && $videos ) { ?>
+                <?php if ( $panorama_list || $videos ) { ?>
                     <div class="col-md-4">    
                         <?php if ( $videos && $video_placement == 'SIDEBAR' ) { ?>
                             <section class="single-listing-videos">

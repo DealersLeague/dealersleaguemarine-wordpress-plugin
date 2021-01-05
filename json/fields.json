@@ -881,7 +881,7 @@
                                 {
                                     "id" : "unit",
                                     "type" : "input_group_text",
-                                    "value" : "kg"
+                                    "value" : "kmh"
                                 }
                             ]
                         },
@@ -908,7 +908,7 @@
                                 {
                                     "id" : "unit",
                                     "type" : "input_group_text",
-                                    "value" : "kg"
+                                    "value" : "kmh"
                                 }
                             ]
                         },

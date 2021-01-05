@@ -414,15 +414,16 @@ class Utils {
 			'clearance'        => __( 'm', 'dlmarine' ),
 			'displacement'     => __( 'kg', 'dlmarine' ),
 			'keel_ballast'     => __( 'kg', 'dlmarine' ),
-			'speed'            => __( 'kg', 'dlmarine' ),
+			'speed'            => __( 'kmh', 'dlmarine' ),
 			'consumption'      => __( 'lh', 'dlmarine' ),
 			'range'            => __( 'nm', 'dlmarine' ),
 			'power'            => __( 'hp', 'dlmarine' ),
 			'headroom'         => __( 'm', 'dlmarine' ),
 			'volume'           => __( 'L', 'dlmarine' ),
 			'capacity'         => __( 'cm3', 'dlmarine' ),
-			'wight'            => __( 'kg', 'dlmarine' ),
+			'weight'           => __( 'kg', 'dlmarine' ),
 			'max_speed'        => __( 'kmh', 'dlmarine' ),
+			'cruising_speed'   => __( 'kmh', 'dlmarine' ),
 			'length'           => __( 'm', 'dlmarine' ),
 			'width'            => __( 'm', 'dlmarine' ),
 			'axle_width'       => __( 'm', 'dlmarine' ),
@@ -565,13 +566,19 @@ class Utils {
 									self::$subfields_texts[ $subfield[ 'id' ] ] = $subfield[ 'id' ];
 								}
 
-								/*if ( ! empty( $subfield[ 'options' ] ) && is_array( $subfield[ 'options' ] ) ) {
-									foreach ( $subfield[ 'options' ] as $option => $text ) {
-										self::$subfields_texts[ $option ] = __( $text, 'dlmarine' );
-									}
-								}*/
-
 							}
+						}
+
+						if ( ! isset( self::$fields_texts[ $field[ 'id' ] ] ) ) {
+
+							if ( ! empty( $field[ 'name' ] ) ) {
+								self::$fields_texts[ $field[ 'id' ] ] = __( $field[ 'name' ], 'dlmarine' );
+							} elseif ( ! empty( $field[ 'label' ] ) ) {
+								self::$fields_texts[ $field[ 'id' ] ] = __( $field[ 'label' ], 'dlmarine' );
+							} else {
+								self::$fields_texts[ $field[ 'id' ] ] = $field[ 'id' ];
+							}
+
 						}
 					} else {
 						if ( ! isset( self::$fields_texts[ $field[ 'id' ] ] ) ) {
@@ -583,13 +590,6 @@ class Utils {
 							} else {
 								self::$fields_texts[ $field[ 'id' ] ] = $field[ 'id' ];
 							}
-
-							/*
-							if ( ! empty( $field[ 'options' ] ) && is_array( $field['options'] ) ) {
-								foreach ( $field[ 'options' ] as $option => $text ) {
-									self::$fields_texts[ $option ] = __( $text, 'dlmarine' );
-								}
-							}*/
 
 						}
 					}
@@ -603,11 +603,11 @@ class Utils {
 		$text_to_return = '';
 
 		if ( isset( self::$tab_texts[ $text ] ) ) {
-			$text_to_return =  self::$tab_texts[ $text ];
+			$text_to_return = self::$tab_texts[ $text ];
 			$text_to_return = str_replace( '_', ' ', $text_to_return );
 			$text_to_return = __( ucwords( $text_to_return ), 'dlmarine' );
 		} elseif ( isset( self::$section_texts[ $text ] ) ) {
-			$text_to_return =  self::$section_texts[ $text ];
+			$text_to_return = self::$section_texts[ $text ];
 			$text_to_return = str_replace( '_', ' ', $text_to_return );
 			$text_to_return = __( ucwords( $text_to_return ), 'dlmarine' );
 		} elseif ( isset( self::$fields_texts[ $text ] ) ) {
@@ -618,7 +618,7 @@ class Utils {
 			$text_to_return = self::$subfields_texts[ $text ];
 			$text_to_return = str_replace( '_', ' ', $text_to_return );
 			$text_to_return = __( ucwords( $text_to_return ), 'dlmarine' );
-		}elseif ( empty( $text_to_return ) || strpos( $text_to_return, '_') !== false ) {
+		} elseif ( empty( $text_to_return ) || strpos( $text_to_return, '_' ) !== false ) {
 
 			$original   = $text;
 			$text       = str_replace( '_', ' ', $text );
