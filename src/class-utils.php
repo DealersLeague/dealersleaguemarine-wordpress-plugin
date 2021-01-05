@@ -620,15 +620,29 @@ class Utils {
 			$text_to_return = __( ucwords( $text_to_return ), 'dlmarine' );
 		} elseif ( empty( $text_to_return ) || strpos( $text_to_return, '_' ) !== false ) {
 
-			$original   = $text;
-			$text       = str_replace( '_', ' ', $text );
-			$translated = __( $text, 'dlmarine' );
-			$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtoupper( $text ), 'dlmarine' ) : $translated;
-			$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtolower( $text ), 'dlmarine' ) : $translated;
-			$translated = strtolower( $text ) == strtolower( $translated ) ? __( ucfirst( $text ), 'dlmarine' ) : $translated;
-			$translated = strtolower( $text ) == strtolower( $translated ) ? __( ucwords( $text ), 'dlmarine' ) : $translated;
+			if ( is_array( $text ) ) {
+				foreach ( $text as $t ) {
+					$t_translate       = str_replace( '_', ' ', $t );
+					$translated = __( $t_translate, 'dlmarine' );
+					$translated = strtolower( $t_translate ) == strtolower( $translated ) ? __( strtoupper( $t_translate ), 'dlmarine' ) : $translated;
+					$translated = strtolower( $t_translate ) == strtolower( $translated ) ? __( strtolower( $t_translate ), 'dlmarine' ) : $translated;
+					$translated = strtolower( $t_translate ) == strtolower( $translated ) ? __( ucfirst( $t_translate ), 'dlmarine' ) : $translated;
+					$translated = strtolower( $t_translate ) == strtolower( $translated ) ? __( ucwords( $t_translate ), 'dlmarine' ) : $translated;
 
-			$text_to_return = strtolower( $original ) == strtolower( $translated ) ? $original : $translated;
+					$text_to_return .= strtolower( $t ) == strtolower( $translated ) ? $t : $translated;
+				}
+			} else {
+
+				$original   = $text;
+				$text       = str_replace( '_', ' ', $text );
+				$translated = __( $text, 'dlmarine' );
+				$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtoupper( $text ), 'dlmarine' ) : $translated;
+				$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtolower( $text ), 'dlmarine' ) : $translated;
+				$translated = strtolower( $text ) == strtolower( $translated ) ? __( ucfirst( $text ), 'dlmarine' ) : $translated;
+				$translated = strtolower( $text ) == strtolower( $translated ) ? __( ucwords( $text ), 'dlmarine' ) : $translated;
+
+				$text_to_return = strtolower( $original ) == strtolower( $translated ) ? $original : $translated;
+			}
 		}
 
 		return $text_to_return;

@@ -283,6 +283,16 @@ class Dealers_League_Marine {
 						}
 					}
 
+					if ( $section_name == 'trailer_details' &&  $field_name == 'boat_types_trailer' && is_array( $field_value ) && ! empty( $field_value ) ) {
+						$c_text = [];
+						foreach ( $field_value as $type ) {
+							$c_text[] = Utils::check_translation( trim( ucfirst( $type ) ) );
+						}
+						if ( ! empty( $c_text ) ) {
+							$field_value = implode( ', ', $c_text );
+						}
+					}
+
 					if ( is_array( $field_value ) ) {
 						$subfield_text = '';
 						foreach ( $field_value as $subfield_name => $subfield_value ) {
