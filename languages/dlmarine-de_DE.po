@@ -1049,7 +1049,7 @@ msgstr "Treibstofftanks"
 
 #: languages/fields.php:348
 msgid "Engine Data"
-msgstr "Motor-Daten"
+msgstr "Motor"
 
 #: languages/fields.php:349
 msgid "Additional Engine Details"
@@ -1109,7 +1109,7 @@ msgstr "Ethanol"
 
 #: languages/fields.php:374
 msgid "Hours"
-msgstr "Stunden"
+msgstr "Betriebsstunden"
 
 #: languages/fields.php:375
 msgid "Cylinders"
@@ -1414,7 +1414,7 @@ msgstr "Solarpanel"
 
 #: languages/fields.php:494
 msgid "Inverter"
-msgstr "Inverser"
+msgstr "Inverter"
 
 #: languages/fields.php:496
 msgid "Rectifier"
@@ -1582,7 +1582,7 @@ msgstr "Badeplattform"
 
 #: languages/fields.php:562
 msgid "Has Bathing Platform"
-msgstr "Hat Badeplattform"
+msgstr "Badeplattform"
 
 #: languages/fields.php:567
 msgid "Bathing Ladder"
@@ -1774,7 +1774,7 @@ msgstr "Bilgenpumpe"
 
 #: languages/fields.php:620
 msgid "Has Bilge Pump"
-msgstr "Mit Bilgenpumpe"
+msgstr "Bilgenpumpe"
 
 #: languages/fields.php:623
 msgid "Automatic"
@@ -2354,6 +2354,10 @@ msgstr "Technik"
 
 #: languages/fields.php:782
 msgid "Volume"
+msgstr "Volumen"
+
+#: languages/fields.php:782
+msgid "volume"
 msgstr "Volumen"
 
 #: languages/fields.php:783
