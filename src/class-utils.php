@@ -404,9 +404,7 @@ class Utils {
 	}
 
 	public static function get_unity( $field_name ) {
-		if ( $field_name == 'speed') {
-			$test = '';
-		}
+
 		$unity_list = array(
 			'loa'              => __( 'm', 'dlmarine' ),
 			'lwl'              => __( 'm', 'dlmarine' ),
