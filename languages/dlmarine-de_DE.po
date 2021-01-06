@@ -1753,7 +1753,7 @@ msgstr "Sicherheit"
 
 #: languages/fields.php:613
 msgid "Fire Extinguish System"
-msgstr "Feuerlösch-Anlage"
+msgstr "Feuerlöschanlage"
 
 #: languages/fields.php:614
 msgid "Fire Extinguisher"
@@ -2368,6 +2368,14 @@ msgstr ""
 #: languages/fields.php:782
 msgid "volume"
 msgstr "Volumen"
+
+#: languages/fields.php:782
+msgid "Volume"
+msgstr "Volumen"
+
+#: languages/fields.php:782
+msgid "VOLUME"
+msgstr "VOLUMEN"
 
 #: languages/fields.php:783
 msgid "Bahamian dollar"
