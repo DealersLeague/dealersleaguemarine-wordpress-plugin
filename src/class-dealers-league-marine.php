@@ -217,8 +217,13 @@ class Dealers_League_Marine {
 			remove_filter('the_excerpt', 'wpautop');
 			ob_start();
 			// Get template file output
-			$listing_json_data = maybe_unserialize( get_post_meta( $post->ID, 'listing_json_data', true ) );
-			$transformed_data = $this->transform_listing_data( $listing_json_data['listing'] );
+			$listing_json_data1 = get_post_meta( $post->ID, 'listing_json_data', true );
+			$listing_json_data = maybe_unserialize( $listing_json_data1 );
+			if ( ! $listing_json_data || ! isset( $listing_json_data['listing'] ) ) {
+				$transformed_data = [];
+			} else {
+				$transformed_data = $this->transform_listing_data( $listing_json_data[ 'listing' ] );
+			}
 			include plugin_dir_path( __FILE__ ) . '../templates/content-single-listing.php';
 			return ob_get_clean();
 		} 
@@ -248,8 +253,10 @@ class Dealers_League_Marine {
 
 		$has_colours = false;
 
-		foreach ( $listing_data as $tab ) {
-
+		foreach ( $listing_data as $tab_name => $tab ) {
+			if ( $tab_name == 'media' || $tab_name == 'listing_id' ) {
+				continue;
+			}
 			foreach ( $tab as $section_name => $section ) {
 
 				$remove_section = true;
@@ -298,6 +305,15 @@ class Dealers_League_Marine {
 					if ( is_array( $field_value ) ) {
 						$subfield_text = '';
 						foreach ( $field_value as $subfield_name => $subfield_value ) {
+
+							if ( $section_name == 'drive' && $field_name == 'propeller' && $subfield_name == 'content' ) {
+								if ( $subfield_value[0] == 'ips' ) {
+									$subfield_value[0] == 'IPS';
+								}
+								$subfield_name = __('Propeller Type', 'dlmarine' );
+							}
+
+
 							$unit = '';
 							$unit = empty( $unit ) ? Utils::get_unity( $subfield_name ) : $unit;
 							if ( ! empty( $subfield_value ) ) {
@@ -342,6 +358,7 @@ class Dealers_League_Marine {
 														break;
 													default:
 														$sv = str_replace( array('-','_'), array(' ',' '),Utils::check_translation($sv) );
+														$sv = ($sv == 'ips') ? 'IPS' : $sv;
 														$subfield_text .= ' ' . ucwords( $sv ) . $unit;
 												}
 											}
