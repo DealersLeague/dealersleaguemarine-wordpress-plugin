@@ -648,6 +648,9 @@ class Utils {
 		if ( strtolower( $text_to_return ) == 'volume' ) {
 			$text_to_return = __( 'volume', 'dlmarine' );
 		}
+		if ( strtolower( $text_to_return ) == 'material' || strtolower( $text_to_return ) == 'rumpfmaterial' ) {
+			$text_to_return = __( 'Material', 'dlmarine' );
+		}
 		return $text_to_return;
 	}
 
