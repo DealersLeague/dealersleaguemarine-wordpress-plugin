@@ -563,7 +563,7 @@ msgstr "colours.json"
 #: languages/fields.php:143 languages/fields.php:250 languages/fields.php:261
 #: languages/fields.php:272 languages/fields.php:280 languages/fields.php:410
 msgid "Material"
-msgstr "Rumpfmaterial"
+msgstr "Material"
 
 #: languages/fields.php:144
 msgid "Please choose a material"

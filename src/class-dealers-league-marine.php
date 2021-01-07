@@ -17,6 +17,8 @@ class Dealers_League_Marine {
 		$this->api_object = new Api();
 		$this->api_object->init();
 
+		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'public_scripts' ) );
 
@@ -306,9 +308,9 @@ class Dealers_League_Marine {
 									if ( $subfield_name != 'checked' && $subfield_name != $field_name && ! empty( $subfield_value[0] ) && ! in_array( $subfield_name, $exclude_field_name ) ) {
 										$subfield_name = str_replace( '_', ' ', Utils::check_translation( $subfield_name ) );
 										if ( count( $field_value ) == 1 ) {
-											$subfield_text .= '(<strong>' . __( $subfield_name, 'dlmarine' ) . ':</strong>';
+											$subfield_text .= '(<strong>' . $subfield_name. ':</strong>';
 										} else {
-											$subfield_text .= strtolower( $subfield_value[ 0 ] ) == 'on' ? '' : '<br><strong>' . __( $subfield_name, 'dlmarine' ) . ':</strong>';
+											$subfield_text .= strtolower( $subfield_value[ 0 ] ) == 'on' ? '' : '<br><strong>' . $subfield_name . ':</strong>';
 										}
 									}
 
