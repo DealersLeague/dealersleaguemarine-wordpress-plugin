@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-01-04 21:40+0000\n"
-"PO-Revision-Date: 2021-01-06 16:33+0000\n"
+"POT-Creation-Date: 2021-01-07 09:06+0000\n"
+"PO-Revision-Date: 2021-01-07 09:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -29,7 +29,7 @@ msgid "ID"
 msgstr "ID"
 
 #: languages/fields.php:5 languages/fields.php:125
-#: templates/content-single-listing.php:433
+#: templates/content-single-listing.php:434
 msgid "Purpose"
 msgstr "Nutzung"
 
@@ -191,7 +191,7 @@ msgstr "Vorführung (bereits im Wasser)"
 msgid "Demonstration (NOT in water)"
 msgstr "Vorführung (NICHT im Wasser)"
 
-#: languages/fields.php:49 templates/content-single-listing.php:383
+#: languages/fields.php:49 templates/content-single-listing.php:384
 msgid "Sale Status"
 msgstr "Verkausstatus"
 
@@ -208,7 +208,7 @@ msgid "Available"
 msgstr "Zur Verfügung"
 
 #: languages/fields.php:53 templates/content-archive-listing.php:63
-#: templates/content-single-listing.php:369
+#: templates/content-single-listing.php:370
 msgid "Condition"
 msgstr "Zustand"
 
@@ -305,7 +305,7 @@ msgstr "Inzahlungnahme möglich"
 msgid "Trade In"
 msgstr "Inzahlungnahme möglich"
 
-#: languages/fields.php:78 templates/content-single-listing.php:440
+#: languages/fields.php:78 templates/content-single-listing.php:441
 msgid "Previous Owners"
 msgstr "Vorherige Besitzer"
 
@@ -314,8 +314,8 @@ msgid "If boat is first hand, use \"0\"."
 msgstr "Wenn das Boot aus erster Hand kommt, verwenden Sie “0”."
 
 #: languages/fields.php:80 templates/content-archive-listing.php:67
-#: templates/content-single-listing.php:376
-#: templates/content-single-listing.php:411
+#: templates/content-single-listing.php:377
+#: templates/content-single-listing.php:412
 msgid "Location"
 msgstr "Standort"
 
@@ -347,13 +347,13 @@ msgstr "Baueigenschaften"
 #: languages/fields.php:89 languages/fields.php:359 languages/fields.php:405
 #: templates/content-archive-listing.php:61
 #: templates/content-archive-search.php:17
-#: templates/content-single-listing.php:341
+#: templates/content-single-listing.php:342
 msgid "Manufacturer"
 msgstr "Hersteller"
 
 #: languages/fields.php:92 languages/fields.php:362 languages/fields.php:408
 #: templates/content-archive-listing.php:62
-#: templates/content-single-listing.php:348
+#: templates/content-single-listing.php:349
 msgid "Model"
 msgstr "Modell"
 
@@ -361,20 +361,20 @@ msgstr "Modell"
 msgid "Designer"
 msgstr "Designer"
 
-#: languages/fields.php:94 templates/content-single-listing.php:355
+#: languages/fields.php:94 templates/content-single-listing.php:356
 msgid "Boat Name"
 msgstr "Bootsname"
 
 #: languages/fields.php:95 languages/fields.php:375 languages/fields.php:409
-#: templates/content-single-listing.php:475
+#: templates/content-single-listing.php:476
 msgid "Year Built"
 msgstr "Baujahr"
 
-#: languages/fields.php:96 templates/content-single-listing.php:482
+#: languages/fields.php:96 templates/content-single-listing.php:483
 msgid "Year Launched"
 msgstr "Erstwasserung"
 
-#: languages/fields.php:97 templates/content-single-listing.php:489
+#: languages/fields.php:97 templates/content-single-listing.php:490
 msgid "Last Refit"
 msgstr "Letzte Wartung"
 
@@ -446,11 +446,11 @@ msgstr "Hardtop"
 msgid "Convertible Top"
 msgstr "Cabrioverdeck"
 
-#: languages/fields.php:113 templates/content-single-listing.php:454
+#: languages/fields.php:113 templates/content-single-listing.php:455
 msgid "CE Certification"
 msgstr "CE-Zertifizierung"
 
-#: languages/fields.php:114 templates/content-single-listing.php:461
+#: languages/fields.php:114 templates/content-single-listing.php:462
 msgid "CE Design Category"
 msgstr "CE-Design Kategorie"
 
@@ -470,7 +470,7 @@ msgstr "C"
 msgid "D"
 msgstr "D"
 
-#: languages/fields.php:119 templates/content-single-listing.php:468
+#: languages/fields.php:119 templates/content-single-listing.php:469
 msgid "CE Passenger Capacity"
 msgstr "CE-Passagier-Zertifizierung"
 
@@ -478,11 +478,11 @@ msgstr "CE-Passagier-Zertifizierung"
 msgid "Registration"
 msgstr "Registrierung"
 
-#: languages/fields.php:121 templates/content-single-listing.php:419
+#: languages/fields.php:121 templates/content-single-listing.php:420
 msgid "Flag"
 msgstr "Flagge"
 
-#: languages/fields.php:124 templates/content-single-listing.php:426
+#: languages/fields.php:124 templates/content-single-listing.php:427
 msgid "Port"
 msgstr "Hafen"
 
@@ -499,7 +499,7 @@ msgid "Dimensions"
 msgstr "Abmessungen"
 
 #: languages/fields.php:129 templates/content-archive-listing.php:64
-#: templates/content-single-listing.php:390
+#: templates/content-single-listing.php:391
 msgid "LOA"
 msgstr "L.ü.A."
 
@@ -512,7 +512,7 @@ msgid "LWL"
 msgstr "Länge Wasserlinie"
 
 #: languages/fields.php:132 templates/content-archive-listing.php:65
-#: templates/content-single-listing.php:404
+#: templates/content-single-listing.php:405
 msgid "Beam"
 msgstr "Breite"
 
@@ -524,12 +524,12 @@ msgstr "Tiefgang"
 msgid "Draught Keelup"
 msgstr "Tiefgang"
 
-#: languages/fields.php:135 templates/content-single-listing.php:496
+#: languages/fields.php:135 templates/content-single-listing.php:497
 msgid "Clearance"
 msgstr "Durchfahrtshöhe"
 
 #: languages/fields.php:136 languages/fields.php:147
-#: templates/content-single-listing.php:503
+#: templates/content-single-listing.php:504
 msgid "Displacement"
 msgstr "Verdrängung"
 
@@ -551,10 +551,8 @@ msgid "Free text, for example: white, blue stripe with red dots"
 msgstr "Freier Text, zum Beispiel: weiß, blauer Streifen mit roten Punkten"
 
 #: languages/fields.php:141
-#, fuzzy
-#| msgid "colours.json"
 msgid "colours_tags"
-msgstr "colours.json"
+msgstr ""
 
 #: languages/fields.php:142
 msgid "colours.json"
@@ -563,7 +561,7 @@ msgstr "colours.json"
 #: languages/fields.php:143 languages/fields.php:250 languages/fields.php:261
 #: languages/fields.php:272 languages/fields.php:280 languages/fields.php:410
 msgid "Material"
-msgstr "Rumpfmaterial"
+msgstr "Material"
 
 #: languages/fields.php:144
 msgid "Please choose a material"
@@ -761,7 +759,7 @@ msgstr "Verbrauch"
 msgid "Max Consumption"
 msgstr "Max Verbrauch"
 
-#: languages/fields.php:195 templates/content-single-listing.php:447
+#: languages/fields.php:195 templates/content-single-listing.php:448
 msgid "Range"
 msgstr "Distanz"
 
@@ -873,10 +871,8 @@ msgid "Spinnaker"
 msgstr "Spinnaker"
 
 #: languages/fields.php:243
-#, fuzzy
-#| msgid "Spinnaker"
 msgid "spinnaker_area"
-msgstr "Spinnaker"
+msgstr ""
 
 #: languages/fields.php:245
 msgid "Blister"
@@ -1037,7 +1033,7 @@ msgstr "Gasheizung"
 msgid "Diesel"
 msgstr "Diesel"
 
-#: languages/fields.php:325
+#: languages/fields.php:325 languages/fields.php:2035
 msgid "Tanks"
 msgstr "Tanks"
 
@@ -1186,7 +1182,7 @@ msgstr "Bootstrailer"
 msgid "Harbour"
 msgstr "Hafentrailer"
 
-#: languages/fields.php:395
+#: languages/fields.php:395 languages/fields.php:2032
 msgid "Storage"
 msgstr "Stellplatz/Trailer"
 
@@ -1907,7 +1903,7 @@ msgstr "Panorama-Videos"
 msgid "Panorama URL"
 msgstr "Panorama URL"
 
-#: languages/fields.php:654 templates/content-single-listing.php:560
+#: languages/fields.php:654 templates/content-single-listing.php:561
 msgid "Documents"
 msgstr "Dokumente"
 
@@ -2128,7 +2124,7 @@ msgstr "Zustand"
 msgid "Mega Yacht"
 msgstr "Mega-Yacht"
 
-#: languages/fields.php:727 src/class-utils.php:113 src/class-utils.php:451
+#: languages/fields.php:727 src/class-utils.php:113 src/class-utils.php:452
 msgid "Offshore"
 msgstr "Außerhalb von Küstengewässern"
 
@@ -2165,30 +2161,24 @@ msgid "Container Ship"
 msgstr "Container-Schiff"
 
 #: languages/fields.php:736
-#, fuzzy
-#| msgid "EU"
 msgid "EUR"
-msgstr "EU"
+msgstr ""
 
 #: languages/fields.php:737
 msgid "Euro"
 msgstr "Euro"
 
 #: languages/fields.php:738
-#, fuzzy
-#| msgid "GRP"
 msgid "GBP"
-msgstr "GFK"
+msgstr ""
 
 #: languages/fields.php:739
 msgid "Pound sterling"
 msgstr "Britisches Pfund"
 
 #: languages/fields.php:740
-#, fuzzy
-#| msgid "US"
 msgid "USD"
-msgstr "USA"
+msgstr ""
 
 #: languages/fields.php:741
 msgid "United States dollar"
@@ -2211,10 +2201,8 @@ msgid "Afghan afghani"
 msgstr "Afghanisch-Afghanisch"
 
 #: languages/fields.php:746
-#, fuzzy
-#| msgid "LWL"
 msgid "ALL"
-msgstr "Länge Wasserlinie"
+msgstr ""
 
 #: languages/fields.php:747
 msgid "Albanian lek"
@@ -2237,10 +2225,8 @@ msgid "Netherlands Antillean guilder"
 msgstr "Niederländische Antillen"
 
 #: languages/fields.php:752
-#, fuzzy
-#| msgid "LOA"
 msgid "AOA"
-msgstr "L.ü.A."
+msgstr ""
 
 #: languages/fields.php:753
 msgid "Angolan kwanza"
@@ -2351,11 +2337,8 @@ msgid "Boliviano"
 msgstr "Boliviano"
 
 #: languages/fields.php:780
-#, fuzzy
-#| msgctxt "app"
-#| msgid "URL"
 msgid "BRL"
-msgstr "URL"
+msgstr ""
 
 #: languages/fields.php:781
 msgid "Brazilian real"
@@ -2364,18 +2347,6 @@ msgstr "Real"
 #: languages/fields.php:782
 msgid "BSD"
 msgstr ""
-
-#: languages/fields.php:782
-msgid "volume"
-msgstr "Volumen"
-
-#: languages/fields.php:782
-msgid "Volume"
-msgstr "Volumen"
-
-#: languages/fields.php:782
-msgid "VOLUME"
-msgstr "VOLUMEN"
 
 #: languages/fields.php:783
 msgid "Bahamian dollar"
@@ -2542,10 +2513,8 @@ msgid "Algerian dinar"
 msgstr "Algerischer Dinar"
 
 #: languages/fields.php:824
-#, fuzzy
-#| msgid "GRP"
 msgid "EGP"
-msgstr "GFK"
+msgstr ""
 
 #: languages/fields.php:825
 msgid "Egyptian pound"
@@ -2592,20 +2561,16 @@ msgid "Georgian lari"
 msgstr "Lara"
 
 #: languages/fields.php:836
-#, fuzzy
-#| msgid "GPS"
 msgid "GHS"
-msgstr "GPS"
+msgstr ""
 
 #: languages/fields.php:837
 msgid "Ghanaian cedi"
 msgstr "Ghana Cedi"
 
 #: languages/fields.php:838
-#, fuzzy
-#| msgid "IPS"
 msgid "GIP"
-msgstr "IPS"
+msgstr ""
 
 #: languages/fields.php:839
 msgid "Gibraltar pound"
@@ -2652,10 +2617,8 @@ msgid "Hong Kong dollar"
 msgstr "Hongkong Dollar"
 
 #: languages/fields.php:850
-#, fuzzy
-#| msgid "HIN"
 msgid "HNL"
-msgstr "HIN"
+msgstr ""
 
 #: languages/fields.php:851
 msgid "Honduran lempira"
@@ -2686,40 +2649,32 @@ msgid "Hungarian forint"
 msgstr "Forint"
 
 #: languages/fields.php:858
-#, fuzzy
-#| msgid "ID"
 msgid "IDR"
-msgstr "ID"
+msgstr ""
 
 #: languages/fields.php:859
 msgid "Indonesian rupiah"
 msgstr "Rupiah"
 
 #: languages/fields.php:860
-#, fuzzy
-#| msgid "IPS"
 msgid "ILS"
-msgstr "IPS"
+msgstr ""
 
 #: languages/fields.php:861
 msgid "Israeli new shekel"
 msgstr "Schekel"
 
 #: languages/fields.php:862
-#, fuzzy
-#| msgid "HIN"
 msgid "INR"
-msgstr "HIN"
+msgstr ""
 
 #: languages/fields.php:863
 msgid "Indian rupee"
 msgstr "Indische Rupie"
 
 #: languages/fields.php:864
-#, fuzzy
-#| msgid "ID"
 msgid "IQD"
-msgstr "ID"
+msgstr ""
 
 #: languages/fields.php:865
 msgid "Iraqi dinar"
@@ -2734,10 +2689,8 @@ msgid "Iranian rial"
 msgstr "Rial"
 
 #: languages/fields.php:868
-#, fuzzy
-#| msgid "IPS"
 msgid "ISK"
-msgstr "IPS"
+msgstr ""
 
 #: languages/fields.php:869
 msgid "Icelandic króna"
@@ -2776,10 +2729,8 @@ msgid "Kenyan shilling"
 msgstr "Kenia Schilling"
 
 #: languages/fields.php:878
-#, fuzzy
-#| msgid "GPS"
 msgid "KGS"
-msgstr "GPS"
+msgstr ""
 
 #: languages/fields.php:879
 msgid "Kyrgyzstani som"
@@ -2842,10 +2793,8 @@ msgid "Kazakhstani tenge"
 msgstr "Tenge Kasachstan"
 
 #: languages/fields.php:894
-#, fuzzy
-#| msgid "LOA"
 msgid "LAK"
-msgstr "L.ü.A."
+msgstr ""
 
 #: languages/fields.php:895
 msgid "Lao kip"
@@ -2876,10 +2825,8 @@ msgid "Liberian dollar"
 msgstr "Liberianischer Dollar"
 
 #: languages/fields.php:902
-#, fuzzy
-#| msgid "LWL"
 msgid "LSL"
-msgstr "Länge Wasserlinie"
+msgstr ""
 
 #: languages/fields.php:903
 msgid "Lesotho loti"
@@ -2958,11 +2905,8 @@ msgid "Mauritanian ouguiya"
 msgstr "Ouguiya"
 
 #: languages/fields.php:922
-#, fuzzy
-#| msgctxt "app"
-#| msgid "URL"
 msgid "MUR"
-msgstr "URL"
+msgstr ""
 
 #: languages/fields.php:923
 msgid "Mauritian rupee"
@@ -3025,10 +2969,8 @@ msgid "Namibian dollar"
 msgstr "Namibia Dollar"
 
 #: languages/fields.php:938
-#, fuzzy
-#| msgid "ENGINES"
 msgid "NGN"
-msgstr "MOTOREN"
+msgstr ""
 
 #: languages/fields.php:939
 msgid "Nigerian naira"
@@ -3075,11 +3017,8 @@ msgid "Omani rial"
 msgstr "Rial"
 
 #: languages/fields.php:950
-#, fuzzy
-#| msgctxt "app"
-#| msgid "POA"
 msgid "PAB"
-msgstr "Preis auf Anfrage"
+msgstr ""
 
 #: languages/fields.php:951
 msgid "Panamanian balboa"
@@ -3158,10 +3097,8 @@ msgid "Serbian dinar"
 msgstr "Serbischer Dinar"
 
 #: languages/fields.php:970
-#, fuzzy
-#| msgid "RIB"
 msgid "RUB"
-msgstr "RIB"
+msgstr ""
 
 #: languages/fields.php:971
 msgid "Russian ruble"
@@ -3192,10 +3129,8 @@ msgid "Solomon Islands dollar"
 msgstr "Salomonen Dollar"
 
 #: languages/fields.php:978
-#, fuzzy
-#| msgid "SUCRE"
 msgid "SCR"
-msgstr "Ruanda Franc"
+msgstr ""
 
 #: languages/fields.php:979
 msgid "Seychelles rupee"
@@ -3234,10 +3169,8 @@ msgid "Saint Helena pound"
 msgstr "St. Helena Pfund"
 
 #: languages/fields.php:988
-#, fuzzy
-#| msgid "LWL"
 msgid "SLL"
-msgstr "Länge Wasserlinie"
+msgstr ""
 
 #: languages/fields.php:989
 msgid "Sierra Leonean leone"
@@ -3396,10 +3329,8 @@ msgid "Uruguayan peso"
 msgstr "Uruguay Peso"
 
 #: languages/fields.php:1028
-#, fuzzy
-#| msgid "US"
 msgid "UZS"
-msgstr "USA"
+msgstr ""
 
 #: languages/fields.php:1029
 msgid "Uzbekistan som"
@@ -3518,10 +3449,8 @@ msgid "Zambian kwacha"
 msgstr "Zambian Kwacha"
 
 #: languages/fields.php:1058
-#, fuzzy
-#| msgid "LWL"
 msgid "ZWL"
-msgstr "Länge Wasserlinie"
+msgstr ""
 
 #: languages/fields.php:1059
 msgid "Zimbabwean dollar"
@@ -3678,11 +3607,8 @@ msgid "bronze"
 msgstr "Bronze"
 
 #: languages/fields.php:1092
-#, fuzzy
-#| msgctxt "app"
-#| msgid "Data"
 msgid "aa"
-msgstr "Daten"
+msgstr ""
 
 #: languages/fields.php:1093
 msgid "Afar"
@@ -3697,10 +3623,8 @@ msgid "Abkhazian"
 msgstr "Abkhazian"
 
 #: languages/fields.php:1096
-#, fuzzy
-#| msgid "Safe"
 msgid "af"
-msgstr "Tresor"
+msgstr ""
 
 #: languages/fields.php:1097
 msgid "Afrikaans"
@@ -3715,61 +3639,48 @@ msgid "Akan"
 msgstr "Akan"
 
 #: languages/fields.php:1100
-#, fuzzy
-#| msgid "m"
 msgid "am"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1101
 msgid "Amharic"
 msgstr "Amharisch"
 
 #: languages/fields.php:1102
-#, fuzzy
-#| msgid "Oman"
 msgid "an"
-msgstr "Oman"
+msgstr ""
 
 #: languages/fields.php:1103
 msgid "Aragonese"
 msgstr "Aragonisch"
 
 #: languages/fields.php:1104
-#, fuzzy
-#| msgid "Warm"
 msgid "ar"
-msgstr "Warm"
+msgstr ""
 
 #: languages/fields.php:1105
 msgid "Arabic"
 msgstr "Arabisch"
 
 #: languages/fields.php:1106
-#, fuzzy
-#| msgid "Gas"
 msgid "as"
-msgstr "Gasheizung"
+msgstr ""
 
 #: languages/fields.php:1107
 msgid "Assamese"
 msgstr "Assamesisch"
 
 #: languages/fields.php:1108
-#, fuzzy
-#| msgctxt "app"
-#| msgid "Save"
 msgid "av"
-msgstr "Speichern"
+msgstr ""
 
 #: languages/fields.php:1109
 msgid "Avaric"
 msgstr "Avaric"
 
 #: languages/fields.php:1110
-#, fuzzy
-#| msgid "Gray"
 msgid "ay"
-msgstr "Grau"
+msgstr ""
 
 #: languages/fields.php:1111
 msgid "Aymara"
@@ -3784,10 +3695,8 @@ msgid "Azerbaijani"
 msgstr "Aserbaidschanisch"
 
 #: languages/fields.php:1114
-#, fuzzy
-#| msgid "Cuba"
 msgid "ba"
-msgstr "Kuba"
+msgstr ""
 
 #: languages/fields.php:1115
 msgid "Bashkir"
@@ -3826,10 +3735,8 @@ msgid "Bislama"
 msgstr "Bislama"
 
 #: languages/fields.php:1124
-#, fuzzy
-#| msgid "m"
 msgid "bm"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1125
 msgid "Bambara"
@@ -3844,10 +3751,8 @@ msgid "Bengali"
 msgstr "Bengali"
 
 #: languages/fields.php:1128
-#, fuzzy
-#| msgid "Igbo"
 msgid "bo"
-msgstr "Igbo"
+msgstr ""
 
 #: languages/fields.php:1129
 msgid "Tibetan"
@@ -3942,11 +3847,8 @@ msgid "Danish"
 msgstr "Dänisch"
 
 #: languages/fields.php:1152
-#, fuzzy
-#| msgctxt "app"
-#| msgid "Code"
 msgid "de"
-msgstr "Code"
+msgstr ""
 
 #: languages/fields.php:1153
 msgid "German"
@@ -3969,71 +3871,56 @@ msgid "Dzongkha"
 msgstr "Dzongkha"
 
 #: languages/fields.php:1158
-#, fuzzy
-#| msgid "Keel"
 msgid "ee"
-msgstr "Kiel"
+msgstr ""
 
 #: languages/fields.php:1159
 msgid "Ewe"
 msgstr "Ewe"
 
 #: languages/fields.php:1160
-#, fuzzy
-#| msgid "Fuel"
 msgid "el"
-msgstr "Treibstoff"
+msgstr ""
 
 #: languages/fields.php:1161
 msgid "Greek, Modern (1453–)"
 msgstr "Griechisch"
 
 #: languages/fields.php:1162
-#, fuzzy
-#| msgid "Send"
 msgid "en"
-msgstr "Senden"
+msgstr ""
 
 #: languages/fields.php:1163
 msgid "English"
 msgstr "Englisch"
 
 #: languages/fields.php:1164
-#, fuzzy
-#| msgctxt "app"
-#| msgid "Yes"
 msgid "es"
-msgstr "Ja"
+msgstr ""
 
 #: languages/fields.php:1165
 msgid "Spanish, Castilian"
 msgstr "Spanisch, Kastilianisch"
 
 #: languages/fields.php:1166
-#, fuzzy
-#| msgid "Jet"
 msgid "et"
-msgstr "Strahlantrieb"
+msgstr ""
 
 #: languages/fields.php:1167
 msgid "Estonian"
 msgstr "Estnisch"
 
 #: languages/fields.php:1168
-#, fuzzy
-#| msgid "Peru"
 msgid "eu"
-msgstr "Peru"
+msgstr ""
 
 #: languages/fields.php:1169
 msgid "Basque"
 msgstr "Baskisch"
 
 #: languages/fields.php:1170
-#, fuzzy
-#| msgid "Afar"
 msgid "fa"
-msgstr "Afar"
+msgstr ""
 
 #: languages/fields.php:1171
 msgid "Persian"
@@ -4048,11 +3935,8 @@ msgid "Fulah"
 msgstr "Fulah"
 
 #: languages/fields.php:1174
-#, fuzzy
-#| msgctxt "app"
-#| msgid "fin"
 msgid "fi"
-msgstr "Flossenkiel"
+msgstr ""
 
 #: languages/fields.php:1175
 msgid "Finnish"
@@ -4067,20 +3951,16 @@ msgid "Fijian"
 msgstr "Fidschianisch"
 
 #: languages/fields.php:1178
-#, fuzzy
-#| msgid "Info"
 msgid "fo"
-msgstr "Info"
+msgstr ""
 
 #: languages/fields.php:1179
 msgid "Faroese"
 msgstr "Färöisch"
 
 #: languages/fields.php:1180
-#, fuzzy
-#| msgid "Afar"
 msgid "fr"
-msgstr "Afar"
+msgstr ""
 
 #: languages/fields.php:1181
 msgid "French"
@@ -4143,31 +4023,24 @@ msgid "Manx"
 msgstr "Manx"
 
 #: languages/fields.php:1196
-#, fuzzy
-#| msgid "Chad"
 msgid "ha"
-msgstr "Tschad"
+msgstr ""
 
 #: languages/fields.php:1197
 msgid "Hausa"
 msgstr "Hausa"
 
 #: languages/fields.php:1198
-#, fuzzy
-#| msgctxt "app"
-#| msgid "here"
 msgid "he"
-msgstr "hier"
+msgstr ""
 
 #: languages/fields.php:1199
 msgid "Hebrew"
 msgstr "Hebräisch"
 
 #: languages/fields.php:1200
-#, fuzzy
-#| msgid "Thai"
 msgid "hi"
-msgstr "Thai"
+msgstr ""
 
 #: languages/fields.php:1201
 msgid "Hindi"
@@ -4182,11 +4055,8 @@ msgid "Hiri Motu"
 msgstr "Hiri Motu"
 
 #: languages/fields.php:1204
-#, fuzzy
-#| msgctxt "app"
-#| msgid "here"
 msgid "hr"
-msgstr "hier"
+msgstr ""
 
 #: languages/fields.php:1205
 msgid "Croatian"
@@ -4225,10 +4095,8 @@ msgid "Herero"
 msgstr "Herero"
 
 #: languages/fields.php:1214
-#, fuzzy
-#| msgid "Paid"
 msgid "id"
-msgstr "Bezahlt"
+msgstr ""
 
 #: languages/fields.php:1215
 msgid "Indonesian"
@@ -4243,20 +4111,16 @@ msgid "Igbo"
 msgstr "Igbo"
 
 #: languages/fields.php:1218
-#, fuzzy
-#| msgid "Fiji"
 msgid "ii"
-msgstr "Fidschi"
+msgstr ""
 
 #: languages/fields.php:1219
 msgid "Sichuan Yi, Nuosu"
 msgstr "Sichuan Yi, Nuosu"
 
 #: languages/fields.php:1220
-#, fuzzy
-#| msgid "Sink"
 msgid "ik"
-msgstr "Waschbecken"
+msgstr ""
 
 #: languages/fields.php:1221
 msgid "Inupiaq"
@@ -4271,31 +4135,24 @@ msgid "Ido"
 msgstr "Ido"
 
 #: languages/fields.php:1224
-#, fuzzy
-#| msgctxt "app"
-#| msgid "List"
 msgid "is"
-msgstr "Liste"
+msgstr ""
 
 #: languages/fields.php:1225
 msgid "Icelandic"
 msgstr "Isländisch"
 
 #: languages/fields.php:1226
-#, fuzzy
-#| msgid "City"
 msgid "it"
-msgstr "Stadt"
+msgstr ""
 
 #: languages/fields.php:1227
 msgid "Italian"
 msgstr "Italienisch"
 
 #: languages/fields.php:1228
-#, fuzzy
-#| msgid "Niue"
 msgid "iu"
-msgstr "Niue"
+msgstr ""
 
 #: languages/fields.php:1229
 msgid "Inuktitut"
@@ -4318,18 +4175,16 @@ msgid "Javanese"
 msgstr "Javanisch"
 
 #: languages/fields.php:1234
-#, fuzzy
-#| msgid "Akan"
 msgid "ka"
-msgstr "Akan"
+msgstr ""
 
 #: languages/fields.php:1235
 msgid "Georgian"
 msgstr "Georgisch"
 
 #: languages/fields.php:1236 src/class-utils.php:415 src/class-utils.php:416
-#: src/class-utils.php:417 src/class-utils.php:424 src/class-utils.php:429
-#: src/class-utils.php:430 src/class-utils.php:431
+#: src/class-utils.php:424 src/class-utils.php:430 src/class-utils.php:431
+#: src/class-utils.php:432
 msgid "kg"
 msgstr "kg"
 
@@ -4370,20 +4225,16 @@ msgid "Kalaallisut, Greenlandic"
 msgstr "Kalaallisut, Grönländisch"
 
 #: languages/fields.php:1246
-#, fuzzy
-#| msgid "kmh"
 msgid "km"
-msgstr "km/h"
+msgstr ""
 
 #: languages/fields.php:1247
 msgid "Central Khmer"
 msgstr "Zentrale Khmer"
 
 #: languages/fields.php:1248
-#, fuzzy
-#| msgid "Akan"
 msgid "kn"
-msgstr "Akan"
+msgstr ""
 
 #: languages/fields.php:1249
 msgid "Kannada"
@@ -4446,30 +4297,24 @@ msgid "Kirghiz, Kyrgyz"
 msgstr "Kirgisisch, Kirgisisch"
 
 #: languages/fields.php:1264
-#, fuzzy
-#| msgid "Bulb"
 msgid "lb"
-msgstr "Festkiel mit Bombe"
+msgstr ""
 
 #: languages/fields.php:1265
 msgid "Luxembourgish, Letzeburgesch"
 msgstr "Luxemburgisch, Letzeburgesch"
 
 #: languages/fields.php:1266
-#, fuzzy
-#| msgid "Flag"
 msgid "lg"
-msgstr "Flagge"
+msgstr ""
 
 #: languages/fields.php:1267
 msgid "Ganda"
 msgstr "Ganda"
 
 #: languages/fields.php:1268
-#, fuzzy
-#| msgid "Mali"
 msgid "li"
-msgstr "Mali"
+msgstr ""
 
 #: languages/fields.php:1269
 msgid "Limburgan, Limburger, Limburgish"
@@ -4484,31 +4329,24 @@ msgid "Lingala"
 msgstr "Lingala"
 
 #: languages/fields.php:1272
-#, fuzzy
-#| msgctxt "app"
-#| msgid "Solo"
 msgid "lo"
-msgstr "Solo"
+msgstr ""
 
 #: languages/fields.php:1273
 msgid "Lao"
 msgstr "Laos"
 
 #: languages/fields.php:1274
-#, fuzzy
-#| msgid "Flat"
 msgid "lt"
-msgstr "Plattboden"
+msgstr ""
 
 #: languages/fields.php:1275
 msgid "Lithuanian"
 msgstr "Litauisch"
 
 #: languages/fields.php:1276
-#, fuzzy
-#| msgid "Blue"
 msgid "lu"
-msgstr "Blau"
+msgstr ""
 
 #: languages/fields.php:1277
 msgid "Luba-Katanga"
@@ -4523,100 +4361,80 @@ msgid "Latvian"
 msgstr "Lettisch"
 
 #: languages/fields.php:1280
-#, fuzzy
-#| msgid "m"
 msgid "mg"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1281
 msgid "Malagasy"
 msgstr "Malagasy"
 
 #: languages/fields.php:1282
-#, fuzzy
-#| msgid "kmh"
 msgid "mh"
-msgstr "km/h"
+msgstr ""
 
 #: languages/fields.php:1283
 msgid "Marshallese"
 msgstr "Marschallisch"
 
 #: languages/fields.php:1284
-#, fuzzy
-#| msgid "m"
 msgid "mi"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1285
 msgid "Maori"
 msgstr "Maori"
 
 #: languages/fields.php:1286
-#, fuzzy
-#| msgid "m"
 msgid "mk"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1287
 msgid "Macedonian"
 msgstr "Republik Nordmazedonien"
 
 #: languages/fields.php:1288
-#, fuzzy
-#| msgid "m"
 msgid "ml"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1289
 msgid "Malayalam"
 msgstr "Malayalam"
 
 #: languages/fields.php:1290
-#, fuzzy
-#| msgid "m"
 msgid "mn"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1291
 msgid "Mongolian"
 msgstr "Mongolisch"
 
 #: languages/fields.php:1292
-#, fuzzy
-#| msgid "m"
 msgid "mr"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1293
 msgid "Marathi"
 msgstr "Marathi"
 
 #: languages/fields.php:1294
-#, fuzzy
-#| msgid "m"
 msgid "ms"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1295
 msgid "Malay"
 msgstr "Malay"
 
 #: languages/fields.php:1296
-#, fuzzy
-#| msgid "m"
 msgid "mt"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1297
 msgid "Maltese"
 msgstr "Maltesisch"
 
 #: languages/fields.php:1298
-#, fuzzy
-#| msgid "m"
 msgid "my"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1299
 msgid "Burmese"
@@ -4639,21 +4457,16 @@ msgid "Norwegian Bokmål"
 msgstr "Norwegisch Bokmål"
 
 #: languages/fields.php:1304
-#, fuzzy
-#| msgctxt "app"
-#| msgid "End"
 msgid "nd"
-msgstr "Beenden"
+msgstr ""
 
 #: languages/fields.php:1305
 msgid "North Ndebele"
 msgstr "Nord-Ndebele"
 
 #: languages/fields.php:1306
-#, fuzzy
-#| msgid "None"
 msgid "ne"
-msgstr "Keine"
+msgstr ""
 
 #: languages/fields.php:1307
 msgid "Nepali"
@@ -4684,10 +4497,8 @@ msgid "Norwegian Nynorsk"
 msgstr "Norwegisch Nynorsk"
 
 #: languages/fields.php:1314
-#, fuzzy
-#| msgid "Info"
 msgid "no"
-msgstr "Info"
+msgstr ""
 
 #: languages/fields.php:1315
 msgid "Norwegian"
@@ -4734,31 +4545,24 @@ msgid "Ojibwa"
 msgstr "Ojibwa"
 
 #: languages/fields.php:1326
-#, fuzzy
-#| msgid "m"
 msgid "om"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1327
 msgid "Oromo"
 msgstr "Oromo"
 
 #: languages/fields.php:1328
-#, fuzzy
-#| msgid "Port"
 msgid "or"
-msgstr "Hafen"
+msgstr ""
 
 #: languages/fields.php:1329
 msgid "Oriya"
 msgstr "Oriya"
 
 #: languages/fields.php:1330
-#, fuzzy
-#| msgctxt "app"
-#| msgid "Host"
 msgid "os"
-msgstr "Hosting"
+msgstr ""
 
 #: languages/fields.php:1331
 msgid "Ossetian, Ossetic"
@@ -4813,10 +4617,8 @@ msgid "Quechua"
 msgstr "Quechua"
 
 #: languages/fields.php:1344
-#, fuzzy
-#| msgid "m"
 msgid "rm"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1345
 msgid "Romansh"
@@ -4831,30 +4633,24 @@ msgid "Rundi"
 msgstr "Rundi"
 
 #: languages/fields.php:1348
-#, fuzzy
-#| msgid "Euro"
 msgid "ro"
-msgstr "Euro"
+msgstr ""
 
 #: languages/fields.php:1349
 msgid "Romanian, Moldavian, Moldovan"
 msgstr "Rumänisch, Moldawisch, Moldauisch"
 
 #: languages/fields.php:1350
-#, fuzzy
-#| msgid "Peru"
 msgid "ru"
-msgstr "Peru"
+msgstr ""
 
 #: languages/fields.php:1351
 msgid "Russian"
 msgstr "Russisch"
 
 #: languages/fields.php:1352
-#, fuzzy
-#| msgid "Crew"
 msgid "rw"
-msgstr "Crew"
+msgstr ""
 
 #: languages/fields.php:1353
 msgid "Kinyarwanda"
@@ -4869,20 +4665,16 @@ msgid "Sardinian"
 msgstr "Sardisch"
 
 #: languages/fields.php:1356
-#, fuzzy
-#| msgid "Used"
 msgid "sd"
-msgstr "Gebraucht"
+msgstr ""
 
 #: languages/fields.php:1357
 msgid "Sindhi"
 msgstr "Sindhi"
 
 #: languages/fields.php:1358
-#, fuzzy
-#| msgid "Used"
 msgid "se"
-msgstr "Gebraucht"
+msgstr ""
 
 #: languages/fields.php:1359
 msgid "Northern Sami"
@@ -4921,10 +4713,8 @@ msgid "Slovenian"
 msgstr "Slowenisch"
 
 #: languages/fields.php:1368
-#, fuzzy
-#| msgid "m"
 msgid "sm"
-msgstr "m"
+msgstr ""
 
 #: languages/fields.php:1369
 msgid "Samoan"
@@ -4955,11 +4745,8 @@ msgid "Albanian"
 msgstr "Albanisch"
 
 #: languages/fields.php:1376
-#, fuzzy
-#| msgctxt "app"
-#| msgid "User"
 msgid "sr"
-msgstr "Benutzer"
+msgstr ""
 
 #: languages/fields.php:1377
 msgid "Serbian"
@@ -4974,10 +4761,8 @@ msgid "Swati"
 msgstr "Swati"
 
 #: languages/fields.php:1380
-#, fuzzy
-#| msgid "Mast"
 msgid "st"
-msgstr "Mast"
+msgstr ""
 
 #: languages/fields.php:1381
 msgid "Southern Sotho"
@@ -5008,21 +4793,16 @@ msgid "Swahili"
 msgstr "Suaheli"
 
 #: languages/fields.php:1388
-#, fuzzy
-#| msgctxt "app"
-#| msgid "Data"
 msgid "ta"
-msgstr "Daten"
+msgstr ""
 
 #: languages/fields.php:1389
 msgid "Tamil"
 msgstr "Tamilisch"
 
 #: languages/fields.php:1390
-#, fuzzy
-#| msgid "text"
 msgid "te"
-msgstr "Text"
+msgstr ""
 
 #: languages/fields.php:1391
 msgid "Telugu"
@@ -5045,11 +4825,8 @@ msgid "Thai"
 msgstr "Thai"
 
 #: languages/fields.php:1396
-#, fuzzy
-#| msgctxt "app"
-#| msgid "twin"
 msgid "ti"
-msgstr "Zweihebelschaltung"
+msgstr ""
 
 #: languages/fields.php:1397
 msgid "Tigrinya"
@@ -5072,11 +4849,8 @@ msgid "Tagalog"
 msgstr "Tagalog"
 
 #: languages/fields.php:1402
-#, fuzzy
-#| msgctxt "app"
-#| msgid "twin"
 msgid "tn"
-msgstr "Zweihebelschaltung"
+msgstr ""
 
 #: languages/fields.php:1403
 msgid "Tswana"
@@ -5107,31 +4881,24 @@ msgid "Tsonga"
 msgstr "Tsonga"
 
 #: languages/fields.php:1410
-#, fuzzy
-#| msgid "text"
 msgid "tt"
-msgstr "Text"
+msgstr ""
 
 #: languages/fields.php:1411
 msgid "Tatar"
 msgstr "Tatarisch"
 
 #: languages/fields.php:1412
-#, fuzzy
-#| msgctxt "app"
-#| msgid "twin"
 msgid "tw"
-msgstr "Zweihebelschaltung"
+msgstr ""
 
 #: languages/fields.php:1413
 msgid "Twi"
 msgstr "Twi"
 
 #: languages/fields.php:1414
-#, fuzzy
-#| msgid "City"
 msgid "ty"
-msgstr "Stadt"
+msgstr ""
 
 #: languages/fields.php:1415
 msgid "Tahitian"
@@ -5154,10 +4921,8 @@ msgid "Ukrainian"
 msgstr "Ukrainisch"
 
 #: languages/fields.php:1420
-#, fuzzy
-#| msgid "Euro"
 msgid "ur"
-msgstr "Euro"
+msgstr ""
 
 #: languages/fields.php:1421
 msgid "Urdu"
@@ -5172,11 +4937,8 @@ msgid "Uzbek"
 msgstr "Usbekisch"
 
 #: languages/fields.php:1424
-#, fuzzy
-#| msgctxt "app"
-#| msgid "Save"
 msgid "ve"
-msgstr "Speichern"
+msgstr ""
 
 #: languages/fields.php:1425
 msgid "Venda"
@@ -5255,640 +5017,512 @@ msgid "Zulu"
 msgstr "Zulu"
 
 #: languages/fields.php:1444
-#, fuzzy
-#| msgid "D"
 msgid "DE"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1445 src/class-utils.php:148
 msgid "Germany"
 msgstr "Deutschland"
 
 #: languages/fields.php:1446
-#, fuzzy
-#| msgid "B"
 msgid "GB"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1447 src/class-utils.php:149
 msgid "United Kingdom"
 msgstr "Vereinigtes Königreich von Großbritannien"
 
 #: languages/fields.php:1448
-#, fuzzy
-#| msgid "A"
 msgid "AD"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1449 src/class-utils.php:150
 msgid "Andorra"
 msgstr "Andorra"
 
 #: languages/fields.php:1450
-#, fuzzy
-#| msgid "A"
 msgid "AE"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1451 src/class-utils.php:151
 msgid "United Arab Emirates"
 msgstr "Vereinigte Arabische Emirate"
 
 #: languages/fields.php:1452
-#, fuzzy
-#| msgid "A"
 msgid "AF"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1453 src/class-utils.php:152
 msgid "Afghanistan"
 msgstr "Afghanistan"
 
 #: languages/fields.php:1454
-#, fuzzy
-#| msgid "A"
 msgid "AG"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1455 src/class-utils.php:153
 msgid "Antigua and Barbuda"
 msgstr "Antigua und Barbuda"
 
 #: languages/fields.php:1456
-#, fuzzy
-#| msgid "A"
 msgid "AI"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1457 src/class-utils.php:154
 msgid "Anguilla"
 msgstr "Anguilla"
 
 #: languages/fields.php:1458
-#, fuzzy
-#| msgid "A"
 msgid "AL"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1459 src/class-utils.php:155
 msgid "Albania"
 msgstr "Albanien"
 
 #: languages/fields.php:1460
-#, fuzzy
-#| msgid "A"
 msgid "AM"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1461 src/class-utils.php:156
 msgid "Armenia"
 msgstr "Armenien"
 
 #: languages/fields.php:1462
-#, fuzzy
-#| msgid "A"
 msgid "AO"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1463 src/class-utils.php:157
 msgid "Angola"
 msgstr "Angola"
 
 #: languages/fields.php:1464
-#, fuzzy
-#| msgid "A"
 msgid "AQ"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1465 src/class-utils.php:158
 msgid "Antarctica"
 msgstr "Antarktis"
 
 #: languages/fields.php:1466
-#, fuzzy
-#| msgid "A"
 msgid "AR"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1467 src/class-utils.php:159
 msgid "Argentina"
 msgstr "Argentinien"
 
 #: languages/fields.php:1468
-#, fuzzy
-#| msgid "A"
 msgid "AS"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1469 src/class-utils.php:160
 msgid "American Samoa"
 msgstr "Amerikanisch-Samoa"
 
 #: languages/fields.php:1470
-#, fuzzy
-#| msgid "VAT"
 msgid "AT"
-msgstr "MwSt"
+msgstr ""
 
 #: languages/fields.php:1471 src/class-utils.php:161
 msgid "Austria"
 msgstr "Österreich"
 
 #: languages/fields.php:1472
-#, fuzzy
-#| msgid "A"
 msgid "AU"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1473 src/class-utils.php:162
 msgid "Australia"
 msgstr "Australien"
 
 #: languages/fields.php:1474
-#, fuzzy
-#| msgid "A"
 msgid "AW"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1475 src/class-utils.php:163
 msgid "Aruba"
 msgstr "Aruba"
 
 #: languages/fields.php:1476
-#, fuzzy
-#| msgid "A"
 msgid "AX"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1477 src/class-utils.php:164
 msgid "Åland Islands"
 msgstr "Ålandinseln"
 
 #: languages/fields.php:1478
-#, fuzzy
-#| msgid "A"
 msgid "AZ"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1479 src/class-utils.php:165
 msgid "Azerbaijan"
 msgstr "Aserbaidschan"
 
 #: languages/fields.php:1480
-#, fuzzy
-#| msgid "A"
 msgid "BA"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1481 src/class-utils.php:166
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnien und Herzegovina"
 
 #: languages/fields.php:1482
-#, fuzzy
-#| msgid "B"
 msgid "BB"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1483 src/class-utils.php:167
 msgid "Barbados"
 msgstr "Barbados"
 
 #: languages/fields.php:1484
-#, fuzzy
-#| msgid "B"
 msgid "BD"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1485 src/class-utils.php:168
 msgid "Bangladesh"
 msgstr "Bangladesch"
 
 #: languages/fields.php:1486
-#, fuzzy
-#| msgid "B"
 msgid "BE"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1487 src/class-utils.php:169
 msgid "Belgium"
 msgstr "Belgien"
 
 #: languages/fields.php:1488
-#, fuzzy
-#| msgid "B"
 msgid "BF"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1489 src/class-utils.php:170
 msgid "Burkina Faso"
 msgstr "Burkina Faso"
 
 #: languages/fields.php:1490
-#, fuzzy
-#| msgid "B"
 msgid "BG"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1491 src/class-utils.php:171
 msgid "Bulgaria"
 msgstr "Bulgarien"
 
 #: languages/fields.php:1492
-#, fuzzy
-#| msgid "B"
 msgid "BH"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1493 src/class-utils.php:172
 msgid "Bahrain"
 msgstr "Bahrain (Bahrein)"
 
 #: languages/fields.php:1494
-#, fuzzy
-#| msgid "B"
 msgid "BI"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1495 src/class-utils.php:173
 msgid "Burundi"
 msgstr "Burundi"
 
 #: languages/fields.php:1496
-#, fuzzy
-#| msgid "B"
 msgid "BJ"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1497 src/class-utils.php:174
 msgid "Benin"
 msgstr "Benin"
 
 #: languages/fields.php:1498
-#, fuzzy
-#| msgid "B"
 msgid "BL"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1499 src/class-utils.php:175
 msgid "Saint Barthélemy"
 msgstr "Saint-Barthélemy"
 
 #: languages/fields.php:1500
-#, fuzzy
-#| msgid "B"
 msgid "BM"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1501 src/class-utils.php:176
 msgid "Bermuda"
 msgstr "Bermuda"
 
 #: languages/fields.php:1502
-#, fuzzy
-#| msgid "B"
 msgid "BN"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1503 src/class-utils.php:177
 msgid "Brunei Darussalam"
 msgstr "Brunei"
 
 #: languages/fields.php:1504
-#, fuzzy
-#| msgid "B"
 msgid "BO"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1505 src/class-utils.php:178
 msgid "Bolivia (Plurinational State of)"
 msgstr "Bolivien"
 
 #: languages/fields.php:1506
-#, fuzzy
-#| msgid "B"
 msgid "BQ"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1507 src/class-utils.php:179
 msgid "Bonaire, Sint Eustatius and Saba"
 msgstr "Bonaire, St. Eustatius und Saba"
 
 #: languages/fields.php:1508
-#, fuzzy
-#| msgid "B"
 msgid "BR"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1509 src/class-utils.php:180
 msgid "Brazil"
 msgstr "Brasilien"
 
 #: languages/fields.php:1510
-#, fuzzy
-#| msgid "B"
 msgid "BS"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1511 src/class-utils.php:181
 msgid "Bahamas"
 msgstr "Bahamas"
 
 #: languages/fields.php:1512
-#, fuzzy
-#| msgid "B"
 msgid "BT"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1513 src/class-utils.php:182
 msgid "Bhutan"
 msgstr "Bhutan"
 
 #: languages/fields.php:1514
-#, fuzzy
-#| msgid "B"
 msgid "BV"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1515 src/class-utils.php:183
 msgid "Bouvet Island"
 msgstr "Bouvetinsel"
 
 #: languages/fields.php:1516
-#, fuzzy
-#| msgid "B"
 msgid "BW"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1517 src/class-utils.php:184
 msgid "Botswana"
 msgstr "Botswana"
 
 #: languages/fields.php:1518
-#, fuzzy
-#| msgid "B"
 msgid "BY"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1519 src/class-utils.php:185
 msgid "Belarus"
 msgstr "Weißrußland (Belarus)"
 
 #: languages/fields.php:1520
-#, fuzzy
-#| msgid "B"
 msgid "BZ"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1521 src/class-utils.php:186
 msgid "Belize"
 msgstr "Belize"
 
 #: languages/fields.php:1522
-#, fuzzy
-#| msgid "A"
 msgid "CA"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1523 src/class-utils.php:187
 msgid "Canada"
 msgstr "Kanada"
 
 #: languages/fields.php:1524
-#, fuzzy
-#| msgid "C"
 msgid "CC"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1525 src/class-utils.php:188
 msgid "Cocos (Keeling) Islands"
 msgstr "Kokosinseln (Keeling)"
 
 #: languages/fields.php:1526
-#, fuzzy
-#| msgid "C"
 msgid "CD"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1527 src/class-utils.php:189
 msgid "Congo, Democratic Republic of the"
 msgstr "Kongo"
 
 #: languages/fields.php:1528
-#, fuzzy
-#| msgid "C"
 msgid "CF"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1529 src/class-utils.php:190
 msgid "Central African Republic"
 msgstr "Zentralafrikanische Republik"
 
 #: languages/fields.php:1530
-#, fuzzy
-#| msgid "C"
 msgid "CG"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1531 src/class-utils.php:191
 msgid "Congo"
 msgstr "Kongo"
 
 #: languages/fields.php:1532
-#, fuzzy
-#| msgid "C"
 msgid "CH"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1533 src/class-utils.php:192
 msgid "Switzerland"
 msgstr "Schweiz"
 
 #: languages/fields.php:1534
-#, fuzzy
-#| msgid "C"
 msgid "CI"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1535 src/class-utils.php:193
 msgid "Côte d'Ivoire"
 msgstr "Elfenbeinküste"
 
 #: languages/fields.php:1536
-#, fuzzy
-#| msgid "C"
 msgid "CK"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1537 src/class-utils.php:194
 msgid "Cook Islands"
 msgstr "Cook-Inseln"
 
 #: languages/fields.php:1538
-#, fuzzy
-#| msgid "C"
 msgid "CL"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1539 src/class-utils.php:195
 msgid "Chile"
 msgstr "Chile"
 
 #: languages/fields.php:1540
-#, fuzzy
-#| msgid "C"
 msgid "CM"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1541 src/class-utils.php:196
 msgid "Cameroon"
 msgstr "Kamerun"
 
 #: languages/fields.php:1542
-#, fuzzy
-#| msgid "C"
 msgid "CN"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1543 src/class-utils.php:197
 msgid "China"
 msgstr "China"
 
 #: languages/fields.php:1544
-#, fuzzy
-#| msgid "C"
 msgid "CO"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1545 src/class-utils.php:198
 msgid "Colombia"
 msgstr "Kolumbien"
 
 #: languages/fields.php:1546
-#, fuzzy
-#| msgid "C"
 msgid "CR"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1547 src/class-utils.php:199
 msgid "Costa Rica"
 msgstr "Costa Rica"
 
 #: languages/fields.php:1548
-#, fuzzy
-#| msgid "C"
 msgid "CU"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1549 src/class-utils.php:200
 msgid "Cuba"
 msgstr "Kuba"
 
 #: languages/fields.php:1550
-#, fuzzy
-#| msgid "C"
 msgid "CV"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1551 src/class-utils.php:201
 msgid "Cabo Verde"
 msgstr "Kap Verde"
 
 #: languages/fields.php:1552
-#, fuzzy
-#| msgid "C"
 msgid "CW"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1553 src/class-utils.php:202
 msgid "Curaçao"
 msgstr "Curaçao"
 
 #: languages/fields.php:1554
-#, fuzzy
-#| msgid "C"
 msgid "CX"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1555 src/class-utils.php:203
 msgid "Christmas Island"
 msgstr "Weihnachtsinsel (Austr.Verwaltung)"
 
 #: languages/fields.php:1556
-#, fuzzy
-#| msgid "C"
 msgid "CY"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1557 src/class-utils.php:204
 msgid "Cyprus"
 msgstr "Zypern"
 
 #: languages/fields.php:1558
-#, fuzzy
-#| msgid "C"
 msgid "CZ"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1559 src/class-utils.php:205
 msgid "Czechia"
 msgstr "Tschechische Republik"
 
 #: languages/fields.php:1560
-#, fuzzy
-#| msgid "D"
 msgid "DJ"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1561 src/class-utils.php:206
 msgid "Djibouti"
 msgstr "Dschibuti"
 
 #: languages/fields.php:1562
-#, fuzzy
-#| msgid "D"
 msgid "DK"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1563 src/class-utils.php:207
 msgid "Denmark"
 msgstr "Dänemark"
 
 #: languages/fields.php:1564
-#, fuzzy
-#| msgid "D"
 msgid "DM"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1565 src/class-utils.php:208
 msgid "Dominica"
 msgstr "Dominica"
 
 #: languages/fields.php:1566
-#, fuzzy
-#| msgid "D"
 msgid "DO"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1567 src/class-utils.php:209
 msgid "Dominican Republic"
 msgstr "Dominikanische Republik"
 
 #: languages/fields.php:1568
-#, fuzzy
-#| msgid "D"
 msgid "DZ"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1569 src/class-utils.php:210
 msgid "Algeria"
 msgstr "Algerien"
 
 #: languages/fields.php:1570
-#, fuzzy
-#| msgid "C"
 msgid "EC"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1571 src/class-utils.php:211
 msgid "Ecuador"
@@ -5991,20 +5625,16 @@ msgid "France"
 msgstr "Frankreich"
 
 #: languages/fields.php:1596
-#, fuzzy
-#| msgid "A"
 msgid "GA"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1597 src/class-utils.php:224
 msgid "Gabon"
 msgstr "Gabun"
 
 #: languages/fields.php:1598
-#, fuzzy
-#| msgid "D"
 msgid "GD"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1599 src/class-utils.php:225
 msgid "Grenada"
@@ -6051,10 +5681,8 @@ msgid "Gibraltar"
 msgstr "Gibraltar"
 
 #: languages/fields.php:1610
-#, fuzzy
-#| msgid "L"
 msgid "GL"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1611 src/class-utils.php:231
 msgid "Greenland"
@@ -6077,10 +5705,8 @@ msgid "Guinea"
 msgstr "Guinea"
 
 #: languages/fields.php:1616
-#, fuzzy
-#| msgid "GRP"
 msgid "GP"
-msgstr "GFK"
+msgstr ""
 
 #: languages/fields.php:1617 src/class-utils.php:234
 msgid "Guadeloupe"
@@ -6095,20 +5721,16 @@ msgid "Equatorial Guinea"
 msgstr "Papua-Neuguinea"
 
 #: languages/fields.php:1620
-#, fuzzy
-#| msgid "GRP"
 msgid "GR"
-msgstr "GFK"
+msgstr ""
 
 #: languages/fields.php:1621 src/class-utils.php:236
 msgid "Greece"
 msgstr "Griechenland"
 
 #: languages/fields.php:1622
-#, fuzzy
-#| msgid "GPS"
 msgid "GS"
-msgstr "GPS"
+msgstr ""
 
 #: languages/fields.php:1623 src/class-utils.php:237
 msgid "South Georgia and the South Sandwich Islands"
@@ -6163,10 +5785,8 @@ msgid "Heard Island and McDonald Islands"
 msgstr "Heard und Mc Donald Inseln (unter Austr.Verw.)"
 
 #: languages/fields.php:1636
-#, fuzzy
-#| msgid "HIN"
 msgid "HN"
-msgstr "HIN"
+msgstr ""
 
 #: languages/fields.php:1637 src/class-utils.php:244
 msgid "Honduras"
@@ -6209,10 +5829,8 @@ msgid "Ireland"
 msgstr "Irland"
 
 #: languages/fields.php:1648
-#, fuzzy
-#| msgid "L"
 msgid "IL"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1649 src/class-utils.php:250
 msgid "Israel"
@@ -6227,10 +5845,8 @@ msgid "Isle of Man"
 msgstr "Isle of Man"
 
 #: languages/fields.php:1652
-#, fuzzy
-#| msgid "HIN"
 msgid "IN"
-msgstr "HIN"
+msgstr ""
 
 #: languages/fields.php:1653 src/class-utils.php:252
 msgid "India"
@@ -6261,10 +5877,8 @@ msgid "Iran (Islamic Republic of)"
 msgstr "Iran"
 
 #: languages/fields.php:1660
-#, fuzzy
-#| msgid "IPS"
 msgid "IS"
-msgstr "IPS"
+msgstr ""
 
 #: languages/fields.php:1661 src/class-utils.php:256
 msgid "Iceland"
@@ -6399,140 +6013,112 @@ msgid "Kazakhstan"
 msgstr "Kasachstan"
 
 #: languages/fields.php:1694
-#, fuzzy
-#| msgid "LOA"
 msgid "LA"
-msgstr "L.ü.A."
+msgstr ""
 
 #: languages/fields.php:1695 src/class-utils.php:273
 msgid "Lao People's Democratic Republic"
 msgstr "Laos"
 
 #: languages/fields.php:1696
-#, fuzzy
-#| msgid "B"
 msgid "LB"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1697 src/class-utils.php:274
 msgid "Lebanon"
 msgstr "Libanon"
 
 #: languages/fields.php:1698
-#, fuzzy
-#| msgid "C"
 msgid "LC"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1699 src/class-utils.php:275
 msgid "Saint Lucia"
 msgstr "Saint Lucia"
 
 #: languages/fields.php:1700
-#, fuzzy
-#| msgid "L"
 msgid "LI"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1701 src/class-utils.php:276
 msgid "Liechtenstein"
 msgstr "Liechtenstein"
 
 #: languages/fields.php:1702
-#, fuzzy
-#| msgid "L"
 msgid "LK"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1703 src/class-utils.php:277
 msgid "Sri Lanka"
 msgstr "Sri Lanka"
 
 #: languages/fields.php:1704
-#, fuzzy
-#| msgid "L"
 msgid "LR"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1705 src/class-utils.php:278
 msgid "Liberia"
 msgstr "Liberiern"
 
 #: languages/fields.php:1706
-#, fuzzy
-#| msgid "L"
 msgid "LS"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1707 src/class-utils.php:279
 msgid "Lesotho"
 msgstr "Lesotho"
 
 #: languages/fields.php:1708
-#, fuzzy
-#| msgid "L"
 msgid "LT"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1709 src/class-utils.php:280
 msgid "Lithuania"
 msgstr "Litauen"
 
 #: languages/fields.php:1710
-#, fuzzy
-#| msgid "L"
 msgid "LU"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1711 src/class-utils.php:281
 msgid "Luxembourg"
 msgstr "Luxemburg"
 
 #: languages/fields.php:1712
-#, fuzzy
-#| msgid "L"
 msgid "LV"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1713 src/class-utils.php:282
 msgid "Latvia"
 msgstr "Lettland"
 
 #: languages/fields.php:1714
-#, fuzzy
-#| msgid "L"
 msgid "LY"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1715 src/class-utils.php:283
 msgid "Libya"
 msgstr "Libysch-Arabische Dschamahirija"
 
 #: languages/fields.php:1716
-#, fuzzy
-#| msgid "A"
 msgid "MA"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1717 src/class-utils.php:284
 msgid "Morocco"
 msgstr "Marokko"
 
 #: languages/fields.php:1718
-#, fuzzy
-#| msgid "C"
 msgid "MC"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1719 src/class-utils.php:285
 msgid "Monaco"
 msgstr "Monaco"
 
 #: languages/fields.php:1720
-#, fuzzy
-#| msgid "D"
 msgid "MD"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1721 src/class-utils.php:286
 msgid "Moldova, Republic of"
@@ -6579,10 +6165,8 @@ msgid "North Macedonia"
 msgstr "Mazedonien"
 
 #: languages/fields.php:1732
-#, fuzzy
-#| msgid "L"
 msgid "ML"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1733 src/class-utils.php:292
 msgid "Mali"
@@ -6701,20 +6285,16 @@ msgid "Mozambique"
 msgstr "Mosambik"
 
 #: languages/fields.php:1762
-#, fuzzy
-#| msgid "A"
 msgid "NA"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1763 src/class-utils.php:307
 msgid "Namibia"
 msgstr "Namibia"
 
 #: languages/fields.php:1764
-#, fuzzy
-#| msgid "C"
 msgid "NC"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1765 src/class-utils.php:308
 msgid "New Caledonia"
@@ -6753,10 +6333,8 @@ msgid "Nicaragua"
 msgstr "Nicaragua"
 
 #: languages/fields.php:1774
-#, fuzzy
-#| msgid "L"
 msgid "NL"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1775 src/class-utils.php:313
 msgid "Netherlands"
@@ -6807,11 +6385,8 @@ msgid "Oman"
 msgstr "Oman"
 
 #: languages/fields.php:1788
-#, fuzzy
-#| msgctxt "app"
-#| msgid "POA"
 msgid "PA"
-msgstr "Preis auf Anfrage"
+msgstr ""
 
 #: languages/fields.php:1789 src/class-utils.php:320
 msgid "Panama"
@@ -6858,10 +6433,8 @@ msgid "Pakistan"
 msgstr "Pakistan"
 
 #: languages/fields.php:1800
-#, fuzzy
-#| msgid "L"
 msgid "PL"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1801 src/class-utils.php:326
 msgid "Poland"
@@ -6892,10 +6465,8 @@ msgid "Puerto Rico"
 msgstr "Puerto Rico"
 
 #: languages/fields.php:1808
-#, fuzzy
-#| msgid "IPS"
 msgid "PS"
-msgstr "IPS"
+msgstr ""
 
 #: languages/fields.php:1809 src/class-utils.php:330
 msgid "Palestine, State of"
@@ -6926,10 +6497,8 @@ msgid "Paraguay"
 msgstr "Paraguay"
 
 #: languages/fields.php:1816
-#, fuzzy
-#| msgid "A"
 msgid "QA"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1817 src/class-utils.php:334
 msgid "Qatar"
@@ -6976,40 +6545,32 @@ msgid "Rwanda"
 msgstr "Ruanda"
 
 #: languages/fields.php:1828
-#, fuzzy
-#| msgid "A"
 msgid "SA"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1829 src/class-utils.php:340
 msgid "Saudi Arabia"
 msgstr "Saudi-Arabien"
 
 #: languages/fields.php:1830
-#, fuzzy
-#| msgid "B"
 msgid "SB"
-msgstr "B"
+msgstr ""
 
 #: languages/fields.php:1831 src/class-utils.php:341
 msgid "Solomon Islands"
 msgstr "Salomonen"
 
 #: languages/fields.php:1832
-#, fuzzy
-#| msgid "C"
 msgid "SC"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1833 src/class-utils.php:342
 msgid "Seychelles"
 msgstr "Seychellen"
 
 #: languages/fields.php:1834
-#, fuzzy
-#| msgid "D"
 msgid "SD"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1835 src/class-utils.php:343
 msgid "Sudan"
@@ -7064,10 +6625,8 @@ msgid "Slovakia"
 msgstr "Slowakai"
 
 #: languages/fields.php:1848
-#, fuzzy
-#| msgid "L"
 msgid "SL"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1849 src/class-utils.php:350
 msgid "Sierra Leone"
@@ -7154,20 +6713,16 @@ msgid "Eswatini"
 msgstr "Eswatini"
 
 #: languages/fields.php:1870
-#, fuzzy
-#| msgid "C"
 msgid "TC"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1871 src/class-utils.php:361
 msgid "Turks and Caicos Islands"
 msgstr "Turks- und Caicosinseln"
 
 #: languages/fields.php:1872
-#, fuzzy
-#| msgid "D"
 msgid "TD"
-msgstr "D"
+msgstr ""
 
 #: languages/fields.php:1873 src/class-utils.php:362
 msgid "Chad"
@@ -7214,10 +6769,8 @@ msgid "Tokelau"
 msgstr "Tokelau"
 
 #: languages/fields.php:1884
-#, fuzzy
-#| msgid "L"
 msgid "TL"
-msgstr "L"
+msgstr ""
 
 #: languages/fields.php:1885 src/class-utils.php:368
 msgid "Timor-Leste"
@@ -7284,10 +6837,8 @@ msgid "Tanzania, United Republic of"
 msgstr "Tansania"
 
 #: languages/fields.php:1902
-#, fuzzy
-#| msgid "A"
 msgid "UA"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1903 src/class-utils.php:377
 msgid "Ukraine"
@@ -7334,20 +6885,16 @@ msgid "Uzbekistan"
 msgstr "Uzbekistan"
 
 #: languages/fields.php:1914
-#, fuzzy
-#| msgid "VAT"
 msgid "VA"
-msgstr "MwSt"
+msgstr ""
 
 #: languages/fields.php:1915 src/class-utils.php:383
 msgid "Holy See"
 msgstr "Heiliger Stuhl"
 
 #: languages/fields.php:1916
-#, fuzzy
-#| msgid "C"
 msgid "VC"
-msgstr "C"
+msgstr ""
 
 #: languages/fields.php:1917 src/class-utils.php:384
 msgid "Saint Vincent and the Grenadines"
@@ -7426,10 +6973,8 @@ msgid "Mayotte"
 msgstr "Mayotte"
 
 #: languages/fields.php:1936
-#, fuzzy
-#| msgid "A"
 msgid "ZA"
-msgstr "A"
+msgstr ""
 
 #: languages/fields.php:1937 src/class-utils.php:394
 msgid "South Africa"
@@ -7476,18 +7021,14 @@ msgid "aluminum"
 msgstr "aluminium"
 
 #: languages/fields.php:1952
-#, fuzzy
-#| msgid "Concrete"
 msgid "concrete"
-msgstr "Beton"
+msgstr "beton"
 
 #: languages/fields.php:1953
 msgid "Concrete"
 msgstr "Beton"
 
 #: languages/fields.php:1954
-#, fuzzy
-#| msgid "Rubber"
 msgid "rubber"
 msgstr "Gummi"
 
@@ -7496,10 +7037,8 @@ msgid "Rubber"
 msgstr "Gummi"
 
 #: languages/fields.php:1956
-#, fuzzy
-#| msgid "Carbonfiber"
 msgid "carbonfiber"
-msgstr "Carbonfaser"
+msgstr "carbonfaser"
 
 #: languages/fields.php:1957
 msgid "Carbonfiber"
@@ -7514,94 +7053,343 @@ msgid "PVC Fabric"
 msgstr "PVC-Gewebe"
 
 #: languages/fields.php:1960
-#, fuzzy
-#| msgid "Hypalon"
 msgid "hypalon"
-msgstr "Hypalon"
+msgstr "hypalon"
 
 #: languages/fields.php:1961
 msgid "Hypalon"
 msgstr "Hypalon"
 
 #: languages/fields.php:1962
-#, fuzzy
-#| msgid "Hypalon Neoprene"
 msgid "hypalon-neoprene"
-msgstr "Hypalon"
+msgstr ""
 
 #: languages/fields.php:1963
 msgid "Hypalon Neoprene"
 msgstr "Hypalon"
 
 #: languages/fields.php:1964
-#, fuzzy
-#| msgid "Neoprene"
 msgid "neoprene"
-msgstr "Neopren"
+msgstr "neopren"
 
 #: languages/fields.php:1965
 msgid "Neoprene"
 msgstr "Neopren"
 
 #: languages/fields.php:1966
-#, fuzzy
-#| msgid "Polyurethane Neoprene"
 msgid "polyurethane-neoprene"
-msgstr "Polyurethan Neopren"
+msgstr "polyurethan-neopren"
 
 #: languages/fields.php:1967
 msgid "Polyurethane Neoprene"
 msgstr "Polyurethan Neopren"
 
 #: languages/fields.php:1968
-#, fuzzy
-#| msgid "Nylon"
 msgid "nylon"
-msgstr "Nylon"
+msgstr "nylon"
 
 #: languages/fields.php:1969
 msgid "Nylon"
 msgstr "Nylon"
 
 #: languages/fields.php:1970
-#, fuzzy
-#| msgid "Polyethylene"
 msgid "polyethylene"
-msgstr "Polyethylen"
+msgstr "polyethylen"
 
 #: languages/fields.php:1971
 msgid "Polyethylene"
 msgstr "Polyethylen"
 
 #: languages/fields.php:1972
-#, fuzzy
-#| msgid "Duratex"
 msgid "duratex"
-msgstr "Duratex"
+msgstr ""
 
 #: languages/fields.php:1973
 msgid "Duratex"
 msgstr "Duratex"
 
 #: languages/fields.php:1974
-#, fuzzy
-#| msgid "Decitex"
 msgid "decitex"
-msgstr "Decitex"
+msgstr "decitex"
 
 #: languages/fields.php:1975
 msgid "Decitex"
 msgstr "Decitex"
 
 #: languages/fields.php:1976
-#, fuzzy
-#| msgid "Strongan Duotex"
 msgid "strongan-duotex"
-msgstr "Strongan Duotex"
+msgstr "strongan-duotex"
 
 #: languages/fields.php:1977
-msgid "Strongan Duotex"
-msgstr "Strongan Duotex"
+msgid "Survey Email"
+msgstr ""
+
+#: languages/fields.php:1978
+msgid "Survey Link"
+msgstr ""
+
+#: languages/fields.php:1979
+msgid "Privacy Notice"
+msgstr ""
+
+#: languages/fields.php:1980
+msgid "Your Import Has Finished"
+msgstr ""
+
+#: languages/fields.php:1981
+msgid "Your import has just finished. Here are the results:"
+msgstr ""
+
+#: languages/fields.php:1982
+msgid "Date"
+msgstr "Datum"
+
+#: languages/fields.php:1983
+msgid "Source"
+msgstr "Quelle"
+
+#: languages/fields.php:1984
+msgid "Published"
+msgstr "Veröffentlicht"
+
+#: languages/fields.php:1985
+msgid "Drafts"
+msgstr "Entwürfe"
+
+#: languages/fields.php:1986
+msgid ""
+"The following listings have some issues. They have been saved as drafts. "
+"Please review them and amend any issues before they can be published."
+msgstr ""
+
+#: languages/fields.php:1987
+msgid "If you have any questions, simply reply to this email!"
+msgstr ""
+"Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach auf "
+"diese E-Mail!"
+
+#: languages/fields.php:1988
+msgid "Welcome back! Please signin to continue."
+msgstr "Willkommen zurück! Bitte melden Sie sich an, um fortzufahren."
+
+#: languages/fields.php:1989
+msgid "Forgot password?"
+msgstr "Haben Sie Ihr Passwort vergessen?"
+
+#: languages/fields.php:1990
+msgid "Sign In"
+msgstr "Einloggen"
+
+#: languages/fields.php:1991
+msgid "Recover Password"
+msgstr "Passwort erstellen"
+
+#: languages/fields.php:1992
+msgid "Repeat Password"
+msgstr "Passwort zurücksetzen"
+
+#: languages/fields.php:1993
+msgid "Please, type your email below"
+msgstr "Bitte geben Sie Ihre E-Mail-Adresse unten ein"
+
+#: languages/fields.php:1994
+msgid "Go to login"
+msgstr "Zur Anmeldung gehen"
+
+#: languages/fields.php:1995
+msgid "Account activation"
+msgstr "Konto-Aktivierung"
+
+#: languages/fields.php:1996
+msgid "Type your password"
+msgstr "Geben Sie Ihr Passwort ein"
+
+#: languages/fields.php:1997
+msgid "Activate account"
+msgstr "Konto aktivieren"
+
+#: languages/fields.php:1998
+msgid "Welcome to Dealers League Marine!"
+msgstr "Willkommen bei Dealers League Marine!"
+
+#: languages/fields.php:1999
+msgid "To help you get started here are a few guides you might find useful"
+msgstr ""
+"Um Ihnen den Einstieg zu erleichtern, finden Sie hier einige Leitfäden, die "
+"Ihnen nützlich sein könnten"
+
+#: languages/fields.php:2000
+msgid "How to manage your account"
+msgstr "Wie Sie Ihr Konto verwalten"
+
+#: languages/fields.php:2001
+msgid "How to create a new listing"
+msgstr "Wie man einen neuen Eintrag erstellt"
+
+#: languages/fields.php:2002
+msgid "How to publish a new listing to your website"
+msgstr "Wie Sie einen neuen Eintrag auf Ihrer Webseite veröffentlichen"
+
+#: languages/fields.php:2003
+msgid "If you need help with anything else, simply reply to this email!"
+msgstr ""
+"Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach auf "
+"diese E-Mail!"
+
+#: languages/fields.php:2004
+msgid "Many Thanks"
+msgstr "Vielen Dank"
+
+#: languages/fields.php:2005
+msgid "Operations Manager"
+msgstr "Betriebsleiter"
+
+#: languages/fields.php:2006
+msgid "At least 6 characters long"
+msgstr ""
+
+#: languages/fields.php:2007
+msgid "One lowercase character"
+msgstr "Gebraucht (in Charter gewesen)"
+
+#: languages/fields.php:2008
+msgid "One uppercase character"
+msgstr ""
+
+#: languages/fields.php:2009
+msgid "One number or symbol"
+msgstr "Anzahl der Ergebnisse ausblenden"
+
+#: languages/fields.php:2010
+msgid ""
+"In addition to only showing boats if they are the same brand, turning this "
+"on will only show related boats if they are a similar length and price"
+msgstr ""
+
+#: languages/fields.php:2011
+msgid ""
+"Add CSS here that you want added to the boat archive page and single boat "
+"pages. For example, to hide the theme header or change button color."
+msgstr ""
+"Fügen Sie hier CSS hinzu, die Sie zur Bootsarchivseite und zu den einzelnen "
+"Bootsseiten hinzufügen möchten. Zum Beispiel"
+
+#: languages/fields.php:2012
+msgid "Privacy Link URL"
+msgstr "Datenschutz-Link"
+
+#: languages/fields.php:2013
+msgid "Add Location"
+msgstr "Standort"
+
+#: languages/fields.php:2014
+msgid "Location Data"
+msgstr "Standort-ID"
+
+#: languages/fields.php:2015
+msgid "Location name"
+msgstr "Standort"
+
+#: languages/fields.php:2016
+msgid "Main location"
+msgstr "Hauptsitz"
+
+#: languages/fields.php:2017
+msgid "Invoicing location"
+msgstr "Details zur Rechnungsstellung"
+
+#: languages/fields.php:2018
+msgid "Address (Type and press enter to validate)"
+msgstr "Bitte machen Sie eine Eingabe um hier zu suchen"
+
+#: languages/fields.php:2019
+msgid "Info"
+msgstr ""
+
+#: languages/fields.php:2020
+msgid "Enter the name"
+msgstr "Geben Sie den Bootsnamen ein"
+
+#: languages/fields.php:2021
+msgid "Your Scheduled Listings Have Been Processed"
+msgstr "Y"
+
+#: languages/fields.php:2022
+msgid "Here are the results:"
+msgstr "Hier die Ergebnisse:"
+
+#: languages/fields.php:2023
+msgid "Sent To Website"
+msgstr "Webseite"
+
+#: languages/fields.php:2024
+msgid "Not Published"
+msgstr "Veröffentlicht"
+
+#: languages/fields.php:2025
+msgid ""
+"The following listings have some issues. Please review them and amend any "
+"issues before they can be published."
+msgstr "T."
+
+#: languages/fields.php:2026
+msgid ""
+"If provided used in correspondence and admin dashboard, if not provided, "
+"company will be used"
+msgstr ""
+"Falls vorhanden, in der Korrespondenz und im Verwaltungs-Dashboard verwendet"
+
+#: languages/fields.php:2027
+msgid "Used for invoices and contracts, etc"
+msgstr "Wird für Rechnungen und Verträge verwendet"
+
+#: languages/fields.php:2028
+msgid "Marketing"
+msgstr ""
+
+#: languages/fields.php:2029
+msgid "Listings"
+msgstr "Auflistungen"
+
+#: languages/fields.php:2030
+msgid "Finance"
+msgstr "Finanzen"
+
+#: languages/fields.php:2031
+msgid "Productivity"
+msgstr ""
+
+#: languages/fields.php:2033
+msgid "Survey"
+msgstr "Gutachten"
+
+#: languages/fields.php:2034
+msgid "tanks"
+msgstr "tanks"
+
+#: languages/fields.php:2036
+msgid "TANKS"
+msgstr "TANKS"
+
+#: languages/fields.php:2037
+msgid "ENGINES"
+msgstr ""
+
+#: languages/fields.php:2038
+msgid "TECHNICS"
+msgstr "Technik"
+
+#: languages/fields.php:2039
+msgid "Volume"
+msgstr "Volumen"
+
+#: languages/fields.php:2040
+msgid "Engines"
+msgstr "Motoren"
+
+#: languages/fields.php:2041
+msgid "Technic"
+msgstr "Technik"
 
 #: src/class-boat-post-type.php:21 src/class-boat-post-type.php:23
 msgid "Boats"
@@ -7627,7 +7415,7 @@ msgstr "Boot ansehen"
 msgid "Edit Boat"
 msgstr "Boot hinzufügen"
 
-#: src/class-boat-post-type.php:29 src/class-dealers-league-marine.php:725
+#: src/class-boat-post-type.php:29 src/class-dealers-league-marine.php:735
 msgid "View Boat"
 msgstr "Boot ansehen"
 
@@ -7655,80 +7443,80 @@ msgstr "Keine Boote gefunden."
 msgid "Enter the Boat name"
 msgstr "Geben Sie den Bootsnamen ein"
 
-#: src/class-dealers-league-marine.php:380
+#: src/class-dealers-league-marine.php:390
 msgid "engines"
 msgstr "motoren"
 
-#: src/class-dealers-league-marine.php:436
+#: src/class-dealers-league-marine.php:446
 msgid "listings"
 msgstr "Auflistungen"
 
-#: src/class-dealers-league-marine.php:438
+#: src/class-dealers-league-marine.php:448
 msgid "No listings found"
 msgstr "Keine Auflistungen gefunden"
 
-#: src/class-dealers-league-marine.php:654
-#: src/class-dealers-league-marine.php:751
+#: src/class-dealers-league-marine.php:664
+#: src/class-dealers-league-marine.php:761
 msgid "Missing data"
 msgstr "Fehlende Daten"
 
-#: src/class-dealers-league-marine.php:684
+#: src/class-dealers-league-marine.php:694
 msgid "Please complete recaptcha"
 msgstr "Bitte vervollständigen Sie recaptcha"
 
-#: src/class-dealers-league-marine.php:687
+#: src/class-dealers-league-marine.php:697
 msgid "The name is required"
 msgstr "Der Name ist erforderlich"
 
-#: src/class-dealers-league-marine.php:690
+#: src/class-dealers-league-marine.php:700
 msgid "The email is required"
 msgstr "Die E-Mail ist erforderlich"
 
-#: src/class-dealers-league-marine.php:692
+#: src/class-dealers-league-marine.php:702
 msgid "The email is not valid"
 msgstr "E-Mail ist ungültig"
 
-#: src/class-dealers-league-marine.php:695
+#: src/class-dealers-league-marine.php:705
 msgid "The phone is required"
 msgstr "Benutzerkonto ist erforderlich"
 
-#: src/class-dealers-league-marine.php:698
+#: src/class-dealers-league-marine.php:708
 msgid "The subject is required"
 msgstr "Benutzerkonto ist erforderlich"
 
-#: src/class-dealers-league-marine.php:701
+#: src/class-dealers-league-marine.php:711
 msgid "The message is required"
 msgstr "Die Nachricht ist erforderlich"
 
-#: src/class-dealers-league-marine.php:712
+#: src/class-dealers-league-marine.php:722
 msgid "New Survey Request from"
 msgstr "Neue Gutachten Anfrage von"
 
-#: src/class-dealers-league-marine.php:713
+#: src/class-dealers-league-marine.php:723
 msgid "New Survey Request"
 msgstr "Neue Gutachten Anfrage"
 
-#: src/class-dealers-league-marine.php:716
+#: src/class-dealers-league-marine.php:726
 msgid "New Boat Enquiry"
 msgstr "Neue Bootsanfrage"
 
-#: src/class-dealers-league-marine.php:717
+#: src/class-dealers-league-marine.php:727
 msgid "New Enquiry"
 msgstr "Neue Anfrage"
 
-#: src/class-dealers-league-marine.php:741
+#: src/class-dealers-league-marine.php:751
 msgid "Thank you for contacting us, we will be in touch soon."
 msgstr "Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen."
 
-#: src/class-dealers-league-marine.php:743
+#: src/class-dealers-league-marine.php:753
 msgid "Sorry there was an error. Message was not sent."
 msgstr "Es gab einen Fehler. Ihre Nachricht wurde nicht gesendet."
 
-#: src/class-listing-shortcode.php:229
+#: src/class-listing-shortcode.php:230
 msgid "Previous"
 msgstr "Vorherige"
 
-#: src/class-listing-shortcode.php:251
+#: src/class-listing-shortcode.php:252
 msgid "Next"
 msgstr "Nächste"
 
@@ -7766,7 +7554,7 @@ msgstr "Auflistungen aktualisieren"
 
 #: src/class-settings-page.php:85
 msgid "View listings"
-msgstr "Mehr Information"
+msgstr "Inserate ansehen"
 
 #: src/class-settings-page.php:86
 msgid ""
@@ -7786,10 +7574,14 @@ msgstr "Dealers League Marine"
 
 #: src/class-utils.php:409 src/class-utils.php:410 src/class-utils.php:411
 #: src/class-utils.php:412 src/class-utils.php:413 src/class-utils.php:414
-#: src/class-utils.php:421 src/class-utils.php:426 src/class-utils.php:427
-#: src/class-utils.php:428 src/class-utils.php:433 src/class-utils.php:434
+#: src/class-utils.php:421 src/class-utils.php:427 src/class-utils.php:428
+#: src/class-utils.php:429 src/class-utils.php:434 src/class-utils.php:435
 msgid "m"
 msgstr "m"
+
+#: src/class-utils.php:417 src/class-utils.php:425 src/class-utils.php:426
+msgid "kmh"
+msgstr "km/h"
 
 #: src/class-utils.php:418
 msgid "lh"
@@ -7811,25 +7603,25 @@ msgstr "L"
 msgid "cm3"
 msgstr "cm³"
 
-#: src/class-utils.php:425
-msgid "kmh"
-msgstr "km/h"
-
-#: src/class-utils.php:432
+#: src/class-utils.php:433
 msgid "m2"
 msgstr "m²"
 
-#: src/class-utils.php:450
+#: src/class-utils.php:451
 msgid "Ocean"
 msgstr "Hochsee"
 
-#: src/class-utils.php:452
+#: src/class-utils.php:453
 msgid "Inshore"
 msgstr "Küstennahne Gewässer"
 
-#: src/class-utils.php:453
+#: src/class-utils.php:454
 msgid "Sheltered waters"
 msgstr "Geschützte Gewässer"
+
+#: src/class-utils.php:649
+msgid "volume"
+msgstr ""
 
 #: templates/content-archive-listing.php:10
 msgid "Sort by:"
@@ -7857,7 +7649,7 @@ msgid "Highest Price First"
 msgstr "Höchster Preis zuerst"
 
 #: templates/content-archive-listing.php:66
-#: templates/content-single-listing.php:397
+#: templates/content-single-listing.php:398
 msgid "Draft"
 msgstr "Tiefgang"
 
@@ -7867,8 +7659,8 @@ msgid "Select Manufacturer"
 msgstr "Hersteller auswählen"
 
 #: templates/content-archive-search.php:32
-#: templates/content-single-listing.php:362
-#: templates/content-single-listing.php:533
+#: templates/content-single-listing.php:363
+#: templates/content-single-listing.php:534
 msgid "Category"
 msgstr "Kategorie"
 
@@ -7934,134 +7726,134 @@ msgstr "Alle Farben"
 msgid "I have read and agreed to the %sPrivacy Policy%s"
 msgstr "Ich habe die %sDatenschutzerklärung%s gelesen und verstanden"
 
-#: templates/content-single-listing.php:197
+#: templates/content-single-listing.php:198
 msgid "EU taxed (document existent)"
 msgstr "EU-versteuert (Beleg)"
 
-#: templates/content-single-listing.php:199
+#: templates/content-single-listing.php:200
 msgid "VAT Paid"
 msgstr "MwSt. bezahlt"
 
-#: templates/content-single-listing.php:206
+#: templates/content-single-listing.php:207
 msgid "VAT Stated Separatly"
 msgstr "MwSt Separat ausgewiesen"
 
-#: templates/content-single-listing.php:217
+#: templates/content-single-listing.php:218
 msgid "Share on Facebook"
 msgstr "Auf Facebook teilen"
 
-#: templates/content-single-listing.php:224
+#: templates/content-single-listing.php:225
 msgid "Share on Twitter"
 msgstr "Auf Twitter teilen"
 
-#: templates/content-single-listing.php:228
+#: templates/content-single-listing.php:229
 msgid "Thought you might like this"
 msgstr "Ich denke, daß dies von Interesse sein dürfte"
 
-#: templates/content-single-listing.php:230
+#: templates/content-single-listing.php:231
 msgid "Hi, Thought this might interest you"
 msgstr "Hi, das dürfte Sie interessieren"
 
-#: templates/content-single-listing.php:232
+#: templates/content-single-listing.php:233
 msgid "Share via email"
 msgstr "Per E-Mail teilen"
 
-#: templates/content-single-listing.php:236
+#: templates/content-single-listing.php:237
 msgid "Check out this boat"
 msgstr "Schauen Sie dieses Boot an"
 
-#: templates/content-single-listing.php:238
+#: templates/content-single-listing.php:239
 msgid "Share via WhatsApp"
 msgstr "Auf WhatsApp teilen"
 
-#: templates/content-single-listing.php:243
+#: templates/content-single-listing.php:244
 msgid "Print this page"
 msgstr "Diese Seite ausdrucken"
 
-#: templates/content-single-listing.php:252
-#: templates/content-single-listing.php:599
+#: templates/content-single-listing.php:253
+#: templates/content-single-listing.php:600
 msgid "Enquiry"
 msgstr "Anfrage"
 
-#: templates/content-single-listing.php:255
+#: templates/content-single-listing.php:256
 msgid "Watch Video"
 msgstr "Video ansehen"
 
-#: templates/content-single-listing.php:258
-#: templates/content-single-listing.php:636
+#: templates/content-single-listing.php:259
+#: templates/content-single-listing.php:637
 msgid "Request Survey"
 msgstr "Gutachtenanfrage"
 
-#: templates/content-single-listing.php:290
-#: templates/content-single-listing.php:312
+#: templates/content-single-listing.php:291
+#: templates/content-single-listing.php:313
 msgid "Click here to watch the video:"
 msgstr "Klicken Sie hier, um das Video anzusehen:"
 
-#: templates/content-single-listing.php:337
+#: templates/content-single-listing.php:338
 msgid "General Details"
 msgstr "Generelle Information"
 
-#: templates/content-single-listing.php:510
+#: templates/content-single-listing.php:511
 msgid "Ballast"
 msgstr "Ballast"
 
-#: templates/content-single-listing.php:532
+#: templates/content-single-listing.php:533
 msgid "VAT"
 msgstr "MwSt"
 
-#: templates/content-single-listing.php:610
+#: templates/content-single-listing.php:611
 msgid "Name"
 msgstr "Name"
 
-#: templates/content-single-listing.php:611
+#: templates/content-single-listing.php:612
 msgid "Your Name"
 msgstr "Ihr Name"
 
-#: templates/content-single-listing.php:616
+#: templates/content-single-listing.php:617
 msgid "Email"
 msgstr "E-Mail"
 
-#: templates/content-single-listing.php:617
+#: templates/content-single-listing.php:618
 msgid "Your Email"
 msgstr "Ihre E-Mail-Adresse"
 
-#: templates/content-single-listing.php:622
+#: templates/content-single-listing.php:623
 msgid "Phone"
 msgstr "Telefon"
 
-#: templates/content-single-listing.php:623
+#: templates/content-single-listing.php:624
 msgid "Your Phone"
 msgstr "Ihre Telefonnummer"
 
-#: templates/content-single-listing.php:628
+#: templates/content-single-listing.php:629
 msgid "Subject"
 msgstr "Grund Ihres Kontaktes"
 
-#: templates/content-single-listing.php:630
+#: templates/content-single-listing.php:631
 msgid "Choose an option"
 msgstr "Wählen Sie eine Option aus"
 
-#: templates/content-single-listing.php:631
+#: templates/content-single-listing.php:632
 msgid "Viewing"
 msgstr "Besichtigung"
 
-#: templates/content-single-listing.php:632
+#: templates/content-single-listing.php:633
 msgid "Availability"
 msgstr "Verfügbarkeit"
 
-#: templates/content-single-listing.php:633
+#: templates/content-single-listing.php:634
 msgid "Pricing"
 msgstr "Preis"
 
-#: templates/content-single-listing.php:634
+#: templates/content-single-listing.php:635
 msgid "Further Information"
 msgstr "Weitere Information"
 
-#: templates/content-single-listing.php:645
+#: templates/content-single-listing.php:646
 msgid "Message"
 msgstr "Nachricht"
 
-#: templates/content-single-listing.php:667
+#: templates/content-single-listing.php:668
 msgid "Send"
 msgstr "Senden"
 
@@ -8071,170 +7863,13 @@ msgstr "Wie neu"
 
 #: templates/item-listing-list.php:41
 msgid "View Listing"
-msgstr "Mehr Information"
+msgstr "Auflistung ansehen"
+
+#~ msgid "Strongan Duotex"
+#~ msgstr "Strongan Duotex"
 
 #~ msgid "Flags"
 #~ msgstr "Flaggen"
-
-#~ msgid "Date"
-#~ msgstr "Datum"
-
-#~ msgid "Source"
-#~ msgstr "Quelle"
-
-#~ msgid "Published"
-#~ msgstr "Veröffentlicht"
-
-#~ msgid "Drafts"
-#~ msgstr "Entwürfe"
-
-#~ msgid "If you have any questions, simply reply to this email!"
-#~ msgstr ""
-#~ "Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach "
-#~ "auf diese E-Mail!"
-
-#~ msgid "Welcome back! Please signin to continue."
-#~ msgstr "Willkommen zurück! Bitte melden Sie sich an, um fortzufahren."
-
-#~ msgid "Forgot password?"
-#~ msgstr "Haben Sie Ihr Passwort vergessen?"
-
-#~ msgid "Sign In"
-#~ msgstr "Einloggen"
-
-#~ msgid "Recover Password"
-#~ msgstr "Passwort erstellen"
-
-#~ msgid "Repeat Password"
-#~ msgstr "Passwort zurücksetzen"
-
-#~ msgid "Please, type your email below"
-#~ msgstr "Bitte geben Sie Ihre E-Mail-Adresse unten ein"
-
-#~ msgid "Go to login"
-#~ msgstr "Zur Anmeldung gehen"
-
-#~ msgid "Account activation"
-#~ msgstr "Konto-Aktivierung"
-
-#~ msgid "Type your password"
-#~ msgstr "Geben Sie Ihr Passwort ein"
-
-#~ msgid "Activate account"
-#~ msgstr "Konto aktivieren"
-
-#~ msgid "Welcome to Dealers League Marine!"
-#~ msgstr "Willkommen bei Dealers League Marine!"
-
-#~ msgid "To help you get started here are a few guides you might find useful"
-#~ msgstr ""
-#~ "Um Ihnen den Einstieg zu erleichtern, finden Sie hier einige Leitfäden, "
-#~ "die Ihnen nützlich sein könnten"
-
-#~ msgid "How to manage your account"
-#~ msgstr "Wie Sie Ihr Konto verwalten"
-
-#~ msgid "How to create a new listing"
-#~ msgstr "Wie man einen neuen Eintrag erstellt"
-
-#~ msgid "How to publish a new listing to your website"
-#~ msgstr "Wie Sie einen neuen Eintrag auf Ihrer Webseite veröffentlichen"
-
-#~ msgid "If you need help with anything else, simply reply to this email!"
-#~ msgstr ""
-#~ "Wenn Sie bei irgendetwas anderem Hilfe benötigen, antworten Sie einfach "
-#~ "auf diese E-Mail!"
-
-#~ msgid "Many Thanks"
-#~ msgstr "Vielen Dank"
-
-#~ msgid "Operations Manager"
-#~ msgstr "Betriebsleiter"
-
-#~ msgid "One number or symbol"
-#~ msgstr "Anzahl der Ergebnisse ausblenden"
-
-#~ msgid ""
-#~ "Add CSS here that you want added to the boat archive page and single boat "
-#~ "pages. For example, to hide the theme header or change button color."
-#~ msgstr ""
-#~ "Fügen Sie hier CSS hinzu, die Sie zur Bootsarchivseite und zu den "
-#~ "einzelnen Bootsseiten hinzufügen möchten. Zum Beispiel"
-
-#~ msgid "Privacy Link URL"
-#~ msgstr "Datenschutz-Link"
-
-#~ msgid "Add Location"
-#~ msgstr "Standort"
-
-#~ msgid "Location Data"
-#~ msgstr "Standort-ID"
-
-#~ msgid "Location name"
-#~ msgstr "Standort"
-
-#~ msgid "Main location"
-#~ msgstr "Hauptsitz"
-
-#~ msgid "Invoicing location"
-#~ msgstr "Details zur Rechnungsstellung"
-
-#~ msgid "Address (Type and press enter to validate)"
-#~ msgstr "Bitte machen Sie eine Eingabe um hier zu suchen"
-
-#~ msgid "Enter the name"
-#~ msgstr "Geben Sie den Bootsnamen ein"
-
-#~ msgid "Your Scheduled Listings Have Been Processed"
-#~ msgstr "Y"
-
-#~ msgid "Here are the results:"
-#~ msgstr "Hier die Ergebnisse:"
-
-#~ msgid "Sent To Website"
-#~ msgstr "Webseite"
-
-#~ msgid "Not Published"
-#~ msgstr "Veröffentlicht"
-
-#~ msgid ""
-#~ "The following listings have some issues. Please review them and amend any "
-#~ "issues before they can be published."
-#~ msgstr "T."
-
-#~ msgid ""
-#~ "If provided used in correspondence and admin dashboard, if not provided, "
-#~ "company will be used"
-#~ msgstr ""
-#~ "Falls vorhanden, in der Korrespondenz und im Verwaltungs-Dashboard "
-#~ "verwendet"
-
-#~ msgid "Used for invoices and contracts, etc"
-#~ msgstr "Wird für Rechnungen und Verträge verwendet"
-
-#~ msgid "Survey"
-#~ msgstr "Gutachten"
-
-#~ msgid "tanks"
-#~ msgstr "tanks"
-
-#~ msgid "TANKS"
-#~ msgstr "TANKS"
-
-#~ msgid "VOLUME"
-#~ msgstr "VOLUMEN"
-
-#~ msgid "TECHNICS"
-#~ msgstr "Technik"
-
-#~ msgid "Volume"
-#~ msgstr "Volumen"
-
-#~ msgid "Engines"
-#~ msgstr "Motoren"
-
-#~ msgid "Technics"
-#~ msgstr "Technik"
 
 #~ msgid ""
 #~ "A new account has been created for you on Dealers League Marine! This "
@@ -8249,58 +7884,10 @@ msgstr "Mehr Information"
 #~ "zu erstellen."
 
 #, fuzzy
-#~| msgid "Private"
-#~ msgid "Privacy Notice"
-#~ msgstr "Privat"
-
-#, fuzzy
-#~| msgid "Rafting"
-#~ msgid "Marketing"
-#~ msgstr "Rafting"
-
-#, fuzzy
-#~| msgid "listings"
-#~ msgid "Listings"
-#~ msgstr "Auflistungen"
-
-#, fuzzy
-#~| msgctxt "app"
-#~| msgid "Finance"
-#~ msgid "Finance"
-#~ msgstr "Finanzen"
-
-#, fuzzy
 #~| msgctxt "app"
 #~| msgid "Auth Key"
 #~ msgid "Site Key"
 #~ msgstr "Autorisierungsschlüssel"
-
-#, fuzzy
-#~| msgid "Your Email"
-#~ msgid "Survey Email"
-#~ msgstr "Ihre E-Mail-Adresse"
-
-#, fuzzy
-#~| msgid ""
-#~| "The following listings have some issues. Please review them and amend "
-#~| "any issues before they can be published."
-#~ msgid ""
-#~ "The following listings have some issues. They have been saved as drafts. "
-#~ "Please review them and amend any issues before they can be published."
-#~ msgstr "T."
-
-#, fuzzy
-#~| msgid "One lowercase character"
-#~ msgid "At least 6 characters long"
-#~ msgstr "Gebraucht (in Charter gewesen)"
-
-#~ msgid "One lowercase character"
-#~ msgstr "Gebraucht (in Charter gewesen)"
-
-#, fuzzy
-#~| msgid "One lowercase character"
-#~ msgid "One uppercase character"
-#~ msgstr "Gebraucht (in Charter gewesen)"
 
 #~ msgid "Description"
 #~ msgstr "Beschreibung"
