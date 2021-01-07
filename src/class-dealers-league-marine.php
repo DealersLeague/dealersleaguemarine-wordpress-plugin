@@ -270,7 +270,15 @@ class Dealers_League_Marine {
 					}
 
 					if ( $section_name== 'rig_sails' && in_array( $field_name, array( 'sailplan', 'main_sail', 'jib', 'genoa', 'gennaker', 'spinnaker', 'blister', 'mast', 'boom', 'gennaker_boom', 'spinnaker_boom', ) ) ) {
-						continue;
+						if ( $field_name != 'sailplan' ) {
+							continue;
+						} elseif ( $field_name == 'sailplan' && $field_value == 'on' &&
+						     empty( $listing_data['boat_details']['rig_sails']['sailplan_details']['masts'][0] &&
+						     empty( $listing_data['boat_details']['rig_sails']['sailplan_details']['type'][0] ) ) ){
+
+						} else {
+							continue;
+						}
 					}
 
 					if ( $section_name == 'hull' && ( $field_name == 'colours' || $field_name == 'colours_tags' ) ) {
