@@ -1166,7 +1166,7 @@ Headers:		'Varela Round', sans-serif;
     top: 2.5rem;
     font-size: 1.5rem;
     color: #000;
-    left: 27rem;
+    left: 0;
     bottom: inherit;
     width: 100%;
 }
@@ -3161,7 +3161,7 @@ textarea.form-control {
     height: 100%;
 }
 .background-image img {
-    display: none;
+    display: none !important;
 }
 .background-image.original-size {
     background-size: inherit;

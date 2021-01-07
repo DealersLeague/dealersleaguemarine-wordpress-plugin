@@ -1,10 +1,6 @@
 <div class="item">
     <div class="wrapper">
-        <div class="image">
-            <h3>
-                <a href="#" class="tag category"><?php echo __( ucfirst( $category ) , 'dlmarine' ); ?></a>
-                <a href="<?php echo get_permalink( $listing->ID ); ?>" class="title"><?php echo $manufacturer . ' ' . $model; ?></a> 
-            </h3>
+        <div class="image"> 
             <a href="<?php echo get_permalink( $listing->ID ); ?>" class="image-wrapper background-image">
                 <img src="<?php echo $featured_image; ?>" alt="">
             </a>
@@ -22,6 +18,10 @@
             <p><?php echo $short_description_text; ?></p>
         </div>-->
         <div class="additional-info">
+            <h3>
+                <a href="#" class="tag category"><?php echo __( ucfirst( $category ) , 'dlmarine' ); ?></a>
+                <a href="<?php echo get_permalink( $listing->ID ); ?>" class="title"><?php echo $manufacturer . ' ' . $model; ?></a> 
+            </h3>
             <ul>
                 <?php foreach ( $meta_field_list as $field_name => $field_value ) {
                     if ( ! empty( $field_value ) ) {

@@ -432,7 +432,7 @@ if ( ! is_user_logged_in() ) {
                             <?php if (! empty( $purpose ) ) { ?>
                                 <div class="item boat-info-item item-title">
                                     <strong><?php _e('Purpose', 'dlmarine' ); ?></strong>: 
-	                                <?php echo ucfirst( $purpose ); ?>
+	                                <?php echo __( ucfirst( $purpose ), 'dlmarine' ); ?>
                                 </div>
                             <?php } ?>
 

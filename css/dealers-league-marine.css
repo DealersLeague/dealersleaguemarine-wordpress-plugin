@@ -290,6 +290,7 @@ input.error, textarea.error, select.error {
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 /*.item span {
@@ -435,6 +436,10 @@ input.error, textarea.error, select.error {
     margin-bottom: 1.5rem;
 }
 
+.items:not(.selectize-input) .item h3 {
+    padding-right: 0;
+}
+
 @media (max-width: 1198px) {
     .owl-carousel.full-width-carousel .owl-item {
         opacity: 1 !important;  
@@ -460,17 +465,11 @@ input.error, textarea.error, select.error {
 		left: -25.5rem !important;
 		background: #000 !important; 
 	}
-}
+} 
 
 @media (max-width: 1300px) and (min-width: 767px) {
-    .additional-info {
-        display: none;
-    }
-}
-
-@media (max-width: 1300px) and (min-width: 767px) {
-    .additional-info {
-        display: none;
+    .items:not(.selectize-input).list .item .additional-info {
+        padding: 7rem 0 6rem 0; 
     }
 
     .items:not(.selectize-input).list .item .meta { 
@@ -485,10 +484,13 @@ input.error, textarea.error, select.error {
         width: 20rem;
     }
 
-    .items:not(.selectize-input).list .item h3,
-    .items:not(.selectize-input).list .item .meta { 
-        left: 22rem; 
-    } 
+    .items:not(.selectize-input).list .item .additional-info { 
+        margin-left: 22rem;
+    }
+
+    .items:not(.selectize-input).list .item h3 {
+        font-size: 1.1rem;
+    }
 
     .items:not(.selectize-input).list .item h3 .tag  { 
 		left: -15.5rem !important; 
@@ -496,10 +498,22 @@ input.error, textarea.error, select.error {
 	
 	.items:not(.selectize-input).list .item h3 .tag.category  { 
 		left: -20.5rem !important; 
-	}
+    }
+    
+    .items:not(.selectize-input).list .item .meta {  
+        left: 22rem; 
+    } 
 }
 
 @media (max-width: 767px) {
+    .items:not(.selectize-input).list .item h3, 
+    .items:not(.selectize-input).list.compact .item h3 {
+        left: 0;
+        bottom: 0;
+        top: 0;
+        position: relative;
+    }
+
     .main-search-form {
         padding: 0 !important;
         margin: 0 !important;
@@ -575,11 +589,37 @@ input.error, textarea.error, select.error {
     }
 
     .items:not(.selectize-input).list .item .meta, .items:not(.selectize-input).list.compact .item .meta {
-        background-color: #fff !important; 
+        float: right;
+        right: unset;
+        left: unset;
+        position: relative;
+        width: unset;
+        margin-bottom: -3rem;
+        background: unset;
     }
 
     .items:not(.selectize-input).list .item .price, .items:not(.selectize-input).list.compact .item .price {
         top: 5% !important;
         bottom: unset !important; 
+    }
+
+    .items:not(.selectize-input).list .item .additional-info, .items:not(.selectize-input).list.compact .item .additional-info {
+         
+        margin-right: 0; 
+    }
+}
+
+@media (max-width: 500px) {
+    .items:not(.selectize-input).list .item .meta, .items:not(.selectize-input).list.compact .item .meta {
+        float: unset; 
+        margin-bottom: 0; 
+    }
+
+    .items:not(.selectize-input).list .item .additional-info ul {
+        display: block;
+    }
+
+    .items:not(.selectize-input).list .item .additional-info ul li {
+        width: 100%
     }
 }
