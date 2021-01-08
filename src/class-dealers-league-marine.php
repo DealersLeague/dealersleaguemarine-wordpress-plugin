@@ -270,12 +270,41 @@ class Dealers_League_Marine {
 					}
 
 					if ( $section_name== 'rig_sails' && in_array( $field_name, array( 'sailplan', 'main_sail', 'jib', 'genoa', 'gennaker', 'spinnaker', 'blister', 'mast', 'boom', 'gennaker_boom', 'spinnaker_boom', ) ) ) {
-						if ( $field_name != 'sailplan' ) {
-							continue;
-						} elseif ( $field_name == 'sailplan' && $field_value == 'on' &&
-						     empty( $listing_data['boat_details']['rig_sails']['sailplan_details']['masts'][0] &&
-						     empty( $listing_data['boat_details']['rig_sails']['sailplan_details']['type'][0] ) ) ){
 
+						if ( $field_name == 'sailplan' && $field_value == 'on' &&
+						     empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ 'sailplan_details' ][ 'masts' ][ 0 ] ) &&
+						     empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ 'sailplan_details' ][ 'type' ][ 0 ] ) ) {
+
+						} elseif ( $field_name == 'main_sail' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_main_sail' ][ 'type' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_main_sail' ][ 'area' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_main_sail' ][ 'details' ][ 0 ] ) ) {
+						} elseif ( $field_name == 'jib' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_jib' ][ 'brand' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_jib' ][ 'area' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_jib' ][ 'furling' ][ 0 ] ) ) {
+						} elseif ( $field_name == 'genoa' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_genoa' ][ 'area' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_genoa' ][ 'furling' ][ 0 ] ) ) {
+						} elseif ( $field_name == 'gennaker' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_gennaker' ][ 'area' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_gennaker' ][ 'details' ][ 0 ] ) ) {
+						} elseif ( $field_name == 'spinnaker' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ 'spinnaker_area' ] ) ) {
+						} elseif ( $field_name == 'blister' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ 'blister_area' ] ) ) {
+						} elseif ( $field_name == 'mast' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_mast' ][ 'material' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_mast' ][ 'height' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_mast' ][ 'lowered_height' ][ 0 ] ) ) {
+						} elseif ( $field_name == 'boom' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_boom' ][ 'material' ][ 0 ] ) ) {
+						} elseif ( $field_name == 'gennaker_boom' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_gennaker_boom' ][ 'details' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_gennaker_boom' ][ 'material' ][ 0 ] ) ) {
+						} elseif ( $field_name == 'spinnaker_boom' && $field_value == 'on' &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_spinnaker_boom' ][ 'details' ][ 0 ] ) &&
+						           empty( $listing_data[ 'boat_details' ][ 'rig_sails' ][ '_spinnaker_boom' ][ 'material' ][ 0 ] ) ) {
 						} else {
 							continue;
 						}
