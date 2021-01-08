@@ -70,7 +70,6 @@
  Yii::t('app', 'On-request');
  Yii::t('app', 'Negotiable');
  Yii::t('app', 'Auction');
- Yii::t('app', 'Share');
  Yii::t('app', 'VAT Status');
  Yii::t('app', 'status');
  Yii::t('app', 'Status');
@@ -153,9 +152,6 @@
  Yii::t('app', 'Draught');
  Yii::t('app', 'number');
  Yii::t('app', 'unit');
- Yii::t('app', 'Draught Keelup');
- Yii::t('app', 'number');
- Yii::t('app', 'unit');
  Yii::t('app', 'Clearance');
  Yii::t('app', 'number');
  Yii::t('app', 'unit');
@@ -166,7 +162,7 @@
  Yii::t('app', 'HIN');
  Yii::t('app', 'Colours');
  Yii::t('app', 'Free text, for example: white, blue stripe with red dots');
- Yii::t('app', 'colours_tags');
+ Yii::t('app', 'Colour Tags');
  Yii::t('app', 'colours.json');
  Yii::t('app', 'Material');
  Yii::t('app', 'Please choose a material');
@@ -195,11 +191,11 @@
  Yii::t('app', 'Has Engine?');
  Yii::t('app', 'Propulsion');
  Yii::t('app', 'Outboard');
- Yii::t('app', 'Stern');
+ Yii::t('app', 'Stern Drive');
  Yii::t('app', 'Vdrive');
  Yii::t('app', 'Shaft');
  Yii::t('app', 'Jet');
- Yii::t('app', 'Sail');
+ Yii::t('app', 'Sail Drive');
  Yii::t('app', 'Pod');
  Yii::t('app', 'Surface');
  Yii::t('app', 'Hydraulic');
@@ -244,8 +240,8 @@
  Yii::t('app', 'Stern Thruster');
  Yii::t('app', 'Optional extra details');
  Yii::t('app', 'Control Type');
- Yii::t('app', 'Single');
- Yii::t('app', 'Twin');
+ Yii::t('app', 'Single Engine');
+ Yii::t('app', 'Twin Engine');
  Yii::t('app', 'Lake Constance');
  Yii::t('app', 'Lake Constance');
  Yii::t('app', 'Rig Sails');
@@ -457,10 +453,10 @@
  Yii::t('app', 'Inboard');
  Yii::t('app', 'Outboard');
  Yii::t('app', 'Manufacturer');
+ Yii::t('app', 'manufacturer');
  Yii::t('app', 'country');
  Yii::t('app', 'Please choose a country');
  Yii::t('app', 'countries.json');
- Yii::t('app', 'manufacturer');
  Yii::t('app', 'Model');
  Yii::t('app', 'Power');
  Yii::t('app', 'power');
@@ -844,7 +840,7 @@
  Yii::t('app', 'Pontoon');
  Yii::t('app', 'Runabout');
  Yii::t('app', 'Sloep');
- Yii::t('app', 'Skiandwake');
+ Yii::t('app', 'Ski and wake');
  Yii::t('app', 'Sport');
  Yii::t('app', 'Submarine');
  Yii::t('app', 'Trawler');
@@ -2198,3 +2194,4 @@
  Yii::t('app', 'Technics');
  Yii::t('app', 'volume');
  Yii::t('app', 'Volume');
+ Yii::t('app', 'Colour Tags');
