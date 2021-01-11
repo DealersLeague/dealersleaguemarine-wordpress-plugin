@@ -27,7 +27,7 @@
     });
 
     $(document).on('click', '#dealers_league_marine_view_listings', function(event) { 
-        window.location.href='/wp-admin/edit.php?post_type=newboat'; 
+        window.location.href='/wp-admin/edit.php?post_type=boat';
     });
 
 })(jQuery);
