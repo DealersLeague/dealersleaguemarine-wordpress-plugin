@@ -710,6 +710,33 @@ class Dealers_League_Marine {
 	}
 
 	/**
+	 * Remove listing based on external ID
+	 *
+	 * @param $listing_external_id
+	 */
+	public static function remove_listing( $listing_external_id ) {
+		$conditions[] = array(
+			'key'     => 'listing_external_id',
+			'value'   => $listing_external_id,
+			'compare' => '=',
+		);
+
+		$args = array(
+			'post_type'      => Boat_Post_Type::get_post_type_name(),
+			'post_status'    => 'publish',
+			'posts_per_page' => 1,
+			$args['meta_query'] = $conditions
+		);
+		$listings = new \WP_Query( $args );
+
+		if ( $listings->posts ) {
+			foreach ( $listings->posts as $listing ) {
+				wp_delete_post( $listing->ID, true );
+			}
+		}
+	}
+
+	/**
 	 * Ajax handler to send listing enquiry emails
 	 */
 	public function send_enquiry() {

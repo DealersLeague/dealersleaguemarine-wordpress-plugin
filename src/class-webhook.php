@@ -39,6 +39,13 @@ class Webhook {
 			) );
 		} );
 
+		add_action( 'rest_api_init', function () {
+			register_rest_route( 'dealers-league-marine/v1', '/remove-listing/', array(
+				'methods' => 'POST',
+				'callback' => array( $this, 'remove_listing' ),
+			) );
+		} );
+
 	}
 
 	/**
@@ -89,6 +96,42 @@ class Webhook {
 				header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
 				$listing_data = $request->get_params();
 				Dealers_League_Marine::update_listing_data( $listing_data );
+				$settings->save_search_form_options();
+			} else {
+				header( 'HTTP/1.1 401 Authorization Required' );
+				header( 'WWW-Authenticate: Basic realm="Access denied"' );
+				exit;
+			}
+
+			header( 'HTTP/1.1 200 OK' );
+			exit;
+
+		} catch ( \Exception $e ) {
+			header( 'HTTP/1.1 404 Bad Request' );
+			exit;
+		}
+
+	}
+
+	/**
+	 * @param WP_REST_Request $request
+	 *
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
+	 */
+	public function remove_listing( WP_REST_Request $request ) {
+
+		try {
+
+			$settings = new Settings_Page();
+			$settings->refresh_options();
+
+			$is_auth = $this->is_auth( $settings );
+
+			if ( $is_auth ) {
+				header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
+				$listing_id = $request->get_params();
+				Dealers_League_Marine::remove_listing( $listing_id[0] );
 				$settings->save_search_form_options();
 			} else {
 				header( 'HTTP/1.1 401 Authorization Required' );

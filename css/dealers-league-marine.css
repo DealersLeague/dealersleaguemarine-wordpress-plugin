@@ -481,11 +481,11 @@ input.error, textarea.error, select.error {
 
 @media (max-width: 990px) and (min-width: 767px) {
     .items:not(.selectize-input).list .item .image .background-image {
-        width: 20rem;
+        width: 15rem;
     }
 
     .items:not(.selectize-input).list .item .additional-info { 
-        margin-left: 22rem;
+        margin-left: 16rem;
     }
 
     .items:not(.selectize-input).list .item h3 {
@@ -497,12 +497,16 @@ input.error, textarea.error, select.error {
 	}
 	
 	.items:not(.selectize-input).list .item h3 .tag.category  { 
-		left: -20.5rem !important; 
+		left: -14.5rem !important;
     }
     
     .items:not(.selectize-input).list .item .meta {  
-        left: 22rem; 
-    } 
+        left: 16rem;
+    }
+
+    .items:not(.selectize-input) .item .meta {
+        margin-top: 0.8rem;
+    }
 }
 
 @media (max-width: 767px) {
