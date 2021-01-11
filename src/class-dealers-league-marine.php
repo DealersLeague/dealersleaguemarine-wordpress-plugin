@@ -344,7 +344,7 @@ class Dealers_League_Marine {
 						foreach ( $field_value as $subfield_name => $subfield_value ) {
 
 							if ( $section_name == 'drive' && $field_name == 'propeller' && $subfield_name == 'content' ) {
-								if ( $subfield_value[0] == 'ips' ) {
+								if ( ! empty( $subfield_value[0] ) && $subfield_value[0] == 'ips' ) {
 									$subfield_value[0] == 'IPS';
 								}
 								$subfield_name = __('Propeller Type', 'dlmarine' );
