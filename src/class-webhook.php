@@ -19,6 +19,13 @@ class Webhook {
 		} );
 
 		add_action( 'rest_api_init', function () {
+			register_rest_route( 'dealers-league-marine/v1', '/update-import/', array(
+				'methods' => 'POST',
+				'callback' => array( $this, 'update_import' ),
+			) );
+		} );
+
+		add_action( 'rest_api_init', function () {
 			register_rest_route( 'dealers-league-marine/v1', '/update-web-settings/', array(
 				'methods' => 'POST',
 				'callback' => array( $this, 'update_qwb_settings' ),
@@ -97,6 +104,37 @@ class Webhook {
 			exit;
 		}
 
+	}
+
+	/**
+	 * @param WP_REST_Request $request
+	 *
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 */
+	public function update_import( WP_REST_Request $request ) {
+		try {
+			$settings = new Settings_Page();
+			$settings->save_search_form_options();
+
+			// Getting options from API
+			$api_object = new Api();
+			$api_object->init();
+			// page -1 means all listings
+			$listings = $api_object->get_listings( - 1 );
+
+			if ( is_array( $listings['listings'] ) && $listings['totalCount'] > 0 ) {
+
+				foreach ( $listings[ 'listings' ] as $listing_data ) {
+					Dealers_League_Marine::update_listing_data( $listing_data );
+				}
+
+			}
+			header( 'HTTP/1.1 200 OK' );
+		exit;
+		} catch ( \Exception $e ) {
+			header( 'HTTP/1.1 404 Bad Request' );
+			exit;
+		}
 	}
 
 	/**

@@ -4,7 +4,7 @@ namespace dealersleague\marine\wordpress;
 
 class Boat_Post_Type {
 
-    private static $post_type_name = 'newboat';
+    private static $post_type_name = 'boat';
 
     public function init(): void {
         add_action( 'init', array( $this, 'create_post_type' ) );
