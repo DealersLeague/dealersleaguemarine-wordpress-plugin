@@ -269,6 +269,10 @@ class Dealers_League_Marine {
 						continue;
 					}
 
+					if ( $section_name == 'engine_data' && $field_name == 'fuel' ) {
+						$field_name = __( 'Fuel Type', 'dlmarine' );
+					}
+
 					if ( $section_name== 'rig_sails' && in_array( $field_name, array( 'sailplan', 'main_sail', 'jib', 'genoa', 'gennaker', 'spinnaker', 'blister', 'mast', 'boom', 'gennaker_boom', 'spinnaker_boom', ) ) ) {
 
 						if ( $field_name == 'sailplan' && $field_value == 'on' &&

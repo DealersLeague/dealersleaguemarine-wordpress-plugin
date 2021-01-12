@@ -536,7 +536,6 @@ class Utils {
 	 * @return mixed|string|void
 	 */
 	public static function check_translation( $text ) {
-
 		$path = plugin_dir_path( __FILE__ ) . '../json/fields.json';
 		if ( empty( self::$fields_json ) && file_exists( $path ) ) {
 			self::$fields_json = json_decode( file_get_contents( $path ), true );
