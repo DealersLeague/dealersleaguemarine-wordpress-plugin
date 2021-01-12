@@ -10,8 +10,8 @@ use dealersleague\marine\wordpress\Utils;
         <label class="mr-3" style="margin-bottom:0;padding:0"><?php _e('Sort by:', 'dlmarine'); ?></label>
         <select name="sorting" id="sorting" class="width-200px" data-placeholder="<?php _e( 'Default Sorting', 'dlmarine');?>" >
             <option value="<?php echo esc_url( remove_query_arg( 'sort' ) )?>"><?php _e( 'Default Sorting', 'dlmarine');?></option>
-            <option <?php echo $sort == 'date_desc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'date_desc' ) )?>"><?php _e( 'Newest First', 'dlmarine');?></option>
-            <option <?php echo $sort == 'date_asc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'date_asc' ) )?>"><?php _e( 'Oldest First', 'dlmarine');?></option>
+            <option <?php echo $sort == 'date_desc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'date_asc' ) )?>"><?php _e( 'Newest First', 'dlmarine');?></option>
+            <option <?php echo $sort == 'date_asc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'date_desc' ) )?>"><?php _e( 'Oldest First', 'dlmarine');?></option>
             <option <?php echo $sort == 'price_asc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'price_asc' ) )?>"><?php _e( 'Lowest Price First', 'dlmarine');?></option>
             <option <?php echo $sort == 'price_desc' ? 'selected="selected"' : '' ; ?> value="<?php echo esc_url( add_query_arg( 'sort', 'price_desc' ) )?>"><?php _e( 'Highest Price First', 'dlmarine');?></option>
         </select>
