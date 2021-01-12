@@ -252,11 +252,11 @@
             })
 
             fullWidthCarousel.on('initialized.owl.carousel', function(event) {
-              isSlidePortrait()
+              isSlidePortrait();
             })
 
             fullWidthCarousel.on('loaded.owl.lazy', function(event) {
-                isSlidePortrait()
+                isSlidePortrait();
             })
     
             $(".gallery-carousel-thumbs").owlCarousel({
@@ -416,7 +416,19 @@
             allPanels.not( $(this).next('.listing-details-grid') ).slideUp()
             $(this).next('.listing-details-grid').slideDown()
             return false
-        })
+        });
+
+    setTimeout(
+        function () {
+            $(document).find(".background-image").each(function () {
+                var bg_img = $(this).css('background-image');
+                if (bg_img.indexOf("undefined") >= 0) {
+                    bg_img = "url('" + $(this).attr('data-img') + "')";
+                    $(this).css('background-image', bg_img);
+                }
+            });
+        }, 1000);
+
       
     })(jQuery)
       
