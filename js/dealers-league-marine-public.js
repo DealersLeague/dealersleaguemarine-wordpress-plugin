@@ -422,7 +422,7 @@
         function () {
             $(document).find(".background-image").each(function () {
                 var bg_img = $(this).css('background-image');
-                if (bg_img.indexOf("undefined") >= 0) {
+                if (bg_img && bg_img.indexOf("undefined") >= 0) {
                     bg_img = "url('" + $(this).attr('data-img') + "')";
                     $(this).css('background-image', bg_img);
                 }
