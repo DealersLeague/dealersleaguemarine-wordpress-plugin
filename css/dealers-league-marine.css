@@ -440,9 +440,22 @@ input.error, textarea.error, select.error {
     padding-right: 0;
 }
 
+.price-small {
+    color: #6c727a !important;
+    font-size: 1.1rem !important;
+    background-color: transparent;
+    top: 0;
+    z-index: 1;
+    font-weight: bold;
+}
+
 @media (max-width: 1198px) {
     .owl-carousel.full-width-carousel .owl-item {
         opacity: 1 !important;  
+    }
+
+    .items:not(.selectize-input).list .item .additional-info ul li {
+        width: 100% !important;
     }
 }
 
