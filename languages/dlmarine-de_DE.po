@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-01-07 10:06+0000\n"
-"PO-Revision-Date: 2021-01-11 16:17+0000\n"
+"PO-Revision-Date: 2021-01-13 15:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -1278,7 +1278,7 @@ msgstr "Bug"
 
 #: languages/fields_wordpress.php:383
 msgid "Berths"
-msgstr "Liegeplätze"
+msgstr "Schlafplätze"
 
 #: languages/fields_wordpress.php:387
 msgid "Saloon"
@@ -1306,7 +1306,7 @@ msgstr "Heizung"
 
 #: languages/fields_wordpress.php:406
 msgid "AC"
-msgstr "Heizung über Klimaanlage"
+msgstr "Klimaanlage mit Heizung"
 
 #: languages/fields_wordpress.php:407 languages/fields_wordpress.php:474
 msgid "Gas"
@@ -2087,7 +2087,7 @@ msgstr "Faltbar"
 
 #: languages/fields_wordpress.php:739
 msgid "Folding"
-msgstr "Faltbar"
+msgstr "Klappbar"
 
 #: languages/fields_wordpress.php:740
 msgid "Suncushions"
@@ -2099,7 +2099,7 @@ msgstr "Persenninge"
 
 #: languages/fields_wordpress.php:742
 msgid "Spray Hood"
-msgstr "Spritzhaube"
+msgstr "Sprayhood"
 
 #: languages/fields_wordpress.php:743
 msgid "Bimini Top"
