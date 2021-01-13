@@ -1,7 +1,10 @@
+<?php
+$listing_permalink = get_post_meta( $listing->ID, 'listing_permalink', true );
+?>
 <div class="item">
     <div class="wrapper">
         <div class="image"> 
-            <a href="<?php echo get_permalink( $listing->ID ); ?>" class="image-wrapper background-image">
+            <a href="<?php echo home_url() .'/'.$listing_permalink; ?>" class="image-wrapper background-image">
                 <img src="<?php echo $featured_image; ?>" alt="">
             </a>
         </div>
@@ -45,7 +48,7 @@
         </div>
         <!--end description-->
         <?php __( 'As New', 'dlmarine' ); ?>
-        <a href="<?php echo get_permalink( $listing->ID ); ?>" class="detail text-caps underline"><?php _e('View Listing', 'dlmarine'); ?></a>
+        <a href="<?php echo home_url() .'/'.$listing_permalink; ?>" class="detail text-caps underline"><?php _e('View Listing', 'dlmarine'); ?></a>
     </div>
 </div>
 <!--end item-->

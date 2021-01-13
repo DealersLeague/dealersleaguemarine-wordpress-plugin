@@ -41,7 +41,7 @@ class Boat_Post_Type {
 		    'show_ui'            => true,
 		    'show_in_menu'       => false,
 		    'query_var'          => true,
-		    'rewrite'            => /*array( 'slug' => 'boat' ),*/ array( 'slug' => 'boat' ),
+		    'rewrite'            => array( 'slug' => __( 'boat', 'dlmarine' ) ),
 		    'capability_type'    => 'post',
 		    'has_archive'        => true,
 		    'hierarchical'       => false,
@@ -51,6 +51,7 @@ class Boat_Post_Type {
 	    );
 
         register_post_type( self::$post_type_name, $args );
+	    flush_rewrite_rules();
     }
 
 	/**

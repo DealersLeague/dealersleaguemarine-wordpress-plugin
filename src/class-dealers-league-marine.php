@@ -7,9 +7,7 @@ class Dealers_League_Marine {
 	private $api_object;
 
 	public function load(): void {
-
-
-
+		(new Redirection())->init();
 		(new Settings_Page())->init();
 		(new Boat_Post_Type())->init();
 		(new Listing_Search_Shortcode())->init();
@@ -31,118 +29,33 @@ class Dealers_League_Marine {
 		add_action( 'wp_ajax_nopriv_dealers-league-marine_send_enquiry', array( $this, 'send_enquiry' ) );
 
 		add_filter( 'the_content', array( $this, 'listing_content' ), -1 );
+		add_filter( 'post_type_link', array($this,'listing_permalinks'), 10, 2 );
+		add_filter( 'post_link', array($this,'listing_permalinks'), 10, 2 );
 
-		add_action('init', array($this,'my_custom_rewrite'));
-		add_filter( 'post_type_link', array($this,'my_custom_permalinks'), 10, 2 );
-		add_action( 'pre_get_posts', array( $this, 'alter_query' ) );
-		add_filter( 'query_vars', array( $this, 'custom_query_vars' ), 10, 1 );
 	}
 
+	/**
+	 * @param $permalink
+	 * @param $post
+	 *
+	 * @return string|string[]
+	 */
+	public function listing_permalinks( $permalink, $post ) {
 
-	public function my_custom_rewrite() {
+		if ( $post->post_type == Boat_Post_Type::get_post_type_name() && is_singular() ) {
+			$listing_permalink = get_post_meta( $post->ID, 'listing_permalink', true );
 
-		add_rewrite_tag( '%listing_manufacturer%', '([^&]+)');
-		add_rewrite_tag( '%listing_range%', '([^&]+)');
-		add_rewrite_tag( '%listing_model%', '([^&]+)');
+			if ( empty( $listing_permalink ) ) {
+				self::create_unique_listing_permalink( $post->ID );
+				$listing_permalink = get_post_meta( $post->ID, 'listing_permalink', true );
+			}
 
-		add_rewrite_rule("^boat/([^/]+)/([^/]+)/?$", 'index.php?post_type='.Boat_Post_Type::get_post_type_name().'&listing_manufacturer=$matches[1]&listing_model=$matches[2]', 'top');
-		add_rewrite_rule("^boat/([^/]+)/([^/]+)/([^/]+)/?$", 'index.php?post_type='.Boat_Post_Type::get_post_type_name().'&listing_manufacturer=$matches[1]&listing_range=$matches[2]&listing_model=$matches[3]', 'top');
+			return home_url() . '/' . $listing_permalink;
 
-		add_permastruct('boat', 'boat/%listing_manufacturer%/%listing_range%/%listing_model%', false);
-	}
-
-
-	public function my_custom_permalinks( $permalink, $post ) {
-
-		$manufacturer = get_post_meta( $post->ID, 'listing_manufacturer', true );
-		$range        = get_post_meta( $post->ID, 'listing_range', true );
-		$model        = get_post_meta( $post->ID, 'listing_model', true );
-		if ( ! empty( $manufacturer ) ) {
-			$permalink =  str_replace( '%listing_manufacturer%', str_replace( [' ', '/'], ['-', '-'], strtolower( $manufacturer ) ), $permalink );
 		}
 
-		if ( ! empty( $range ) ) {
-			$permalink =  str_replace( '%listing_range%', str_replace( [' ', '/'], ['-', '-'], strtolower( $range ) ), $permalink );
-		} else {
-			$permalink =  str_replace( '/%listing_range%', '', $permalink );
-		}
-
-		if ( ! empty( $model ) ) {
-			$permalink =  str_replace( '%listing_model%', str_replace( [' ', '/'], ['-', '-'], strtolower( $model ) ), $permalink );
-		}
 		return $permalink;
 	}
-
-
-	public function custom_rewrite_rules() {
-		global $wp_rewrite;
-
-		add_rewrite_tag( '%listing_manufacturer%', '([^&]+)');
-		add_rewrite_tag( '%listing_range%', '([^&]+)');
-		add_rewrite_tag( '%listing_model%', '([^&]+)');
-
-		add_rewrite_rule("^boat/([^/]+)/([^/]+)/?$", 'index.php?post_type='.Boat_Post_Type::get_post_type_name().'&listing_manufacturer=$matches[1]&listing_model=model[2]', 'top');
-		add_rewrite_rule("^boat/([^/]+)/([^/]+)/([^/]+)/?$", 'index.php?post_type='.Boat_Post_Type::get_post_type_name().'&listing_manufacturer=$matches[1]&listing_range=$matches[2]&listing_model=$matches[3]', 'top');
-	}
-
-	public function custom_query_vars($vars) {
-		$vars[] = 'listing_manufacturer';
-		$vars[] = 'listing_range';
-		$vars[] = 'listing_model';
-		return $vars;
-	}
-
-	public function alter_query( $query ) {
-
-		//gets the global query var object
-		global $wp_query;
-
-		// check if the user is requesting an admin page
-		// or current query is not the main query
-		if ( is_admin() || ! $query->is_main_query() ){
-			return;
-		}
-
-
-		$post_type = get_query_var( 'post_type' );
-
-		$manufacturer = get_query_var( 'listing_manufacturer' );
-		$range        = get_query_var( 'listing_range' );
-		$model        = get_query_var( 'listing_model' );
-
-		if ( ! empty( $manufacturer ) ) {
-			$conditions[] = array(
-				'key'     => 'listing_manufacturer',
-				'value'   => strtolower( $manufacturer ),
-				'compare' => 'LIKE',
-			);
-		}
-
-		if ( ! empty( $range ) ) {
-			$conditions[] = array(
-				'key'     => 'listing_range',
-				'value'   => strtolower( $range ),
-				'compare' => 'LIKE',
-			);
-		}
-
-		if ( ! empty( $model ) ) {
-			$conditions[] = array(
-				'key'     => 'listing_model',
-				'value'   => strtolower( $model ),
-				'compare' => 'LIKE',
-			);
-		}
-
-		if ( ! empty( $conditions ) ) {
-			if ( count( $conditions ) > 1 ) {
-				$conditions[ 'relation' ] = 'AND';
-			}
-			$query->meta_query = $conditions;
-		}
-
-	}
-
 
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain( 'dlmarine', FALSE, basename( plugin_dir_path(  dirname( __FILE__  ) ) ) . '/languages/' );
@@ -585,7 +498,12 @@ class Dealers_League_Marine {
 
 			}
 		}
-
+		self::create_unique_listing_permalink(346);
+		self::create_unique_listing_permalink(352);
+		self::create_unique_listing_permalink(353);
+		self::create_unique_listing_permalink(354);
+		self::create_unique_listing_permalink(313);
+		self::create_unique_listing_permalink(314);
 		return $transformed_fields;
 	}
 
@@ -828,6 +746,47 @@ class Dealers_League_Marine {
 
 			update_post_meta( $post_id, 'listing_n_videos', count( $video_list ) );
 
+		}
+
+		self::create_unique_listing_permalink( $post_id );
+
+	}
+
+	/**
+	 * @param $post_id
+	 */
+	public static function create_unique_listing_permalink( $post_id ) {
+		global $wpdb;
+
+		$listing_permalink    = get_post_meta( $post_id, 'listing_permalink', true );
+		$listing_manufacturer = get_post_meta( $post_id, 'listing_manufacturer', true );
+		$listing_range        = get_post_meta( $post_id, 'listing_range', true );
+		$listing_model        = get_post_meta( $post_id, 'listing_model', true );
+
+		$permalink = Boat_Post_Type::get_post_type_name() . '/' . Utils::slugify( $listing_manufacturer );
+		if ( ! empty( $listing_range ) ) {
+			$permalink .= '/' . Utils::slugify( $listing_range );
+		}
+		if ( ! empty( $listing_model ) ) {
+			$permalink .= '/' . Utils::slugify( $listing_model );
+		}
+
+		$sql = $wpdb->prepare( "SELECT p.ID, pm.meta_value, p.post_type " .
+		                       " FROM $wpdb->posts AS p INNER JOIN $wpdb->postmeta AS pm ON (pm.post_id = p.ID) " .
+		                       " WHERE pm.meta_key = 'listing_permalink' " .
+		                       " AND (pm.meta_value LIKE '%s' OR pm.meta_value LIKE '%s') AND p.id!=%s " .
+		                       " AND p.post_status != 'trash' AND p.post_type ='%s' " .
+		                       " ORDER BY FIELD(post_status,'publish','private','pending','draft','auto-draft','inherit')," .
+		                       " FIELD(post_type,'%s')", $permalink, $permalink . "/", $post_id, Boat_Post_Type::get_post_type_name(), Boat_Post_Type::get_post_type_name() );
+
+		$posts = $wpdb->get_results( $sql );
+
+		if ( count( $posts ) > 0 && $permalink != $listing_permalink ) {
+			$permalink = ltrim( $permalink, '/' ) . '-' . ( count( $posts ) + 1 );
+		}
+
+		if ( $permalink != $listing_permalink && ! empty( $permalink )) {
+			$res = update_post_meta( $post_id, 'listing_permalink', $permalink );
 		}
 
 	}
