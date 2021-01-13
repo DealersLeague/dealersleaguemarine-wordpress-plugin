@@ -7,6 +7,9 @@ class Dealers_League_Marine {
 	private $api_object;
 
 	public function load(): void {
+
+
+
 		(new Settings_Page())->init();
 		(new Boat_Post_Type())->init();
 		(new Listing_Search_Shortcode())->init();
@@ -27,8 +30,117 @@ class Dealers_League_Marine {
 		add_action( 'wp_ajax_dealers-league-marine_send_enquiry', array( $this, 'send_enquiry' ) );
 		add_action( 'wp_ajax_nopriv_dealers-league-marine_send_enquiry', array( $this, 'send_enquiry' ) );
 
-		add_filter( 'the_content', array( $this, 'listing_content' ), -1 ); 
- 
+		add_filter( 'the_content', array( $this, 'listing_content' ), -1 );
+
+		add_action('init', array($this,'my_custom_rewrite'));
+		add_filter( 'post_type_link', array($this,'my_custom_permalinks'), 10, 2 );
+		add_action( 'pre_get_posts', array( $this, 'alter_query' ) );
+		add_filter( 'query_vars', array( $this, 'custom_query_vars' ), 10, 1 );
+	}
+
+
+	public function my_custom_rewrite() {
+
+		add_rewrite_tag( '%listing_manufacturer%', '([^&]+)');
+		add_rewrite_tag( '%listing_range%', '([^&]+)');
+		add_rewrite_tag( '%listing_model%', '([^&]+)');
+
+		add_rewrite_rule("^boat/([^/]+)/([^/]+)/?$", 'index.php?post_type='.Boat_Post_Type::get_post_type_name().'&listing_manufacturer=$matches[1]&listing_model=$matches[2]', 'top');
+		add_rewrite_rule("^boat/([^/]+)/([^/]+)/([^/]+)/?$", 'index.php?post_type='.Boat_Post_Type::get_post_type_name().'&listing_manufacturer=$matches[1]&listing_range=$matches[2]&listing_model=$matches[3]', 'top');
+
+		add_permastruct('boat', 'boat/%listing_manufacturer%/%listing_range%/%listing_model%', false);
+	}
+
+
+	public function my_custom_permalinks( $permalink, $post ) {
+
+		$manufacturer = get_post_meta( $post->ID, 'listing_manufacturer', true );
+		$range        = get_post_meta( $post->ID, 'listing_range', true );
+		$model        = get_post_meta( $post->ID, 'listing_model', true );
+		if ( ! empty( $manufacturer ) ) {
+			$permalink =  str_replace( '%listing_manufacturer%', str_replace( [' ', '/'], ['-', '-'], strtolower( $manufacturer ) ), $permalink );
+		}
+
+		if ( ! empty( $range ) ) {
+			$permalink =  str_replace( '%listing_range%', str_replace( [' ', '/'], ['-', '-'], strtolower( $range ) ), $permalink );
+		} else {
+			$permalink =  str_replace( '/%listing_range%', '', $permalink );
+		}
+
+		if ( ! empty( $model ) ) {
+			$permalink =  str_replace( '%listing_model%', str_replace( [' ', '/'], ['-', '-'], strtolower( $model ) ), $permalink );
+		}
+		return $permalink;
+	}
+
+
+	public function custom_rewrite_rules() {
+		global $wp_rewrite;
+
+		add_rewrite_tag( '%listing_manufacturer%', '([^&]+)');
+		add_rewrite_tag( '%listing_range%', '([^&]+)');
+		add_rewrite_tag( '%listing_model%', '([^&]+)');
+
+		add_rewrite_rule("^boat/([^/]+)/([^/]+)/?$", 'index.php?post_type='.Boat_Post_Type::get_post_type_name().'&listing_manufacturer=$matches[1]&listing_model=model[2]', 'top');
+		add_rewrite_rule("^boat/([^/]+)/([^/]+)/([^/]+)/?$", 'index.php?post_type='.Boat_Post_Type::get_post_type_name().'&listing_manufacturer=$matches[1]&listing_range=$matches[2]&listing_model=$matches[3]', 'top');
+	}
+
+	public function custom_query_vars($vars) {
+		$vars[] = 'listing_manufacturer';
+		$vars[] = 'listing_range';
+		$vars[] = 'listing_model';
+		return $vars;
+	}
+
+	public function alter_query( $query ) {
+
+		//gets the global query var object
+		global $wp_query;
+
+		// check if the user is requesting an admin page
+		// or current query is not the main query
+		if ( is_admin() || ! $query->is_main_query() ){
+			return;
+		}
+
+
+		$post_type = get_query_var( 'post_type' );
+
+		$manufacturer = get_query_var( 'listing_manufacturer' );
+		$range        = get_query_var( 'listing_range' );
+		$model        = get_query_var( 'listing_model' );
+
+		if ( ! empty( $manufacturer ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_manufacturer',
+				'value'   => strtolower( $manufacturer ),
+				'compare' => 'LIKE',
+			);
+		}
+
+		if ( ! empty( $range ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_range',
+				'value'   => strtolower( $range ),
+				'compare' => 'LIKE',
+			);
+		}
+
+		if ( ! empty( $model ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_model',
+				'value'   => strtolower( $model ),
+				'compare' => 'LIKE',
+			);
+		}
+
+		if ( ! empty( $conditions ) ) {
+			if ( count( $conditions ) > 1 ) {
+				$conditions[ 'relation' ] = 'AND';
+			}
+			$query->meta_query = $conditions;
+		}
+
 	}
 
 
@@ -589,6 +701,13 @@ class Dealers_League_Marine {
 			update_post_meta( $post_id, 'listing_draught', $draught );
 		} else {
 			delete_post_meta( $post_id, 'listing_draught' );
+		}
+
+		if ( isset( $json_data['listing']['boat_details']['construction_details']['range'] ) ) {
+			$model = $json_data['listing']['boat_details']['construction_details']['range'];
+			update_post_meta( $post_id, 'listing_range', $model );
+		} else {
+			delete_post_meta( $post_id, 'listing_range' );
 		}
 
 		if ( isset( $json_data['listing']['boat_details']['construction_details']['model'] ) ) {
