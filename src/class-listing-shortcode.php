@@ -11,7 +11,7 @@ class Listing_Shortcode {
 	}
 
 	/**
-	 * Usage: [listing_archive category="my category" manufacturer="my manufacturer" country="DE" condition="new|used" hide_order_by="true|false" range="my range"]
+	 * Usage: [listing_archive category="my category" manufacturer="my manufacturer" country="DE" condition="new|used" range="my range" hide_order_by="true|false"]
 	 *
 	 * @param mixed $attr
 	 *
@@ -151,7 +151,6 @@ class Listing_Shortcode {
 		}
 
 		$hide_order_by = $attr[ 'hide_order_by' ] ?? $settings->get_web_settings_option_val( 'hide_orderby' ) ?? '';
-
 
 		$default_sorting = $settings->get_web_settings_option_val( 'default_sorting' );
 		$sort = ! empty( $_GET['sort'] ) ? $_GET['sort'] : strtolower( $default_sorting );
