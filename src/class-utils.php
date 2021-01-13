@@ -679,4 +679,14 @@ class Utils {
 		return $text;
 	}
 
+	/**
+	 * @param $listing_id
+	 *
+	 * @return string
+	 */
+	public static function get_listing_permalink( $listing_id ) {
+		$listing_permalink = get_post_meta( $listing_id, 'listing_permalink', true );
+		return home_url() .'/'.$listing_permalink;
+	}
+
 }
