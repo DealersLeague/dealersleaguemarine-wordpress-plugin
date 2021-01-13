@@ -25,6 +25,12 @@ function dealers_league_marine_plugin() {
 	$plugin = new Dealers_League_Marine();
 	$plugin->load();
 	$plugin->load_plugin_textdomain();
+
+}
+
+register_activation_hook(__FILE__,'my_custom_plugin_activate');
+function my_custom_plugin_activate() {
+	flush_rewrite_rules();
 }
 
 add_action( 'plugins_loaded', 'dealers_league_marine_plugin', 99 );

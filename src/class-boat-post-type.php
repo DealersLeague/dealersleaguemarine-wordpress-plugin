@@ -41,7 +41,7 @@ class Boat_Post_Type {
 		    'show_ui'            => true,
 		    'show_in_menu'       => false,
 		    'query_var'          => true,
-		    'rewrite'            => array( 'slug' => 'boat' ),
+		    'rewrite'            => /*array( 'slug' => 'boat' ),*/ array( 'slug' => 'boat' ),
 		    'capability_type'    => 'post',
 		    'has_archive'        => true,
 		    'hierarchical'       => false,
