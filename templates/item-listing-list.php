@@ -4,7 +4,7 @@ use dealersleague\marine\wordpress\Utils;
 <div class="item">
     <div class="wrapper">
         <div class="image"> 
-            <a href="<?php echo Utils::get_listing_permalink( $listing->ID ); ?>" class="image-wrapper background-image">
+            <a href="<?php echo Utils::get_listing_permalink( $listing->ID ); ?>" class="image-wrapper background-image" data-img="<?php echo $featured_image; ?>">
                 <img src="<?php echo $featured_image; ?>" alt="">
             </a>
         </div>
