@@ -102,6 +102,7 @@
  Yii::t('app', 'country');
  Yii::t('app', 'Please choose a country');
  Yii::t('app', 'countries.json');
+ Yii::t('app', 'Boat Range');
  Yii::t('app', 'Model');
  Yii::t('app', 'Designer');
  Yii::t('app', 'Boat Name');
@@ -2195,3 +2196,5 @@
  Yii::t('app', 'volume');
  Yii::t('app', 'Volume');
  Yii::t('app', 'Colour Tags');
+ Yii::t('app', 'This action will remove the listing and all its related data. This cannot be undone.');
+ Yii::t('app', 'Remove Listing:');
