@@ -165,11 +165,11 @@ class Redirection {
 			                       " meta_key = 'listing_permalink' AND meta_value != '' AND " .
 			                       " ( LOWER(meta_value) = LEFT(LOWER('%s'), LENGTH(meta_value)) OR " .
 			                       "   LOWER(meta_value) = LEFT(LOWER('%s'), LENGTH(meta_value)) ) " .
-			                       "  AND post_status != 'trash' AND post_type ='%s'" .
+			                       "  AND post_status != 'trash' AND p.post_type != 'nav_menu_item'" .
 			                       " ORDER BY LENGTH(meta_value) DESC, " .
 			                       " FIELD(post_status,'publish','private','pending','draft','auto-draft','inherit')," .
-			                       " FIELD(post_type,'%s'), p.ID ASC LIMIT 1",
-			                       $request_no_slash, $request_no_slash . "/", Boat_Post_Type::get_post_type_name(), Boat_Post_Type::get_post_type_name() );
+			                       " FIELD(post_type,'post','page','%s'), p.ID ASC LIMIT 1",
+			                       $request_no_slash, $request_no_slash . "/", Boat_Post_Type::get_post_type_name() );
 
 			$posts = $wpdb->get_results( $sql );
 		}
@@ -343,9 +343,9 @@ class Redirection {
 		                       " FROM $wpdb->posts AS p INNER JOIN $wpdb->postmeta AS pm ON (pm.post_id = p.ID) " .
 		                       " WHERE pm.meta_key = 'listing_permalink' " .
 		                       " AND (pm.meta_value = '%s' OR pm.meta_value = '%s') " .
-		                       " AND p.post_status != 'trash' AND p.post_type ='%s' " .
+		                       " AND p.post_status != 'trash' AND p.post_type != 'nav_menu_item' " .
 		                       " ORDER BY FIELD(post_status,'publish','private','draft','auto-draft','inherit')," .
-		                       " FIELD(post_type,'%s') LIMIT 1", $request_no_slash, $request_no_slash . "/", Boat_Post_Type::get_post_type_name(), Boat_Post_Type::get_post_type_name() );
+		                       " FIELD(post_type,'post','page','%s') LIMIT 1", $request_no_slash, $request_no_slash . "/", Boat_Post_Type::get_post_type_name() );
 
 		$posts = $wpdb->get_results( $sql );
 
@@ -356,11 +356,11 @@ class Redirection {
 			                       " meta_key = 'listing_permalink' AND meta_value != '' AND " .
 			                       " ( LOWER(meta_value) = LEFT(LOWER('%s'), LENGTH(meta_value)) OR " .
 			                       "   LOWER(meta_value) = LEFT(LOWER('%s'), LENGTH(meta_value)) ) " .
-			                       "  AND post_status != 'trash' AND post_type ='%s'" .
+			                       "  AND post_status != 'trash' AND p.post_type != 'nav_menu_item'" .
 			                       " ORDER BY LENGTH(meta_value) DESC, " .
 			                       " FIELD(post_status,'publish','private','draft','auto-draft','inherit')," .
-			                       " FIELD(post_type,'%s'), p.ID ASC LIMIT 1",
-			                       $request_no_slash, $request_no_slash . "/", Boat_Post_Type::get_post_type_name(), Boat_Post_Type::get_post_type_name() );
+			                       " FIELD(post_type,'post','page','%s'), p.ID ASC LIMIT 1",
+			                       $request_no_slash, $request_no_slash . "/", Boat_Post_Type::get_post_type_name() );
 
 			$posts = $wpdb->get_results( $sql );
 		}

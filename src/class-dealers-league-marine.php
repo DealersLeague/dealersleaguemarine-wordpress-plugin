@@ -42,7 +42,7 @@ class Dealers_League_Marine {
 	 */
 	public function listing_permalinks( $permalink, $post ) {
 
-		if ( $post->post_type == Boat_Post_Type::get_post_type_name() && is_singular() ) {
+		if ( ! is_home() && ! is_search() && ! is_archive() && $post->post_type == Boat_Post_Type::get_post_type_name() && is_singular() ) {
 			$listing_permalink = get_post_meta( $post->ID, 'listing_permalink', true );
 
 			if ( empty( $listing_permalink ) ) {
@@ -498,12 +498,7 @@ class Dealers_League_Marine {
 
 			}
 		}
-		self::create_unique_listing_permalink(346);
-		self::create_unique_listing_permalink(352);
-		self::create_unique_listing_permalink(353);
-		self::create_unique_listing_permalink(354);
-		self::create_unique_listing_permalink(313);
-		self::create_unique_listing_permalink(314);
+
 		return $transformed_fields;
 	}
 
