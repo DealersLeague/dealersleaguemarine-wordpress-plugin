@@ -20,7 +20,7 @@
                             "id": "advert_purpose",
                             "name": "Purpose",
                             "type": "select",
-                            "default": "sale",
+                            "default": "sales",
                             "hidden": true,
                             "hide_search": true,
                             "required": true,
@@ -249,11 +249,10 @@
                                     "type" : "select",
                                     "hide_search": true,
                                     "options" :   {
-                                        "fixed" : "Fixed",
+                                        "fixed" : "Fixed Price",
                                         "on-request" : "On-request",
                                         "negotiable" : "Negotiable",
-                                        "auction" : "Auction",
-                                        "share" : "Share"
+                                        "auction" : "Auction"
                                     }
                                 }
                             ]
@@ -281,7 +280,7 @@
                                     "id" : "paid_area",
                                     "type" : "select",
                                     "hide_search": true,
-                                    "placeholder" : "Area",
+                                    "placeholder" : "Country",
                                     "options" : {
                                         "file" : "countries.json"
                                     },
@@ -386,6 +385,11 @@
                                     }
                                 }
                             ]
+                        },
+                        {
+                            "id" : "range",
+                            "name" : "Boat Range",
+                            "type" : "text"
                         },
                         {
                             "id" : "model",
@@ -623,27 +627,6 @@
                             ]
                         },
                         {
-                            "id" : "draught_keelup",
-                            "name" : "Draught Keelup",
-                            "type" : "input_group",
-                            "position" : "append",
-                            "fields" : [
-                                {
-                                    "id" : "number",
-                                    "type" : "number",
-                                    "configuration" : {
-                                        "min" : 0.01,
-                                        "max" : 460.00
-                                    }
-                                },
-                                {
-                                    "id" : "unit",
-                                    "type" : "input_group_text",
-                                    "value" : "m"
-                                }
-                            ]
-                        },
-                        {
                             "id" : "clearance",
                             "name" : "Clearance",
                             "type" : "input_group",
@@ -705,6 +688,7 @@
                         },
                         { 
                             "id" : "colours_tags",
+                            "name" : "Colour Tags",
                             "type" : "select",
                             "multiple" : true,
                             "configuration" : {
@@ -741,17 +725,17 @@
                             "type" : "select",
                             "hide_search": true,
                             "options" : {
-                                "fin" : "Fin",
-                                "full" : "Full",
-                                "bulb" : "Bulb",
-                                "winged" : "Winged",
-                                "twin" : "Twin",
-                                "swing" : "Swing",
-                                "lifting" : "Lifting",
-                                "canting" : "Canting",
-                                "daggerboard" : "Daggerboard",
-                                "flat" : "Flat",
-                                "fixed " : "Fixed"
+                                "fin"        : "Fin",
+                                "full"       : "Full",
+                                "bulb"       : "Bulb",
+                                "winged"     : "Winged",
+                                "twin"       : "Twin",
+                                "swing"      : "Swing",
+                                "lifting"    : "Lifting",
+                                "canting"    : "Canting",
+                                "daggerboard": "Daggerboard",
+                                "flat"       : "Flat",
+                                "fixed "     : "Fixed Keel"
                             }
                         },
                         {
@@ -799,11 +783,11 @@
                             },
                             "options" : {
                                 "outboard" : "Outboard",
-                                "stern" : "Stern",
+                                "stern" : "Stern Drive",
                                 "vdrive" : "Vdrive",
                                 "shaft" : "Shaft",
                                 "jet" : "Jet",
-                                "sail" : "Sail",
+                                "sail" : "Sail Drive",
                                 "pod" : "Pod",
                                 "surface" : "Surface",
                                 "hydraulic" : "Hydraulic",
@@ -851,8 +835,8 @@
                                         "singleprop" : "Singleprop",
                                         "duoprop" : "Duoprop",
                                         "ips" : "IPS",
-                                        "folding" : "Folding",
-                                        "fixed" : "Fixed",
+                                        "folding" : "Folding Propeller",
+                                        "fixed" : "Fixed Propeller",
                                         "variable-pitch" : "Variable Pitch"
                                     }
                                 }
@@ -1053,8 +1037,8 @@
                                 "action" : "hide"
                             },
                             "options" : {
-                                "single" : "Single",
-                                "twin" : "Twin"
+                                "single" : "Single Engine",
+                                "twin" : "Twin Engine"
                             }
                         },
                         {
@@ -1814,9 +1798,13 @@
                             "id" : "manufacturer",
                             "name" : "Manufacturer",
                             "type" : "input_group",
-                            "position": "prepend",
+                            "position": "append",
                             "_comment": "engine_manufacturer",
                             "fields" : [
+                                {
+                                    "id" : "manufacturer",
+                                    "type" : "text"
+                                },
                                 {
                                     "id" : "country",
                                     "type" : "select",
@@ -1824,10 +1812,6 @@
                                     "options" : {
                                         "file" : "countries.json"
                                     }
-                                },
-                                {
-                                    "id" : "manufacturer",
-                                    "type" : "text" 
                                 }
                             ]
                         },
@@ -2736,7 +2720,7 @@
                                     "type" : "select",
                                     "hide_search": true,
                                     "options" : {
-                                        "fixed" : "Fixed",
+                                        "fixed" : "Fixed Platform",
                                         "manual" : "Manual",
                                         "electric" : "Electric",
                                         "hydraulic": "Hydraulic"
