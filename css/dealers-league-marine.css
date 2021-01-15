@@ -520,6 +520,7 @@ input.error, textarea.error, select.error {
     right: -2rem;
     width: fit-content;
     left: 2em;
+    display:table;
 }
 
 .single-boat .items.dlmarine-similar-listings .item .detail:hover {
