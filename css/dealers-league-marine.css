@@ -520,6 +520,10 @@ input.error, textarea.error, select.error {
     right: -2rem;
 }
 
+.single-boat .items.dlmarine-similar-listings .item .detail:hover {
+    background: #01559c;
+}
+
 .single-boat .items.dlmarine-similar-listings .item h3 {
     left: 0;
     bottom: 0;
