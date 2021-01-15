@@ -482,7 +482,7 @@ input.error, textarea.error, select.error {
     position: relative !important;
     margin-left: 0 !important;
     display: block;
-    height: 250px;
+    min-height: 250px;
 }
 
 .single-boat .items.dlmarine-similar-listings .item .image {
@@ -516,8 +516,10 @@ input.error, textarea.error, select.error {
     font-size: 1rem;
     border-radius: .3rem !important;
     z-index: 2;
-    position: relative;
+    position: absolute;
     right: -2rem;
+    width: fit-content;
+    left: 2em;
 }
 
 .single-boat .items.dlmarine-similar-listings .item .detail:hover {
