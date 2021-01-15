@@ -731,11 +731,15 @@ class Dealers_League_Marine {
 			$image_list = is_array( $json_data[ 'fileuploader-list-listing_images' ] ) ? $json_data[ 'fileuploader-list-listing_images' ] : json_decode( $json_data[ 'fileuploader-list-listing_images' ], true );
 
 			update_post_meta( $post_id, 'listing_n_images', count( $image_list ) );
-
-			if ( isset( $image_list[ 0 ][ 'file' ] ) ) {
+			$has_index = false;
+			foreach ( $image_list as $image ) {
+				if ( isset( $image['index'] ) && $image['index'] == 0 ) {
+					$has_index = true;
+					update_post_meta( $post_id, 'listing_featured_image', $image[ 'file' ] );
+				}
+			}
+			if ( ! $has_index ) {
 				update_post_meta( $post_id, 'listing_featured_image', $image_list[ 0 ][ 'file' ] );
-			} else {
-				delete_post_meta( $post_id, 'listing_featured_image' );
 			}
 
 		}
