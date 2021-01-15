@@ -2,6 +2,7 @@
 
 use dealersleague\marine\wordpress\Settings_Page;
 use dealersleague\marine\wordpress\Utils;
+use dealersleague\marine\wordpress\Dealers_League_Marine;
 
 $settings = new Settings_Page();
 $settings->refresh_options();
@@ -38,7 +39,6 @@ if ( ! empty( $privacy_policy_page_link) ) {
 $hide_enquiry_button     = $settings->get_web_settings_option_val( 'hide_enquiry_button' );
 $hide_print_button       = $settings->get_web_settings_option_val( 'hide_print_button' );
 $hide_watch_video_button = $settings->get_web_settings_option_val( 'hide_watch_video_button' );
-
 
 // Images for slider
 if ( ! empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) && is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
@@ -104,14 +104,14 @@ $vat_separately        = get_post_meta( $post_id, 'listing_vat_stated_separately
 $city                  = get_post_meta( $post_id, 'listing_location_city', true );
 $country               = get_post_meta( $post_id, 'listing_location_country', true );
 $country               = get_post_meta( $post_id, 'flag', true );
-$price                 = get_post_meta( $post_id, 'listing_price', true );
+$price_number          = get_post_meta( $post_id, 'listing_price', true );
 $currency              = get_post_meta( $post_id, 'listing_currency', true );
-$price                 = Utils::format_price( $price, $currency );
+$price                 = Utils::format_price( $price_number, $currency );
 $currency              = Utils::get_currency_symbol( $currency );
 $location              = get_post_meta( $post_id, 'listing_location', true );
 $sale_status           = get_post_meta( $post_id, 'listing_sale_status', true );
-$loa                   = get_post_meta( $post_id, 'listing_loa', true );
-$loa                   = empty( $loa ) ? '' : $loa . Utils::get_unity( 'loa' );
+$loa_number            = get_post_meta( $post_id, 'listing_loa', true );
+$loa                   = empty( $loa_number ) ? '' : $loa_number . Utils::get_unity( 'loa' );
 $draft                 = get_post_meta( $post_id, 'listing_draught', true );
 $draft                 = empty( $draft ) ? '' : $draft . Utils::get_unity( 'draught' );
 $year                  = get_post_meta( $post_id, 'listing_year_built', true );
@@ -166,6 +166,10 @@ if ( ! is_user_logged_in() ) {
     $visits = empty( $visits ) ? 1 : intval( $visits ) + 1;
 	update_post_meta( $post_id, 'listing_visits', $visits );
 }
+
+// Related listings
+$is_advanced = $settings->get_web_settings_option_val( 'related_boats' );
+$similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $post_id, $boat_type, 3, $manufacturer, $loa_number, $price_number );
 
 ?>
 
@@ -672,7 +676,99 @@ if ( ! is_user_logged_in() ) {
                         </div>
                     </section>
 <!-- END Contact Form-->
- 
+
+                    <?php if ( ! empty( $similar_listings ) ) { ?>
+
+                    <section>
+                        <h2><?php _e('Similar Boats', 'dlmarine' ); ?></h2>
+                        <div class="items grid grid-xl-<?php echo count( $similar_listings ); ?>-items grid-lg-<?php echo count( $similar_listings ); ?>-items grid-md-<?php echo count( $similar_listings ); ?>-items dlmarine-similar-listings">
+
+                        <?php foreach ( $similar_listings as $similar_listing ) { ?>
+
+                            <?php
+	                        $country        = get_post_meta( $similar_listing->ID, 'listing_location_country', true );
+	                        $location       = get_post_meta( $similar_listing->ID, 'listing_location_city', true );
+	                        if ( ! empty( $location ) && ! empty( $country ) ) {
+		                        $location .= ', ' . Utils::get_country_name( $country );
+	                        }
+	                        $model          = get_post_meta( $similar_listing->ID, 'listing_model', true );
+	                        $manufacturer   = get_post_meta( $similar_listing->ID, 'listing_manufacturer', true );
+	                        $category       = get_post_meta( $similar_listing->ID, 'listing_boat_type', true );
+	                        $loa            = get_post_meta( $similar_listing->ID, 'listing_loa', true );
+	                        $beam           = get_post_meta( $similar_listing->ID, 'listing_beam', true );
+	                        $draft          = get_post_meta( $similar_listing->ID, 'listing_draught', true );
+	                        $condition      = str_replace( '-', ' ', get_post_meta( $similar_listing->ID, 'listing_condition', true ) );
+	                        $sale_status    = get_post_meta( $similar_listing->ID, 'listing_sale_status', true );
+	                        $currency_code  = get_post_meta( $similar_listing->ID, 'listing_currency', true );
+	                        $currency       = Utils::get_currency_symbol( $currency_code );
+	                        $price          = Utils::format_price( get_post_meta( $similar_listing->ID, 'listing_price', true ), $currency_code );
+	                        $featured_image = get_post_meta( $similar_listing->ID, 'listing_featured_image', true );
+	                        $n_images       = get_post_meta( $similar_listing->ID, 'listing_n_images', true );
+	                        $n_videos       = get_post_meta( $similar_listing->ID, 'listing_n_videos', true );
+
+	                        $meta_field_list = array(
+		                        __( 'Manufacturer', 'model' ) => $manufacturer,
+		                        __( 'Model', 'dlmarine' )     => $model,
+		                        __( 'Condition', 'dlmarine' ) => ucwords( __( $condition, 'dlmarine' ) ),
+		                        __( 'LOA', 'dlmarine' )       => empty( $loa ) ? '' : $loa .'m',
+		                        __( 'Beam', 'dlmarine' )      => empty( $beam ) ? '' : $beam .'m',
+		                        __( 'Draft', 'dlmarine' )     => empty( $draft ) ? '' : $draft .'m',
+		                        __( 'Location', 'model' )     => $location,
+	                        );
+                            ?>
+                            <div class="item item-similar-listing">
+                                <div class="wrapper">
+                                    <div class="image">
+                                        <a href="<?php echo Utils::get_listing_permalink( $similar_listing->ID ); ?>" class="image-wrapper background-image" data-img="<?php echo $featured_image;?>">
+                                            <img src="<?php echo $featured_image;?>" alt="">
+                                        </a>
+                                    </div>
+                                    <!--end image-->
+
+	                                <?php echo ($n_images ? '<div class="price"><i class="fa fa-image"></i> ' . $n_images . '</div>' : ''); ?>
+	                                <?php echo ($n_videos ? '<div class="price" ' . ($n_images ? 'style="left: 7rem;"' : '') . '><i class="fa fa-video-camera"></i> ' . $n_videos . '</div>' : ''); ?>
+
+
+                                    <div class="price-left"><a href="#" class="tag category"><?php echo __( ucfirst( $category ) , 'dlmarine' ); ?></a></div>
+
+                                    <!--end meta-->
+                                    <!--<div class="description">
+										<p></p>
+									</div>-->
+                                    <div class="additional-info">
+                                        <h3>
+                                            <a href="<?php echo get_permalink( $similar_listing->ID ); ?>" class="title"><?php echo $manufacturer . ' ' . $model; ?></a>
+                                        </h3>
+
+                                        <ul>
+                                            <li class="price-small"><?php echo $currency . $price; ?></li>
+                                        </ul>
+
+                                        <ul>
+		                                    <?php foreach ( $meta_field_list as $field_name => $field_value ) {
+			                                    if ( ! empty( $field_value ) ) {
+				                                    ?>
+
+                                                    <li>
+                                                        <strong><?php echo __( $field_name, 'dlmarine'); ?></strong>
+					                                    <?php echo __($field_value, 'dlmarine'); ?>
+                                                    </li>
+				                                    <?php
+			                                    }
+		                                    } ?>
+                                        </ul>
+                                    </div>
+                                    <!--end description-->
+                                    <a href="<?php echo Utils::get_listing_permalink( $similar_listing->ID ); ?>" class="detail text-caps"><?php _e('View Listing', 'dlmarine'); ?></a>
+                                </div>
+                            </div>
+
+                        <?php } ?>
+
+                        </div>
+                    </section>
+                    <?php } ?>
+
                 </div>
 <!--============ End Listing Detail =========================================================--> 
             </div>

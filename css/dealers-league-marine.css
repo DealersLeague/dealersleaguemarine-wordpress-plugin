@@ -440,6 +440,104 @@ input.error, textarea.error, select.error {
     padding-right: 0;
 }
 
+.single-newboat .items.dlmarine-similar-listings,
+.single-boat .items.dlmarine-similar-listings {
+    margin-left: -1.5rem !important;
+    margin-right: -1.5rem !important;
+}
+
+.single-newboat .items.dlmarine-similar-listings .item,
+.single-boat .items.dlmarine-similar-listings .item{
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+
+.single-newboat .items.dlmarine-similar-listings .item .price,
+.single-boat .items.dlmarine-similar-listings .item .price {
+    top: 5% !important;
+    bottom: unset !important;
+    right: 2rem;
+    left: unset;
+    border-radius: .3rem;
+}
+
+.single-newboat .items.dlmarine-similar-listings .item .price-left,
+.single-boat .items.dlmarine-similar-listings .item .price-left {
+    top: -160px !important;
+    left: 0px;
+    bottom: unset !important;
+    right: unset;
+    /* left: 2rem; */
+    border-radius: .3rem;
+    position: absolute;
+}
+
+.single-newboat .items.dlmarine-similar-listings .item .additional-info,
+.single-boat .items.dlmarine-similar-listings .item .additional-info{
+
+    margin-bottom: 4rem !important;
+    padding: 0 2rem 2em 2em !important;
+    margin-right: 2rem !important;
+    position: relative !important;
+    margin-left: 0 !important;
+    display: block;
+    height: 250px;
+}
+
+.single-boat .items.dlmarine-similar-listings .item .image {
+    background-color: transparent !important;
+}
+
+.single-boat .items.dlmarine-similar-listings .item .image .image-wrapper {
+    border: .6rem solid #fff !important;
+    border-radius: .9rem;
+}
+
+.single-boat .items.dlmarine-similar-listings .item .wrapper {
+    background-color: #fff !important;
+}
+
+.single-boat .items.dlmarine-similar-listings .item .additional-info ul li {
+    font-size: .8rem;
+    font-size: .8rem;
+    width: 100%;
+    margin-top: 0;
+}
+
+.single-boat .items.dlmarine-similar-listings .item .detail {
+    border: .1rem solid #01559c;
+    color: #222 !important;
+    text-decoration: none;
+    bottom: 2rem;
+    left: inherit;
+    padding: .3rem 2rem;
+    text-transform: none;
+    font-size: 1rem;
+    border-radius: .3rem !important;
+    z-index: 2;
+    position: relative;
+    right: -2rem;
+}
+
+.single-boat .items.dlmarine-similar-listings .item h3 {
+    left: 0;
+    bottom: 0;
+    top: 0;
+    position: relative;
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: .5rem;
+    width: 100%;
+}
+
+.single-boat .items.dlmarine-similar-listings .item h3 a:not(.category) {
+    color: #000;
+    text-shadow: none;
+    display: inline-block;
+    text-decoration: none !important;
+}
+
 .price-small {
     color: #6c727a !important;
     font-size: 1.1rem !important;
@@ -449,7 +547,25 @@ input.error, textarea.error, select.error {
     font-weight: bold;
 }
 
+@media (min-width: 1198px) {
+
+    .single-boat .items.dlmarine-similar-listings {
+        display: flex !important;
+    }
+
+    .single-boat .items.dlmarine-similar-listings .item {
+        width: 33%;
+    }
+}
+
 @media (max-width: 1198px) {
+    .single-boat .items.dlmarine-similar-listings {
+        display: block !important;
+    }
+    .single-boat .items.dlmarine-similar-listings .item {
+        width: 100% !important;
+    }
+
     .owl-carousel.full-width-carousel .owl-item {
         opacity: 1 !important;  
     }

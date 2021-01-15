@@ -36,7 +36,7 @@ use dealersleague\marine\wordpress\Utils;
 
 	    $country        = get_post_meta( $listing->ID, 'listing_location_country', true );
 	    $location       = get_post_meta( $listing->ID, 'listing_location_city', true );
-	    if ( ! empty( $location ) && ! empty( $condition ) ) {
+	    if ( ! empty( $location ) && ! empty( $country ) ) {
 		    $location .= ', ' . Utils::get_country_name( $country );
         }
 	    $model          = get_post_meta( $listing->ID, 'listing_model', true );

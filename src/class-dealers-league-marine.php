@@ -44,12 +44,12 @@ class Dealers_League_Marine {
 
 		if ( ! is_home() && ! is_search() && ! is_archive() && $post->post_type == Boat_Post_Type::get_post_type_name() && is_singular() ) {
 			$listing_permalink = get_post_meta( $post->ID, 'listing_permalink', true );
-
+/*
 			if ( empty( $listing_permalink ) ) {
 				self::create_unique_listing_permalink( $post->ID );
 				$listing_permalink = get_post_meta( $post->ID, 'listing_permalink', true );
 			}
-
+*/
 			return home_url() . '/' . $listing_permalink;
 
 		}
@@ -791,6 +791,96 @@ class Dealers_League_Marine {
 	}
 
 	/**
+	 * Get similar listings based on boat type, but if they have “advanced related boats” turned on in website settings
+	 * it would be manufacturer, length (-/+5 m), price (-/+15%)
+	 *
+	 * @param $is_advance
+	 * @param $listing_id
+	 * @param $boat_type
+	 * @param int $n_listings
+	 * @param string $manufacturer
+	 * @param string $length
+	 * @param string $price
+	 *
+	 * @return array
+	 */
+	public static function get_similar_listings( $is_advance, $listing_id, $boat_type, $n_listings = 3, $manufacturer = '', $length = '', $price = '' ) {
+
+		$listings = [];
+
+		if ( ! empty( $is_advance ) ) {
+
+			if ( ! empty( $manufacturer ) ) {
+
+				$conditions[] = array(
+					'key'     => 'listing_manufacturer',
+					'value'   => strtolower( $manufacturer ),
+					'compare' => '=',
+				);
+
+			}
+
+			if ( ! empty( $length ) ) {
+
+				$length_inf = (float)$length - 5;
+				$length_sup = (float)$length + 5;
+
+				$conditions[] = array(
+					'key'     => 'listing_loa',
+					'value'   => array( $length_inf, $length_sup ),
+					'compare' => 'BETWEEN',
+					'type'    => 'numeric',
+				);
+
+			}
+
+			if ( ! empty( $price ) ) {
+
+				$price_15percent = (float)$price * 0.15;
+				$price_inf = (float)$price - $price_15percent;
+				$price_sup = (float)$price + $price_15percent;
+
+				$conditions[] = array(
+					'key'     => 'listing_price',
+					'value'   => array( $price_inf, $price_sup ),
+					'compare' => 'BETWEEN',
+					'type'    => 'numeric',
+				);
+
+			}
+
+		} elseif ( ! empty( $boat_type ) ) {
+
+			$conditions[] = array(
+				'key'     => 'listing_boat_type',
+				'value'   => strtolower( $boat_type ),
+				'compare' => '=',
+			);
+
+		}
+
+		// Get n_listings different from the current one
+		$args = array(
+			'post_type'      => Boat_Post_Type::get_post_type_name(),
+			'post_status'    => 'publish',
+			'posts_per_page' => $n_listings,
+			'post__not_in'   => array( $listing_id ),
+		);
+
+		if ( ! empty( $conditions ) ) {
+			if ( count( $conditions ) > 1 ) {
+				$conditions[ 'relation' ] = 'AND';
+			}
+			$args['meta_query'] = $conditions;
+
+			$listings = new \WP_Query( $args );
+		}
+
+		return $listings->posts;
+
+	}
+
+	/**
 	 * Remove listing based on external ID
 	 *
 	 * @param $listing_external_id
@@ -806,7 +896,7 @@ class Dealers_League_Marine {
 			'post_type'      => Boat_Post_Type::get_post_type_name(),
 			'post_status'    => 'publish',
 			'posts_per_page' => 1,
-			$args['meta_query'] = $conditions
+			'meta_query'     => $conditions
 		);
 		$listings = new \WP_Query( $args );
 

@@ -47,7 +47,6 @@ use dealersleague\marine\wordpress\Utils;
             </ul>
         </div>
         <!--end description-->
-        <?php __( 'As New', 'dlmarine' ); ?>
         <a href="<?php echo Utils::get_listing_permalink( $listing->ID ); ?>" class="detail text-caps underline"><?php _e('View Listing', 'dlmarine'); ?></a>
     </div>
 </div>

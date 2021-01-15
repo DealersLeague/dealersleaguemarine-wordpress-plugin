@@ -163,6 +163,12 @@ class Listing_Shortcode {
 			'paged'          => $paged,
 		);
 
+		$conditions[] = array(
+			'key'     => 'listing_external_id',
+			'value'   => '',
+			'compare' => '!='
+		);
+
 		if ( ! empty( $conditions ) ) {
 			if ( count( $conditions ) > 1 ) {
 				$conditions[ 'relation' ] = 'AND';
