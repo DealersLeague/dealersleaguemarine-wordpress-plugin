@@ -41,11 +41,18 @@ use dealersleague\marine\wordpress\Utils;
         }
 	    $model          = get_post_meta( $listing->ID, 'listing_model', true );
 	    $manufacturer   = get_post_meta( $listing->ID, 'listing_manufacturer', true );
+	    $range          = get_post_meta( $listing->ID, 'listing_range', true );
 	    $category       = get_post_meta( $listing->ID, 'listing_boat_type', true );
 	    $loa            = get_post_meta( $listing->ID, 'listing_loa', true );
 	    $beam           = get_post_meta( $listing->ID, 'listing_beam', true );
 	    $draft          = get_post_meta( $listing->ID, 'listing_draught', true );
-	    $condition      = str_replace( '-', ' ', get_post_meta( $listing->ID, 'listing_condition', true ) );
+	    $condition    = get_post_meta( $listing->ID, 'listing_condition', true );
+	    $sale_class   = get_post_meta( $listing->ID, 'listing_sale_class', true );
+	    if ( in_array( $sale_class, array( 'new','new-instock','new-onorder','new-inorder') ) ) {
+		    $condition = 'New';
+	    } else {
+		    $condition = ucfirst( str_replace( '-', ' ', $condition ) );
+	    }
 	    $sale_status    = get_post_meta( $listing->ID, 'listing_sale_status', true );
 	    $currency_code  = get_post_meta( $listing->ID, 'listing_currency', true );
 	    $currency       = Utils::get_currency_symbol( $currency_code );

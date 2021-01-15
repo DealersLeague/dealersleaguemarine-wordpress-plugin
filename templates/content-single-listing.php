@@ -86,10 +86,14 @@ if ( ! $panorama_list && ! $videos ) {
 
 
 // Details
-$post_title   = get_the_title();
+
 $boat_type    = get_post_meta( $post_id, 'listing_boat_type', true );
 $manufacturer = get_post_meta( $post_id, 'listing_manufacturer', true );
+$range        = get_post_meta( $post_id, 'listing_range', true );
 $model        = get_post_meta( $post_id, 'listing_model', true );
+
+$post_title   = empty( $range ) ? $manufacturer . ' ' . $model : $manufacturer . ' ' . $range . ' ' . $model;//get_the_title();
+
 $boat_name    = $listing_json_data['listing']['boat_details']['construction_details']['boat_name'];
 $condition    = get_post_meta( $post_id, 'listing_condition', true );
 $sale_class   = get_post_meta( $post_id, 'listing_sale_class', true );

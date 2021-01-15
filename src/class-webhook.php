@@ -28,7 +28,7 @@ class Webhook {
 		add_action( 'rest_api_init', function () {
 			register_rest_route( 'dealers-league-marine/v1', '/update-web-settings/', array(
 				'methods' => 'POST',
-				'callback' => array( $this, 'update_qwb_settings' ),
+				'callback' => array( $this, 'update_web_settings' ),
 			) );
 		} );
 

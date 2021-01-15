@@ -23,7 +23,8 @@ use dealersleague\marine\wordpress\Utils;
         <div class="additional-info">
             <h3>
                 <a href="#" class="tag category"><?php echo __( ucfirst( $category ) , 'dlmarine' ); ?></a>
-                <a href="<?php echo get_permalink( $listing->ID ); ?>" class="title"><?php echo $manufacturer . ' ' . $model; ?></a>
+                <?php $name = empty( $range ) ? $manufacturer . ' ' . $model : $manufacturer .' '.$range.' '.$model; ?>
+                <a href="<?php echo get_permalink( $listing->ID ); ?>" class="title"><?php echo $name; ?></a>
             </h3>
 
             <ul class="d-block d-xl-none">
