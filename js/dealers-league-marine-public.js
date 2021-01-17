@@ -2,12 +2,15 @@
 
     $('.anchor-scroll').on('click', function(evt){
         var buttonId = $(this).attr('id');
-        console.log(buttonId);
 
-        if ( buttonId == 'form_send_survey_btn' ) {
-            $('#enquiry-subject').val('request_survey').trigger('change');
+
+        if ( buttonId == 'form_send_enquiry_btn' ) {
+            $(document).find('#enquiry-subject').val('').trigger('change');
+        }else if ( buttonId == 'form_send_survey_btn' ) {
+                $(document).find('#enquiry-subject').val('request_survey').trigger('change');
         } else if ( buttonId == 'finanzierung-btn' ) {
-            $('#finanzierung').trigger('click');
+            console.log('finance button');
+            $(document).find('#finanzierung').trigger('click');
         }
         evt.preventDefault(); //prevents hash from being append to the url
         evt.stopPropagation();

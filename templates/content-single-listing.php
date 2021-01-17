@@ -258,7 +258,7 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                 </div>
                 <div class="col-md-4 listing-buttons">
                     <?php if ( empty( $hide_enquiry_button ) ) { ?>
-                        <a href="#form_send_enquiry" class="btn btn-primary btn-lg btn-block anchor-scroll"><?php _e('Enquiry', 'dlmarine'); ?></a>
+                        <a id="form_send_enquiry_btn" href="#form_send_enquiry" class="btn btn-primary btn-lg btn-block anchor-scroll"><?php _e('Enquiry', 'dlmarine'); ?></a>
                     <?php } ?>
                     <?php if ( $videos && $video_placement != 'SIDEBAR' && empty( $hide_watch_video_button ) ) { ?>
                         <a href="#video-wrapper" class="btn btn-primary btn-lg btn-block anchor-scroll"><?php _e('Watch Video', 'dlmarine'); ?></a>
