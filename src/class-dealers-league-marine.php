@@ -777,14 +777,14 @@ class Dealers_League_Marine {
 		$sql = $wpdb->prepare( "SELECT p.ID, pm.meta_value, p.post_type " .
 		                       " FROM $wpdb->posts AS p INNER JOIN $wpdb->postmeta AS pm ON (pm.post_id = p.ID) " .
 		                       " WHERE pm.meta_key = 'listing_permalink' " .
-		                       " AND (pm.meta_value LIKE '%s' OR pm.meta_value LIKE '%s') AND p.id!=%s " .
+		                       " AND (pm.meta_value LIKE '".$wpdb->esc_like($permalink)."%' OR pm.meta_value LIKE '".$wpdb->esc_like($permalink)."%/') AND p.id!=%s " .
 		                       " AND p.post_status != 'trash' AND p.post_type ='%s' " .
 		                       " ORDER BY FIELD(post_status,'publish','private','pending','draft','auto-draft','inherit')," .
-		                       " FIELD(post_type,'%s')", $permalink, $permalink . "/", $post_id, Boat_Post_Type::get_post_type_name(), Boat_Post_Type::get_post_type_name() );
+		                       " FIELD(post_type,'%s')", $post_id, Boat_Post_Type::get_post_type_name(), Boat_Post_Type::get_post_type_name() );
 
 		$posts = $wpdb->get_results( $sql );
 
-		if ( count( $posts ) > 0 && $permalink != $listing_permalink ) {
+		if ( count( $posts ) > 0 ) {
 			$permalink = ltrim( $permalink, '/' ) . '-' . ( count( $posts ) + 1 );
 		}
 
