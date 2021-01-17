@@ -139,7 +139,7 @@ class Dealers_League_Marine {
 			'dealers-league-marine-css',
 			plugins_url('css/dealers-league-marine.css' , __DIR__ ),
 			false,
-			'1.0.1'
+			time()
 		);
 		wp_enqueue_style( 'dealers-league-marine-css' );
 

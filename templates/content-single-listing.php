@@ -264,8 +264,8 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                         <a href="#video-wrapper" class="btn btn-primary btn-lg btn-block anchor-scroll"><?php _e('Watch Video', 'dlmarine'); ?></a>
                     <?php } ?> 
                     <?php if ( $survey_active ) { ?>
-                        <a id="form_send_enquiry_btn" href="#form_send_enquiry" class="btn btn-primary btn-lg btn-block anchor-scroll"><?php _e('Request Survey', 'dlmarine'); ?></a>
-                    <?php } ?> 
+                        <a id="form_send_survey_btn" href="#form_send_enquiry" class="btn btn-primary btn-lg btn-block anchor-scroll"><?php _e('Request Survey', 'dlmarine'); ?></a>
+                    <?php } ?>
                     
                     <?php do_action( 'after_buttons' ); ?>
                      
@@ -552,6 +552,7 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                             }
 
                         }
+
                         
                         do_action('after_accordion', 
                             $manufacturer, 
@@ -560,7 +561,7 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                             $price 
                         );
 
-                    ?> 
+                    ?>
 
                     </section>
 
@@ -684,7 +685,7 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                     <?php if ( ! empty( $similar_listings ) ) { ?>
 
                     <section>
-                        <h2><?php _e('Similar Boats', 'dlmarine' ); ?></h2>
+                        <h2><?php _e('Related Boats', 'dlmarine' ); ?></h2>
                         <div class="items grid grid-xl-<?php echo count( $similar_listings ); ?>-items grid-lg-<?php echo count( $similar_listings ); ?>-items grid-md-<?php echo count( $similar_listings ); ?>-items dlmarine-similar-listings">
 
                         <?php foreach ( $similar_listings as $similar_listing ) { ?>
@@ -701,8 +702,14 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
 	                        $loa            = get_post_meta( $similar_listing->ID, 'listing_loa', true );
 	                        $beam           = get_post_meta( $similar_listing->ID, 'listing_beam', true );
 	                        $draft          = get_post_meta( $similar_listing->ID, 'listing_draught', true );
-	                        $condition      = str_replace( '-', ' ', get_post_meta( $similar_listing->ID, 'listing_condition', true ) );
+	                        $condition      = get_post_meta( $post_id, 'listing_condition', true );
 	                        $sale_status    = get_post_meta( $similar_listing->ID, 'listing_sale_status', true );
+	                        $sale_class     = get_post_meta( $post_id, 'listing_sale_class', true );
+	                        if ( in_array( $sale_class, array( 'new','new-instock','new-onorder','new-inorder') ) ) {
+		                        $condition = 'New';
+	                        } else {
+		                        $condition = ucfirst( str_replace( '-', ' ', $condition ) );
+	                        }
 	                        $currency_code  = get_post_meta( $similar_listing->ID, 'listing_currency', true );
 	                        $currency       = Utils::get_currency_symbol( $currency_code );
 	                        $price          = Utils::format_price( get_post_meta( $similar_listing->ID, 'listing_price', true ), $currency_code );
