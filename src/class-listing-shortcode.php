@@ -54,11 +54,18 @@ class Listing_Shortcode {
 		}
 
 		$search_condition = $attr[ 'condition' ] ?? $_GET['condition'] ?? '';
+
+		if ( strtolower( $search_condition == 'used' ) ) {
+			$condition_array = array( 'used', 'used-excharter', 'demo-inwater', 'demo-exhibition' );
+		} elseif ( strtolower( $search_condition == 'new' ) ) {
+			$condition_array = array( 'new', 'new-inorder', 'new-onorder', 'new-instock' );
+		}
+
 		if ( ! empty( $search_condition ) ) {
 			$conditions[] = array(
 				'key'     => 'listing_sale_class',
-				'value'   => strtolower( $search_condition ),
-				'compare' => '=',
+				'value'   => $condition_array,
+				'compare' => 'IN',
 			);
 		}
 
