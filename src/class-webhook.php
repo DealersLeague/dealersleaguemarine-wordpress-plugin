@@ -78,6 +78,17 @@ class Webhook {
 	}
 
 	/**
+	 * Actions to perform after any webhook call
+	 */
+	private function after_webhook() {
+
+		if ( function_exists( 'rocket_clean_domain' ) ) {
+			rocket_clean_domain();
+		}
+
+	}
+
+	/**
 	 * @param WP_REST_Request $request
 	 *
 	 * @throws \GuzzleHttp\Exception\GuzzleException
@@ -97,6 +108,7 @@ class Webhook {
 				$listing_data = $request->get_params();
 				Dealers_League_Marine::update_listing_data( $listing_data );
 				$settings->save_search_form_options();
+				$this->after_webhook();
 			} else {
 				header( 'HTTP/1.1 401 Authorization Required' );
 				header( 'WWW-Authenticate: Basic realm="Access denied"' );
@@ -133,6 +145,7 @@ class Webhook {
 				$listing_id = $request->get_params();
 				Dealers_League_Marine::remove_listing( $listing_id[0] );
 				$settings->save_search_form_options();
+				$this->after_webhook();
 			} else {
 				header( 'HTTP/1.1 401 Authorization Required' );
 				header( 'WWW-Authenticate: Basic realm="Access denied"' );
@@ -170,6 +183,7 @@ class Webhook {
 				foreach ( $listings[ 'listings' ] as $listing_data ) {
 					Dealers_League_Marine::update_listing_data( $listing_data );
 				}
+				$this->after_webhook();
 
 			}
 			header( 'HTTP/1.1 200 OK' );
@@ -196,6 +210,7 @@ class Webhook {
 				header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
 				$web_settings = $request->get_params();
 				$settings->save_web_settings_options( $web_settings );
+				$this->after_webhook();
 			} else {
 				header( 'HTTP/1.1 401 Authorization Required' );
 				header( 'WWW-Authenticate: Basic realm="Access denied"' );
@@ -228,6 +243,7 @@ class Webhook {
 				header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
 				$integrations = $request->get_params();
 				$settings->save_integrations_options( $integrations );
+				$this->after_webhook();
 			} else {
 				header( 'HTTP/1.1 401 Authorization Required' );
 				header( 'WWW-Authenticate: Basic realm="Access denied"' );

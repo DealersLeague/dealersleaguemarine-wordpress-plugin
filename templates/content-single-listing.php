@@ -100,7 +100,7 @@ $sale_class   = get_post_meta( $post_id, 'listing_sale_class', true );
 if ( in_array( $sale_class, array( 'new','new-instock','new-onorder','new-inorder') ) ) {
     $condition = 'New';
 } else {
-	$condition = ucfirst( str_replace( '-', ' ', $condition ) );
+	$condition = ucfirst( str_replace( '-', ' ', trim($condition) ) );
 }
 $vat_status            = get_post_meta( $post_id, 'listing_vat_status', true );
 $vat_area              = get_post_meta( $post_id, 'listing_vat_paid_area', true );
@@ -708,7 +708,7 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
 	                        if ( in_array( $sale_class, array( 'new','new-instock','new-onorder','new-inorder') ) ) {
 		                        $condition = 'New';
 	                        } else {
-		                        $condition = ucfirst( str_replace( '-', ' ', $condition ) );
+		                        $condition = ucfirst( str_replace( '-', ' ', trim($condition) ) );
 	                        }
 	                        $currency_code  = get_post_meta( $similar_listing->ID, 'listing_currency', true );
 	                        $currency       = Utils::get_currency_symbol( $currency_code );
