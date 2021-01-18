@@ -405,6 +405,8 @@ class Utils {
 
 	public static function get_unity( $field_name ) {
 
+		$as_new = __( 'As New', 'dlmarine');
+
 		$unity_list = array(
 			'loa'              => __( 'm', 'dlmarine' ),
 			'lwl'              => __( 'm', 'dlmarine' ),
