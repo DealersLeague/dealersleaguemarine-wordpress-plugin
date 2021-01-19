@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-01-18 13:22+0000\n"
-"PO-Revision-Date: 2021-01-18 13:23+0000\n"
+"POT-Creation-Date: 2021-01-18 13:36+0000\n"
+"PO-Revision-Date: 2021-01-19 14:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -435,10 +435,8 @@ msgid "name"
 msgstr "Nachname"
 
 #: languages/fields_wordpress.php:105 src/class-dealers-league-marine.php:302
-#, fuzzy
-#| msgid "Boat Crane"
 msgid "Boat Range"
-msgstr "Bootskran"
+msgstr "Serie"
 
 #: languages/fields_wordpress.php:106 languages/fields_wordpress.php:461
 #: languages/fields_wordpress.php:515 templates/content-archive-listing.php:69
@@ -692,7 +690,7 @@ msgstr "colours.json"
 #: languages/fields_wordpress.php:168 languages/fields_wordpress.php:306
 #: languages/fields_wordpress.php:322 languages/fields_wordpress.php:338
 #: languages/fields_wordpress.php:348 languages/fields_wordpress.php:517
-#: src/class-utils.php:651
+#: src/class-utils.php:653
 msgid "Material"
 msgstr "Material"
 
@@ -1347,7 +1345,7 @@ msgstr "GFK"
 
 #: languages/fields_wordpress.php:418 languages/fields_wordpress.php:430
 #: languages/fields_wordpress.php:442 languages/fields_wordpress.php:2196
-#: src/class-utils.php:648
+#: src/class-utils.php:650
 msgid "volume"
 msgstr ""
 
@@ -1769,7 +1767,7 @@ msgstr "Ruderstandsanzeige"
 
 #: languages/fields_wordpress.php:611
 msgid "Rev Indicator"
-msgstr "Reff Anzeige"
+msgstr "Drehzahlmesser"
 
 #: languages/fields_wordpress.php:613
 msgid "Technical"
@@ -2576,7 +2574,7 @@ msgid "Mega Yacht"
 msgstr "Mega-Yacht"
 
 #: languages/fields_wordpress.php:874 src/class-utils.php:113
-#: src/class-utils.php:452
+#: src/class-utils.php:454
 msgid "Offshore"
 msgstr "Außerhalb von Küstengewässern"
 
@@ -4634,9 +4632,9 @@ msgstr ""
 msgid "Georgian"
 msgstr "Georgisch"
 
-#: languages/fields_wordpress.php:1383 src/class-utils.php:415
-#: src/class-utils.php:416 src/class-utils.php:424 src/class-utils.php:430
-#: src/class-utils.php:431 src/class-utils.php:432
+#: languages/fields_wordpress.php:1383 src/class-utils.php:417
+#: src/class-utils.php:418 src/class-utils.php:426 src/class-utils.php:432
+#: src/class-utils.php:433 src/class-utils.php:434
 msgid "kg"
 msgstr "kg"
 
@@ -8103,50 +8101,54 @@ msgstr "Dealers League Marine"
 msgid "Skiandwake"
 msgstr "Skiandwake"
 
-#: src/class-utils.php:409 src/class-utils.php:410 src/class-utils.php:411
-#: src/class-utils.php:412 src/class-utils.php:413 src/class-utils.php:414
-#: src/class-utils.php:421 src/class-utils.php:427 src/class-utils.php:428
-#: src/class-utils.php:429 src/class-utils.php:434 src/class-utils.php:435
+#: src/class-utils.php:408
+msgid "As New"
+msgstr "Wie neu"
+
+#: src/class-utils.php:411 src/class-utils.php:412 src/class-utils.php:413
+#: src/class-utils.php:414 src/class-utils.php:415 src/class-utils.php:416
+#: src/class-utils.php:423 src/class-utils.php:429 src/class-utils.php:430
+#: src/class-utils.php:431 src/class-utils.php:436 src/class-utils.php:437
 msgid "m"
 msgstr "m"
 
-#: src/class-utils.php:417 src/class-utils.php:425 src/class-utils.php:426
+#: src/class-utils.php:419 src/class-utils.php:427 src/class-utils.php:428
 msgid "kmh"
 msgstr "km/h"
 
-#: src/class-utils.php:418
+#: src/class-utils.php:420
 msgid "lh"
 msgstr "l/h"
 
-#: src/class-utils.php:419
+#: src/class-utils.php:421
 msgid "nm"
 msgstr "nm"
 
-#: src/class-utils.php:420
+#: src/class-utils.php:422
 msgid "hp"
 msgstr "PS"
 
-#: src/class-utils.php:422
+#: src/class-utils.php:424
 msgid "L"
 msgstr "L"
 
-#: src/class-utils.php:423
+#: src/class-utils.php:425
 msgid "cm3"
 msgstr "cm³"
 
-#: src/class-utils.php:433
+#: src/class-utils.php:435
 msgid "m2"
 msgstr "m²"
 
-#: src/class-utils.php:451
+#: src/class-utils.php:453
 msgid "Ocean"
 msgstr "Hochsee"
 
-#: src/class-utils.php:453
+#: src/class-utils.php:455
 msgid "Inshore"
 msgstr "Küstennahne Gewässer"
 
-#: src/class-utils.php:454
+#: src/class-utils.php:456
 msgid "Sheltered waters"
 msgstr "Geschützte Gewässer"
 
@@ -8392,9 +8394,6 @@ msgstr "Mehr Info"
 
 #~ msgid "Sail"
 #~ msgstr "Saildrive"
-
-#~ msgid "As New"
-#~ msgstr "Wie neu"
 
 #~ msgid "Title"
 #~ msgstr "Titel"
