@@ -47,9 +47,17 @@ class Listing_Shortcode {
 		$search_category = $attr[ 'category' ] ?? $_GET['category'] ?? '';
 		if ( ! empty( $search_category ) ) {
 			$conditions[] = array(
-				'key'     => 'listing_category',
-				'value'   => strtolower( $search_category ),
-				'compare' => '=',
+				'relation' => 'OR',
+				array(
+					'key'     => 'listing_category',
+					'value'   => strtolower( $search_category ),
+					'compare' => '=',
+				),
+				array(
+					'key'     => 'listing_boat_type',
+					'value'   => strtolower( $search_category ),
+					'compare' => '=',
+				)
 			);
 		}
 
@@ -203,6 +211,9 @@ class Listing_Shortcode {
 		// Get template file output
 		$layout_type = strtolower( $settings->get_web_settings_option_val( 'listing_layout' ) );
 		$listings    = new \WP_Query( $args );
+		// echo '<pre>';
+		// print_r($listings);
+		// die;
 		include plugin_dir_path( __FILE__ ) . '../templates/content-archive-listing.php';
 		echo $this->render_pagination( $listings->max_num_pages );
 		return ob_get_clean();
