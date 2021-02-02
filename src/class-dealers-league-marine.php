@@ -980,7 +980,7 @@ class Dealers_League_Marine {
 					$subject = __( 'New Survey Request from', 'dlmarine' ) . ' ' . get_bloginfo( 'name' );
 					$body =  '<p style="margin-bottom:10px;">' . __( 'New Survey Request', 'dlmarine' ) . '</p> ';
 				} else {
-					$to = $settings->get_option_val( 'email' );;
+					$to = $settings->get_web_settings_option_val( 'email' );;
 					$subject = $boat_name . ' ' . __( 'New Boat Enquiry', 'dlmarine' );
 					$body =  '<p style="margin-bottom:10px;">' . __( 'New Enquiry', 'dlmarine' ) . '</p> ';
 				}
@@ -997,7 +997,7 @@ class Dealers_League_Marine {
 				           'Reply-To: ' . $_POST[ 'enquiry' ][ 'email' ] . "\r\n";
 
 				$sent = wp_mail( $to, $subject, $body, $headers );
-
+				 
 				if ( $sent ) {
 					// Tracking
 					if ( ! is_user_logged_in() ) {
