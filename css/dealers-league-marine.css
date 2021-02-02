@@ -746,7 +746,19 @@ input.error, textarea.error, select.error {
     .items:not(.selectize-input).list .item .additional-info, .items:not(.selectize-input).list.compact .item .additional-info {
          
         margin-right: 0; 
-    }
+	}
+	
+	.related-boats-section {
+		order: 1;
+	}
+	
+	.media-sidebar-section {
+		order: 2;
+	}
+	
+	.long-description-section {
+		order: 3;
+	}
 }
 
 @media (max-width: 500px) {
@@ -763,3 +775,4 @@ input.error, textarea.error, select.error {
         width: 100%
     }
 }
+

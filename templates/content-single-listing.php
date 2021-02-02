@@ -278,7 +278,7 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
         <div class="container">
             <div class="row flex-column-reverse flex-md-row">
                 <!--============ Listing Detail =============================================================-->
-                <div class="<?php echo $sidebar_class; ?> listing-mobile-order-first">
+                <div class="<?php echo $sidebar_class; ?> listing-mobile-order-first long-description-section">
 <!-- START Description -->
                     <section>  
                         <p>
@@ -308,7 +308,7 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
 
 <!-- START Sidebar -->
                 <?php if ( $panorama_list || $videos ) { ?>
-                    <div class="col-md-4">    
+                    <div class="col-md-4 media-sidebar-section">    
                         <?php if ( $videos && $video_placement == 'SIDEBAR' ) { ?>
                             <section class="single-listing-videos">
                                 <?php foreach ( $videos as $video ) {  
@@ -684,7 +684,7 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
 
                     <?php if ( ! empty( $similar_listings ) ) { ?>
 
-                    <section>
+                    <section class="related-boats-section">
                         <h2><?php _e('Related Boats', 'dlmarine' ); ?></h2>
                         <div class="items grid grid-xl-<?php echo count( $similar_listings ); ?>-items grid-lg-<?php echo count( $similar_listings ); ?>-items grid-md-<?php echo count( $similar_listings ); ?>-items dlmarine-similar-listings">
 

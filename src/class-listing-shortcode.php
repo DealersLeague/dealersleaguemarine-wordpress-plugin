@@ -35,6 +35,15 @@ class Listing_Shortcode {
 			);
 		}
 
+		$search_exclude_range = $attr[ 'exclude_range' ] ?? $_GET['exclude_range'] ?? '';
+		if ( ! empty( $search_exclude_range ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_range',
+				'value'   => strtolower( $search_exclude_range ),
+				'compare' => '!=',
+			);
+		}
+
 		$search_manufacturer = $attr[ 'manufacturer' ] ?? $_GET['manufacturer'] ?? '';
 		if ( ! empty( $search_manufacturer ) ) {
 			$conditions[] = array(
