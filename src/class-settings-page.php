@@ -301,35 +301,40 @@ class Settings_Page {
 	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
 	 */
 	public function save_options( $options, $option_name ): void {
+		try {
+			$tab_page_fields = $this->get_tab_page_fields();
 
-		$tab_page_fields = $this->get_tab_page_fields();
+			if ( array_key_exists( $option_name, $tab_page_fields ) ) {
 
-		if ( array_key_exists( $option_name, $tab_page_fields ) ) {
+				$field_list = $tab_page_fields[ $option_name ][ 'fields' ];
 
-			$field_list = $tab_page_fields[ $option_name ][ 'fields' ];
-
-			foreach ( $field_list as $field ) {
-				if ( array_key_exists( $field[ 'id' ], $options ) ) {
-					$value = $this->sanitize( $options[ $field[ 'id' ] ], $field[ 'type' ] );
-					$this->options[ $field[ 'id' ] ] = $value;
-				} else {
-					$this->options[ $field[ 'id' ] ] = '';
+				foreach ( $field_list as $field ) {
+					if ( array_key_exists( $field[ 'id' ], $options ) ) {
+						$value = $this->sanitize( $options[ $field[ 'id' ] ], $field[ 'type' ] );
+						$this->options[ $field[ 'id' ] ] = $value;
+					} else {
+						$this->options[ $field[ 'id' ] ] = '';
+					}
 				}
 			}
+
+			update_option( $this->option_name, $this->options );
+
+			// Getting options from API
+			$api_object = new Api();
+			$api_object->init( $this );
+
+			$web_settings = $api_object->get_web_settings();
+			update_option( $this->web_settings_option_name, maybe_serialize( $web_settings ) );
+			
+			$integrations = $api_object->get_integration();
+			update_option( $this->integration_option_name, maybe_serialize( $integrations ) );
+
+		} catch(\Exception $ex){
+			echo '<div class="error notice notice-warning is-dismissible">
+             <p>'.$ex->getMessage().'</p>
+         	</div>';
 		}
-
-		update_option( $this->option_name, $this->options );
-
-		// Getting options from API
-		$api_object = new Api();
-		$api_object->init( $this );
-
-		$web_settings = $api_object->get_web_settings();
-		update_option( $this->web_settings_option_name, maybe_serialize( $web_settings ) );
-
-		$integrations = $api_object->get_integration();
-		update_option( $this->integration_option_name, maybe_serialize( $integrations ) );
-
 	}
 
 	/**
