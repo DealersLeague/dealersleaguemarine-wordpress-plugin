@@ -61,17 +61,19 @@ use dealersleague\marine\wordpress\Utils;
 	    $n_images       = get_post_meta( $listing->ID, 'listing_n_images', true );
 	    $n_videos       = get_post_meta( $listing->ID, 'listing_n_videos', true ); 
 
-	    $listing_json_data = get_post_meta( $listing->ID, 'listing_json_data', true );
-	    $short_description_text = Utils::get_short_description( $listing_json_data );
+	    $listing_json_data = maybe_unserialize( get_post_meta( $listing->ID, 'listing_json_data', true ) );
+	    $short_description_text = Utils::get_short_description( $listing_json_data_maybe_unserialize );
+		$year = $listing_json_data['listing']['boat_details']['construction_details']['year_built'];
 
 	    $meta_field_list = array(
-		    __( 'Manufacturer', 'model' ) => $manufacturer,
+		    __( 'Manufacturer', 'dlmarine' ) => $manufacturer,
 		    __( 'Model', 'dlmarine' )     => $model,
 		    __( 'Condition', 'dlmarine' ) => ucwords( __( $condition, 'dlmarine' ) ),
 		    __( 'LOA', 'dlmarine' )       => empty( $loa ) ? '' : $loa .'m',
 		    __( 'Beam', 'dlmarine' )      => empty( $beam ) ? '' : $beam .'m',
 		    __( 'Draft', 'dlmarine' )     => empty( $draft ) ? '' : $draft .'m',
-		    __( 'Location', 'model' )     => $location,
+		    __( 'Location', 'dlmarine' )     => $location,
+		    __( 'Year', 'dlmarine' )     	  => $year,
 	    );
 
         if ( $layout_type == 'grid' ) {
