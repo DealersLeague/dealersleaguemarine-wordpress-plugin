@@ -573,9 +573,12 @@ class Dealers_League_Marine {
 		update_post_meta( $post_id, 'listing_external_id', $listing_data[ 'id' ] );
 		update_post_meta( $post_id, 'listing_json_data', maybe_serialize( $json_data ) );
 
-		if ( ! empty( $listing_data['publish_at'] ) ) {
-			update_post_meta( $post_id, 'listing_publish_date', strtotime($listing_data['publish_at']) );
-		} else if ( ! empty( $listing_data['created_at'] ) ) {
+		// if ( ! empty( $listing_data['publish_at'] ) ) {
+		// 	update_post_meta( $post_id, 'listing_publish_date', strtotime($listing_data['publish_at']) );
+		// } else if ( ! empty( $listing_data['created_at'] ) ) {
+		// 	update_post_meta( $post_id, 'listing_publish_date', strtotime($listing_data['created_at']) );
+		// }
+		 if ( ! empty( $listing_data['created_at'] ) ) {
 			update_post_meta( $post_id, 'listing_publish_date', strtotime($listing_data['created_at']) );
 		}
 
