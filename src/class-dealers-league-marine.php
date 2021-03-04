@@ -616,8 +616,8 @@ class Dealers_League_Marine {
 			delete_post_meta( $post_id, 'listing_beam' );
 		}
 
-		if ( isset( $json_data['listing']['boat_details']['dimensions']['draught']['number'][0] ) ) {
-			$draught = $json_data['listing']['boat_details']['dimensions']['draught']['number'][0];
+		if ( isset( $json_data['listing']['boat_details']['dimensions']['draft']['number'][0] ) ) {
+			$draught = $json_data['listing']['boat_details']['dimensions']['draft']['number'][0];
 			update_post_meta( $post_id, 'listing_draught', $draught );
 		} else {
 			delete_post_meta( $post_id, 'listing_draught' );

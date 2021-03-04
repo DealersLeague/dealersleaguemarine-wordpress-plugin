@@ -150,7 +150,7 @@ __( 'unit','dlmarine');
 __( 'Beam','dlmarine');
 __( 'number','dlmarine');
 __( 'unit','dlmarine');
-__( 'Draught','dlmarine');
+__( 'draft','dlmarine');
 __( 'number','dlmarine');
 __( 'unit','dlmarine');
 __( 'Clearance','dlmarine');

@@ -411,7 +411,7 @@ class Utils {
 			'loa'              => __( 'm', 'dlmarine' ),
 			'lwl'              => __( 'm', 'dlmarine' ),
 			'beam'             => __( 'm', 'dlmarine' ),
-			'draught'          => __( 'm', 'dlmarine' ),
+			'draft'          => __( 'm', 'dlmarine' ),
 			'draught_keelup'   => __( 'm', 'dlmarine' ),
 			'clearance'        => __( 'm', 'dlmarine' ),
 			'displacement'     => __( 'kg', 'dlmarine' ),

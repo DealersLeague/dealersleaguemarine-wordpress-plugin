@@ -606,8 +606,8 @@
                             ]
                         },
                         {
-                            "id" : "draught",
-                            "name" : "Draught",
+                            "id" : "draft",
+                            "name" : "Draft",
                             "type" : "input_group",
                             "position" : "append",
                             "fields" : [

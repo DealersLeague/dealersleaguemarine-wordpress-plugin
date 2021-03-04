@@ -150,7 +150,7 @@
  Yii::t('app', 'Beam');
  Yii::t('app', 'number');
  Yii::t('app', 'unit');
- Yii::t('app', 'Draught');
+ Yii::t('app', 'draft');
  Yii::t('app', 'number');
  Yii::t('app', 'unit');
  Yii::t('app', 'Clearance');
