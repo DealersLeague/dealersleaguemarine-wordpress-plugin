@@ -729,20 +729,21 @@ class Dealers_League_Marine {
 		}
 
 		// Get first image as cover image
-		if ( !empty($json_data[ 'fileuploader-list-listing_images' ] ) ) {
+		if ( !empty($json_data[ 'images' ] ) ) {
 
-			$image_list = is_array( $json_data[ 'fileuploader-list-listing_images' ] ) ? $json_data[ 'fileuploader-list-listing_images' ] : json_decode( $json_data[ 'fileuploader-list-listing_images' ], true );
+			// $image_list = is_array( $json_data[ 'fileuploader-list-listing_images' ] ) ? $json_data[ 'fileuploader-list-listing_images' ] : json_decode( $json_data[ 'fileuploader-list-listing_images' ], true );
 
-			update_post_meta( $post_id, 'listing_n_images', count( $image_list ) );
+			update_post_meta( $post_id, 'listing_n_images', count( $json_data[ 'images' ] ) );
 			$has_index = false;
-			foreach ( $image_list as $image ) {
+			foreach ( $json_data[ 'images' ] as $image ) {
 				if ( isset( $image['index'] ) && $image['index'] == 0 ) {
 					$has_index = true;
 					update_post_meta( $post_id, 'listing_featured_image', $image[ 'file' ] );
+					break;
 				}
 			}
 			if ( ! $has_index ) {
-				update_post_meta( $post_id, 'listing_featured_image', $image_list[ 0 ][ 'file' ] );
+				update_post_meta( $post_id, 'listing_featured_image', $json_data[ 'images' ][ 0 ][ 'file' ] );
 			}
 
 		}
