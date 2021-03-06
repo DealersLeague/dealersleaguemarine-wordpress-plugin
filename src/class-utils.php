@@ -437,10 +437,10 @@ class Utils {
 			'max_boat_draught' => __( 'm', 'dlmarine' ),
 		);
 
+
 		if ( array_key_exists( strtolower( $field_name ) , $unity_list ) ) {
 			return $unity_list[ strtolower( $field_name )  ];
 		}
-
 		return '';
 
 	}
@@ -503,12 +503,12 @@ class Utils {
 		} elseif ( isset( $short_description_array[ 'language' ] ) && is_array( $short_description_array[ 'language' ] ) ) {
 			foreach ( $short_description_array[ 'language' ] as $index => $short_description_language ) {
 				if ( $short_description_language == $language ) {
-					$short_description_text = $short_description_array[ 'text' ][ $index ];
+					$short_description_text = $short_description_array[ 'short_description_text' ][ $index ];
 					break;
 				}
 			}
-			if ( empty( $short_description_text ) ) {
-				$short_description_text = $short_description_array[ 'text' ][ 0 ];
+			if ( !empty( $short_description_text ) ) {
+				$short_description_text = $short_description_array[ 'short_description_text' ][ 0 ];
 			}
 		}
 
@@ -639,13 +639,13 @@ class Utils {
 				$translated = __( $text, 'dlmarine' );
 				$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtoupper( $text ), 'dlmarine' ) : $translated;
 				$translated = strtolower( $text ) == strtolower( $translated ) ? __( strtolower( $text ), 'dlmarine' ) : $translated;
+			}
 				$translated = strtolower( $text ) == strtolower( $translated ) ? __( ucfirst( $text ), 'dlmarine' ) : $translated;
 				$translated = strtolower( $text ) == strtolower( $translated ) ? __( ucwords( $text ), 'dlmarine' ) : $translated;
 
 				$text_to_return = strtolower( $original ) == strtolower( $translated ) ? $original : $translated;
 			}
-		}
-
+			
 		if ( strtolower( $text_to_return ) == 'volume' ) {
 			$text_to_return = __( 'volume', 'dlmarine' );
 		}
@@ -653,12 +653,12 @@ class Utils {
 			$text_to_return = __( 'Material', 'dlmarine' );
 		}
 		return $text_to_return;
+		$text = preg_replace( '~[^\pL\d]+~u', '-', $text );
 	}
 
 	public static function slugify( $text ) {
 		// replace non letter or digits by -
-		$text = preg_replace( '~[^\pL\d]+~u', '-', $text );
-
+		
 		// transliterate
 		$text = iconv( 'utf-8', 'us-ascii//TRANSLIT', $text );
 

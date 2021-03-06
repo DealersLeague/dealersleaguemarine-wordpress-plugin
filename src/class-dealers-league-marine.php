@@ -647,6 +647,7 @@ class Dealers_League_Marine {
 		if ( isset( $json_data['listing']['engine_data']['engine_data']['fuel'] ) ) {
 			$model = $json_data['listing']['engine_data']['engine_data']['fuel'];
 			update_post_meta( $post_id, 'listing_fuel', $model );
+
 		} else {
 			delete_post_meta( $post_id, 'listing_fuel' );
 		}
@@ -655,6 +656,7 @@ class Dealers_League_Marine {
 			$year = $json_data['listing']['boat_details']['construction_details']['year_built'];
 			update_post_meta( $post_id, 'listing_year_built', $year );
 		} else {
+			update_post_meta( $post_id, 'listing_vat_paid_area', $vat_paid_area );
 			delete_post_meta( $post_id, 'listing_year_built' );
 		}
 
@@ -678,14 +680,12 @@ class Dealers_League_Marine {
 		} else {
 			delete_post_meta( $post_id, 'listing_vat_status' );
 		}
-
 		if ( isset( $json_data['listing']['listing_details']['sales_details']['vat']['paid_area'][0] ) ) {
 			$vat_paid_area = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['vat']['paid_area'][0];
-			update_post_meta( $post_id, 'listing_vat_paid_area', $vat_paid_area );
 		} else {
 			delete_post_meta( $post_id, 'listing_vat_paid_area' );
 		}
-
+		
 		if ( isset( $json_data['listing']['listing_details']['sales_details']['vat']['stated_separatly'][0] ) && $json_data['listing']['listing_details']['sales_details']['vat']['stated_separatly'][0] == 'on' ) {
 			$vat_stated_separatly = $json_data[ 'listing' ][ 'listing_details' ][ 'sales_details' ]['vat']['stated_separatly'][0];
 			update_post_meta( $post_id, 'listing_vat_stated_separately', $vat_stated_separatly );
@@ -727,15 +727,13 @@ class Dealers_League_Marine {
 		} else {
 			delete_post_meta( $post_id, 'listing_currency' );
 		}
-
 		// Get first image as cover image
-		if ( !empty($json_data[ 'images' ] ) ) {
+		update_post_meta( $post_id, 'listing_image', $listing_data[ 'images' ] );
 
-			// $image_list = is_array( $json_data[ 'fileuploader-list-listing_images' ] ) ? $json_data[ 'fileuploader-list-listing_images' ] : json_decode( $json_data[ 'fileuploader-list-listing_images' ], true );
-
-			update_post_meta( $post_id, 'listing_n_images', count( $json_data[ 'images' ] ) );
+		if ( !empty($listing_data[ 'images' ] ) ) {
+			update_post_meta( $post_id, 'listing_n_images', count( $listing_data[ 'images' ] ) );
 			$has_index = false;
-			foreach ( $json_data[ 'images' ] as $image ) {
+			foreach ( $listing_data[ 'images' ] as $image ) {
 				if ( isset( $image['index'] ) && $image['index'] == 0 ) {
 					$has_index = true;
 					update_post_meta( $post_id, 'listing_featured_image', $image[ 'file' ] );
@@ -743,9 +741,8 @@ class Dealers_League_Marine {
 				}
 			}
 			if ( ! $has_index ) {
-				update_post_meta( $post_id, 'listing_featured_image', $json_data[ 'images' ][ 0 ][ 'file' ] );
+				update_post_meta( $post_id, 'listing_featured_image', $listing_data[ 'images' ][ 0 ][ 'file' ] );
 			}
-
 		}
 		if ( !empty($json_data['listing']['media']['videos']['video_upload'] ) ) {
 

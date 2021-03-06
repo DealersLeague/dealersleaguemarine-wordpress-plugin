@@ -40,13 +40,6 @@ $hide_enquiry_button     = $settings->get_web_settings_option_val( 'hide_enquiry
 $hide_print_button       = $settings->get_web_settings_option_val( 'hide_print_button' );
 $hide_watch_video_button = $settings->get_web_settings_option_val( 'hide_watch_video_button' );
 
-// Images for slider
-if ( ! empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) && is_array( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ) {
-    $image_list = $listing_json_data[ 'fileuploader-list-listing_images' ];
-} else {
-	$image_list = empty( $listing_json_data[ 'fileuploader-list-listing_images' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_images' ], true );
-}
-
 // Documents for download
 
 if ( ! empty( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) && is_array( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ) {
@@ -71,6 +64,8 @@ if ( empty( $listing_json_data['listing']['media']['videos']['video_upload'][0] 
 }
 
 $post_id      = get_the_ID();
+$image_list = get_post_meta( $post_id, 'listing_image', true );
+
 
 // Panorama
 $panorama_list = maybe_unserialize( get_post_meta( $post_id, 'listing_panorama', true ) );
