@@ -536,6 +536,22 @@ class Dealers_League_Marine {
 			} else {
 				$result['message'] = __( 'No listings found', 'dlmarine' );
 			}
+
+			$brokers      = $this->api_object->get_brokers( - 1 );
+			if ( is_array( $brokers ) && count($brokers)) {
+
+				foreach ( $brokers as $broker ) {
+
+					self::update_broker_data( $broker );
+
+				}
+				$result['brokers'] = $brokers;
+			} else{
+				$allBrokers= get_posts( array('post_type'=>'dlm_broker') );
+				foreach ($allBrokers as $broker) {
+					wp_delete_post( $broker->ID, true );
+				}
+			}
 		} catch ( \Exception $e ) {
 			$result['message'] = $e->getMessage();
 			wp_send_json( $result );
@@ -573,11 +589,6 @@ class Dealers_League_Marine {
 		update_post_meta( $post_id, 'listing_external_id', $listing_data[ 'id' ] );
 		update_post_meta( $post_id, 'listing_json_data', maybe_serialize( $json_data ) );
 
-		// if ( ! empty( $listing_data['publish_at'] ) ) {
-		// 	update_post_meta( $post_id, 'listing_publish_date', strtotime($listing_data['publish_at']) );
-		// } else if ( ! empty( $listing_data['created_at'] ) ) {
-		// 	update_post_meta( $post_id, 'listing_publish_date', strtotime($listing_data['created_at']) );
-		// }
 		 if ( ! empty( $listing_data['created_at'] ) ) {
 			update_post_meta( $post_id, 'listing_publish_date', strtotime($listing_data['created_at']) );
 		}
@@ -753,6 +764,34 @@ class Dealers_League_Marine {
 		}
 
 		self::create_unique_listing_permalink( $post_id );
+
+	}
+
+	public static function update_broker_data( $broker ) {
+
+		$args = array(
+			'posts_per_page' => 1,
+			'post_type'      => 'dlm_broker',
+			'meta_key'       => 'broker_external_id',
+			'meta_value'     => $broker[ 'id' ],
+		);
+		$broker_posts = get_posts( $args );
+		
+		$broker_data = array(
+			'post_title'   => $broker[ 'company_name' ],
+			'post_content' => '',
+			'post_status'  => 'publish',
+			'post_type'    => 'dlm_broker'
+		);
+	
+		if ( ! empty( $broker_posts ) ) {
+			$post_id = $broker_data['id'] = $broker_posts[0]->ID;
+			wp_update_post( $broker_data );
+		} else {
+			$post_id = wp_insert_post( $broker_data );
+		}
+		update_post_meta( $post_id, 'broker_external_id', $broker[ 'id' ] );
+		update_post_meta( $post_id, 'broker_location', $broker['locations'] );
 
 	}
 

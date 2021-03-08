@@ -177,6 +177,24 @@ class Api {
 	}
 
 	/**
+	 * @param int $page
+	 *
+	 * @return array|mixed|string
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
+	 */
+	public function get_brokers( $page = 0 ) {
+		$brokers = [];
+
+		if ( ! empty( $this->client ) ) {
+			$brokers = $this->client->getBrokersPage( $page );
+		}
+
+		return $brokers;
+
+	}
+
+	/**
 	 * @param $listing_analytic_list
 	 *
 	 * @return array|mixed|string
