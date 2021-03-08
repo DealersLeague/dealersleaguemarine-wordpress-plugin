@@ -302,8 +302,22 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
 <!-- END Videos -->
 
 <!-- START Sidebar -->
-                <?php if ( $panorama_list || $videos ) { ?>
-                    <div class="col-md-4 media-sidebar-section">    
+				<?php $multi_broker = true; ?>
+				
+                <?php if ( $panorama_list || $videos || $multi_broker ) { ?>
+                    <div class="col-md-4 media-sidebar-section">  
+						<?php if ( $multi_broker ) {?>
+							<div class="broker-details">
+								<p class="broker-name">Blu-Yachting</p>
+								<address class="broker-address"><p></p></address>
+								<p class="broker-email"><a href="#form_send_enquiry"><?php _e( 'Send Enquiry', 'dlmarine' ); ?></a></p>
+								<p class="broker-phone"><?php _e( 'Phone', 'dlmarine' ); ?>: <a href="tel:+39-348-56 822 62">+39-348-56 822 62</a></p>
+								<p class="broker-mobile"><?php _e( 'Mobile', 'dlmarine' ); ?>: <a href="tel:+39-348-56 822 62">+39-348-56 822 62</a></p>
+								<p class="broker-fax"><?php _e( 'Fax', 'dlmarine' ); ?>: +39-0431-53 028</p>
+								<p><a target="_blank" href="http://www.blu-yachting.com">http://www.blu-yachting.com</a></p> 
+							</div>
+						<?php } ?>
+
                         <?php if ( $videos && $video_placement == 'SIDEBAR' ) { ?>
                             <section class="single-listing-videos">
                                 <?php foreach ( $videos as $video ) {  
