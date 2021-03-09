@@ -64,9 +64,24 @@ if ( empty( $listing_json_data['listing']['media']['videos']['video_upload'][0] 
 }
 
 $post_id      = get_the_ID();
+
 $image_list = get_post_meta( $post_id, 'listing_image', true );
-
-
+if (is_string($image_list)){
+    $image_list = [];
+}
+$broker_id = get_post_meta( $post_id, 'listing_broker_id', true );
+global $wpdb;
+if (!is_null($broker_id)) {
+    $meta_key = "broker_external_id";
+    $res = $wpdb->get_results($wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE meta_key = %s AND meta_value=%s", $meta_key,$broker_id) , ARRAY_A  );
+    if (!empty($res)) {
+        $broker_external_post_id = $res[0]["post_id"];
+        if (isset($broker_external_post_id)) {
+            $broker_location = get_post_meta($broker_external_post_id, 'broker_location', true );
+            
+        }
+    }
+}
 // Panorama
 $panorama_list = maybe_unserialize( get_post_meta( $post_id, 'listing_panorama', true ) );
 if ( empty( $panorama_list ) || ! is_array( $panorama_list ) ) {
@@ -305,18 +320,37 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
 				<?php $multi_broker = true; ?>
 				
                 <?php if ( $panorama_list || $videos || $multi_broker ) { ?>
-                    <div class="col-md-4 media-sidebar-section">  
-						<?php if ( $multi_broker ) {?>
-							<div class="broker-details">
-								<p class="broker-name">Blu-Yachting</p>
-								<address class="broker-address"><p></p></address>
-								<p class="broker-email"><a href="#form_send_enquiry"><?php _e( 'Send Enquiry', 'dlmarine' ); ?></a></p>
-								<p class="broker-phone"><?php _e( 'Phone', 'dlmarine' ); ?>: <a href="tel:+39-348-56 822 62">+39-348-56 822 62</a></p>
-								<p class="broker-mobile"><?php _e( 'Mobile', 'dlmarine' ); ?>: <a href="tel:+39-348-56 822 62">+39-348-56 822 62</a></p>
-								<p class="broker-fax"><?php _e( 'Fax', 'dlmarine' ); ?>: +39-0431-53 028</p>
-								<p><a target="_blank" href="http://www.blu-yachting.com">http://www.blu-yachting.com</a></p> 
-							</div>
-						<?php } ?>
+                    <div class="col-md-4 media-sidebar-section">
+						<?php if ( $multi_broker && !empty($broker_location)) {
+                                foreach ($broker_location as $key) {
+                                    $name = isset($key["name"])?$key["name"]:"";
+                                    $address = isset($key['address'])?$key['address']:'';
+                                    $email = isset($key['email'])?$key['email']:'#';
+                                    $daytime_phone = isset($key['daytime_phone'])?$key['daytime_phone']:'';
+                                    $mobile = isset($key['mobile'])?$key['mobile']:'';
+                                    $fax = isset($key['fax'])?$key['fax']:'';
+                                    $website = isset($key['website'])?$key['website']:'';
+                                 ?>
+                                    <div class="broker-details">
+                                        <p class="broker-name"><?php echo $name; ?></p>
+                                        <address class="broker-address"><p><?php echo $address; ?></p></address>
+                                        <p class="broker-email"><a href="<?php echo  $email; ?>"><?php _e( 'Send Enquiry', 'dlmarine' ); ?></a></p>
+                                        <p class="broker-phone"><?php _e( 'Phone', 'dlmarine' ); ?>: <a href="tel: <?php echo $daytime_phone ?>"><?php echo $daytime_phone ?></a></p>
+                                        <p class="broker-mobile"><?php _e( 'Mobile', 'dlmarine' ); ?>: <a href="tel: <?php echo $mobile ?>"><?php echo $mobile ?></a></p>
+                                        <p class="broker-fax"><?php _e( 'Fax', 'dlmarine' ); ?>: <?php echo $fax; ?></p>
+                                        <p><a target="_blank" href="<?php echo $website; ?>"><?php echo $website; ?></a></p> 
+                                    </div>
+        							<!-- <div class="broker-details">
+        								<p class="broker-name">Blu-Yachting</p>
+        								<address class="broker-address"><p></p></address>
+        								<p class="broker-email"><a href="#form_send_enquiry"><?php _e( 'Send Enquiry', 'dlmarine' ); ?></a></p>
+        								<p class="broker-phone"><?php _e( 'Phone', 'dlmarine' ); ?>: <a href="tel:+39-348-56 822 62">+39-348-56 822 62</a></p>
+        								<p class="broker-mobile"><?php _e( 'Mobile', 'dlmarine' ); ?>: <a href="tel:+39-348-56 822 62">+39-348-56 822 62</a></p>
+        								<p class="broker-fax"><?php _e( 'Fax', 'dlmarine' ); ?>: +39-0431-53 028</p>
+        								<p><a target="_blank" href="http://www.blu-yachting.com">http://www.blu-yachting.com</a></p> 
+        							</div> -->
+						<?php }
+                        } ?>
 
                         <?php if ( $videos && $video_placement == 'SIDEBAR' ) { ?>
                             <section class="single-listing-videos">
@@ -347,7 +381,6 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                     </div>  
                 <?php } ?>
 <!-- END Sidebar -->               
-
                 <div class="col-md-12">
 
 <!--Details-->

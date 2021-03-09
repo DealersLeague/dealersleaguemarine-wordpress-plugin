@@ -585,16 +585,16 @@ class Dealers_League_Marine {
 		}
 
 		$json_data = json_decode( $listing_data['json_data'], true );
-
+		update_post_meta( $post_id, 'listing_broker_id', $listing_data[ 'broker_id' ] );
 		update_post_meta( $post_id, 'listing_external_id', $listing_data[ 'id' ] );
-		update_post_meta( $post_id, 'listing_json_data', maybe_serialize( $json_data ) );
+		update_post_meta( $post_id, 'listing_json_data',  $json_data );
 
 		 if ( ! empty( $listing_data['created_at'] ) ) {
 			update_post_meta( $post_id, 'listing_publish_date', strtotime($listing_data['created_at']) );
 		}
 
 		if ( isset( $listing_data['panorama'] ) ) {
-			update_post_meta( $post_id, 'listing_panorama', maybe_serialize( $listing_data['panorama'] ) );
+			update_post_meta( $post_id, 'listing_panorama', $listing_data['panorama'] );
 		} else {
 			delete_post_meta( $post_id, 'listing_panorama' );
 		}
@@ -1005,36 +1005,36 @@ class Dealers_League_Marine {
 			if ( empty( $_POST[ 'enquiry' ][ 'subject' ] ) ) {
 				$error_messages[] = __( 'The subject is required', 'dlmarine' );
 			}
-			if ( $_POST[ 'enquiry' ][ 'subject' ] != 'request_survey' && empty( $_POST[ 'enquiry' ][ 'message' ] ) ) {
+			if ( sanitize_text_field($_POST[ 'enquiry' ][ 'subject' ]) != 'request_survey' && empty( $_POST[ 'enquiry' ][ 'message' ] ) ) {
 				$error_messages[] = __( 'The message is required', 'dlmarine' );
 			}
 
 			if ( empty( $error_messages ) ) {
 
-				$current_url = $_POST[ 'enquiry' ][ 'current_url' ];
-				$boat_name   = $_POST[ 'enquiry' ][ 'boat_name' ];
+				$current_url = esc_url_raw($_POST[ 'enquiry' ][ 'current_url' ]);
+				$boat_name   = sanitize_text_field($_POST[ 'enquiry' ][ 'boat_name' ]);
 
-				if ( $_POST[ 'enquiry' ][ 'subject' ] == 'request_survey' ) {
+				if ( sanitize_text_field($_POST[ 'enquiry' ][ 'subject' ]) == 'request_survey' ) {
 					$survey_email = $settings->get_integration_option_val( 'EMS Boot Check', 'survey_email' );
 					$to = $survey_email;
 					$subject = __( 'New Survey Request from', 'dlmarine' ) . ' ' . get_bloginfo( 'name' );
 					$body =  '<p style="margin-bottom:10px;">' . __( 'New Survey Request', 'dlmarine' ) . '</p> ';
 				} else {
-					$to = $settings->get_web_settings_option_val( 'email' );;
+					$to = $settings->get_web_settings_option_val( 'email' );
 					$subject = $boat_name . ' ' . __( 'New Boat Enquiry', 'dlmarine' );
 					$body =  '<p style="margin-bottom:10px;">' . __( 'New Enquiry', 'dlmarine' ) . '</p> ';
 				}
 
-				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'name' ] . '</p> ';
-				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'email' ] . '</p> ';
-				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'phone' ] . '</p> ';
-				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'subject' ] . '</p> ';
-				$body .= '<p style="margin-bottom:10px;">' . $_POST[ 'enquiry' ][ 'message' ] . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . sanitize_text_field($_POST[ 'enquiry' ][ 'name' ]) . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . sanitize_email($_POST[ 'enquiry' ][ 'email' ]) . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . sanitize_text_field($_POST[ 'enquiry' ][ 'phone' ]) . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . sanitize_text_field($_POST[ 'enquiry' ][ 'subject' ]) . '</p> ';
+				$body .= '<p style="margin-bottom:10px;">' . sanitize_text_field($_POST[ 'enquiry' ][ 'message' ]) . '</p> ';
 				$body .= '<p style="margin-bottom:10px;">' . __( 'View Boat', 'dlmarine' ) . ': <a href="' . $current_url . '">' . $boat_name . '</a></p>';
 
-				$headers = 'From: "' . get_bloginfo( 'name' ) . '" <'. $_POST[ 'enquiry' ][ 'email' ] . ">\r\n" .
+				$headers = 'From: "' . get_bloginfo( 'name' ) . '" <'. sanitize_text_field($_POST[ 'enquiry' ][ 'email' ]) . ">\r\n" .
 				           'Content-type: text/html' . "\r\n" .
-				           'Reply-To: ' . $_POST[ 'enquiry' ][ 'email' ] . "\r\n";
+				           'Reply-To: ' . sanitize_text_field($_POST[ 'enquiry' ][ 'email' ]) . "\r\n";
 
 				$sent = wp_mail( $to, $subject, $body, $headers );
 				 

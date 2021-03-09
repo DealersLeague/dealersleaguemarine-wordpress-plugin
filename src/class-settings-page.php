@@ -168,13 +168,13 @@ class Settings_Page {
 	public function create_admin_page(): void {
 		// Set class property
 
-		$action         = $_GET[ 'action' ] ?? '';
+		$action         = sanitize_text_field($_GET[ 'action' ] ?? '');
 		$current_page   = '';
 		$current_option = '';
 
 		if ( isset( $_POST[ 'dealers_league_marine_option' ] ) ) {
 			$option_name = empty( $action ) ? 'connection' : $action;
-			$this->save_options( $_POST[ 'dealers_league_marine_option' ], $option_name );
+			$this->save_options( sanitize_text_field($_POST[ 'dealers_league_marine_option' ]), $option_name );
 		}
 
 		$tab_page_field_list = $this->get_tab_page_fields();
@@ -325,10 +325,10 @@ class Settings_Page {
 			$api_object->init( $this );
 
 			$web_settings = $api_object->get_web_settings();
-			update_option( $this->web_settings_option_name, maybe_serialize( $web_settings ) );
+			update_option( $this->web_settings_option_name, $web_settings  );
 			
 			$integrations = $api_object->get_integration();
-			update_option( $this->integration_option_name, maybe_serialize( $integrations ) );
+			update_option( $this->integration_option_name, $integrations );
 
 		} catch(\Exception $ex){
 			echo '<div class="error notice notice-warning is-dismissible">
@@ -360,14 +360,14 @@ class Settings_Page {
 	 * @param $web_settings
 	 */
 	public function save_web_settings_options( $web_settings ) {
-		update_option( $this->web_settings_option_name, maybe_serialize( $web_settings ) );
+		update_option( $this->web_settings_option_name, $web_settings );
 	}
 
 	/**
 	 * @param $integrations
 	 */
 	public function save_integrations_options( $integrations ) {
-		update_option( $this->integration_option_name, maybe_serialize( $integrations ) );
+		update_option( $this->integration_option_name, $integrations );
 	}
 
 	/**
