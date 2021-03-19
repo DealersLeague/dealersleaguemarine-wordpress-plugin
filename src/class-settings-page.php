@@ -174,7 +174,7 @@ class Settings_Page {
 
 		if ( isset( $_POST[ 'dealers_league_marine_option' ] ) ) {
 			$option_name = empty( $action ) ? 'connection' : $action;
-			$this->save_options( sanitize_text_field($_POST[ 'dealers_league_marine_option' ]), $option_name );
+			$this->save_options( $_POST[ 'dealers_league_marine_option' ], $option_name );
 		}
 
 		$tab_page_field_list = $this->get_tab_page_fields();
