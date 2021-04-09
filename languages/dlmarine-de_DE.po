@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-02-12 15:03+0000\n"
-"PO-Revision-Date: 2021-02-18 14:43+0000\n"
+"PO-Revision-Date: 2021-03-16 16:19+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -44,7 +44,7 @@ msgstr "Vermietung"
 #: languages/fields_wordpress.php:7 languages/fields_wordpress.php:13
 #: languages/fields_wordpress.php:171
 msgid "Type"
-msgstr "Rumpfart"
+msgstr "Rumpftyp"
 
 #: languages/fields_wordpress.php:8 src/class-boat-post-type.php:22
 msgid "Boat"
@@ -645,7 +645,7 @@ msgstr "Durchfahrtshöhe"
 #: languages/fields_wordpress.php:159 languages/fields_wordpress.php:172
 #: templates/content-single-listing.php:512
 msgid "Displacement"
-msgstr "Verdrängung"
+msgstr "Verdränger"
 
 #: languages/fields_wordpress.php:162 languages/fields_wordpress.php:814
 #: languages/fields_wordpress.php:838 src/class-utils.php:57
@@ -809,7 +809,7 @@ msgstr "Forward Drive"
 
 #: languages/fields_wordpress.php:204
 msgid "Propeller"
-msgstr "Propeller"
+msgstr "Propellertyp"
 
 #: languages/fields_wordpress.php:205
 msgid "blades"
