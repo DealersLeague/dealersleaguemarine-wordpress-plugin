@@ -11,7 +11,7 @@ class Listing_Shortcode {
 	}
 
 	/**
-	 * Usage: [listing_archive category="my category" manufacturer="my manufacturer" country="DE" condition="new|used" range="my range" hide_order_by="true|false"]
+	 * Usage: [listing_archive category="my category" manufacturer="my manufacturer" country="DE" condition="new|used" range="my range" hide_order_by="true|false" min_price="50000" max_price="100000"]
 	 *
 	 * @param mixed $attr
 	 *
@@ -172,6 +172,26 @@ class Listing_Shortcode {
 					);
 				}
 			}
+		}
+
+		$min_price = $attr[ 'min_price' ] ?? $_GET['min_price'] ?? '';
+		if ( ! empty( $min_price ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_price',
+				'value'   => $min_price,
+				'type'    => 'numeric',
+				'compare' => '>=',
+			);
+		}
+
+		$max_price = $attr[ 'max_price' ] ?? $_GET['max_price'] ?? '';
+		if ( ! empty( $max_price ) ) {
+			$conditions[] = array(
+				'key'     => 'listing_price',
+				'value'   => $max_price,
+				'type'    => 'numeric',
+				'compare' => '>=',
+			);
 		}
 
 		$hide_order_by = $attr[ 'hide_order_by' ] ?? $settings->get_web_settings_option_val( 'hide_orderby' ) ?? '';
