@@ -72,10 +72,12 @@ class Listing_Shortcode {
 
 		$search_condition = $attr[ 'condition' ] ?? $_GET['condition'] ?? '';
 
-		if ( strtolower( $search_condition == 'used' ) ) {
+		if ( strtolower( $search_condition == 'all-used' ) ) {
 			$condition_array = array( 'used', 'used-excharter', 'demo-inwater', 'demo-exhibition' );
-		} elseif ( strtolower( $search_condition == 'new' ) ) {
-			$condition_array = array( 'new', 'new-inorder', 'new-onorder', 'new-instock' );
+		} elseif ( strtolower( $search_condition == 'all-new' ) ) {
+			$condition_array = array( 'new', 'new-instock', 'new-onorder', 'new-instock' );
+		} else {
+			$condition_array = array( $search_condition );
 		}
 
 		if ( ! empty( $search_condition ) ) {

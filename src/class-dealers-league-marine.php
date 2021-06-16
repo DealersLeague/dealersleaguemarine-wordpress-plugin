@@ -915,7 +915,7 @@ class Dealers_League_Marine {
 			if ( count( $conditions ) > 1 ) {
 				$conditions[ 'relation' ] = 'AND';
 			}
-			$args['meta_query'] = $conditions;
+			$args['meta_query'] = apply_filters( 'dl_related_listings', $conditions );
 
 			$listings = new \WP_Query( $args );
 		}
