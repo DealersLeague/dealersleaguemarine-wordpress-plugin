@@ -825,7 +825,7 @@ class Dealers_League_Marine {
 		$posts = $wpdb->get_results( $sql );
 
 		if ( count( $posts ) > 0 ) {
-			$permalink = ltrim( $permalink, '/' ) . '-' . ( count( $posts ) + 1 );
+            $permalink = ltrim( $permalink, '/' ) . '-' . $post_id;
 		}
 
 		if ( $permalink != $listing_permalink && ! empty( $permalink )) {
