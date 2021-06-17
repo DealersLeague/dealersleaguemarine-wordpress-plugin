@@ -191,16 +191,22 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
     <section class="block">
 <!-- START Gallery Carousel -->
         <section class="single-boat-owl-carousel">
-            <div class="owl-carousel full-width-carousel<?php echo ( $n_images == '1' ? ' single-image' : '' ); ?>" style="min-height: 300px;width:100%;">
-                <?php
-                foreach ( $image_list as $index => $image ) {
-                 ?>
-                <a href="<?php echo $image['file']; ?>" data-img="<?php echo $image['file']; ?>" data-featherlight="image" style="display:inline-block" class="item background-image">
-                    <img class="owl-lazy" data-src="<?php echo $image['file']; ?>" data-hash="<?php echo $index; ?>" alt="<?php echo $post_title; ?>" >
+            <div class="owl-carousel full-width-carousel<?php echo($n_images == '1' ? ' single-image' : ''); ?>"
+                 style="min-height: 300px;width:100%;">
+                <?php $featured_image = get_post_meta($post_id, 'listing_featured_image', true); ?>
+                <a href="<?php echo $featured_image; ?>" data-img="<?php echo $featured_image; ?>"
+                   data-featherlight="image" style="display:inline-block" class="item background-image azaza">
+                    <img class="owl-lazy" data-src="<?php echo $featured_image; ?>" data-hash="0">
                 </a>
-                <?php
-                }
-                ?>
+                <?php foreach ($image_list as $index => $image) : ?>
+                    <?php if ($image['file'] != $featured_image) : ?>
+                        <a href="<?php echo $image['file']; ?>" data-img="<?php echo $image['file']; ?>"
+                           data-featherlight="image" style="display:inline-block" class="item background-image">
+                            <img class="owl-lazy" data-src="<?php echo $image['file']; ?>"
+                                 data-hash="<?php echo $index; ?>" alt="<?php echo $post_title; ?>">
+                        </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </section>
 <!-- END Gallery Carousel -->
