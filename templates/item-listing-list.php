@@ -1,6 +1,26 @@
 <?php
 use dealersleague\marine\wordpress\Utils;
 ?>
+<?php 
+if($_GET['filter']){
+$broker_id = get_post_meta( $listing->ID, 'listing_broker_id', true );
+$meta_key = "broker_external_id";
+$res = $wpdb->get_results($wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE meta_key = %s AND meta_value=%s", $meta_key,$broker_id) , ARRAY_A  );
+
+    foreach($res as $post_id){
+        $broker_external_post_id = $post_id['post_id'];
+        if (isset($broker_external_post_id)) {
+            $broker_location = get_post_meta($broker_external_post_id, 'broker_location', true );
+            foreach ($broker_location as $key) {
+                $name = isset($key["name"])?$key["name"]:"";
+                $name = str_replace(" ", "_",$name);
+                ?><input type="hidden" class="listing_id" data-id="<?php echo $name; ?>" value="<?php echo  $broker_id ?>"><?php
+            }
+        }
+    }
+}
+
+?>
 <div class="item">
     <div class="wrapper">
         <div class="image"> 

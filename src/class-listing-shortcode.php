@@ -240,6 +240,7 @@ class Listing_Shortcode {
 
 		ob_start();
 		// Get template file output
+		$args = apply_filters( "broker_name_filter", $args );
 		$layout_type = strtolower( $settings->get_web_settings_option_val( 'listing_layout' ) );
 		$listings    = new \WP_Query( $args );
 		// echo '<pre>';

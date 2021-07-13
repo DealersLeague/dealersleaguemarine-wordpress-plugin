@@ -30,6 +30,70 @@ use dealersleague\marine\wordpress\Utils;
     </div>
 </div>
 
+<!-- filter by broker -->
+<?php 
+global $wpdb;
+$results = $wpdb->get_results( "SELECT * FROM wp_postmeta WHERE meta_key = 'listing_manufacturer'" );
+$stack = array();
+
+foreach($results as $rsult){
+	array_push($stack, $rsult->meta_value);
+}
+
+$boat_broker_name = array_unique($stack); 
+
+$listing = $wpdb->get_results( "SELECT * FROM wp_posts WHERE post_type = 'boat'" );
+$arr = [];
+foreach ($listing as $key) {
+	$broker_id = get_post_meta( $key->ID, 'listing_broker_id', true );
+	if(!array_key_exists($broker_id,$arr)){
+		$meta_key  = "broker_external_id";
+		$res = $wpdb->get_results($wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE meta_key = %s AND meta_value=%s", $meta_key,$broker_id) , ARRAY_A  );
+		if(!empty($res)){
+			$broker_external_post_id = $res[0]['post_id'];
+			$broker_location = get_post_meta($broker_external_post_id, 'broker_location', true );
+			foreach ($broker_location as $l) {
+				$name = isset($l["name"])?$l["name"]:"";
+				$name = str_replace(" ", "_",$name);
+				$arr[$broker_id] = $name;
+			}
+		}
+	}
+}
+?>
+
+<div class="filter_by_broker">
+	<label class="mr-3" style="margin-bottom:0;padding:0">Sort by brocker</label>
+	<input type="hidden" class="filter_param" value="<?php echo $_GET['filter'] ?>" data-id="<?php echo $_GET['filter'] ?>">
+	<select name="filter_broker" id="filter_broker"  class="width-200px" >
+		<?php 
+		//    $meta_key = "broker_external_id";
+		$res = $wpdb->get_results($wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE meta_key = 'broker_location'"));
+
+		if (!empty($res)) {
+			
+			foreach($res as $post_id){
+					$broker_external_post_id = $post_id->post_id;
+					// var_dump($broker_external_post_id);
+					if (isset($broker_external_post_id)) {
+						$broker_location = get_post_meta($broker_external_post_id, 'broker_location', true );
+						foreach ($broker_location as $key) {
+							$name = isset($key["name"])?$key["name"]:"";
+							?><option class="option_name" <?php echo $sort == $key["name"] ? 'selected="selected"' : '' ; ?> value="<?php echo $key["name"]; ?>" ><?php echo $name ?></option><?php
+						}
+					}
+			}
+		}
+		?>
+	</select>
+	<?php
+	foreach ($arr as $key => $val) { ?>
+		<input type="hidden" class='listing_id' value="<?php echo $key?>" data-id='<?php echo $val?>'>
+	<?php }
+	?>
+</div>
+
+
 <div class="items grid-xl-4-items grid-lg-4-items grid-md-4-items <?php echo $layout_type; ?>">
 
     <?php foreach ( $listings->posts as $listing ) {

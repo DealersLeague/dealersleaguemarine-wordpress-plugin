@@ -35,3 +35,25 @@ function my_custom_plugin_activate() {
 }
 
 add_action( 'plugins_loaded', 'dealers_league_marine_plugin', 99 );
+
+add_filter("broker_name_filter","broker_name_filter_call");
+function broker_name_filter_call($arg){
+	if(isset($_GET['filter']) && isset($_GET['id']) && $_GET['id'] != "undefined"){
+
+		$ar = [
+			"post_type" => "boat",
+			"post_status" => "publish",
+
+			"meta_query" => [
+				[
+					"key" => "listing_broker_id",
+					"value" => $_GET['id'],
+					"compare" => "LIKE"
+				]
+			]
+		];
+		return $ar;
+	}
+	 return $arg;
+}
+

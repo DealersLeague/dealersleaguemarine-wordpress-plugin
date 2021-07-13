@@ -111,6 +111,28 @@
             var value = $(this).val();
             window.location.href = value;
         });
+
+        $( document ).ready(function() {
+            var filter_param = $('.filter_param').val();
+            var option_name = $('.option_name').val();
+    
+            $( ".option_name" ).each(function( index ) {
+               if($(this).val() == filter_param){
+                   console.log($(this).val());
+                   $(this).prop('selected', true)
+               }
+            });
+        });
+        
+        // filter by broker
+        $(document).on( 'change', '#filter_broker', function(event) {
+            var value = $(this).val();
+            var param = '?filter=';
+            var name = value.split(" ").join("_");
+            var listing_id =  $(".listing_id[data-id='"+name+"']").val();
+            window.location.href = param + value + '&id=' + listing_id;
+        });
+
     
         function dropdownOpen($dropdown){
             $dropdown.addClass("opening");
