@@ -617,7 +617,7 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                         echo '<ul>';
                             foreach ( $listing_file as $key => $file) { 
                                     echo '<li>';
-                                    echo '<a href="' . $file['file'] . '">' . $key + 1 . '</a>'; 
+                                    echo '<a href="' . $file['file'] . '">' . ($key + 1) . '</a>'; 
                                     echo '</li>'; 
                             }
 
