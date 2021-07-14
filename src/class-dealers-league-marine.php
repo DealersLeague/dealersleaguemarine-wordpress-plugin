@@ -741,6 +741,8 @@ class Dealers_League_Marine {
 		// Get first image as cover image
 		update_post_meta( $post_id, 'listing_image', $listing_data[ 'images' ] );
 
+		update_post_meta( $post_id, 'listing_files', $listing_data[ 'files' ] );
+
 		if ( !empty($listing_data[ 'images' ] ) ) {
 			update_post_meta( $post_id, 'listing_n_images', count( $listing_data[ 'images' ] ) );
 			$has_index = false;

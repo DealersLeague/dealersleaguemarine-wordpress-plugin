@@ -48,10 +48,6 @@ if ( ! empty( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) && i
 	$document_list = empty( $listing_json_data[ 'fileuploader-list-listing_documents' ] ) ? [] : json_decode( $listing_json_data[ 'fileuploader-list-listing_documents' ], true );
 }
 
-if ( ! empty( $listing_json_data[ 'listing_uploaded_document_list' ] ) ) { 
-    $document_names = explode( ',', $listing_json_data[ 'listing_uploaded_document_list' ] );
-} 
-
 /*
  * Videos *
  * If there are no videos, the JSON sends an array with an empty string. 
@@ -66,6 +62,7 @@ if ( empty( $listing_json_data['listing']['media']['videos']['video_upload'][0] 
 $post_id      = get_the_ID();
 
 $image_list = get_post_meta( $post_id, 'listing_image', true );
+$listing_file = get_post_meta( $post_id, 'listing_files', true );
 if (is_string($image_list)){
     $image_list = [];
 }
@@ -610,24 +607,23 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                         );
 
                     ?>
-
+           
                     </section>
 
-                    <?php if ( ! empty( $document_list ) ) {
-
+                    <?php 
+    
+                    if(!empty($listing_file)){
                         echo '<h2 class="listing-heading">' . __( 'Documents', 'dlmarine' ) . '</h2>';
-
                         echo '<ul>';
-
-                            foreach ( $document_list as $index => $doc ) { 
-                                echo '<li>';
-                                    echo '<a href="' . $doc['file'] . '">' . $document_names[$index] . '</a>'; 
-                                echo '</li>';
+                            foreach ( $listing_file as $key => $file) { 
+                                    echo '<li>';
+                                    echo '<a href="' . $file['file'] . '">' . $key + 1 . '</a>'; 
+                                    echo '</li>'; 
                             }
 
                         echo '</ul>';
-
-                    } ?> 
+                    }
+                    ?> 
 
                     
 <!-- START Contact Form-->
