@@ -33,7 +33,7 @@ if(!$release['message']){
 	$obj->downloaded = $release['assets'][0]['size'];
 	$obj->url = ABSPATH . 'wp-content/plugins/dealers-league-marine-new-wordpress/dealersleague-marine.php';
 
-	$obj->package = 'https://github.com/' . $repo_name . 'releases/latest/download/dealers-league-marine-new-wordpress.zip';
+	$obj->package = 'https://github.com/' . $repo_name . 'releases/latest/download/dealersleaguemarine-wordpress-plugin.zip';
 
 	switch ( $_POST['action'] ) {
 
