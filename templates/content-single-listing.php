@@ -1,8 +1,11 @@
 <?php
-
 use dealersleague\marine\wordpress\Settings_Page;
 use dealersleague\marine\wordpress\Utils;
 use dealersleague\marine\wordpress\Dealers_League_Marine;
+
+$plugin = new Dealers_League_Marine();
+$plugin->load();
+$plugin->post_listing_id(null, 'view');
 
 $settings = new Settings_Page();
 $settings->refresh_options();
@@ -610,6 +613,8 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
            
                     </section>
 
+                   
+
                     <?php 
     
                     if(!empty($listing_file)){
@@ -655,6 +660,8 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                             <form class="form email" id="form_send_enquiry" method="post">
                                 <input type="hidden" name="enquiry[current_url]" value="<?php the_permalink();?>">
                                 <input type="hidden" name="enquiry[boat_name]" value="<?php echo $manufacturer.' '.$model;?>">
+                                <?php $id = get_post_meta(get_the_id(), 'listing_external_id', true); ?>
+                                <input type="hidden" name="listing_id" value="<?php echo $id;?>">
 
                                 <div class="success" style="display: none;"></div>
                                 <div class="error" style="display: none;"></div>
@@ -718,7 +725,8 @@ $similar_listings = Dealers_League_Marine::get_similar_listings( $is_advanced, $
                                 <div id="g-recaptcha" class="m-b-20 m-t-20"></div>
                                 <script src="https://www.google.com/recaptcha/api.js?onload=reCaptchaCallback&render=explicit" async defer></script>
                                 <?php } ?>
-                                <button type="submit" id="btn-send-enquiry" class="btn btn-primary btn-send-enquiry"><?php _e('Send', 'dlmarine'); ?></button>
+
+                                <button type="submit" name="send-enquiry-btn" id="btn-send-enquiry" class="btn btn-primary btn-send-enquiry"><?php _e('Send', 'dlmarine'); ?></button>
 
 
                             </form>

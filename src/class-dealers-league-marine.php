@@ -31,7 +31,6 @@ class Dealers_League_Marine {
 		add_filter( 'the_content', array( $this, 'listing_content' ), -1 );
 		add_filter( 'post_type_link', array($this,'listing_permalinks'), 10, 2 );
 		add_filter( 'post_link', array($this,'listing_permalinks'), 10, 2 );
-
 	}
 
 	/**
@@ -58,8 +57,7 @@ class Dealers_League_Marine {
 	}
 
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'dlmarine', FALSE, basename( plugin_dir_path(  dirname( __FILE__  ) ) ) . '/languages/' );
-
+		load_plugin_textdomain( 'dlmarine', FALSE, basename( plugin_dir_path(  dirname( __FILE__  ) ) ) . '/languages/' );	
 	}
 
 
@@ -506,6 +504,16 @@ class Dealers_League_Marine {
 		return $transformed_fields;
 	}
 
+
+	public function post_listing_id($id = null, $type) {
+		global $post;
+		if(!$id){
+		   $id = get_post_meta($post->ID, 'listing_external_id', true);
+		}
+		$listings = $this->api_object->send_listing_id($id, $type);
+		return  $listings;
+	}
+
 	/**
 	 * Ajax handler for refreshing listings from the settings page
 	 *
@@ -538,6 +546,7 @@ class Dealers_League_Marine {
 			}
 
 			$brokers      = $this->api_object->get_brokers( - 1 );
+		
 			if ( is_array( $brokers ) && count($brokers)) {
 
 				foreach ( $brokers as $broker ) {
@@ -759,7 +768,7 @@ class Dealers_League_Marine {
 		}
 		if ( !empty($json_data['listing']['media']['videos']['video_upload'] ) ) {
 
-			$video_list = json_decode( $json_data['listing']['media']['videos']['video_upload'], true );
+			$video_list = $json_data['listing']['media']['videos']['video_upload'];
 
 			update_post_meta( $post_id, 'listing_n_videos', count( $video_list ) );
 
@@ -956,8 +965,16 @@ class Dealers_League_Marine {
 	/**
 	 * Ajax handler to send listing enquiry emails
 	 */
+
+
 	public function send_enquiry() {
 		global $post;
+       
+		$plugin = new Dealers_League_Marine();
+		$plugin->load();	
+		$id = $_POST["listing_id"];
+		$type = 'enquire';
+		$plugin->post_listing_id($id, $type);
 
 		$result = array(
 			'status'  => 'NOK',
@@ -1064,6 +1081,4 @@ class Dealers_League_Marine {
 		wp_send_json( $result );
 
 	}
-
-
 }

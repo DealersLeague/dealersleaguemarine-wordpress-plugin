@@ -139,7 +139,6 @@ class Api {
 		if ( ! empty( $this->client ) ) {
 			$settings = $this->client->getSettings();
 		}
-
 		return $settings;
 	}
 
@@ -154,7 +153,6 @@ class Api {
 		if ( ! empty( $this->client ) ) {
 			$integrations = $this->client->getIntegrations();
 		}
-
 		return $integrations;
 	}
 
@@ -171,7 +169,6 @@ class Api {
 		if ( ! empty( $this->client ) ) {
 			$listings = $this->client->getListingsPage( $page );
 		}
-
 		return $listings;
 
 	}
@@ -189,7 +186,6 @@ class Api {
 		if ( ! empty( $this->client ) ) {
 			$brokers = $this->client->getBrokersPage( $page );
 		}
-
 		return $brokers;
 
 	}
@@ -205,10 +201,23 @@ class Api {
 		$response = [];
 		if ( ! empty( $this->client ) ) {
 			$response = $this->client->sendAnalytics( $listing_analytic_list );
+			
 		}
-
 		return $response;
 	}
 
+	/**
+	 * @param $id, $type
+	 *
+	 * @return array|mixed|string
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws \dealersleague\marine\Exceptions\DealersLeagueException
+	 */     
+	public function send_listing_id($id, $type) {
+		$response = [];
+		if ( ! empty( $this->client ) ) {
+			$response = $this->client->sendListingid( $id, $type );
+		}
+		return $response;
+	}
 }
-
