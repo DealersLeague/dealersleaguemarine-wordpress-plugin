@@ -60,7 +60,7 @@ class WP_AutoUpdate
 		$this->slug = str_replace( '.php', '', $t2 );		
 
 		// define the alternative API for updating checking
-		add_filter( 'pre_set_site_transient_update_plugins', array( &$this, 'check_update' ) );
+		add_filter( 'site_transient_update_plugins', array( &$this, 'check_update' ) );
 
 		// Define the alternative response for information checking
 		add_filter( 'plugins_api', array( &$this, 'check_info' ), 10, 3 );
@@ -80,7 +80,7 @@ class WP_AutoUpdate
 
 		// Get the remote version
 		$remote_version = $this->getRemote('version');
-        var_dump($remote_version);
+
 		// If a newer version is available, add the update
 		if ( version_compare( $this->current_version, $remote_version->new_version, '<' ) ) {
 			$obj = new stdClass();
@@ -92,6 +92,7 @@ class WP_AutoUpdate
 			$obj->tested = $remote_version->tested;
 			$transient->response[$this->plugin_slug] = $obj;
 		}
+	
 		return $transient;
 	}
 
@@ -105,11 +106,9 @@ class WP_AutoUpdate
 	 */
 	public function check_info($obj, $action, $arg)
 	{
-		if (($action=='query_plugins' || $action=='plugin_information') && 
-		    isset($arg->slug) && $arg->slug === $this->slug) {
+		if (($action=='query_plugins' || $action=='plugin_information') && isset($arg->slug) && $arg->slug === $this->slug) {
 			return $this->getRemote('info');
 		}
-		
 		return $obj;
 	}
 
@@ -130,7 +129,7 @@ class WP_AutoUpdate
 		
 		// Make the POST request
 		$request = wp_remote_post($this->update_path, $params );
-		
+
 		// Check if response is valid
 		if ( !is_wp_error( $request ) || wp_remote_retrieve_response_code( $request ) === 200 ) {
 			//return @unserialize( $request['body'] );
