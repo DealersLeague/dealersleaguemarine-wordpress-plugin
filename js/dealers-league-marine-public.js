@@ -85,7 +85,7 @@
                 allowEmptyOption: false
             });
         });
-    
+    /*
         var searchform = $("#advanced-searchform select");
         searchform.selectize({
             onDropdownOpen: dropdownOpen,
@@ -139,16 +139,16 @@
         }
         function dropdownClose($dropdown){
             $dropdown.removeClass("opening");
-        }
+        }*/
     
     
     //  Disable inputs in the non-active tab
     
-        $(".form-slide:not(.active) input, .form-slide:not(.active) select, .form-slide:not(.active) textarea").prop("disabled", true);
+        //$(".form-slide:not(.active) input, .form-slide:not(.active) select, .form-slide:not(.active) textarea").prop("disabled", true);
     
     //  Change tab button
     
-    
+    /*
         $("select.change-tab").each(function(){
             var _this = $(this);
             if( $(this).find(".item").attr("data-value") !== "" ){
@@ -164,10 +164,10 @@
             if( $(this).find(".background .background-image").length ) {
                 $(this).css("background-color","transparent");
             }
-        });
+        });*/
     
     //  Star Rating
-    
+    /*
         $(".rating").each(function(){
             for( var i = 0; i <  5; i++ ){
                 if( i < $(this).attr("data-rating") ){
@@ -231,7 +231,7 @@
                $(this).parent().removeClass("hover");
            }
         })
-    
+    */
         if( $(".owl-carousel").length ){
             var galleryCarousel = $(".gallery-carousel");
     
@@ -360,11 +360,11 @@
  
     //  Bootstrap tooltip initialization
     
-        $('[data-toggle="tooltip"]').tooltip();
+        //$('[data-toggle="tooltip"]').tooltip();
     
     //  iCheck
     
-        $("input[type=checkbox], input[type=radio]").iCheck();
+        //$("input[type=checkbox], input[type=radio]").iCheck();
     
         var framedInputRadio = $(".framed input[type=radio]");
         framedInputRadio.on('ifChecked', function(){

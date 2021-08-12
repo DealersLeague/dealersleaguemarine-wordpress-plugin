@@ -5,9 +5,27 @@ namespace dealersleague\marine\wordpress;
 class Listing_Shortcode {
 
 	public function init(): void {
-
 		add_shortcode( 'listing_archive', array( $this, 'shortcode_listing_archive' ) );
+		add_filter("broker_name_filter", array( $this, 'broker_name_filter_call' ));
+	}
 
+    public function broker_name_filter_call($arg){
+		if(isset($_GET['filter']) && isset($_GET['id']) && $_GET['id'] != "undefined"){
+			$ar = [
+				"post_type" => "boat",
+				"post_status" => "publish",
+
+				"meta_query" => [
+					[
+						"key" => "listing_broker_id",
+						"value" => $_GET['id'],
+						"compare" => "LIKE"
+					]
+				]
+			];
+			return $ar;
+		}
+		return $arg;
 	}
 
 	/**
@@ -75,7 +93,7 @@ class Listing_Shortcode {
 		if ( strtolower( $search_condition == 'all-used' ) ) {
 			$condition_array = array( 'used', 'used-excharter', 'demo-inwater', 'demo-exhibition' );
 		} elseif ( strtolower( $search_condition == 'all-new' ) ) {
-			$condition_array = array( 'new', 'new-instock', 'new-onorder', 'new-instock' );
+			$condition_array = array( 'new', 'new-instock', 'new-onorder', 'new-inorder' );
 		} else {
 			$condition_array = array( $search_condition );
 		}

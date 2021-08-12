@@ -8,7 +8,7 @@ if ( !isset( $_POST['action'] ) ) {
 	echo '0';
 	exit;
 }
-$repo_name = 'DealersLeague/dealersleaguemarine-wordpress-plugin';
+$repo_name = 'DealersLeague/dealersleaguemarine-wordpress-plugin/';
 $url = 'https://api.github.com/repos/' . $repo_name . 'releases/latest';
 $ch = curl_init();
 
@@ -31,7 +31,7 @@ if(!$release['message']){
 	$obj->new_version = $release['tag_name'];
 	$obj->last_updated = $release['published_at'];
 	$obj->downloaded = $release['assets'][0]['size'];
-	$obj->url = ABSPATH . 'wp-content/plugins/dealers-league-marine-new-wordpress/dealersleague-marine.php';
+	$obj->url = ABSPATH . 'wp-content/plugins/dealersleaguemarine-wordpress-plugin/dealersleague-marine.php';
 
 	$obj->package = 'https://github.com/' . $repo_name . 'releases/latest/download/dealersleaguemarine-wordpress-plugin.zip';
 

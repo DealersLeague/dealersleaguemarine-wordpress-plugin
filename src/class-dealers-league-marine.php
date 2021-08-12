@@ -57,12 +57,12 @@ class Dealers_League_Marine {
 	}
 
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'dlmarine', FALSE, basename( plugin_dir_path(  dirname( __FILE__  ) ) ) . '/languages/' );	
+		load_plugin_textdomain( 'dlmarine', FALSE, basename( plugin_dir_path(  dirname( __FILE__  ) ) ) . '/languages/' ); 
 	}
 
 
 	public function admin_scripts(): void {
-		wp_register_style( 'dealers-league-marine-admin-css', plugins_url( 'css/dealers-league-marine-admin.css', __DIR__ ), false, '1.0.1' );
+		wp_register_style( 'dealers-league-marine-admin-css', plugins_url( 'css/style.css', __DIR__ ), false, '1.0.1' );
 		wp_enqueue_style( 'dealers-league-marine-admin-css' );
 		wp_enqueue_script( 'dealers-league-marine-admin-js', plugins_url( 'js/dealers-league-marine-admin.js', __DIR__ ), array( 'jquery' ), false, true );
 	}
@@ -77,15 +77,15 @@ class Dealers_League_Marine {
 		);
 		wp_enqueue_style( 'dealers-league-marine-google-fonts' );
 
-		wp_register_style(
+		/*wp_register_style(
 			'dealers-league-marine-bootstrap-css',
 			plugins_url('css/bootstrap/bootstrap.css' , __DIR__ ),
 			false,
 			'1.0.0'
 		);
-		wp_enqueue_style( 'dealers-league-marine-bootstrap-css' );
+		//wp_enqueue_style( 'dealers-league-marine-bootstrap-css' );*/
 
-		wp_register_style(
+		/*wp_register_style(
 			'dealers-league-marine-font-awesome',
 			plugins_url('fonts/font-awesome.css' , __DIR__ ),
 			false,
@@ -99,15 +99,15 @@ class Dealers_League_Marine {
 			false,
 			'1.0.0'
 		);
-		wp_enqueue_style( 'dealers-league-marine-selectize-css' );
+		wp_enqueue_style( 'dealers-league-marine-selectize-css' );*/
 
-		wp_register_style(
+		/*wp_register_style(
 			'dealers-league-marine-owl-css',
 			plugins_url('css/owl.carousel.min.css' , __DIR__ ),
 			false,
 			'1.0.0'
 		);
-		wp_enqueue_style( 'dealers-league-marine-owl-css' );
+		wp_enqueue_style( 'dealers-league-marine-owl-css' );*/
 
 		wp_register_style(
 			'dealers-league-marine-featherlight-css',
@@ -125,24 +125,24 @@ class Dealers_League_Marine {
 		);
 		wp_enqueue_style( 'dealers-league-marine-panorama' );
 
-		wp_register_style(
+		/*wp_register_style(
 			'dealers-league-marine-craigs-css',
 			plugins_url('css/craigs.css' , __DIR__ ),
 			false,
 			'1.0.0'
 		);
-		wp_enqueue_style( 'dealers-league-marine-craigs-css' );
+		//wp_enqueue_style( 'dealers-league-marine-craigs-css' );*/
  
 		wp_register_style(
 			'dealers-league-marine-css',
-			plugins_url('css/dealers-league-marine.css' , __DIR__ ),
+			plugins_url('css/style.css' , __DIR__ ),
 			false,
 			time()
 		);
 		wp_enqueue_style( 'dealers-league-marine-css' );
 
 
-		wp_register_script(
+		/*wp_register_script(
 			'dealers-league-marine-popper-js',
 			plugins_url( 'js/popper.min.js' , __DIR__ ),
 			array(),
@@ -158,6 +158,15 @@ class Dealers_League_Marine {
 			false,
 			true
 		);
+		wp_enqueue_script( 'dealers-league-marine-bootstrap-js' );*/
+
+		wp_register_script(
+			'dealers-league-marine-bootstrap-js',
+			plugins_url( 'js/bootstrap.js' , __DIR__ ),
+			array( 'jquery' ),
+			false,
+			true
+		);
 		wp_enqueue_script( 'dealers-league-marine-bootstrap-js' );
 
 		wp_register_script(
@@ -169,7 +178,7 @@ class Dealers_League_Marine {
 		);
 		wp_enqueue_script( 'dealers-league-marine-featherlight-js' );
 
-		wp_register_script(
+		/*wp_register_script(
 			'dealers-league-marine-selectize-js',
 			plugins_url( 'js/selectize.min.js' , __DIR__ ),
 			array( 'jquery' ),
@@ -185,11 +194,11 @@ class Dealers_League_Marine {
 			false,
 			true
 		);
-		wp_enqueue_script( 'dealers-league-marine-icheck-js' );
+		wp_enqueue_script( 'dealers-league-marine-icheck-js' );*/
 
 		wp_register_script(
 			'dealers-league-marine-owl-js',
-			plugins_url( 'js/owl.carousel.min.js' , __DIR__ ),
+			plugins_url( 'node_modules/owl.carousel/dist/owl.carousel.min.js' , __DIR__ ),
 			array( 'jquery' ),
 			false,
 			true
@@ -209,12 +218,11 @@ class Dealers_League_Marine {
 			plugins_url( 'js/dealers-league-marine-public.js', __DIR__ ),
 			array( 
 				'jquery', 
-				'jquery-validation',
-				'dealers-league-marine-popper-js',
+				//'jquery-validation', 
 				'dealers-league-marine-bootstrap-js',
-				'dealers-league-marine-selectize-js',
-				'dealers-league-marine-icheck-js',
-				'dealers-league-marine-owl-js'
+				//'dealers-league-marine-selectize-js',
+				//'dealers-league-marine-icheck-js',
+				//'dealers-league-marine-owl-js'
 			),
 			false,
 			true
@@ -969,12 +977,14 @@ class Dealers_League_Marine {
 
 	public function send_enquiry() {
 		global $post;
-       
+		     
 		$plugin = new Dealers_League_Marine();
 		$plugin->load();	
 		$id = $_POST["listing_id"];
 		$type = 'enquire';
-		$plugin->post_listing_id($id, $type);
+		if($plugin->post_listing_id($id, $type) != '' || $plugin->post_listing_id($id, $type) != null){
+			$plugin->post_listing_id($id, $type);
+		}
 
 		$result = array(
 			'status'  => 'NOK',
@@ -1066,6 +1076,17 @@ class Dealers_League_Marine {
 					}
 					$result[ 'status' ]  = 'OK';
 					$result[ 'message' ] = '<span style="color:#058305;">' . __( 'Thank you for contacting us, we will be in touch soon.', 'dlmarine' ) . '</span>';
+
+					// Send client thank you email 
+					$userEmail = $_POST[ 'enquiry' ][ 'email' ];
+					$userSubject = $_POST[ 'enquiry' ][ 'email' ];
+					$userBody = '<p style="margin-bottom:10px;">' . __( 'Thank you for your email. We will be in touch soon!', 'dlmarine' ) . '</p> ';
+					$userBody .= '<p style="margin-bottom:10px;">' . __( 'View Boat', 'dlmarine' ) . ': <a href="' . $current_url . '">' . $boat_name . '</a></p>';
+					$userHeaders = 'From: "' . get_bloginfo( 'name' ) . '" <'. $to . ">\r\n" .
+				           'Content-type: text/html' . "\r\n" .
+				           'Reply-To: ' . $to . "\r\n";
+
+					wp_mail( $userEmail, $userSubject, $userBody, $userHeaders ); 
 				} else {
 					$result[ 'message' ] = '<span style="color:#058305;">' . __( 'Sorry there was an error. Message was not sent.', 'dlmarine' ) . '</span>';
 				}

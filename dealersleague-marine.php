@@ -7,12 +7,12 @@ if ( ! defined( 'WPINC' ) ) {
 
 /*
  * @wordpress-plugin
- * Plugin Name:       Dealers League Marine
+ * Plugin Name:       Dealers League Marine Development
  * Plugin URI:        https://dealearsleague.com
  * Description:       Manage, list, broker and sell your boats online, book a charter or advertise your repair shop. The largest and most complete WordPress boat plugin.
- * Version:           2.0.2
- * Author:            josephbydesign, dealersleague
- * Author URI:        https://profiles.wordpress.org/josephbydesign/, https://dealersleague.com
+ * Version:           1.2.0
+ * Author:            <a href="https://profiles.wordpress.org/josephbydesign/">josephbydesign</a>, <a href="https://dealersleague.com">dealersleague</a>
+ * Author URI:        https://dealersleague.com
  * Text Domain:       dlmarine
  * Domain Path:       /languages
  */
@@ -26,6 +26,7 @@ function dealers_league_marine_plugin() {
 	$plugin = new Dealers_League_Marine();
 	$plugin->load();
 	$plugin->load_plugin_textdomain();
+
 }
 
 register_activation_hook(__FILE__,'my_custom_plugin_activate');
@@ -56,13 +57,11 @@ function broker_name_filter_call($arg){
 	 return $arg;
 }
 
-
 // Self-Hosted-WordPress-Plugin-repository
 add_action( 'init', 'activate_au' );
-function activate_au()
-{
+function activate_au() {
 	require_once ( 'wp_autoupdate.php' );
-	$plugin_current_version = '2.0.2';
+	$plugin_current_version = '1.2.0';
 	$plugin_remote_path = plugin_dir_url( __FILE__ ) . 'update.php';
 	$plugin_slug = plugin_basename( __FILE__ );
 	$license_user = '';
